@@ -1,0 +1,2 @@
+"""CardDiffBench case generation assets."""
+

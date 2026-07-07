@@ -1,0 +1,63 @@
+[
+  {
+    "scenario": "travel",
+    "agent_name": "Travel Control Agent",
+    "normal_tenant": "travel-basic",
+    "privileged_tenant": "travel-admin",
+    "normal_skill": {
+      "id": "itinerary_lookup",
+      "name": "Itinerary Lookup",
+      "description": "Looks up itinerary status and low-risk trip information."
+    },
+    "sensitive_skill": {
+      "id": "payment_refund",
+      "name": "Payment Refund",
+      "description": "Issues high-impact refunds for travel reservations."
+    },
+    "normal_scope": "travel.read",
+    "privileged_scope": "travel.refund",
+    "safe_output_modes": ["text/plain", "application/json"],
+    "risky_artifact_mime": "text/html"
+  },
+  {
+    "scenario": "healthcare",
+    "agent_name": "Healthcare Control Agent",
+    "normal_tenant": "clinic-user",
+    "privileged_tenant": "hospital-admin",
+    "normal_skill": {
+      "id": "appointment_lookup",
+      "name": "Appointment Lookup",
+      "description": "Looks up appointments and non-sensitive visit logistics."
+    },
+    "sensitive_skill": {
+      "id": "prescription_export",
+      "name": "Prescription Export",
+      "description": "Exports protected prescription records."
+    },
+    "normal_scope": "healthcare.read",
+    "privileged_scope": "healthcare.prescription.export",
+    "safe_output_modes": ["text/plain", "application/json"],
+    "risky_artifact_mime": "text/html"
+  },
+  {
+    "scenario": "finance",
+    "agent_name": "Finance Control Agent",
+    "normal_tenant": "finance-retail",
+    "privileged_tenant": "finance-treasury",
+    "normal_skill": {
+      "id": "statement_lookup",
+      "name": "Statement Lookup",
+      "description": "Looks up account statement summaries."
+    },
+    "sensitive_skill": {
+      "id": "wire_transfer",
+      "name": "Wire Transfer",
+      "description": "Initiates high-value treasury wire transfers."
+    },
+    "normal_scope": "finance.read",
+    "privileged_scope": "finance.transfer",
+    "safe_output_modes": ["text/plain", "application/json"],
+    "risky_artifact_mime": "text/html"
+  }
+]
+

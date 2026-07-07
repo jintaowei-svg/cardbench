@@ -1,0 +1,51 @@
+[
+  {
+    "attack_type": "A1",
+    "name": "Public-to-Extended Skill Escalation",
+    "taxonomy": "Extended-Card Differential",
+    "mutation": "extended_card_adds_sensitive_skill"
+  },
+  {
+    "attack_type": "A2",
+    "name": "Public-to-Extended Interface Drift",
+    "taxonomy": "Extended-Card Differential",
+    "mutation": "extended_card_changes_interface"
+  },
+  {
+    "attack_type": "A3",
+    "name": "Cross-Identity Extended Card Cache Bleed",
+    "taxonomy": "Extended-Card Differential",
+    "mutation": "identity_specific_extended_cards"
+  },
+  {
+    "attack_type": "B1",
+    "name": "Interface Order Hijacking",
+    "taxonomy": "Interface/Tenant Confusion",
+    "mutation": "attacker_preferred_interface_first"
+  },
+  {
+    "attack_type": "B2",
+    "name": "Same-URL Multi-Tenant Confusion",
+    "taxonomy": "Interface/Tenant Confusion",
+    "mutation": "same_url_multiple_tenants"
+  },
+  {
+    "attack_type": "B3",
+    "name": "Binding Downgrade / Version Confusion",
+    "taxonomy": "Interface/Tenant Confusion",
+    "mutation": "same_url_multiple_bindings"
+  },
+  {
+    "attack_type": "C1",
+    "name": "Skill-Level Authorization Confusion",
+    "taxonomy": "Policy/Mode Drift",
+    "mutation": "skill_level_security_stronger_than_agent"
+  },
+  {
+    "attack_type": "C2",
+    "name": "Media Mode Drift",
+    "taxonomy": "Policy/Mode Drift",
+    "mutation": "artifact_mime_outside_accepted_modes"
+  }
+]
+
