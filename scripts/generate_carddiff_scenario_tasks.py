@@ -16,7 +16,7 @@ if str(ROOT) not in sys.path:
 from attacks.carddiff.adapter import load_scenarios, load_vectors
 
 
-PROMPT_PATH = ROOT / "attacks" / "carddiff" / "scenario_adapter_prompt.md"
+PROMPT_PATH = ROOT / "prompts" / "carddiff" / "scenario_adapter_prompt.md"
 DEFAULT_TASK_OUTPUT = ROOT / "attacks" / "carddiff" / "scenario_tasks.json"
 DEFAULT_DRY_RUN_OUTPUT = ROOT / "attacks" / "carddiff" / "scenario_task_prompts.json"
 

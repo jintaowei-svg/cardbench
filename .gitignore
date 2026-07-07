@@ -154,6 +154,7 @@ venv.bak/
 # Project-local generated/runtime state
 .codex_work/
 results/
+output/
 .pytest_cache/
 
 # Keep the repository's checked-in site/ directory trackable.

@@ -1,0 +1,2 @@
+"""Prompt assets for CardDiffBench."""
+

@@ -16,9 +16,8 @@ except ModuleNotFoundError:  # pragma: no cover - exercised in environments with
     yaml = None
 
 from attacks.base import AttackCase
-from attacks.a2a_attack import A2A_ATTACK_IDS
 from attacks.carddiff_attack import CARDDIFF_ATTACK_ID
-from sut.registry import load_a2a_security, load_comparator, load_selector
+from sut.registry import load_carddiff_host
 from utils.env import load_repo_env
 from utils.logging import get_logger
 
@@ -160,18 +159,7 @@ def _build_summary(
         "counts_per_case": case_counts,
     }
 
-    if records and records[0]["attack_id"] == "CC":
-        cc_mode = mode or "unknown"
-        summary["cc_mode_asr"] = {cc_mode: summary["asr"]}
-        label_records = [
-            r for r in records
-            if isinstance(r.get("details"), dict) and "label_correct" in r["details"]
-        ]
-        if label_records:
-            label_correct = sum(1 for r in label_records if r["details"].get("label_correct"))
-            summary["label_accuracy"] = label_correct / len(label_records)
-            summary["evidence_metric"] = "not_judged"
-    elif records and records[0]["attack_id"] == CARDDIFF_ATTACK_ID:
+    if records and records[0]["attack_id"] == CARDDIFF_ATTACK_ID:
         by_attack: dict[str, dict[str, float | int]] = {}
         by_scenario: dict[str, dict[str, float | int]] = {}
         matrix: dict[str, dict[str, dict[str, float | int]]] = {}
@@ -205,23 +193,6 @@ def _build_summary(
         summary["carddiff_asr_by_attack"] = by_attack
         summary["carddiff_asr_by_scenario"] = by_scenario
         summary["carddiff_asr_matrix"] = matrix
-    elif records and records[0]["attack_id"] in A2A_ATTACK_IDS:
-        attack_records = [
-            r for r in records
-            if not (isinstance(r.get("details"), dict) and r["details"].get("is_control"))
-        ]
-        control_records = [
-            r for r in records
-            if isinstance(r.get("details"), dict) and r["details"].get("is_control")
-        ]
-        if attack_records:
-            summary["a2a_attack_asr"] = sum(1 for r in attack_records if r["success"]) / len(attack_records)
-            summary["a2a_attack_trials"] = len(attack_records)
-        if control_records:
-            passed = sum(1 for r in control_records if r["details"].get("control_pass"))
-            summary["control_pass_rate"] = passed / len(control_records)
-            summary["overblock_rate"] = 1.0 - summary["control_pass_rate"]
-            summary["control_trials"] = len(control_records)
 
     return summary
 
@@ -258,41 +229,15 @@ def run(config_path: Path, mode: str | None, trials_override: int | None, out: P
     if not isinstance(sut_kwargs, dict):
         raise ValueError(f"Config '{config_path}' field 'sut.kwargs' must be a mapping if provided.")
 
-    # 3) Resolve and instantiate exactly one SUT for the whole run.
-    #    AS uses selector interface, CC uses comparator interface, and
-    #    coordinator-level A2A attacks use the structured probe interface.
-    if attack_id == "AS":
-        selector_path = sut_cfg.get("selector")
-        if not isinstance(selector_path, str):
-            raise ValueError("AS config must set sut.selector as 'module:Class'.")
-        if mode is not None:
-            raise ValueError("--mode is not valid for AS runs.")
-        sut = load_selector(selector_path, **sut_kwargs)
-    elif attack_id == "CC":
-        comparator_path = sut_cfg.get("comparator")
-        if not isinstance(comparator_path, str):
-            raise ValueError("CC config must set sut.comparator as 'module:Class'.")
-        if mode not in {"whitebox", "blackbox"}:
-            raise ValueError("CC runs require --mode whitebox|blackbox.")
-        sut = load_comparator(comparator_path, **sut_kwargs)
-    elif attack_id == CARDDIFF_ATTACK_ID:
-        a2a_security_path = sut_cfg.get("a2a_security")
-        if not isinstance(a2a_security_path, str):
-            raise ValueError("CARDDIFF config must set sut.a2a_security as 'module:Class'.")
-        if mode is not None:
-            raise ValueError("--mode is not valid for CARDDIFF runs.")
-        sut = load_a2a_security(a2a_security_path, **sut_kwargs)
-    elif attack_id in A2A_ATTACK_IDS:
-        a2a_security_path = sut_cfg.get("a2a_security")
-        if not isinstance(a2a_security_path, str):
-            raise ValueError(
-                f"{attack_id} config must set sut.a2a_security as 'module:Class'."
-            )
-        if mode is not None:
-            raise ValueError(f"--mode is not valid for {attack_id} runs.")
-        sut = load_a2a_security(a2a_security_path, **sut_kwargs)
-    else:
+    # 3) Resolve and instantiate the CardDiff Host SUT for the whole run.
+    if attack_id != CARDDIFF_ATTACK_ID:
         raise ValueError(f"Unsupported attack_id '{attack_id}'.")
+    host_path = sut_cfg.get("carddiff_host") or sut_cfg.get("a2a_security")
+    if not isinstance(host_path, str):
+        raise ValueError("CARDDIFF config must set sut.carddiff_host as 'module:Class'.")
+    if mode is not None:
+        raise ValueError("--mode is not valid for CARDDIFF runs.")
+    sut = load_carddiff_host(host_path, **sut_kwargs)
 
     out_path = out or _default_out_path()
     out_path.parent.mkdir(parents=True, exist_ok=True)
@@ -315,14 +260,7 @@ def run(config_path: Path, mode: str | None, trials_override: int | None, out: P
         for case in cases:
             for trial_index in range(trials):
                 # Delegate attack-specific execution to the case implementation.
-                if attack_id == "AS":
-                    outcome = case.run(sut=sut, trial_index=trial_index)
-                elif attack_id == "CC":
-                    outcome = case.run(sut=sut, mode=mode, trial_index=trial_index)
-                elif attack_id in A2A_ATTACK_IDS or attack_id == CARDDIFF_ATTACK_ID:
-                    outcome = case.run(sut=sut, trial_index=trial_index)
-                else:
-                    raise ValueError(f"Unsupported attack_id '{attack_id}'.")
+                outcome = case.run(sut=sut, trial_index=trial_index)
 
                 # Persist trial output immediately for deterministic, crash-tolerant logging.
                 record = {
@@ -349,17 +287,7 @@ def run(config_path: Path, mode: str | None, trials_override: int | None, out: P
     summary_path = out_path.with_name("summary.json")
     summary_path.write_text(json.dumps(summary, indent=2, sort_keys=True), encoding="utf-8")
 
-    if attack_id == "AS":
-        print(f"ASR (AS): {summary['asr']:.4f}")
-    elif attack_id == "CC":
-        print(f"ASR (CC/{mode}): {summary['asr']:.4f}")
-    elif attack_id == CARDDIFF_ATTACK_ID:
-        print(f"ASR (CARDDIFF): {summary['asr']:.4f}")
-    else:
-        display_asr = summary.get("a2a_attack_asr", summary["asr"])
-        print(f"ASR ({attack_id}): {display_asr:.4f}")
-        if "control_pass_rate" in summary:
-            print(f"Control pass rate ({attack_id}): {summary['control_pass_rate']:.4f}")
+    print(f"ASR (CARDDIFF): {summary['asr']:.4f}")
 
     logger.info(
         "Run finished",
@@ -373,13 +301,13 @@ def run(config_path: Path, mode: str | None, trials_override: int | None, out: P
 
 
 def _build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description="A2ASecBench orchestration runner")
+    parser = argparse.ArgumentParser(description="CardDiffBench orchestration runner")
     parser.add_argument("--config", required=True, help="Path to YAML config.")
     parser.add_argument(
         "--mode",
         choices=["whitebox", "blackbox"],
         default=None,
-        help="CC mode: `whitebox` inspects source; `blackbox` probes A2A behavior.",
+        help=argparse.SUPPRESS,
     )
     parser.add_argument("--trials", type=int, default=None, help="Override number of trials.")
     parser.add_argument("--out", default=None, help="Output JSONL path.")

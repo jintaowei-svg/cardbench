@@ -3,9 +3,9 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "a2asecbench"
+name = "carddiffbench"
 version = "0.1.0"
-description = "A2ASecBench v0 benchmark harness"
+description = "CardDiffBench AgentCard differential benchmark harness"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
@@ -24,13 +24,18 @@ dependencies = [
 dev = ["pytest>=8.0.0"]
 
 [tool.setuptools.packages.find]
-include = ["attacks*", "harness*", "sut*", "utils*"]
+include = ["attacks*", "harness*", "sut*", "utils*", "prompts*"]
 
 [tool.setuptools.package-data]
 attacks = [
-  "fixtures/**/*.json",
-  "legacy/cc_explicit/fixtures/**/*.json",
   "carddiff/*.json",
-  "carddiff/*.jsonl",
+  "carddiff/*.jsonl"
+]
+prompts = [
   "carddiff/*.md"
 ]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+norecursedirs = ["reference", ".codex_work", "results", "output"]
+cache_dir = ".codex_work/pytest_cache"

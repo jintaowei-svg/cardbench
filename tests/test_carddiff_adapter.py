@@ -6,9 +6,9 @@ from pathlib import Path
 from attacks.carddiff.adapter import generate_cases, generate_perturbed_cases, load_perturbations
 
 
-def test_carddiff_adapter_generates_24_stable_cases() -> None:
+def test_carddiff_adapter_generates_scenario_adapted_stable_cases() -> None:
     cases = generate_cases()
-    assert len(cases) == 24
+    assert len(cases) == 72
 
     coverage = {(case["attack_type"], case["scenario"]) for case in cases}
     expected = {
@@ -51,7 +51,7 @@ def test_carddiff_b2_has_independent_request_tenant() -> None:
 def test_carddiff_protocol_state_perturbations_cover_all_cells() -> None:
     cases = generate_perturbed_cases()
     expected_variants = {variant["variant_id"] for variant in load_perturbations()}
-    assert len(cases) == 24 * len(expected_variants)
+    assert len(cases) == 72 * len(expected_variants)
     variants = {case["perturbation"]["variant_id"] for case in cases}
     assert variants == expected_variants
     coverage = {

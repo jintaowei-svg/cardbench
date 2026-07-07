@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import importlib
 
-from sut.base import A2ASecuritySUT, ComparatorSUT, SelectorSUT
+from sut.base import CardDiffHostSUTBase
 
 
 def _parse_path(path: str) -> tuple[str, str]:
@@ -30,43 +30,18 @@ def _load_class(path: str):
     return getattr(module, class_name)
 
 
-def load_selector(path: str, **kwargs) -> SelectorSUT:
+def load_carddiff_host(path: str, **kwargs) -> CardDiffHostSUTBase:
     cls = _load_class(path)
     try:
         instance = cls(**kwargs)
     except Exception as exc:
-        raise TypeError(f"Failed to instantiate selector '{path}' with kwargs={kwargs}: {exc}") from exc
-    if not isinstance(instance, SelectorSUT):
+        raise TypeError(f"Failed to instantiate CardDiff Host SUT '{path}' with kwargs={kwargs}: {exc}") from exc
+    if not isinstance(instance, CardDiffHostSUTBase):
         raise TypeError(
-            f"Loaded object from '{path}' is not a SelectorSUT. "
-            f"Expected {SelectorSUT.__name__}, got {type(instance).__name__}."
+            f"Loaded object from '{path}' is not a CardDiffHostSUTBase. "
+            f"Expected {CardDiffHostSUTBase.__name__}, got {type(instance).__name__}."
         )
     return instance
 
 
-def load_comparator(path: str, **kwargs) -> ComparatorSUT:
-    cls = _load_class(path)
-    try:
-        instance = cls(**kwargs)
-    except Exception as exc:
-        raise TypeError(f"Failed to instantiate comparator '{path}' with kwargs={kwargs}: {exc}") from exc
-    if not isinstance(instance, ComparatorSUT):
-        raise TypeError(
-            f"Loaded object from '{path}' is not a ComparatorSUT. "
-            f"Expected {ComparatorSUT.__name__}, got {type(instance).__name__}."
-        )
-    return instance
-
-
-def load_a2a_security(path: str, **kwargs) -> A2ASecuritySUT:
-    cls = _load_class(path)
-    try:
-        instance = cls(**kwargs)
-    except Exception as exc:
-        raise TypeError(f"Failed to instantiate A2A security SUT '{path}' with kwargs={kwargs}: {exc}") from exc
-    if not isinstance(instance, A2ASecuritySUT):
-        raise TypeError(
-            f"Loaded object from '{path}' is not an A2ASecuritySUT. "
-            f"Expected {A2ASecuritySUT.__name__}, got {type(instance).__name__}."
-        )
-    return instance
+load_a2a_security = load_carddiff_host

@@ -1,0 +1,2 @@
+"""CardDiffBench prompt templates."""
+

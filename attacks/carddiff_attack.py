@@ -6,7 +6,7 @@ from typing import Any
 from attacks.base import AttackCase, TrialOutcome
 from harness.carddiff_env import LocalCardDiffEnvironment
 from harness.carddiff_scoring import score_carddiff_environment
-from sut.base import A2AProbeResult, A2ASecuritySUT
+from sut.base import A2AProbeResult, CardDiffHostSUTBase
 
 
 CARDDIFF_ATTACK_ID = "CARDDIFF"
@@ -30,10 +30,10 @@ class CardDiffCase(AttackCase):
     def get_sut_payload(self) -> dict[str, Any]:
         return deepcopy(self.metadata["public"])
 
-    def run(self, sut: A2ASecuritySUT, **kwargs) -> TrialOutcome:
-        if not isinstance(sut, A2ASecuritySUT):
+    def run(self, sut: CardDiffHostSUTBase, **kwargs) -> TrialOutcome:
+        if not isinstance(sut, CardDiffHostSUTBase):
             raise TypeError(
-                f"CardDiffCase.run expected A2ASecuritySUT, got {type(sut).__name__}."
+                f"CardDiffCase.run expected CardDiffHostSUTBase, got {type(sut).__name__}."
             )
 
         trial_index = int(kwargs.get("trial_index", 0))
@@ -93,4 +93,3 @@ def _extract_trace_fields(events: list[dict[str, Any]]) -> dict[str, Any]:
         "card_scope_used": evidence.get("card_scope_used"),
         "artifact_mime_type": artifact_evidence.get("mime_type"),
     }
-

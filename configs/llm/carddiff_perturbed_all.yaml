@@ -4,10 +4,10 @@
     "module": "attacks.instances.carddiff_perturbed",
     "class_prefix": "CardDiffPerturbed",
     "start": 1,
-    "stop": 240
+    "stop": 720
   },
   "sut": {
-    "a2a_security": "sut.a2a.carddiff_host:LLMCardDiffHostSUT",
+    "carddiff_host": "sut.carddiff.host:LLMCardDiffHostSUT",
     "kwargs": {
       "max_retries": 1,
       "model": "gpt-5.4-mini"

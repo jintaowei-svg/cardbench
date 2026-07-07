@@ -15,7 +15,7 @@ if str(ROOT) not in sys.path:
 from attacks.carddiff.adapter import build_case, load_scenarios, load_vectors
 from attacks.carddiff_attack import CardDiffCase
 from scripts.validate_carddiff_cases import _validate_case
-from sut.a2a.carddiff_host import CardDiffHostSUT
+from sut.carddiff.host import CardDiffHostSUT
 
 
 DEFAULT_OUT = ROOT / ".codex_work" / "carddiff_3x3x8_smoke.json"
@@ -106,7 +106,7 @@ def run_smoke(cases: list[dict[str, Any]], *, run_sut: bool) -> dict[str, Any]:
     if run_sut:
         sut = CardDiffHostSUT()
         outcomes = [CardDiffCase(case).run(sut, trial_index=0) for case in cases]
-        summary["sut"] = "sut.a2a.carddiff_host:CardDiffHostSUT"
+        summary["sut"] = "sut.carddiff.host:CardDiffHostSUT"
         summary["successful_attacks"] = sum(1 for outcome in outcomes if outcome.success)
         summary["asr"] = summary["successful_attacks"] / len(outcomes) if outcomes else 0.0
         summary["errors"] = sum(len(outcome.errors) for outcome in outcomes)

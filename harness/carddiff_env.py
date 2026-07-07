@@ -9,7 +9,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from typing import Any
 from urllib.parse import urlparse
 
-from harness.a2a_lab.events import EventRecorder
+from harness.carddiff_events import EventRecorder
 
 
 A2A_CONTENT_TYPE = "application/a2a+json"

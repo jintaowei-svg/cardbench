@@ -1,53 +1,80 @@
-# A2ASecBench
+# CardDiffBench
 
-A2ASecBench is a benchmark for evaluating security behavior in
-agent-to-agent systems. It provides frozen benchmark cases, pluggable Systems
-Under Test (SUTs), and local executable environments for protocol-aware attacks.
+CardDiffBench is a benchmark for evaluating AgentCard control-plane
+differentials in agent-to-agent systems. It tests whether a Host makes unsafe
+decisions when public AgentCards, authenticated extended AgentCards, interfaces,
+tenant bindings, authorization scopes, and output modes disagree.
 
-## Benchmark Scope
+This branch is CardDiff-first. The original A2ASecBench codebase is preserved
+only as reference material under `reference/archive/a2asecbench/`; active
+experiments, prompts, cases, configs, SUTs, and tests live in the CardDiff paths
+listed below.
 
-| Benchmark | What it evaluates |
-| --- | --- |
-| AgentCard Spoofing (AS) | Whether a selector chooses the benign AgentCard among spoofed look-alikes. |
-| Capability Cloaking, whitebox | Whether a comparator detects mismatches between an AgentCard and source-visible backend behavior. |
-| Capability Cloaking, blackbox | Whether a comparator discovers capability mismatches through normal A2A service interaction without source access. |
-| Agent-Side Request Forgery (ASRF) | Whether a coordinator safely handles untrusted peer-supplied resource references. |
-| Artifact Triggered Script Injection (ATSI) | Whether a coordinator prevents unsafe execution during artifact preview/rendering. |
-| Cycle Overflow (CO) | Whether a coordinator bounds cyclic peer delegation. |
-| Half-Open Task Flooding (HOTF) | Whether a coordinator limits retained input-required tasks. |
-| CardDiffBench (CARDDIFF) | Whether a host handles AgentCard control-plane differentials across public/extended cards, interfaces, tenants, security, and output modes. |
+## What CardDiffBench Measures
 
-AS and both CC splits include 100 release cases. The executable A2A attack
-families include attack cases and matched controls built on the public
-`a2a-sdk` protocol implementation.
+CardDiffBench focuses on Host control-plane behavior around AgentCard state:
+
+| Family | Attack types | What can go wrong |
+| --- | --- | --- |
+| Extended-card differentials | A1, A2, A3 | A Host trusts authenticated extended-card state that diverges from the public card. |
+| Interface and tenant confusion | B1, B2, B3 | A Host routes through the wrong ordered interface, tenant, binding, or protocol version. |
+| Policy and output-mode drift | C1, C2 | A Host invokes restricted skills or accepts artifacts outside the requested output modes. |
+
+CardDiffBench borrows the scenario-adapter generation style from A2ASecBench,
+but the attack taxonomy, case schema, perturbation dataset, and scoring oracles
+are CardDiffBench-specific.
+
+## Repository Layout
+
+```text
+attacks/carddiff/       Frozen CardDiff cases, perturbations, schema, scenarios, and vectors
+prompts/carddiff/       Scenario-adapter prompt templates
+configs/                Offline and LLM-backed CardDiff run configs
+harness/                Local CardDiff A2A HTTP environment and scoring
+sut/carddiff/           Deterministic and LLM-backed CardDiff Host SUTs
+scripts/                Case generation, validation, and smoke-run helpers
+tests/                  CardDiff regression tests
+paper_drafts/           Draft manuscript and prompt appendix notes
+reference/archive/      Archived A2ASecBench reference snapshot
+```
+
+## Dataset
+
+The active frozen dataset is built from:
+
+- `attacks/carddiff/vectors.json`
+- `attacks/carddiff/scenarios.json`
+- `attacks/carddiff/scenario_tasks.json`
+- `attacks/carddiff/perturbations.json`
+- `attacks/carddiff/cases.jsonl`
+- `attacks/carddiff/perturbed_cases.jsonl`
+
+The current frozen split contains 72 base scenario-adapted cases and 720
+perturbed cases.
 
 ## Installation
 
-Python 3.10 or newer is required. Using following command:
+Python 3.10 or newer is required.
 
 ```bash
 pip install -e ".[dev]"
 ```
 
+## Run CardDiffBench
 
-
-## Quick Start
-
-Run deterministic offline baselines without LLM credentials:
+Run the deterministic Host SUT against the full perturbed dataset:
 
 ```bash
-python orchestration.py --config configs/offline/as.yaml --trials 1
-python orchestration.py --config configs/offline/cc_whitebox.yaml --mode whitebox --trials 1
-python orchestration.py --config configs/smoke/cc_blackbox.yaml --mode blackbox --trials 1
-python orchestration.py --config configs/offline/asrf_eval.yaml --trials 1
 python orchestration.py --config configs/offline/carddiff_perturbed_all.yaml --trials 1
 ```
 
-The other executable A2A configs follow the same pattern:
-`configs/offline/atsi_eval.yaml`, `configs/offline/co_eval.yaml`, and
-`configs/offline/hotf_eval.yaml`.
+Each run writes:
 
-## Evaluate LLM-Backed SUTs
+- `results/run_<timestamp>.jsonl` with per-trial records
+- `results/summary.json` with aggregate ASR and CardDiff breakdowns by attack
+  type and scenario
+
+## LLM-Backed Host Runs
 
 LLM runs are opt-in. Set credentials in the environment or in `.env`:
 
@@ -55,83 +82,46 @@ LLM runs are opt-in. Set credentials in the environment or in `.env`:
 SUT_API_BASE=...
 SUT_API_KEY=...
 SUT_MODEL=...
-SUT_TRUST_ENV=false  # optional; use when Python requests should ignore system proxy settings
+SUT_TRUST_ENV=false
 ```
 
-Start with sample configs before running full splits:
+Then run an LLM config:
 
 ```bash
-python orchestration.py --config configs/llm/as_sample.yaml --trials 1
-python orchestration.py --config configs/llm/cc_whitebox_sample.yaml --mode whitebox --trials 1
-python orchestration.py --config configs/llm/cc_blackbox_sample.yaml --mode blackbox --trials 1
+python orchestration.py --config configs/llm/carddiff_perturbed_10x3x8_gpt5mini.yaml --trials 1
 ```
 
-Full AS and CC runs are available under `configs/llm/*_full.yaml`.
-Executable A2A LLM runs are available as `configs/llm/asrf_eval.yaml`,
-`configs/llm/atsi_eval.yaml`, `configs/llm/co_eval.yaml`, and
-`configs/llm/hotf_eval.yaml`. CardDiffBench uses a scenario-adapter-first
-generation method: LLM-generated natural-language tasks are paired with
-optional oracle-preserving AgentCard perturbations. Deprecated CardDiff result
-configs should not be treated as current paper evidence.
+## Generate Scenario-Adapted Tasks
 
-## Results
-
-Each run writes:
-
-- `results/run_<timestamp>.jsonl`: per-trial records.
-- `results/summary.json`: aggregate metrics for the latest run.
-
-CC summaries include label accuracy. Evidence quality can be judged separately:
+The scenario-adapter prompt is separate from the case data:
 
 ```bash
-python scripts/judge_cc_evidence.py --input results/run_YYYY.jsonl
+python scripts/generate_carddiff_scenario_tasks.py --dry-run
 ```
 
-## Repository Layout
-
-```text
-attacks/          Benchmark case definitions, fixtures, and release instances
-configs/          Offline, smoke, calibration, and LLM run configurations
-harness/a2a_lab/  Local A2A protocol lab and scoring sinks
-sut/              SUT interfaces and reference implementations
-scripts/          Release validators and auxiliary scoring tools
-tests/            Pytest regression tests
-docs/             Maintainer documentation and attack-specific design notes
-```
+The prompt template lives at `prompts/carddiff/scenario_adapter_prompt.md`.
+Generated task banks feed the case builder in `attacks/carddiff/adapter.py`.
 
 ## Validation
 
-Run the standard checks before changing benchmark data, harness behavior, or
-SUT interfaces:
+Run these checks before changing benchmark data, harness behavior, or SUT
+interfaces:
 
 ```bash
 python -m pytest
-python scripts/validate_release.py
 python scripts/validate_carddiff_cases.py
-python scripts/validate_cc_blackbox_observability.py
-python -m compileall -q orchestration.py attacks harness sut utils scripts tests
+python -m compileall -q orchestration.py attacks harness sut utils scripts tests prompts
 ```
 
-The default tests and release validators do not require LLM credentials.
+The default tests and validators do not require LLM credentials.
 
-## Documentation
+## Relationship To A2ASecBench
 
-Start with [docs/README.md](docs/README.md). It links to the architecture,
-dataset model, workflows, and threat-model notes for each attack family.
-
-## Citation
-
-```bibtex
-@inproceedings{
-    li2026aasecbench,
-    title={A2{AS}ecBench: A Protocol-Aware Security Benchmark for Agent-to-Agent Multi-Agent Systems},
-    author={Tianhao Li and Chuangxin Chu and Yujia Zheng and Bohan Zhang and Neil Zhenqiang Gong and Chaowei Xiao},
-    booktitle={The Fourteenth International Conference on Learning Representations},
-    year={2026},
-    url={https://openreview.net/forum?id=LfdFnakqGJ}
-}
-```
+A2ASecBench is used as methodological background for scenario-adapter-style
+case generation. CardDiffBench is a separate benchmark contribution with its own
+AgentCard differential taxonomy and dataset. The archived A2ASecBench snapshot
+is kept only for provenance and comparison, not as active experiment code.
 
 ## License
 
-A2ASecBench is released under the MIT License. See [LICENSE](LICENSE).
+CardDiffBench is released under the MIT License. See `LICENSE`.
