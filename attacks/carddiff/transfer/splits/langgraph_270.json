@@ -1,0 +1,1093 @@
+{
+  "applicable_attacks": [
+    "B2",
+    "C1",
+    "C2"
+  ],
+  "cases": [
+    {
+      "case_id": "CARDDIFF_B2_FINANCE_T027_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed727"
+    },
+    {
+      "case_id": "CARDDIFF_B2_FINANCE_T027_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1927"
+    },
+    {
+      "case_id": "CARDDIFF_B2_FINANCE_T027_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3127"
+    },
+    {
+      "case_id": "CARDDIFF_B2_FINANCE_T013_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed713"
+    },
+    {
+      "case_id": "CARDDIFF_B2_FINANCE_T013_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1913"
+    },
+    {
+      "case_id": "CARDDIFF_B2_FINANCE_T013_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3113"
+    },
+    {
+      "case_id": "CARDDIFF_B2_FINANCE_T047_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed747"
+    },
+    {
+      "case_id": "CARDDIFF_B2_FINANCE_T047_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1947"
+    },
+    {
+      "case_id": "CARDDIFF_B2_FINANCE_T047_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3147"
+    },
+    {
+      "case_id": "CARDDIFF_B2_FINANCE_T011_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed711"
+    },
+    {
+      "case_id": "CARDDIFF_B2_FINANCE_T011_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1911"
+    },
+    {
+      "case_id": "CARDDIFF_B2_FINANCE_T011_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3111"
+    },
+    {
+      "case_id": "CARDDIFF_B2_FINANCE_T029_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed729"
+    },
+    {
+      "case_id": "CARDDIFF_B2_FINANCE_T029_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1929"
+    },
+    {
+      "case_id": "CARDDIFF_B2_FINANCE_T029_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3129"
+    },
+    {
+      "case_id": "CARDDIFF_B2_FINANCE_T042_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed742"
+    },
+    {
+      "case_id": "CARDDIFF_B2_FINANCE_T042_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1942"
+    },
+    {
+      "case_id": "CARDDIFF_B2_FINANCE_T042_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3142"
+    },
+    {
+      "case_id": "CARDDIFF_B2_FINANCE_T031_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed731"
+    },
+    {
+      "case_id": "CARDDIFF_B2_FINANCE_T031_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1931"
+    },
+    {
+      "case_id": "CARDDIFF_B2_FINANCE_T031_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3131"
+    },
+    {
+      "case_id": "CARDDIFF_B2_FINANCE_T014_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed714"
+    },
+    {
+      "case_id": "CARDDIFF_B2_FINANCE_T014_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1914"
+    },
+    {
+      "case_id": "CARDDIFF_B2_FINANCE_T014_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3114"
+    },
+    {
+      "case_id": "CARDDIFF_B2_FINANCE_T016_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed716"
+    },
+    {
+      "case_id": "CARDDIFF_B2_FINANCE_T016_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1916"
+    },
+    {
+      "case_id": "CARDDIFF_B2_FINANCE_T016_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3116"
+    },
+    {
+      "case_id": "CARDDIFF_B2_FINANCE_T050_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed750"
+    },
+    {
+      "case_id": "CARDDIFF_B2_FINANCE_T050_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1950"
+    },
+    {
+      "case_id": "CARDDIFF_B2_FINANCE_T050_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3150"
+    },
+    {
+      "case_id": "CARDDIFF_B2_HEALTHCARE_T014_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed664"
+    },
+    {
+      "case_id": "CARDDIFF_B2_HEALTHCARE_T014_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1864"
+    },
+    {
+      "case_id": "CARDDIFF_B2_HEALTHCARE_T014_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3064"
+    },
+    {
+      "case_id": "CARDDIFF_B2_HEALTHCARE_T008_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed658"
+    },
+    {
+      "case_id": "CARDDIFF_B2_HEALTHCARE_T008_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1858"
+    },
+    {
+      "case_id": "CARDDIFF_B2_HEALTHCARE_T008_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3058"
+    },
+    {
+      "case_id": "CARDDIFF_B2_HEALTHCARE_T010_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed660"
+    },
+    {
+      "case_id": "CARDDIFF_B2_HEALTHCARE_T010_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1860"
+    },
+    {
+      "case_id": "CARDDIFF_B2_HEALTHCARE_T010_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3060"
+    },
+    {
+      "case_id": "CARDDIFF_B2_HEALTHCARE_T036_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed686"
+    },
+    {
+      "case_id": "CARDDIFF_B2_HEALTHCARE_T036_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1886"
+    },
+    {
+      "case_id": "CARDDIFF_B2_HEALTHCARE_T036_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3086"
+    },
+    {
+      "case_id": "CARDDIFF_B2_HEALTHCARE_T007_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed657"
+    },
+    {
+      "case_id": "CARDDIFF_B2_HEALTHCARE_T007_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1857"
+    },
+    {
+      "case_id": "CARDDIFF_B2_HEALTHCARE_T007_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3057"
+    },
+    {
+      "case_id": "CARDDIFF_B2_HEALTHCARE_T050_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed700"
+    },
+    {
+      "case_id": "CARDDIFF_B2_HEALTHCARE_T050_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1900"
+    },
+    {
+      "case_id": "CARDDIFF_B2_HEALTHCARE_T050_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3100"
+    },
+    {
+      "case_id": "CARDDIFF_B2_HEALTHCARE_T023_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed673"
+    },
+    {
+      "case_id": "CARDDIFF_B2_HEALTHCARE_T023_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1873"
+    },
+    {
+      "case_id": "CARDDIFF_B2_HEALTHCARE_T023_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3073"
+    },
+    {
+      "case_id": "CARDDIFF_B2_HEALTHCARE_T021_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed671"
+    },
+    {
+      "case_id": "CARDDIFF_B2_HEALTHCARE_T021_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1871"
+    },
+    {
+      "case_id": "CARDDIFF_B2_HEALTHCARE_T021_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3071"
+    },
+    {
+      "case_id": "CARDDIFF_B2_HEALTHCARE_T045_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed695"
+    },
+    {
+      "case_id": "CARDDIFF_B2_HEALTHCARE_T045_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1895"
+    },
+    {
+      "case_id": "CARDDIFF_B2_HEALTHCARE_T045_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3095"
+    },
+    {
+      "case_id": "CARDDIFF_B2_HEALTHCARE_T041_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed691"
+    },
+    {
+      "case_id": "CARDDIFF_B2_HEALTHCARE_T041_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1891"
+    },
+    {
+      "case_id": "CARDDIFF_B2_HEALTHCARE_T041_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3091"
+    },
+    {
+      "case_id": "CARDDIFF_B2_TRAVEL_T039_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed639"
+    },
+    {
+      "case_id": "CARDDIFF_B2_TRAVEL_T039_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1839"
+    },
+    {
+      "case_id": "CARDDIFF_B2_TRAVEL_T039_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3039"
+    },
+    {
+      "case_id": "CARDDIFF_B2_TRAVEL_T010_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed610"
+    },
+    {
+      "case_id": "CARDDIFF_B2_TRAVEL_T010_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1810"
+    },
+    {
+      "case_id": "CARDDIFF_B2_TRAVEL_T010_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3010"
+    },
+    {
+      "case_id": "CARDDIFF_B2_TRAVEL_T018_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed618"
+    },
+    {
+      "case_id": "CARDDIFF_B2_TRAVEL_T018_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1818"
+    },
+    {
+      "case_id": "CARDDIFF_B2_TRAVEL_T018_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3018"
+    },
+    {
+      "case_id": "CARDDIFF_B2_TRAVEL_T005_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed605"
+    },
+    {
+      "case_id": "CARDDIFF_B2_TRAVEL_T005_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1805"
+    },
+    {
+      "case_id": "CARDDIFF_B2_TRAVEL_T005_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3005"
+    },
+    {
+      "case_id": "CARDDIFF_B2_TRAVEL_T038_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed638"
+    },
+    {
+      "case_id": "CARDDIFF_B2_TRAVEL_T038_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1838"
+    },
+    {
+      "case_id": "CARDDIFF_B2_TRAVEL_T038_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3038"
+    },
+    {
+      "case_id": "CARDDIFF_B2_TRAVEL_T037_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed637"
+    },
+    {
+      "case_id": "CARDDIFF_B2_TRAVEL_T037_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1837"
+    },
+    {
+      "case_id": "CARDDIFF_B2_TRAVEL_T037_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3037"
+    },
+    {
+      "case_id": "CARDDIFF_B2_TRAVEL_T047_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed647"
+    },
+    {
+      "case_id": "CARDDIFF_B2_TRAVEL_T047_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1847"
+    },
+    {
+      "case_id": "CARDDIFF_B2_TRAVEL_T047_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3047"
+    },
+    {
+      "case_id": "CARDDIFF_B2_TRAVEL_T013_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed613"
+    },
+    {
+      "case_id": "CARDDIFF_B2_TRAVEL_T013_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1813"
+    },
+    {
+      "case_id": "CARDDIFF_B2_TRAVEL_T013_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3013"
+    },
+    {
+      "case_id": "CARDDIFF_B2_TRAVEL_T004_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed604"
+    },
+    {
+      "case_id": "CARDDIFF_B2_TRAVEL_T004_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1804"
+    },
+    {
+      "case_id": "CARDDIFF_B2_TRAVEL_T004_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3004"
+    },
+    {
+      "case_id": "CARDDIFF_B2_TRAVEL_T012_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed612"
+    },
+    {
+      "case_id": "CARDDIFF_B2_TRAVEL_T012_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1812"
+    },
+    {
+      "case_id": "CARDDIFF_B2_TRAVEL_T012_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3012"
+    },
+    {
+      "case_id": "CARDDIFF_C1_FINANCE_T003_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1003"
+    },
+    {
+      "case_id": "CARDDIFF_C1_FINANCE_T003_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2203"
+    },
+    {
+      "case_id": "CARDDIFF_C1_FINANCE_T003_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3403"
+    },
+    {
+      "case_id": "CARDDIFF_C1_FINANCE_T027_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1027"
+    },
+    {
+      "case_id": "CARDDIFF_C1_FINANCE_T027_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2227"
+    },
+    {
+      "case_id": "CARDDIFF_C1_FINANCE_T027_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3427"
+    },
+    {
+      "case_id": "CARDDIFF_C1_FINANCE_T016_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1016"
+    },
+    {
+      "case_id": "CARDDIFF_C1_FINANCE_T016_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2216"
+    },
+    {
+      "case_id": "CARDDIFF_C1_FINANCE_T016_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3416"
+    },
+    {
+      "case_id": "CARDDIFF_C1_FINANCE_T039_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1039"
+    },
+    {
+      "case_id": "CARDDIFF_C1_FINANCE_T039_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2239"
+    },
+    {
+      "case_id": "CARDDIFF_C1_FINANCE_T039_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3439"
+    },
+    {
+      "case_id": "CARDDIFF_C1_FINANCE_T021_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1021"
+    },
+    {
+      "case_id": "CARDDIFF_C1_FINANCE_T021_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2221"
+    },
+    {
+      "case_id": "CARDDIFF_C1_FINANCE_T021_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3421"
+    },
+    {
+      "case_id": "CARDDIFF_C1_FINANCE_T046_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1046"
+    },
+    {
+      "case_id": "CARDDIFF_C1_FINANCE_T046_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2246"
+    },
+    {
+      "case_id": "CARDDIFF_C1_FINANCE_T046_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3446"
+    },
+    {
+      "case_id": "CARDDIFF_C1_FINANCE_T001_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1001"
+    },
+    {
+      "case_id": "CARDDIFF_C1_FINANCE_T001_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2201"
+    },
+    {
+      "case_id": "CARDDIFF_C1_FINANCE_T001_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3401"
+    },
+    {
+      "case_id": "CARDDIFF_C1_FINANCE_T037_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1037"
+    },
+    {
+      "case_id": "CARDDIFF_C1_FINANCE_T037_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2237"
+    },
+    {
+      "case_id": "CARDDIFF_C1_FINANCE_T037_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3437"
+    },
+    {
+      "case_id": "CARDDIFF_C1_FINANCE_T011_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1011"
+    },
+    {
+      "case_id": "CARDDIFF_C1_FINANCE_T011_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2211"
+    },
+    {
+      "case_id": "CARDDIFF_C1_FINANCE_T011_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3411"
+    },
+    {
+      "case_id": "CARDDIFF_C1_FINANCE_T034_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1034"
+    },
+    {
+      "case_id": "CARDDIFF_C1_FINANCE_T034_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2234"
+    },
+    {
+      "case_id": "CARDDIFF_C1_FINANCE_T034_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3434"
+    },
+    {
+      "case_id": "CARDDIFF_C1_HEALTHCARE_T040_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed990"
+    },
+    {
+      "case_id": "CARDDIFF_C1_HEALTHCARE_T040_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2190"
+    },
+    {
+      "case_id": "CARDDIFF_C1_HEALTHCARE_T040_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3390"
+    },
+    {
+      "case_id": "CARDDIFF_C1_HEALTHCARE_T021_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed971"
+    },
+    {
+      "case_id": "CARDDIFF_C1_HEALTHCARE_T021_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2171"
+    },
+    {
+      "case_id": "CARDDIFF_C1_HEALTHCARE_T021_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3371"
+    },
+    {
+      "case_id": "CARDDIFF_C1_HEALTHCARE_T042_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed992"
+    },
+    {
+      "case_id": "CARDDIFF_C1_HEALTHCARE_T042_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2192"
+    },
+    {
+      "case_id": "CARDDIFF_C1_HEALTHCARE_T042_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3392"
+    },
+    {
+      "case_id": "CARDDIFF_C1_HEALTHCARE_T029_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed979"
+    },
+    {
+      "case_id": "CARDDIFF_C1_HEALTHCARE_T029_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2179"
+    },
+    {
+      "case_id": "CARDDIFF_C1_HEALTHCARE_T029_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3379"
+    },
+    {
+      "case_id": "CARDDIFF_C1_HEALTHCARE_T013_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed963"
+    },
+    {
+      "case_id": "CARDDIFF_C1_HEALTHCARE_T013_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2163"
+    },
+    {
+      "case_id": "CARDDIFF_C1_HEALTHCARE_T013_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3363"
+    },
+    {
+      "case_id": "CARDDIFF_C1_HEALTHCARE_T006_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed956"
+    },
+    {
+      "case_id": "CARDDIFF_C1_HEALTHCARE_T006_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2156"
+    },
+    {
+      "case_id": "CARDDIFF_C1_HEALTHCARE_T006_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3356"
+    },
+    {
+      "case_id": "CARDDIFF_C1_HEALTHCARE_T035_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed985"
+    },
+    {
+      "case_id": "CARDDIFF_C1_HEALTHCARE_T035_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2185"
+    },
+    {
+      "case_id": "CARDDIFF_C1_HEALTHCARE_T035_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3385"
+    },
+    {
+      "case_id": "CARDDIFF_C1_HEALTHCARE_T045_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed995"
+    },
+    {
+      "case_id": "CARDDIFF_C1_HEALTHCARE_T045_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2195"
+    },
+    {
+      "case_id": "CARDDIFF_C1_HEALTHCARE_T045_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3395"
+    },
+    {
+      "case_id": "CARDDIFF_C1_HEALTHCARE_T009_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed959"
+    },
+    {
+      "case_id": "CARDDIFF_C1_HEALTHCARE_T009_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2159"
+    },
+    {
+      "case_id": "CARDDIFF_C1_HEALTHCARE_T009_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3359"
+    },
+    {
+      "case_id": "CARDDIFF_C1_HEALTHCARE_T028_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed978"
+    },
+    {
+      "case_id": "CARDDIFF_C1_HEALTHCARE_T028_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2178"
+    },
+    {
+      "case_id": "CARDDIFF_C1_HEALTHCARE_T028_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3378"
+    },
+    {
+      "case_id": "CARDDIFF_C1_TRAVEL_T006_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed906"
+    },
+    {
+      "case_id": "CARDDIFF_C1_TRAVEL_T006_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2106"
+    },
+    {
+      "case_id": "CARDDIFF_C1_TRAVEL_T006_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3306"
+    },
+    {
+      "case_id": "CARDDIFF_C1_TRAVEL_T027_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed927"
+    },
+    {
+      "case_id": "CARDDIFF_C1_TRAVEL_T027_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2127"
+    },
+    {
+      "case_id": "CARDDIFF_C1_TRAVEL_T027_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3327"
+    },
+    {
+      "case_id": "CARDDIFF_C1_TRAVEL_T045_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed945"
+    },
+    {
+      "case_id": "CARDDIFF_C1_TRAVEL_T045_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2145"
+    },
+    {
+      "case_id": "CARDDIFF_C1_TRAVEL_T045_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3345"
+    },
+    {
+      "case_id": "CARDDIFF_C1_TRAVEL_T021_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed921"
+    },
+    {
+      "case_id": "CARDDIFF_C1_TRAVEL_T021_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2121"
+    },
+    {
+      "case_id": "CARDDIFF_C1_TRAVEL_T021_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3321"
+    },
+    {
+      "case_id": "CARDDIFF_C1_TRAVEL_T011_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed911"
+    },
+    {
+      "case_id": "CARDDIFF_C1_TRAVEL_T011_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2111"
+    },
+    {
+      "case_id": "CARDDIFF_C1_TRAVEL_T011_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3311"
+    },
+    {
+      "case_id": "CARDDIFF_C1_TRAVEL_T010_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed910"
+    },
+    {
+      "case_id": "CARDDIFF_C1_TRAVEL_T010_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2110"
+    },
+    {
+      "case_id": "CARDDIFF_C1_TRAVEL_T010_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3310"
+    },
+    {
+      "case_id": "CARDDIFF_C1_TRAVEL_T041_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed941"
+    },
+    {
+      "case_id": "CARDDIFF_C1_TRAVEL_T041_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2141"
+    },
+    {
+      "case_id": "CARDDIFF_C1_TRAVEL_T041_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3341"
+    },
+    {
+      "case_id": "CARDDIFF_C1_TRAVEL_T008_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed908"
+    },
+    {
+      "case_id": "CARDDIFF_C1_TRAVEL_T008_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2108"
+    },
+    {
+      "case_id": "CARDDIFF_C1_TRAVEL_T008_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3308"
+    },
+    {
+      "case_id": "CARDDIFF_C1_TRAVEL_T002_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed902"
+    },
+    {
+      "case_id": "CARDDIFF_C1_TRAVEL_T002_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2102"
+    },
+    {
+      "case_id": "CARDDIFF_C1_TRAVEL_T002_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3302"
+    },
+    {
+      "case_id": "CARDDIFF_C1_TRAVEL_T039_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed939"
+    },
+    {
+      "case_id": "CARDDIFF_C1_TRAVEL_T039_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2139"
+    },
+    {
+      "case_id": "CARDDIFF_C1_TRAVEL_T039_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3339"
+    },
+    {
+      "case_id": "CARDDIFF_C2_FINANCE_T038_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1188"
+    },
+    {
+      "case_id": "CARDDIFF_C2_FINANCE_T038_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2388"
+    },
+    {
+      "case_id": "CARDDIFF_C2_FINANCE_T038_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3588"
+    },
+    {
+      "case_id": "CARDDIFF_C2_FINANCE_T023_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1173"
+    },
+    {
+      "case_id": "CARDDIFF_C2_FINANCE_T023_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2373"
+    },
+    {
+      "case_id": "CARDDIFF_C2_FINANCE_T023_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3573"
+    },
+    {
+      "case_id": "CARDDIFF_C2_FINANCE_T034_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1184"
+    },
+    {
+      "case_id": "CARDDIFF_C2_FINANCE_T034_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2384"
+    },
+    {
+      "case_id": "CARDDIFF_C2_FINANCE_T034_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3584"
+    },
+    {
+      "case_id": "CARDDIFF_C2_FINANCE_T045_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1195"
+    },
+    {
+      "case_id": "CARDDIFF_C2_FINANCE_T045_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2395"
+    },
+    {
+      "case_id": "CARDDIFF_C2_FINANCE_T045_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3595"
+    },
+    {
+      "case_id": "CARDDIFF_C2_FINANCE_T008_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1158"
+    },
+    {
+      "case_id": "CARDDIFF_C2_FINANCE_T008_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2358"
+    },
+    {
+      "case_id": "CARDDIFF_C2_FINANCE_T008_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3558"
+    },
+    {
+      "case_id": "CARDDIFF_C2_FINANCE_T036_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1186"
+    },
+    {
+      "case_id": "CARDDIFF_C2_FINANCE_T036_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2386"
+    },
+    {
+      "case_id": "CARDDIFF_C2_FINANCE_T036_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3586"
+    },
+    {
+      "case_id": "CARDDIFF_C2_FINANCE_T012_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1162"
+    },
+    {
+      "case_id": "CARDDIFF_C2_FINANCE_T012_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2362"
+    },
+    {
+      "case_id": "CARDDIFF_C2_FINANCE_T012_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3562"
+    },
+    {
+      "case_id": "CARDDIFF_C2_FINANCE_T003_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1153"
+    },
+    {
+      "case_id": "CARDDIFF_C2_FINANCE_T003_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2353"
+    },
+    {
+      "case_id": "CARDDIFF_C2_FINANCE_T003_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3553"
+    },
+    {
+      "case_id": "CARDDIFF_C2_FINANCE_T024_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1174"
+    },
+    {
+      "case_id": "CARDDIFF_C2_FINANCE_T024_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2374"
+    },
+    {
+      "case_id": "CARDDIFF_C2_FINANCE_T024_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3574"
+    },
+    {
+      "case_id": "CARDDIFF_C2_FINANCE_T005_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1155"
+    },
+    {
+      "case_id": "CARDDIFF_C2_FINANCE_T005_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2355"
+    },
+    {
+      "case_id": "CARDDIFF_C2_FINANCE_T005_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3555"
+    },
+    {
+      "case_id": "CARDDIFF_C2_HEALTHCARE_T038_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1138"
+    },
+    {
+      "case_id": "CARDDIFF_C2_HEALTHCARE_T038_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2338"
+    },
+    {
+      "case_id": "CARDDIFF_C2_HEALTHCARE_T038_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3538"
+    },
+    {
+      "case_id": "CARDDIFF_C2_HEALTHCARE_T020_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1120"
+    },
+    {
+      "case_id": "CARDDIFF_C2_HEALTHCARE_T020_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2320"
+    },
+    {
+      "case_id": "CARDDIFF_C2_HEALTHCARE_T020_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3520"
+    },
+    {
+      "case_id": "CARDDIFF_C2_HEALTHCARE_T043_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1143"
+    },
+    {
+      "case_id": "CARDDIFF_C2_HEALTHCARE_T043_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2343"
+    },
+    {
+      "case_id": "CARDDIFF_C2_HEALTHCARE_T043_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3543"
+    },
+    {
+      "case_id": "CARDDIFF_C2_HEALTHCARE_T010_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1110"
+    },
+    {
+      "case_id": "CARDDIFF_C2_HEALTHCARE_T010_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2310"
+    },
+    {
+      "case_id": "CARDDIFF_C2_HEALTHCARE_T010_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3510"
+    },
+    {
+      "case_id": "CARDDIFF_C2_HEALTHCARE_T034_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1134"
+    },
+    {
+      "case_id": "CARDDIFF_C2_HEALTHCARE_T034_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2334"
+    },
+    {
+      "case_id": "CARDDIFF_C2_HEALTHCARE_T034_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3534"
+    },
+    {
+      "case_id": "CARDDIFF_C2_HEALTHCARE_T029_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1129"
+    },
+    {
+      "case_id": "CARDDIFF_C2_HEALTHCARE_T029_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2329"
+    },
+    {
+      "case_id": "CARDDIFF_C2_HEALTHCARE_T029_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3529"
+    },
+    {
+      "case_id": "CARDDIFF_C2_HEALTHCARE_T028_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1128"
+    },
+    {
+      "case_id": "CARDDIFF_C2_HEALTHCARE_T028_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2328"
+    },
+    {
+      "case_id": "CARDDIFF_C2_HEALTHCARE_T028_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3528"
+    },
+    {
+      "case_id": "CARDDIFF_C2_HEALTHCARE_T025_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1125"
+    },
+    {
+      "case_id": "CARDDIFF_C2_HEALTHCARE_T025_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2325"
+    },
+    {
+      "case_id": "CARDDIFF_C2_HEALTHCARE_T025_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3525"
+    },
+    {
+      "case_id": "CARDDIFF_C2_HEALTHCARE_T013_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1113"
+    },
+    {
+      "case_id": "CARDDIFF_C2_HEALTHCARE_T013_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2313"
+    },
+    {
+      "case_id": "CARDDIFF_C2_HEALTHCARE_T013_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3513"
+    },
+    {
+      "case_id": "CARDDIFF_C2_HEALTHCARE_T011_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1111"
+    },
+    {
+      "case_id": "CARDDIFF_C2_HEALTHCARE_T011_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2311"
+    },
+    {
+      "case_id": "CARDDIFF_C2_HEALTHCARE_T011_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3511"
+    },
+    {
+      "case_id": "CARDDIFF_C2_TRAVEL_T045_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1095"
+    },
+    {
+      "case_id": "CARDDIFF_C2_TRAVEL_T045_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2295"
+    },
+    {
+      "case_id": "CARDDIFF_C2_TRAVEL_T045_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3495"
+    },
+    {
+      "case_id": "CARDDIFF_C2_TRAVEL_T016_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1066"
+    },
+    {
+      "case_id": "CARDDIFF_C2_TRAVEL_T016_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2266"
+    },
+    {
+      "case_id": "CARDDIFF_C2_TRAVEL_T016_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3466"
+    },
+    {
+      "case_id": "CARDDIFF_C2_TRAVEL_T047_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1097"
+    },
+    {
+      "case_id": "CARDDIFF_C2_TRAVEL_T047_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2297"
+    },
+    {
+      "case_id": "CARDDIFF_C2_TRAVEL_T047_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3497"
+    },
+    {
+      "case_id": "CARDDIFF_C2_TRAVEL_T018_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1068"
+    },
+    {
+      "case_id": "CARDDIFF_C2_TRAVEL_T018_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2268"
+    },
+    {
+      "case_id": "CARDDIFF_C2_TRAVEL_T018_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3468"
+    },
+    {
+      "case_id": "CARDDIFF_C2_TRAVEL_T048_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1098"
+    },
+    {
+      "case_id": "CARDDIFF_C2_TRAVEL_T048_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2298"
+    },
+    {
+      "case_id": "CARDDIFF_C2_TRAVEL_T048_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3498"
+    },
+    {
+      "case_id": "CARDDIFF_C2_TRAVEL_T008_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1058"
+    },
+    {
+      "case_id": "CARDDIFF_C2_TRAVEL_T008_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2258"
+    },
+    {
+      "case_id": "CARDDIFF_C2_TRAVEL_T008_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3458"
+    },
+    {
+      "case_id": "CARDDIFF_C2_TRAVEL_T028_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1078"
+    },
+    {
+      "case_id": "CARDDIFF_C2_TRAVEL_T028_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2278"
+    },
+    {
+      "case_id": "CARDDIFF_C2_TRAVEL_T028_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3478"
+    },
+    {
+      "case_id": "CARDDIFF_C2_TRAVEL_T029_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1079"
+    },
+    {
+      "case_id": "CARDDIFF_C2_TRAVEL_T029_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2279"
+    },
+    {
+      "case_id": "CARDDIFF_C2_TRAVEL_T029_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3479"
+    },
+    {
+      "case_id": "CARDDIFF_C2_TRAVEL_T003_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1053"
+    },
+    {
+      "case_id": "CARDDIFF_C2_TRAVEL_T003_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2253"
+    },
+    {
+      "case_id": "CARDDIFF_C2_TRAVEL_T003_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3453"
+    },
+    {
+      "case_id": "CARDDIFF_C2_TRAVEL_T011_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1061"
+    },
+    {
+      "case_id": "CARDDIFF_C2_TRAVEL_T011_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2261"
+    },
+    {
+      "case_id": "CARDDIFF_C2_TRAVEL_T011_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3461"
+    }
+  ],
+  "dataset_sha256": "74eaec2d22e740a28259562ef239e1a8f61380e3361fa8894ec38fdc4fab1b26",
+  "parent_split": "transfer_master_720",
+  "sampling_seed": "carddiff-transfer-v1",
+  "split_id": "langgraph_270"
+}

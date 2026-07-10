@@ -1,0 +1,13 @@
+﻿trials: 1
+case_manifest: attacks/carddiff/transfer/splits/langgraph_270.json
+sut:
+  carddiff_host: sut.transfer.langgraph_host:LangGraphCardDiffHostSUT
+  kwargs:
+    model: gpt-5-mini
+    temperature: 0
+    max_retries: 1
+environment:
+  factory: harness.transfer.langgraph_env:LangGraphCardDiffEnvironment
+  kwargs:
+    remote_tool_mode: deterministic
+    persistence: false # every case builds a fresh runtime state

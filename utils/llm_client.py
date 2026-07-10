@@ -87,11 +87,25 @@ def chat(system: str, user: str, model: str | None = None, temperature: float | 
     session = requests.Session()
     session.trust_env = client.trust_env
     response = session.post(
-        f"{client.api_base}/chat/completions",
+        _completion_url(client.api_base),
         headers=headers,
         json=payload,
         timeout=client.timeout_s,
     )
+    # Some OpenAI-compatible gateways advertise a bare origin as ``base_url``
+    # but expose the API below /v1.  A non-JSON landing page is unambiguously
+    # not a completion response, so retry that conventional path once.
+    if (
+        response.ok
+        and "json" not in response.headers.get("Content-Type", "").lower()
+        and not client.api_base.rstrip("/").endswith("/v1")
+    ):
+        response = session.post(
+            _completion_url(client.api_base + "/v1"),
+            headers=headers,
+            json=payload,
+            timeout=client.timeout_s,
+        )
     try:
         response.raise_for_status()
     except requests.HTTPError as exc:
@@ -109,6 +123,10 @@ def chat(system: str, user: str, model: str | None = None, temperature: float | 
         return data["choices"][0]["message"]["content"]
     except Exception as exc:
         raise RuntimeError(f"Unexpected OpenAI-compatible response format: {data}") from exc
+
+
+def _completion_url(api_base: str) -> str:
+    return f"{api_base.rstrip('/')}/chat/completions"
 
 
 def _write_usage_log(*, model: str, usage: object, response_id: object) -> None:

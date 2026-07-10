@@ -1,10 +1,10 @@
 from __future__ import annotations
 
 from copy import deepcopy
+import importlib
 from typing import Any
 
 from attacks.base import AttackCase, TrialOutcome
-from harness.carddiff_env import LocalCardDiffEnvironment
 from harness.carddiff_scoring import score_carddiff_environment
 from sut.base import A2AProbeResult, CardDiffHostSUTBase
 
@@ -41,11 +41,14 @@ class CardDiffCase(AttackCase):
         if not isinstance(environment_cfg, dict):
             raise TypeError("CardDiffCase.run expected environment to be a mapping.")
         errors: list[str] = []
-        with LocalCardDiffEnvironment(
-            self.metadata,
-            trial_index,
-            remote_agent=environment_cfg.get("remote_agent"),
-        ) as env:
+        factory_path = str(environment_cfg.get("factory", "harness.carddiff_env:LocalCardDiffEnvironment"))
+        env_cls = _load_environment_factory(factory_path)
+        env_kwargs = dict(environment_cfg.get("kwargs") or {})
+        # Legacy configs put the remote agent configuration directly under
+        # ``environment``. Keep that stable while allowing transfer factories.
+        if "remote_agent" in environment_cfg and "remote_agent" not in env_kwargs:
+            env_kwargs["remote_agent"] = environment_cfg["remote_agent"]
+        with env_cls(self.metadata, trial_index, **env_kwargs) as env:
             try:
                 result = sut.run_probe(env.public_view, env)
             except Exception as exc:
@@ -78,6 +81,20 @@ class CardDiffCase(AttackCase):
             details=details,
             errors=errors,
         )
+
+
+def _load_environment_factory(path: str):
+    if ":" not in path:
+        raise ValueError("environment.factory must use 'module:ClassName' syntax.")
+    module_name, class_name = path.split(":", 1)
+    module = importlib.import_module(module_name)
+    try:
+        factory = getattr(module, class_name)
+    except AttributeError as exc:
+        raise AttributeError(f"Environment factory '{path}' was not found.") from exc
+    if not callable(factory):
+        raise TypeError(f"Environment factory '{path}' is not callable.")
+    return factory
 
 
 def _extract_trace_fields(events: list[dict[str, Any]]) -> dict[str, Any]:

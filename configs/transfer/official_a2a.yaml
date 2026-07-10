@@ -1,0 +1,13 @@
+﻿trials: 1
+case_manifest: attacks/carddiff/transfer/splits/official_a2a_720.json
+sut:
+  carddiff_host: sut.transfer.official_a2a_host:OfficialSDKCardDiffHostSUT
+  kwargs:
+    model: gpt-5-mini
+    temperature: 0
+    max_retries: 1
+environment:
+  factory: harness.transfer.official_a2a_env:OfficialSDKCardDiffEnvironment
+  kwargs:
+    transport: asgi
+    remote_agent_mode: deterministic # local deterministic peer; LLM stays remote

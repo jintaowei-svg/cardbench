@@ -84,6 +84,23 @@ def _load_config(path: Path) -> dict:
 
 
 def _case_paths_from_config(config: dict, config_path: Path) -> list[str]:
+    manifest = config.get("case_manifest")
+    if manifest is not None:
+        if not isinstance(manifest, str) or not manifest:
+            raise ValueError(f"Config '{config_path}' field 'case_manifest' must be a non-empty path.")
+        manifest_path = Path(manifest)
+        if not manifest_path.is_absolute():
+            manifest_path = Path.cwd() / manifest_path
+        try:
+            payload = json.loads(manifest_path.read_text(encoding="utf-8"))
+        except FileNotFoundError as exc:
+            raise FileNotFoundError(f"Case manifest not found: {manifest_path}") from exc
+        if not isinstance(payload, dict) or not isinstance(payload.get("cases"), list):
+            raise ValueError(f"Case manifest '{manifest_path}' must contain a cases list.")
+        paths = [item.get("class_path") for item in payload["cases"] if isinstance(item, dict)]
+        if len(paths) != len(payload["cases"]) or not all(isinstance(path, str) for path in paths):
+            raise ValueError(f"Case manifest '{manifest_path}' contains an invalid class_path.")
+        return paths
     case_paths = config.get("cases")
     if isinstance(case_paths, list) and case_paths:
         if not all(isinstance(path, str) for path in case_paths):
@@ -204,6 +221,7 @@ def run(config_path: Path, mode: str | None, trials_override: int | None, out: P
 
     config = _load_config(config_path)
     config_hash = _config_hash(config)
+    manifest_metadata = _load_manifest_metadata(config.get("case_manifest"))
 
     case_paths = _case_paths_from_config(config, config_path)
 
@@ -278,6 +296,8 @@ def run(config_path: Path, mode: str | None, trials_override: int | None, out: P
                     "config_hash": config_hash,
                     **asdict(outcome),
                 }
+                if manifest_metadata:
+                    record["transfer"] = manifest_metadata
                 fp.write(json.dumps(record, sort_keys=True) + "\n")
                 fp.flush()
                 records.append(record)
@@ -307,6 +327,22 @@ def run(config_path: Path, mode: str | None, trials_override: int | None, out: P
         },
     )
     return out_path, summary_path, summary
+
+
+def _load_manifest_metadata(value: Any) -> dict[str, Any]:
+    if not isinstance(value, str) or not value:
+        return {}
+    path = Path(value)
+    if not path.is_absolute():
+        path = Path.cwd() / path
+    data = path.read_bytes()
+    payload = json.loads(data.decode("utf-8"))
+    return {
+        "split_id": payload.get("split_id"),
+        "dataset_sha256": payload.get("dataset_sha256"),
+        "split_sha256": hashlib.sha256(data).hexdigest(),
+        "applicable_attacks": payload.get("applicable_attacks", []),
+    }
 
 
 def _build_parser() -> argparse.ArgumentParser:
