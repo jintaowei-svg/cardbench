@@ -49,8 +49,9 @@ The active frozen dataset is built from:
 - `attacks/carddiff/cases.jsonl`
 - `attacks/carddiff/perturbed_cases.jsonl`
 
-The current frozen split contains 72 base scenario-adapted cases and 720
-perturbed cases.
+The current frozen split contains 1,200 base scenario-adapted cases and 3,600
+perturbed cases. This corresponds to 3 domains, 8 attack families, 50 scenario
+tasks per attack-domain cell, and 3 perturbation variants.
 
 ## Installation
 
@@ -85,10 +86,10 @@ SUT_MODEL=...
 SUT_TRUST_ENV=false
 ```
 
-Then run an LLM config:
+Then run the full `gpt-5-mini` LLM config:
 
 ```bash
-python orchestration.py --config configs/llm/carddiff_perturbed_10x3x8_gpt5mini.yaml --trials 1
+python orchestration.py --config configs/llm/carddiff_perturbed_all.yaml --trials 1
 ```
 
 ## Generate Scenario-Adapted Tasks
@@ -101,6 +102,14 @@ python scripts/generate_carddiff_scenario_tasks.py --dry-run
 
 The prompt template lives at `prompts/carddiff/scenario_adapter_prompt.md`.
 Generated task banks feed the case builder in `attacks/carddiff/adapter.py`.
+For the current frozen split, scenario tasks were generated with checkpointed
+cell-level saving:
+
+```bash
+python scripts/generate_carddiff_scenario_tasks.py --num-cases 50 --model gpt-5.4-mini --repair-model gpt-5.4-nano --resume
+python scripts/generate_carddiff_cases.py
+python scripts/generate_carddiff_perturbed_cases.py --variant-ids 001,002,003
+```
 
 ## Validation
 
@@ -109,7 +118,7 @@ interfaces:
 
 ```bash
 python -m pytest
-python scripts/validate_carddiff_cases.py
+python scripts/validate_carddiff_cases.py --variant-ids 001,002,003
 python -m compileall -q orchestration.py attacks harness sut utils scripts tests prompts
 ```
 

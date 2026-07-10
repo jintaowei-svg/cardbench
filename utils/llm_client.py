@@ -2,6 +2,9 @@ from __future__ import annotations
 
 import os
 from dataclasses import dataclass
+from datetime import datetime, timezone
+import json
+from pathlib import Path
 
 import requests
 
@@ -97,7 +100,28 @@ def chat(system: str, user: str, model: str | None = None, temperature: float | 
         ) from exc
 
     data = response.json()
+    _write_usage_log(
+        model=resolved_model,
+        usage=data.get("usage"),
+        response_id=data.get("id"),
+    )
     try:
         return data["choices"][0]["message"]["content"]
     except Exception as exc:
         raise RuntimeError(f"Unexpected OpenAI-compatible response format: {data}") from exc
+
+
+def _write_usage_log(*, model: str, usage: object, response_id: object) -> None:
+    usage_log = os.getenv("SUT_USAGE_LOG", "").strip()
+    if not usage_log:
+        return
+    path = Path(usage_log)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    record = {
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "model": model,
+        "response_id": response_id,
+        "usage": usage,
+    }
+    with path.open("a", encoding="utf-8") as fp:
+        fp.write(json.dumps(record, sort_keys=True) + "\n")

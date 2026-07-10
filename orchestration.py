@@ -228,6 +228,11 @@ def run(config_path: Path, mode: str | None, trials_override: int | None, out: P
     sut_kwargs = sut_cfg.get("kwargs") or {}
     if not isinstance(sut_kwargs, dict):
         raise ValueError(f"Config '{config_path}' field 'sut.kwargs' must be a mapping if provided.")
+    environment_cfg = config.get("environment") or config.get("carddiff_environment") or {}
+    if not isinstance(environment_cfg, dict):
+        raise ValueError(
+            f"Config '{config_path}' field 'environment' must be a mapping if provided."
+        )
 
     # 3) Resolve and instantiate the CardDiff Host SUT for the whole run.
     if attack_id != CARDDIFF_ATTACK_ID:
@@ -260,7 +265,11 @@ def run(config_path: Path, mode: str | None, trials_override: int | None, out: P
         for case in cases:
             for trial_index in range(trials):
                 # Delegate attack-specific execution to the case implementation.
-                outcome = case.run(sut=sut, trial_index=trial_index)
+                outcome = case.run(
+                    sut=sut,
+                    trial_index=trial_index,
+                    environment=environment_cfg,
+                )
 
                 # Persist trial output immediately for deterministic, crash-tolerant logging.
                 record = {

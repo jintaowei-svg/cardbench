@@ -215,3 +215,10 @@ __marimo__/
 # Office temporary lock files
 ~$*
 ~*.tmp
+
+# LaTeX build artifacts
+*.aux
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+*.zip.old

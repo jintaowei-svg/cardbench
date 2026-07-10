@@ -37,8 +37,15 @@ class CardDiffCase(AttackCase):
             )
 
         trial_index = int(kwargs.get("trial_index", 0))
+        environment_cfg = kwargs.get("environment") or {}
+        if not isinstance(environment_cfg, dict):
+            raise TypeError("CardDiffCase.run expected environment to be a mapping.")
         errors: list[str] = []
-        with LocalCardDiffEnvironment(self.metadata, trial_index) as env:
+        with LocalCardDiffEnvironment(
+            self.metadata,
+            trial_index,
+            remote_agent=environment_cfg.get("remote_agent"),
+        ) as env:
             try:
                 result = sut.run_probe(env.public_view, env)
             except Exception as exc:

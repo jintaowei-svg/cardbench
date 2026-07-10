@@ -6,9 +6,22 @@ from pathlib import Path
 from attacks.carddiff.adapter import generate_cases, generate_perturbed_cases, load_perturbations
 
 
+def _frozen_cases(path: str) -> list[str]:
+    return [
+        line
+        for line in Path(path).read_text(encoding="utf-8").splitlines()
+        if line.strip()
+    ]
+
+
+def _frozen_metadata(path: str) -> list[dict]:
+    return [json.loads(line) for line in _frozen_cases(path)]
+
+
 def test_carddiff_adapter_generates_scenario_adapted_stable_cases() -> None:
     cases = generate_cases()
-    assert len(cases) == 72
+    frozen = _frozen_cases("attacks/carddiff/cases.jsonl")
+    assert len(cases) == len(frozen)
 
     coverage = {(case["attack_type"], case["scenario"]) for case in cases}
     expected = {
@@ -19,11 +32,6 @@ def test_carddiff_adapter_generates_scenario_adapted_stable_cases() -> None:
     assert coverage == expected
 
     generated = [json.dumps(case, sort_keys=True, ensure_ascii=False) for case in cases]
-    frozen = [
-        line
-        for line in Path("attacks/carddiff/cases.jsonl").read_text(encoding="utf-8").splitlines()
-        if line.strip()
-    ]
     assert generated == frozen
 
 
@@ -49,19 +57,29 @@ def test_carddiff_b2_has_independent_request_tenant() -> None:
 
 
 def test_carddiff_protocol_state_perturbations_cover_all_cells() -> None:
-    cases = generate_perturbed_cases()
-    expected_variants = {variant["variant_id"] for variant in load_perturbations()}
-    assert len(cases) == 72 * len(expected_variants)
+    frozen = _frozen_metadata("attacks/carddiff/perturbed_cases.jsonl")
+    expected_variants = {case["perturbation"]["variant_id"] for case in frozen}
+    cases = generate_perturbed_cases(expected_variants)
+    assert len(cases) == len(frozen)
     variants = {case["perturbation"]["variant_id"] for case in cases}
     assert variants == expected_variants
+    assert expected_variants <= {variant["variant_id"] for variant in load_perturbations()}
     coverage = {
-        (case["attack_type"], case["scenario"], case["perturbation"]["variant_id"])
+        (
+            case["attack_type"],
+            case["scenario"],
+            case["generation"]["scenario_task_id"],
+            case["perturbation"]["variant_id"],
+        )
         for case in cases
     }
     expected = {
-        (attack_type, scenario, variant)
-        for attack_type in {"A1", "A2", "A3", "B1", "B2", "B3", "C1", "C2"}
-        for scenario in {"travel", "healthcare", "finance"}
-        for variant in expected_variants
+        (
+            case["attack_type"],
+            case["scenario"],
+            case["generation"]["scenario_task_id"],
+            case["perturbation"]["variant_id"],
+        )
+        for case in frozen
     }
     assert coverage == expected

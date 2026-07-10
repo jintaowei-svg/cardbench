@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import argparse
 from collections import Counter
 import importlib
 import json
@@ -222,6 +223,16 @@ def _expected_count(
     )
 
 
+def _parse_variant_ids(text: str | None) -> set[str] | None:
+    if not text:
+        return None
+    return {
+        item.strip().zfill(3) if item.strip().isdigit() else item.strip()
+        for item in text.split(",")
+        if item.strip()
+    }
+
+
 def _validate_agent_card(case_id: str, card: Any) -> None:
     if not isinstance(card, dict):
         raise ValueError(f"{case_id} AgentCard must be a mapping")
@@ -281,6 +292,14 @@ def _validate_importable(
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser(description="Validate CardDiff base and perturbed cases.")
+    parser.add_argument(
+        "--variant-ids",
+        default=None,
+        help="Comma-separated perturbation variant IDs expected in perturbed_cases.jsonl.",
+    )
+    args = parser.parse_args()
+
     expected_task_ids = load_scenario_task_ids()
     cases = load_cases()
     validate_cases(
@@ -289,7 +308,12 @@ def main() -> None:
         expected_task_ids=expected_task_ids,
     )
     perturbed_cases = load_cases(PERTURBED_CASES_PATH)
-    expected_variants = load_perturbation_variants()
+    selected_variants = _parse_variant_ids(args.variant_ids)
+    all_variants = load_perturbation_variants()
+    expected_variants = selected_variants or all_variants
+    unknown = expected_variants - all_variants
+    if unknown:
+        raise ValueError(f"Unknown CardDiff perturbation variants: {sorted(unknown)}")
     validate_cases(
         perturbed_cases,
         expected_count=_expected_count(expected_task_ids, variant_count=len(expected_variants)),
