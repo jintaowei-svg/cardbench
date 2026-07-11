@@ -3,6 +3,7 @@ from __future__ import annotations
 from copy import deepcopy
 from contextvars import ContextVar
 from typing import Any
+from urllib.parse import urlsplit
 from uuid import uuid4
 
 from starlette.applications import Starlette
@@ -21,6 +22,13 @@ from sut.transfer.official_a2a_protocol import (A2AStarletteApplication, AgentEx
 def _token_label(value: str) -> str:
     prefix = "Bearer carddiff-token-"
     return value[len(prefix):] if value.startswith(prefix) else ""
+
+
+def _mount_path_for_interface_url(url: str, base_url: str) -> str | None:
+    endpoint, base = urlsplit(url), urlsplit(base_url)
+    if endpoint.scheme != base.scheme or endpoint.netloc != base.netloc:
+        return None
+    return endpoint.path.rstrip("/") or "/"
 
 
 _AUTH_TOKEN_LABEL: ContextVar[str] = ContextVar("carddiff_auth_token_label", default="")
@@ -111,9 +119,9 @@ def build_peer_app(env: Any) -> Starlette:
     paths = {"/"}
     for card in [runtime.public_card, *runtime.extended_cards.values()]:
         for interface in card.get("supportedInterfaces", []):
-            url = str(interface.get("url", ""))
-            if url.startswith(runtime.base_url):
-                paths.add(url[len(runtime.base_url):].rstrip("/") or "/")
+            path = _mount_path_for_interface_url(str(interface.get("url", "")), runtime.base_url)
+            if path is not None:
+                paths.add(path)
     routes = [Route("/.well-known/carddiff-control-plane.json", public_extension),
               Route("/extendedAgentCard", extended)]
     routes.extend(Mount(path, app=sdk_app) for path in sorted(paths, key=len, reverse=True) if path != "/")

@@ -4,6 +4,7 @@ import hashlib
 import json
 from dataclasses import dataclass
 from typing import Any
+from urllib.parse import urlsplit, urlunsplit
 
 from sut.transfer.official_a2a_protocol import AgentCapabilities, AgentCard, AgentSkill
 
@@ -38,7 +39,7 @@ def build_sdk_agent_card(raw_card: dict[str, Any], *, selected_interface: dict[s
                                  examples=[str(x) for x in item.get("examples", [])],
                                  input_modes=[str(x) for x in item.get("inputModes", [])] or None,
                                  output_modes=[str(x) for x in item.get("outputModes", [])] or None))
-    url = str(interface.get("url") or raw_card.get("url") or base_url).rstrip("/") + "/"
+    url = _sdk_endpoint_url(str(interface.get("url") or raw_card.get("url") or base_url))
     return AgentCard(name=str(raw_card.get("name", "CardDiff Agent")),
         description=str(raw_card.get("description", "CardDiff benchmark peer")), url=url,
         version=str(raw_card.get("version", "1.0.0")),
@@ -47,6 +48,12 @@ def build_sdk_agent_card(raw_card: dict[str, Any], *, selected_interface: dict[s
         default_input_modes=[str(x) for x in raw_card.get("defaultInputModes", ["text/plain"])],
         default_output_modes=[str(x) for x in raw_card.get("defaultOutputModes", ["application/json"])],
         skills=skills)
+
+
+def _sdk_endpoint_url(value: str) -> str:
+    parts = urlsplit(value)
+    path = (parts.path or "/").rstrip("/") + "/"
+    return urlunsplit((parts.scheme, parts.netloc, path, parts.query, parts.fragment))
 
 
 def build_control_extension(raw_card: dict[str, Any], sdk_card: AgentCard, *, card_scope: str, identity: str | None) -> dict[str, Any]:
