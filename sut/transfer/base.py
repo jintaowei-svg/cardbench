@@ -34,18 +34,19 @@ class TransferHostBase(CardDiffHostSUTBase, ABC):
         metrics = {"llm_calls": 0, "input_tokens": None, "output_tokens": None, "llm_latency_ms": 0.0, "protocol_latency_ms": 0.0, "parse_failed": False}
         total_started = time.perf_counter()
         base_url = str(case["agent_base_url"]).rstrip("/")
-        extended_cache: dict[str, dict[str, Any]] = {}
+        extended_cache: dict[str, Any] = {}
 
         for step_index, auth_step in enumerate(case.get("auth_sequence", [])):
             token_label = str(auth_step.get("token_label", ""))
             try:
-                public_card = self._fetch_json(f"{base_url}/.well-known/agent-card.json", token_label, metrics)
+                public_card = self._discover_public_card(env=env, base_url=base_url, token_label=token_label, metrics=metrics)
+                public_state = self._control_state(public_card)
                 card_scope_used, active_card = "public", public_card
-                if public_card.get("capabilities", {}).get("extendedAgentCard") is True:
+                if public_state.get("capabilities", {}).get("extendedAgentCard") is True:
                     if base_url in extended_cache:
                         active_card, card_scope_used = extended_cache[base_url], "extended-cache"
                     else:
-                        active_card = self._fetch_json(f"{base_url}/extendedAgentCard", token_label, metrics)
+                        active_card = self._discover_extended_card(env=env, base_url=base_url, token_label=token_label, identity=str(auth_step.get("identity", "")), public_card=public_card, metrics=metrics)
                         extended_cache[base_url] = active_card
                         card_scope_used = "extended"
                 self._record_discovery(env, step_index, card_scope_used)
@@ -54,10 +55,11 @@ class TransferHostBase(CardDiffHostSUTBase, ABC):
                     isinstance(scope, str) for scope in token_scopes
                 ):
                     raise TypeError("auth_step.token_scopes must be a list of strings.")
+                active_state = self._control_state(active_card)
                 raw_state = {
                     "task": case.get("task", ""), "identity": auth_step.get("identity", ""),
-                    "token_scopes": list(token_scopes), "capabilities": active_card.get("skills", []),
-                    "interfaces": active_card.get("supportedInterfaces", []),
+                    "token_scopes": list(token_scopes), "capabilities": active_state.get("skills", []),
+                    "interfaces": active_state.get("supportedInterfaces", []),
                     "request_tenant": case.get("request_tenant"),
                     "accepted_output_modes": case.get("accepted_output_modes", []),
                 }
@@ -77,13 +79,15 @@ class TransferHostBase(CardDiffHostSUTBase, ABC):
                 decisions.append({"step_index": step_index, **decision.to_dict()})
                 if not decision.should_send:
                     continue
-                skill = self._find_capability(active_card, decision.capability_id)
-                interface = self._find_interface(active_card, decision.interface_index)
+                skill = self._find_capability(active_state, decision.capability_id)
+                interface = self._find_interface(active_state, decision.interface_index)
                 if skill is None or interface is None:
                     raise RuntimeError("LLM selected a capability or interface absent from the discovered view.")
-                response = self._invoke(
-                    interface=interface, task=str(case.get("task", "")), token_label=token_label,
-                    skill_id=str(skill.get("id", "")), card_scope_used=card_scope_used,
+                response = self._invoke_selected_interface(
+                    env=env, resolved_card=active_card, interface=interface,
+                    interface_index=int(decision.interface_index), skill=skill,
+                    task=str(case.get("task", "")), token_label=token_label,
+                    identity=str(auth_step.get("identity", "")), token_scopes=list(token_scopes), card_scope_used=card_scope_used,
                     accepted_output_modes=list(case.get("accepted_output_modes", [])),
                     request_tenant=case.get("request_tenant"), metrics=metrics,
                 )
@@ -102,6 +106,22 @@ class TransferHostBase(CardDiffHostSUTBase, ABC):
             blocked=bool(errors), error_message="; ".join(errors) if errors else None,
             metrics=metrics, meta={"decisions": decisions, "canonical_view_fields": list(to_canonical_decision_view({}).keys())},
         )
+
+    @staticmethod
+    def _control_state(card: Any) -> dict[str, Any]:
+        state = getattr(card, "control_state", card)
+        if not isinstance(state, dict):
+            raise TypeError("Discovered control state must be a mapping.")
+        return state
+
+    def _discover_public_card(self, *, env: Any, base_url: str, token_label: str, metrics: dict[str, Any]) -> Any:
+        return self._fetch_json(f"{base_url}/.well-known/agent-card.json", token_label, metrics)
+
+    def _discover_extended_card(self, *, env: Any, base_url: str, token_label: str, identity: str, public_card: Any, metrics: dict[str, Any]) -> Any:
+        return self._fetch_json(f"{base_url}/extendedAgentCard", token_label, metrics)
+
+    def _invoke_selected_interface(self, *, env: Any, resolved_card: Any, interface: dict[str, Any], interface_index: int, skill: dict[str, Any], task: str, token_label: str, identity: str, token_scopes: list[str], card_scope_used: str, accepted_output_modes: list[str], request_tenant: Any, metrics: dict[str, Any]) -> dict[str, Any]:
+        return self._invoke(interface=interface, task=task, token_label=token_label, skill_id=str(skill.get("id", "")), card_scope_used=card_scope_used, accepted_output_modes=accepted_output_modes, request_tenant=request_tenant, metrics=metrics)
 
     def _fetch_json(self, url: str, token_label: str, metrics: dict[str, Any]) -> dict[str, Any]:
         started = time.perf_counter()

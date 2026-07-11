@@ -6,8 +6,11 @@ sut:
     model: gpt-5-mini
     temperature: 0
     max_retries: 1
+    require_sdk: true
 environment:
   factory: harness.transfer.official_a2a_env:OfficialSDKCardDiffEnvironment
   kwargs:
-    transport: asgi
+    transport: httpx-asgi
+    sdk_server: true
+    require_sdk: true
     remote_agent_mode: deterministic # local deterministic peer; LLM stays remote
