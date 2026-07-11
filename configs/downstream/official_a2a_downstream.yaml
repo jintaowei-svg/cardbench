@@ -1,0 +1,24 @@
+experiment_id: official_a2a_downstream_rqd1
+mode: decision_replay
+source:
+  details_paths:
+    - .codex_work/official_a2a_l3_full/details.jsonl
+    - .codex_work/official_a2a_l3_rerun_nonjudgment/details.jsonl
+  require_attack_success: true
+  require_sdk_evidence: true
+  exclude_attacks: [B2]
+manifest:
+  path: attacks/carddiff/downstream/official_a2a_triggered_621.json
+sut:
+  carddiff_host: sut.downstream.replay_host:OfficialA2AReplayHostSUT
+  kwargs:
+    require_sdk: true
+environment:
+  factory: harness.downstream.impact_env:OfficialA2AImpactEnvironment
+  kwargs:
+    transport: httpx-asgi
+    require_sdk: true
+    reset_resources_per_trial: true
+    external_network: false
+output:
+  directory: results/downstream/official_a2a_rqd1

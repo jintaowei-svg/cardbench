@@ -1,0 +1,69 @@
+{
+  "by_attack": [
+    {
+      "asr": 1.0,
+      "attack": "B2",
+      "error_rate": 0.0,
+      "errors": 0,
+      "llm_calls": 85,
+      "successes": 85,
+      "target": "langgraph_270",
+      "trials": 85
+    },
+    {
+      "asr": 1.0,
+      "attack": "C1",
+      "error_rate": 0.0,
+      "errors": 0,
+      "llm_calls": 84,
+      "successes": 84,
+      "target": "langgraph_270",
+      "trials": 84
+    },
+    {
+      "asr": 1.0,
+      "attack": "C2",
+      "error_rate": 0.0,
+      "errors": 0,
+      "llm_calls": 85,
+      "successes": 85,
+      "target": "langgraph_270",
+      "trials": 85
+    },
+    {
+      "asr": 1.0,
+      "attack": "B2",
+      "error_rate": 0.0,
+      "errors": 0,
+      "llm_calls": 5,
+      "successes": 5,
+      "target": "langgraph_timeout_retry_16",
+      "trials": 5
+    },
+    {
+      "asr": 1.0,
+      "attack": "C1",
+      "error_rate": 0.0,
+      "errors": 0,
+      "llm_calls": 6,
+      "successes": 6,
+      "target": "langgraph_timeout_retry_16",
+      "trials": 6
+    },
+    {
+      "asr": 1.0,
+      "attack": "C2",
+      "error_rate": 0.0,
+      "errors": 0,
+      "llm_calls": 5,
+      "successes": 5,
+      "target": "langgraph_timeout_retry_16",
+      "trials": 5
+    }
+  ],
+  "targets": [
+    "langgraph_270",
+    "langgraph_timeout_retry_16"
+  ],
+  "trials": 270
+}

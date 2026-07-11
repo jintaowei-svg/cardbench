@@ -1,0 +1,79 @@
+{
+  "applicable_attacks": [
+    "B2",
+    "C1",
+    "C2"
+  ],
+  "cases": [
+    {
+      "case_id": "CARDDIFF_B2_FINANCE_T013_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed713"
+    },
+    {
+      "case_id": "CARDDIFF_B2_FINANCE_T013_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1913"
+    },
+    {
+      "case_id": "CARDDIFF_B2_HEALTHCARE_T050_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed700"
+    },
+    {
+      "case_id": "CARDDIFF_B2_HEALTHCARE_T050_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1900"
+    },
+    {
+      "case_id": "CARDDIFF_B2_HEALTHCARE_T023_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3073"
+    },
+    {
+      "case_id": "CARDDIFF_C1_FINANCE_T016_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1016"
+    },
+    {
+      "case_id": "CARDDIFF_C1_FINANCE_T016_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2216"
+    },
+    {
+      "case_id": "CARDDIFF_C1_FINANCE_T039_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2239"
+    },
+    {
+      "case_id": "CARDDIFF_C1_HEALTHCARE_T029_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2179"
+    },
+    {
+      "case_id": "CARDDIFF_C1_HEALTHCARE_T029_V003",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed3379"
+    },
+    {
+      "case_id": "CARDDIFF_C1_TRAVEL_T039_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2139"
+    },
+    {
+      "case_id": "CARDDIFF_C2_FINANCE_T038_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1188"
+    },
+    {
+      "case_id": "CARDDIFF_C2_HEALTHCARE_T034_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1134"
+    },
+    {
+      "case_id": "CARDDIFF_C2_HEALTHCARE_T034_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2334"
+    },
+    {
+      "case_id": "CARDDIFF_C2_TRAVEL_T011_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1061"
+    },
+    {
+      "case_id": "CARDDIFF_C2_TRAVEL_T011_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed2261"
+    }
+  ],
+  "dataset_sha256": "74eaec2d22e740a28259562ef239e1a8f61380e3361fa8894ec38fdc4fab1b26",
+  "parent_split": "langgraph_270",
+  "retry_reason": "api_read_timeout",
+  "retry_source": "results/transfer/langgraph_270.jsonl",
+  "sampling_seed": "carddiff-transfer-v1",
+  "split_id": "langgraph_timeout_retry_16"
+}
