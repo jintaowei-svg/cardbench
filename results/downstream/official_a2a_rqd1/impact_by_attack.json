@@ -1,0 +1,37 @@
+{
+  "A1": {
+    "dir": 1.0,
+    "impact": 85,
+    "triggered": 85
+  },
+  "A2": {
+    "dir": 1.0,
+    "impact": 90,
+    "triggered": 90
+  },
+  "A3": {
+    "dir": 1.0,
+    "impact": 90,
+    "triggered": 90
+  },
+  "B1": {
+    "dir": 1.0,
+    "impact": 87,
+    "triggered": 87
+  },
+  "B3": {
+    "dir": 1.0,
+    "impact": 90,
+    "triggered": 90
+  },
+  "C1": {
+    "dir": 1.0,
+    "impact": 89,
+    "triggered": 89
+  },
+  "C2": {
+    "dir": 1.0,
+    "impact": 90,
+    "triggered": 90
+  }
+}

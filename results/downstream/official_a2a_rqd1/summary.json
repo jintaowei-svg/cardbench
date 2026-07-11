@@ -1,0 +1,71 @@
+{
+  "by_attack": {
+    "A1": {
+      "dir": 1.0,
+      "impact": 85,
+      "triggered": 85
+    },
+    "A2": {
+      "dir": 1.0,
+      "impact": 90,
+      "triggered": 90
+    },
+    "A3": {
+      "dir": 1.0,
+      "impact": 90,
+      "triggered": 90
+    },
+    "B1": {
+      "dir": 1.0,
+      "impact": 87,
+      "triggered": 87
+    },
+    "B3": {
+      "dir": 1.0,
+      "impact": 90,
+      "triggered": 90
+    },
+    "C1": {
+      "dir": 1.0,
+      "impact": 89,
+      "triggered": 89
+    },
+    "C2": {
+      "dir": 1.0,
+      "impact": 90,
+      "triggered": 90
+    }
+  },
+  "by_domain": {
+    "finance": {
+      "impact": 204,
+      "triggered": 204
+    },
+    "healthcare": {
+      "impact": 207,
+      "triggered": 207
+    },
+    "travel": {
+      "impact": 210,
+      "triggered": 210
+    }
+  },
+  "by_variant": {
+    "001": {
+      "impact": 206,
+      "triggered": 206
+    },
+    "002": {
+      "impact": 208,
+      "triggered": 208
+    },
+    "003": {
+      "impact": 207,
+      "triggered": 207
+    }
+  },
+  "dir": 1.0,
+  "fixed_denominator": 621,
+  "impact": 621,
+  "metric": "DIR"
+}

@@ -1,0 +1,7 @@
+{
+  "cases": 621,
+  "experiment_id": "official_a2a_downstream_rqd1",
+  "manifest": "attacks\\carddiff\\downstream\\official_a2a_triggered_621.json",
+  "mode": "decision_replay",
+  "timestamp": "2026-07-11T06:57:44.050425+00:00"
+}

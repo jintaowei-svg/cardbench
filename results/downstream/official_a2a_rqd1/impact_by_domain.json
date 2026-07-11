@@ -1,0 +1,14 @@
+{
+  "finance": {
+    "impact": 204,
+    "triggered": 204
+  },
+  "healthcare": {
+    "impact": 207,
+    "triggered": 207
+  },
+  "travel": {
+    "impact": 210,
+    "triggered": 210
+  }
+}
