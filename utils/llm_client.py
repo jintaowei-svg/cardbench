@@ -87,6 +87,7 @@ def chat(system: str, user: str, model: str | None = None, temperature: float | 
     payload = {
         "model": resolved_model,
         "temperature": resolved_temperature,
+        "response_format": {"type": "json_object"},
         "messages": [
             {"role": "system", "content": system},
             {"role": "user", "content": user},

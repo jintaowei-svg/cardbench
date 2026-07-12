@@ -31,7 +31,7 @@ class TransferHostBase(CardDiffHostSUTBase, ABC):
         responses: list[dict[str, Any]] = []
         decisions: list[dict[str, Any]] = []
         errors: list[str] = []
-        metrics = {"llm_calls": 0, "input_tokens": None, "output_tokens": None, "llm_latency_ms": 0.0, "protocol_latency_ms": 0.0, "parse_failed": False}
+        metrics = {"llm_calls": 0, "input_tokens": None, "output_tokens": None, "llm_latency_ms": 0.0, "protocol_latency_ms": 0.0, "parse_failed": False, "parse_failure_raw_responses": []}
         total_started = time.perf_counter()
         base_url = str(case["agent_base_url"]).rstrip("/")
         extended_cache: dict[str, Any] = {}
@@ -72,6 +72,7 @@ class TransferHostBase(CardDiffHostSUTBase, ABC):
                     metrics[key] += decision_metrics.get(key, 0)
                 if decision_metrics.get("parse_failed"):
                     metrics["parse_failed"] = True
+                    metrics["parse_failure_raw_responses"].append(decision_metrics.get("raw_response", ""))
                     errors.append("LLM decision parsing failed after the allowed retry.")
                     decisions.append({"step_index": step_index, "parse_failed": True})
                     continue
