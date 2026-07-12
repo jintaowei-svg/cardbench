@@ -22,11 +22,12 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = ["pytest>=8.0.0"]
+defense-nemo = ["nemoguardrails==0.23.0"]
 transfer-langgraph = ["langgraph==0.6.11"]
 transfer-anp = ["anp[api]==0.8.8"]
 
 [tool.setuptools.packages.find]
-include = ["attacks*", "harness*", "sut*", "utils*", "prompts*"]
+include = ["attacks*", "defense*", "harness*", "sut*", "utils*", "prompts*"]
 
 [tool.setuptools.package-data]
 attacks = [
@@ -36,6 +37,10 @@ attacks = [
 ]
 prompts = [
   "carddiff/*.md"
+]
+defense = [
+  "nemo/config/*.yml",
+  "nemo/*.txt"
 ]
 
 [tool.pytest.ini_options]

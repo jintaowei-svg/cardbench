@@ -75,6 +75,16 @@ Each run writes:
 - `results/summary.json` with aggregate ASR and CardDiff breakdowns by attack
   type and scenario
 
+To consolidate completed batches and accepted reruns into the experiment order
+used by the paper, run:
+
+```bash
+python scripts/consolidate_paper_results.py
+```
+
+This generates the canonical local tree at `results/paper/`. Selection and
+provenance rules are documented in `docs/paper_results_layout.md`.
+
 ## LLM-Backed Host Runs
 
 LLM runs are opt-in. Set credentials in the environment or in `.env`:
@@ -111,6 +121,16 @@ python scripts/generate_carddiff_cases.py
 python scripts/generate_carddiff_perturbed_cases.py --variant-ids 001,002,003
 ```
 
+## NeMo Guardrails Defense
+
+The optional defense experiment deploys NVIDIA NeMo Guardrails as one generic
+input gateway before the unchanged Official A2A Host. It uses the frozen
+630-case split (the Official A2A manifest excluding B2), preserves the original
+event-level scorer, and reports Guardrail errors as non-judgments.
+
+See [the NeMo defense experiment guide](docs/nemo_defense.md) for the pinned
+environment, seven-case dry run, full run, resume, and aggregation commands.
+
 ## Validation
 
 Run these checks before changing benchmark data, harness behavior, or SUT
@@ -119,7 +139,7 @@ interfaces:
 ```bash
 python -m pytest
 python scripts/validate_carddiff_cases.py --variant-ids 001,002,003
-python -m compileall -q orchestration.py attacks harness sut utils scripts tests prompts
+python -m compileall -q orchestration.py attacks defense harness sut utils scripts tests prompts
 ```
 
 The default tests and validators do not require LLM credentials.

@@ -165,7 +165,7 @@ The primary metric is attack success rate (ASR), defined as
 \[
 \mathrm{ASR} = \frac{\#\mathrm{successful\ attack\ trials}}{\#\mathrm{total\ trials}}.
 \]
-ASR is reported by attack type and overall. Since this draft reports the main adversarial evaluation only, benign utility and defense evaluation are left as planned follow-up experiments rather than claimed results.
+ASR is reported by attack type and overall. We additionally define the NeMo Guardrails defense experiment below. Its result cells remain unreported until the complete frozen run passes the stated completeness checks; this draft does not infer defense effectiveness from errors or partial runs.
 
 \subsection{Main Results}
 
@@ -271,8 +271,35 @@ Prior A2A security work has studied broader protocol attacks such as spoofing, c
 \paragraph{Implications for defenses.}
 The results motivate several defense directions. First, hosts should maintain a typed provenance ledger for every card field used in a decision, distinguishing public, authenticated, cached, identity-specific, and tenant-specific sources. Second, skill selection should be checked against skill-level security, not only agent-level security. Third, interface selection should verify tenant and binding invariants rather than defaulting to ordering. Fourth, artifact acceptance should be enforced by the host-side requested output modes, not by the remote agent's returned artifact alone. \textsc{CardDiffBench} can evaluate these defenses by comparing ASR before and after each policy is added.
 
-\paragraph{Defense evaluation protocol.}
-The next experimental stage should evaluate defenses as host-side policy modules rather than as changes to the attack data. A minimal protocol has four conditions: an undefended helpful host, a provenance-binding host, a scope-checking host, and a combined host that enforces provenance, tenant, binding, scope, and artifact-mode constraints. Each condition should be run on the same 3,600 perturbed cases. A useful defense should reduce ASR while preserving benign task completion on a paired non-adversarial split. For analysis, failures should be separated into explicit refusals, corrected safe routing, protocol errors, and model parse failures. This decomposition would reveal whether a defense actually understands the control-plane invariant or merely blocks more tasks.
+\subsection{NeMo Guardrails Defense Experiment}
+
+We evaluate NVIDIA NeMo Guardrails as a generic security gateway placed immediately before the Official A2A Host. The baseline is the undefended Official A2A execution, which produced 621 successful attacks in 630 trials (98.57\% ASR). The defense condition reuses exactly the same frozen transferability cases: seven attacks (A1, A2, A3, B1, B3, C1, and C2), three domains, and 30 cases per attack--domain cell. Tasks are neither regenerated nor resampled.
+
+For each trial, the gateway receives the user task together with the control-plane context that the Host can observe: the public AgentCard, the authenticated extended-card view, current identity and token scopes, candidate interfaces, available reference configuration, and accepted output modes. The benchmark attack label, expected attack value, success condition, and private event-level oracle are never supplied to the gateway. We use one common \texttt{self check input} rail and do not add attack-specific rules, AgentCard field comparators, or protocol invariants. Both the Host and Guardrail use \texttt{gpt-5-mini} at temperature zero; NeMo Guardrails is pinned to version 0.23.0 and permits one verdict-parsing retry.
+
+A parsed \texttt{Yes} verdict blocks the request before Host execution and counts as an unsuccessful attack. A parsed \texttt{No} verdict runs the unchanged Official A2A Host and original event-level oracle. Guardrail errors, timeouts, and persistently unparseable verdicts are recorded as non-judgments, not successful defenses. We report planned-case ASR with the planned denominator (630 overall, 90 per attack, and 30 per attack--domain cell), together with protocol completion rate and the number of non-judgments.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{lcccc}
+\toprule
+Attack & Travel & Healthcare & Finance & Overall \\
+\midrule
+A1 & -- & -- & -- & -- \\
+A2 & -- & -- & -- & -- \\
+A3 & -- & -- & -- & -- \\
+B1 & -- & -- & -- & -- \\
+B3 & -- & -- & -- & -- \\
+C1 & -- & -- & -- & -- \\
+C2 & -- & -- & -- & -- \\
+\midrule
+Overall & -- & -- & -- & -- \\
+\bottomrule
+\end{tabular}
+\caption{Attack success rates after integrating NVIDIA NeMo Guardrails as a generic security gateway. Lower values indicate stronger mitigation. Cells are populated only after all completeness checks pass.}
+\label{tab:nemo-defense}
+\end{table}
 
 \paragraph{Downstream impact analysis.}
 The main benchmark intentionally scores the boundary crossing itself. To estimate whether triggered control-plane failures can propagate into concrete downstream consequences, we replayed the 621 Official A2A cases that successfully triggered the corresponding AgentCard behavior against LLM-backed downstream workers and harmless domain simulators. Table~\ref{tab:downstream-impact} summarizes the observed confidentiality, integrity, and availability impacts. Every triggered case produced at least one predefined downstream impact, yielding 100.00\% DIR overall.
