@@ -1,0 +1,12 @@
+﻿{
+    "experiment_id":  "official_a2a_llm_downstream_rqd1_v2_final",
+    "source_results":  [
+                           "results/downstream/official_a2a_llm_rqd1_v2_non_c2",
+                           "results/downstream/official_a2a_llm_rqd1_v2_c2_full_rerun"
+                       ],
+    "manifest":  "attacks/carddiff/downstream/official_a2a_triggered_621.json",
+    "mode":  "frozen_host_decision_llm_worker",
+    "model":  "gpt-5-mini",
+    "cases":  621,
+    "timestamp":  "2026-07-12T05:25:04.5580980Z"
+}

@@ -1,0 +1,86 @@
+{
+  "by_attack": {
+    "A1": {
+      "completed": 85,
+      "dir": 1.0,
+      "impact": 85,
+      "planned": 85
+    },
+    "A2": {
+      "completed": 90,
+      "dir": 1.0,
+      "impact": 90,
+      "planned": 90
+    },
+    "A3": {
+      "completed": 90,
+      "dir": 1.0,
+      "impact": 90,
+      "planned": 90
+    },
+    "B1": {
+      "completed": 87,
+      "dir": 1.0,
+      "impact": 87,
+      "planned": 87
+    },
+    "B3": {
+      "completed": 90,
+      "dir": 1.0,
+      "impact": 90,
+      "planned": 90
+    },
+    "C1": {
+      "completed": 89,
+      "dir": 1.0,
+      "impact": 89,
+      "planned": 89
+    },
+    "C2": {
+      "completed": 90,
+      "dir": 1.0,
+      "impact": 90,
+      "planned": 90
+    }
+  },
+  "by_domain": {
+    "finance": {
+      "completed": 204,
+      "dir": 1.0,
+      "impact": 204
+    },
+    "healthcare": {
+      "completed": 207,
+      "dir": 1.0,
+      "impact": 207
+    },
+    "travel": {
+      "completed": 210,
+      "dir": 1.0,
+      "impact": 210
+    }
+  },
+  "by_variant": {
+    "001": {
+      "completed": 206,
+      "dir": 1.0,
+      "impact": 206
+    },
+    "002": {
+      "completed": 208,
+      "dir": 1.0,
+      "impact": 208
+    },
+    "003": {
+      "completed": 207,
+      "dir": 1.0,
+      "impact": 207
+    }
+  },
+  "completed_denominator": 621,
+  "dir": 1.0,
+  "final": true,
+  "impact": 621,
+  "metric": "DIR",
+  "planned_denominator": 621
+}
