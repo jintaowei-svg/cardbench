@@ -1,7 +1,10 @@
-experiment_id: official_a2a_llm_downstream_rqd1
-mode: frozen_host_decision_llm_worker
+experiment_id: official_a2a_llm_downstream_rqd1_v2_c2_full_rerun
+mode: frozen_host_decision_llm_worker_c2_full_rerun
 manifest:
   path: attacks/carddiff/downstream/official_a2a_triggered_621.json
+  selection:
+    attacks: [C2]
+    expected_cases: 90
 sut:
   carddiff_host: sut.downstream.replay_host:OfficialA2AReplayHostSUT
   kwargs:
@@ -23,4 +26,4 @@ environment:
     reset_resources_per_trial: true
     external_network: false
 output:
-  directory: results/downstream/official_a2a_llm_rqd1_v2
+  directory: results/downstream/official_a2a_llm_rqd1_v2_c2_full_rerun

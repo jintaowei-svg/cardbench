@@ -1,0 +1,7 @@
+{
+  "cases": 18,
+  "experiment_id": "official_a2a_llm_downstream_rqd1_v2_sanity",
+  "manifest": "attacks\\carddiff\\downstream\\official_a2a_triggered_621.json",
+  "mode": "frozen_host_decision_llm_worker_sanity",
+  "timestamp": "2026-07-11T17:25:13.003183+00:00"
+}

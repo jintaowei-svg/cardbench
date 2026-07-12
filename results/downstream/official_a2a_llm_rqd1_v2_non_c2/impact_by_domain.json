@@ -1,0 +1,17 @@
+﻿{
+    "finance":  {
+                    "completed":  174,
+                    "dir":  1.0,
+                    "impact":  174
+                },
+    "healthcare":  {
+                       "completed":  177,
+                       "dir":  1.0,
+                       "impact":  177
+                   },
+    "travel":  {
+                   "completed":  180,
+                   "dir":  1.0,
+                   "impact":  180
+               }
+}

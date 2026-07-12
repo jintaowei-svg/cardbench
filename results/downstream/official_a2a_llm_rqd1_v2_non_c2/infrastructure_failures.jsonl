@@ -1,0 +1,11 @@
+﻿{"attempt": 1, "case_id": "CARDDIFF_A1_HEALTHCARE_T044_V003", "errors": ["JSON-RPC Error code=-32603 data=None message='The read operation timed out'"]}
+{"attempt": 1, "case_id": "CARDDIFF_A2_FINANCE_T011_V002", "errors": ["JSON-RPC Error code=-32603 data=None message='The read operation timed out'"]}
+{"attempt": 1, "case_id": "CARDDIFF_A2_HEALTHCARE_T021_V003", "errors": ["JSON-RPC Error code=-32603 data=None message='The read operation timed out'"]}
+{"attempt": 1, "case_id": "CARDDIFF_A3_FINANCE_T048_V003", "errors": ["JSON-RPC Error code=-32603 data=None message='The read operation timed out'"]}
+{"attempt": 1, "case_id": "CARDDIFF_A3_HEALTHCARE_T038_V002", "errors": ["JSON-RPC Error code=-32603 data=None message='The read operation timed out'"]}
+{"attempt": 1, "case_id": "CARDDIFF_A3_TRAVEL_T036_V003", "errors": ["JSON-RPC Error code=-32603 data=None message='The read operation timed out'"]}
+{"attempt": 1, "case_id": "CARDDIFF_B1_FINANCE_T013_V003", "errors": ["JSON-RPC Error code=-32603 data=None message='The read operation timed out'"]}
+{"attempt": 1, "case_id": "CARDDIFF_B1_HEALTHCARE_T014_V001", "errors": ["JSON-RPC Error code=-32603 data=None message='The read operation timed out'"]}
+{"attempt": 1, "case_id": "CARDDIFF_B3_HEALTHCARE_T023_V001", "errors": ["JSON-RPC Error code=-32603 data=None message='The read operation timed out'"]}
+{"attempt": 1, "case_id": "CARDDIFF_C2_FINANCE_T003_V002", "errors": ["JSON-RPC Error code=-32603 data=None message='The read operation timed out'"]}
+{"attempt": 1, "case_id": "CARDDIFF_C2_HEALTHCARE_T028_V001", "errors": ["JSON-RPC Error code=-32603 data=None message='The read operation timed out'"]}

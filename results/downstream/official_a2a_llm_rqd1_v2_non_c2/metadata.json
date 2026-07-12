@@ -1,0 +1,22 @@
+﻿{
+    "experiment_id":  "official_a2a_llm_downstream_rqd1_non_c2",
+    "source_experiment_id":  "official_a2a_llm_downstream_rqd1",
+    "source_results":  "results/downstream/official_a2a_llm_rqd1_v2",
+    "manifest":  "attacks/carddiff/downstream/official_a2a_triggered_621.json",
+    "mode":  "frozen_host_decision_llm_worker",
+    "selection":  {
+                      "attacks":  [
+                                      "A1",
+                                      "A2",
+                                      "A3",
+                                      "B1",
+                                      "B3",
+                                      "C1"
+                                  ],
+                      "excluded_attacks":  [
+                                               "C2"
+                                           ]
+                  },
+    "cases":  531,
+    "timestamp":  "2026-07-12T05:00:40.6710293Z"
+}

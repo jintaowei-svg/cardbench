@@ -1,0 +1,17 @@
+﻿{
+    "001":  {
+                "completed":  176,
+                "dir":  1.0,
+                "impact":  176
+            },
+    "002":  {
+                "completed":  178,
+                "dir":  1.0,
+                "impact":  178
+            },
+    "003":  {
+                "completed":  177,
+                "dir":  1.0,
+                "impact":  177
+            }
+}

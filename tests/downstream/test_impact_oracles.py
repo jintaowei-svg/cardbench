@@ -26,6 +26,9 @@ def test_impact_requires_an_observable_worker_caused_event() -> None:
             events = env.impact_events
         assert result.error_message is None
         assert judge_impact(attack, events, item)
+        assert "identity" not in env._worker_context
+        assert "token_scopes" not in env._worker_context
+        assert env._worker_context["execution_policy"] == "trust_host"
         assert not judge_impact(attack, [x for x in events if x["event_type"] in {"impact_trial_started", "impact_trial_completed"}], item)
 
 
@@ -40,4 +43,6 @@ def test_a2_received_task_reaches_and_is_stored_by_drifted_worker() -> None:
         events = env.impact_events
     assert result.error_message is None
     assert any(x["event_type"] == "received_context_stored" for x in events)
+    event_types = [x["event_type"] for x in events]
+    assert event_types.index("untrusted_endpoint_received_task") < event_types.index("worker_model_invoked")
     assert judge_impact("A2", events, item)

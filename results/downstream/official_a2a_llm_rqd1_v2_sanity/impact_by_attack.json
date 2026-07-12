@@ -1,0 +1,44 @@
+{
+  "A1": {
+    "completed": 9,
+    "dir": 1.0,
+    "impact": 9,
+    "planned": 85
+  },
+  "A2": {
+    "completed": 9,
+    "dir": 1.0,
+    "impact": 9,
+    "planned": 90
+  },
+  "A3": {
+    "completed": 0,
+    "dir": null,
+    "impact": 0,
+    "planned": 90
+  },
+  "B1": {
+    "completed": 0,
+    "dir": null,
+    "impact": 0,
+    "planned": 87
+  },
+  "B3": {
+    "completed": 0,
+    "dir": null,
+    "impact": 0,
+    "planned": 90
+  },
+  "C1": {
+    "completed": 0,
+    "dir": null,
+    "impact": 0,
+    "planned": 89
+  },
+  "C2": {
+    "completed": 0,
+    "dir": null,
+    "impact": 0,
+    "planned": 90
+  }
+}

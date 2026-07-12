@@ -1,0 +1,56 @@
+{
+  "by_attack": {
+    "A1": {
+      "completed": 85,
+      "dir": 0.03529411764705882,
+      "impact": 3,
+      "planned": 85
+    },
+    "A2": {
+      "completed": 68,
+      "dir": 0.7058823529411765,
+      "impact": 48,
+      "planned": 90
+    }
+  },
+  "by_domain": {
+    "finance": {
+      "completed": 55,
+      "dir": 0.41818181818181815,
+      "impact": 23
+    },
+    "healthcare": {
+      "completed": 60,
+      "dir": 0.36666666666666664,
+      "impact": 22
+    },
+    "travel": {
+      "completed": 38,
+      "dir": 0.15789473684210525,
+      "impact": 6
+    }
+  },
+  "by_variant": {
+    "001": {
+      "completed": 50,
+      "dir": 0.5,
+      "impact": 25
+    },
+    "002": {
+      "completed": 52,
+      "dir": 0.4230769230769231,
+      "impact": 22
+    },
+    "003": {
+      "completed": 51,
+      "dir": 0.0784313725490196,
+      "impact": 4
+    }
+  },
+  "completed_denominator": 153,
+  "dir": 0.3333333333333333,
+  "final": false,
+  "impact": 51,
+  "metric": "DIR",
+  "planned_denominator": 175
+}
