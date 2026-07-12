@@ -37,7 +37,7 @@ VARIANTS = ("001", "002", "003")
 MODELS = (
     "gpt-5-mini", "gpt-5.6-Luna", "gpt-5.4-mini",
     "gemini-2.5-flash", "gemini-3.5-flash", "claude-haiku-4.5",
-    "deepseek-v4-flash",
+    "deepseek-v4-flash", "claude-sonnet-5",
 )
 API_MODELS = {
     "gpt-5-mini": "gpt-5-mini",
@@ -47,6 +47,7 @@ API_MODELS = {
     "gemini-3.5-flash": "gemini-3.5-flash",
     "claude-haiku-4.5": "claude-haiku-4-5-20251001",
     "deepseek-v4-flash": "deepseek-v4-flash",
+    "claude-sonnet-5": "claude-sonnet-5",
 }
 SDK_VERSION = "0.3.26"
 TIMEOUT_S = 60.0
