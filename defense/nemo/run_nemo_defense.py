@@ -10,7 +10,11 @@ import importlib
 import json
 import os
 from pathlib import Path
+import shutil
+import tempfile
 from typing import Any
+
+import yaml
 
 from defense.nemo.gateway import NemoGateway, build_security_context
 from sut.transfer.official_a2a_host import OfficialSDKCardDiffHostSUT
@@ -63,6 +67,32 @@ def _dry_run_cases(cases: list[dict[str, str]]) -> list[dict[str, str]]:
     return [chosen[attack] for attack in ATTACKS]
 
 
+def _balanced_sample_cases(
+    cases: list[dict[str, str]], sample_size: int
+) -> list[dict[str, str]]:
+    if sample_size < 1 or sample_size > len(cases):
+        raise ValueError(f"--sample-size must be between 1 and {len(cases)}.")
+
+    groups: dict[tuple[str, str], list[dict[str, str]]] = {
+        (attack, domain): [] for attack in ATTACKS for domain in DOMAINS
+    }
+    for item in cases:
+        case = _load_case(item["class_path"])
+        groups[(case.attack_type, case.scenario)].append(item)
+
+    ordered_groups = sorted(
+        groups,
+        key=lambda key: hashlib.sha256(f"{key[0]}:{key[1]}".encode()).hexdigest(),
+    )
+    base, remainder = divmod(sample_size, len(ordered_groups))
+    selected_ids: set[str] = set()
+    for index, key in enumerate(ordered_groups):
+        take = base + (1 if index < remainder else 0)
+        for item in groups[key][:take]:
+            selected_ids.add(item["case_id"])
+    return [item for item in cases if item["case_id"] in selected_ids]
+
+
 def _variant_id(metadata: dict[str, Any]) -> str:
     return str(metadata.get("perturbation", {}).get("variant_id", "N/A"))
 
@@ -107,6 +137,25 @@ def _append(path: Path, record: dict[str, Any]) -> None:
         handle.flush()
 
 
+def _config_with_api_base(config_path: Path, api_base: str | None) -> tuple[Path, tempfile.TemporaryDirectory[str] | None]:
+    if not api_base:
+        return config_path, None
+
+    temp_dir = tempfile.TemporaryDirectory(prefix="carddiff_nemo_")
+    runtime_config = Path(temp_dir.name)
+    shutil.copytree(config_path, runtime_config, dirs_exist_ok=True)
+
+    config_file = runtime_config / "config.yml"
+    payload = yaml.safe_load(config_file.read_text(encoding="utf-8"))
+    for model in payload.get("models", []):
+        if model.get("type") == "main":
+            parameters = dict(model.get("parameters", {}))
+            parameters["base_url"] = api_base.rstrip("/")
+            model["parameters"] = parameters
+    config_file.write_text(yaml.safe_dump(payload, sort_keys=False), encoding="utf-8")
+    return runtime_config, temp_dir
+
+
 def run(args: argparse.Namespace) -> dict[str, int]:
     load_repo_env(ROOT / ".env", override=False)
     # CardDiff's existing model variables can drive NeMo's OpenAI-compatible client.
@@ -114,11 +163,23 @@ def run(args: argparse.Namespace) -> dict[str, int]:
         os.environ["OPENAI_API_KEY"] = str(os.environ["SUT_API_KEY"])
     if os.getenv("SUT_API_BASE") and not os.getenv("OPENAI_BASE_URL"):
         os.environ["OPENAI_BASE_URL"] = str(os.environ["SUT_API_BASE"])
+    api_base = args.api_base or os.getenv("SUT_API_BASE") or os.getenv("OPENAI_BASE_URL")
+    if api_base and not os.getenv("SUT_API_BASE"):
+        os.environ["SUT_API_BASE"] = api_base
+    if api_base and not os.getenv("OPENAI_BASE_URL"):
+        os.environ["OPENAI_BASE_URL"] = api_base
 
     manifest_payload, cases, manifest_hash = _manifest_cases(args.manifest)
-    split_id = f"{manifest_payload.get('split_id', args.manifest.stem)}_excluding_b2_630"
+    base_split_id = f"{manifest_payload.get('split_id', args.manifest.stem)}_excluding_b2"
+    split_id = f"{base_split_id}_630"
     if args.dry_run:
         cases = _dry_run_cases(cases)
+        split_id = f"{base_split_id}_dryrun7"
+    elif args.sample_size is not None:
+        if args.sample_mode != "balanced":
+            raise ValueError(f"Unsupported sample mode: {args.sample_mode}")
+        cases = _balanced_sample_cases(cases, args.sample_size)
+        split_id = f"{base_split_id}_balanced{args.sample_size}"
 
     completed_ids: set[str] = set()
     if args.output.exists():
@@ -134,8 +195,9 @@ def run(args: argparse.Namespace) -> dict[str, int]:
                     raise ValueError(f"Duplicate case_id in existing output: {case_id}")
                 completed_ids.add(case_id)
 
+    guardrail_config, temp_config = _config_with_api_base(args.guardrail_config, api_base)
     gateway = NemoGateway(
-        args.guardrail_config,
+        guardrail_config,
         max_retries=args.max_guardrail_retries,
         timeout_s=args.guardrail_timeout,
     )
@@ -172,6 +234,7 @@ def run(args: argparse.Namespace) -> dict[str, int]:
                 "host_retries": args.host_retries,
                 "host_timeout_s": args.host_timeout,
                 "guardrail_timeout_s": args.guardrail_timeout,
+                "guardrail_api_base": api_base,
             })
             if guardrail.allow is None:
                 record.update({
@@ -211,6 +274,8 @@ def run(args: argparse.Namespace) -> dict[str, int]:
             }, sort_keys=True), flush=True)
     finally:
         loop.close()
+        if temp_config is not None:
+            temp_config.cleanup()
     return counts
 
 
@@ -230,6 +295,10 @@ def main() -> None:
     parser.add_argument("--temperature", type=float, default=0)
     parser.add_argument("--max-guardrail-retries", type=int, default=1)
     parser.add_argument("--guardrail-timeout", type=float, default=60)
+    parser.add_argument(
+        "--api-base",
+        help="OpenAI-compatible base URL for the NeMo guardrail and host model.",
+    )
     parser.add_argument("--host-retries", type=int, default=1)
     parser.add_argument("--host-timeout", type=float, default=15)
     parser.add_argument(
@@ -237,8 +306,16 @@ def main() -> None:
         default=ROOT / "defense/nemo/results/raw/nemo_official_a2a_630.jsonl",
     )
     parser.add_argument("--dry-run", action="store_true", help="Run one case per attack (7 total).")
+    parser.add_argument(
+        "--sample-size",
+        type=int,
+        help="Run a deterministic balanced sample from the frozen excluding-B2 split.",
+    )
+    parser.add_argument("--sample-mode", choices=["balanced"], default="balanced")
     parser.add_argument("--resume", action="store_true")
     args = parser.parse_args()
+    if args.dry_run and args.sample_size is not None:
+        parser.error("--dry-run and --sample-size cannot be used together.")
     if args.guardrail_model != "gpt-5-mini":
         parser.error("The frozen config uses guardrail-model gpt-5-mini.")
     print(json.dumps(run(args), sort_keys=True))

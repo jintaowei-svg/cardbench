@@ -25,7 +25,7 @@ def _rate(successes: int, total: int) -> float:
 def _baseline_overall(path: Path | None) -> dict[str, Any] | None:
     if path is None:
         return None
-    payload = json.loads(path.read_text(encoding="utf-8"))
+    payload = json.loads(path.read_text(encoding="utf-8-sig"))
     source = payload.get("reconciled_excluding_b2", payload)
     successes = source.get("successes", source.get("total_successes"))
     total = source.get("planned_cases", source.get("total_trials"))

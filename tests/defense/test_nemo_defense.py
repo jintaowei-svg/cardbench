@@ -7,7 +7,7 @@ from pathlib import Path
 from attacks.instances.carddiff_perturbed import CardDiffPerturbed136
 from defense.nemo.aggregate_results import aggregate
 from defense.nemo.gateway import NemoGateway, build_security_context
-from defense.nemo.run_nemo_defense import _manifest_cases
+from defense.nemo.run_nemo_defense import _balanced_sample_cases, _manifest_cases, _load_case
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -20,6 +20,23 @@ def test_official_a2a_defense_split_is_frozen_630() -> None:
     assert payload["split_id"] == "official_a2a_720"
     assert len(cases) == 630
     assert manifest_hash == "6adee51fc98113d27dfa361b1375317d898b17c94a932a59817daa21f8c8a8b8"
+
+
+def test_balanced_sample_selects_uniform_50_cases() -> None:
+    _, cases, _ = _manifest_cases(
+        ROOT / "attacks/carddiff/transfer/splits/official_a2a_720.json"
+    )
+    sample = _balanced_sample_cases(cases, 50)
+    counts: dict[tuple[str, str], int] = {}
+    for item in sample:
+        case = _load_case(item["class_path"])
+        key = (case.attack_type, case.scenario)
+        counts[key] = counts.get(key, 0) + 1
+
+    assert len(sample) == 50
+    assert len(counts) == 21
+    assert min(counts.values()) == 2
+    assert max(counts.values()) == 3
 
 
 def test_security_context_contains_host_state_but_not_private_oracle() -> None:
