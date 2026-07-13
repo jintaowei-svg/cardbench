@@ -1,0 +1,21 @@
+{
+  "plan": {
+    "created_at": "2026-07-13T11:57:19+0800",
+    "filtered_details_sha256": "a364a5811fd7af816c49197f50e71a02e150f1a401f8a9f1b95b4cde05c313a0",
+    "kept_completed_judgment_rows": 3146,
+    "missing_case_ids_before_resume": [],
+    "model": "claude-sonnet-5",
+    "original_completed_rows": 3150,
+    "removed_case_ids": [
+      "CARDDIFF_A2_TRAVEL_T031_V003",
+      "CARDDIFF_A3_TRAVEL_T017_V001",
+      "CARDDIFF_A3_TRAVEL_T025_V001",
+      "CARDDIFF_C1_TRAVEL_T038_V003"
+    ],
+    "removed_nonjudgment_rows": 4,
+    "replacement_policy": "Remove only judgment_status != completed records from working details.jsonl, preserve originals in provenance, rerun canonical full manifest so case_id skip logic precisely replaces removed and missing cases without duplicate counting.",
+    "schema_version": "official-a2a-nonjudgment-replacement-v1",
+    "source_details_sha256": "fb6f73e07a2529473e4cdc71cace0937916b07bf69acdd7a82b9781873265c3f"
+  },
+  "provenance_dir": "results/official_a2a_main_provenance/rerun_nonjudgment_20260713T115711+0800/claude-sonnet-5"
+}

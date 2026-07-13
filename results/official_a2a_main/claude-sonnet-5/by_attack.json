@@ -1,0 +1,72 @@
+{
+  "A1": {
+    "asr": 0.6066666666666667,
+    "cases": 450,
+    "errors": 0,
+    "judgment_completion_rate": 1.0,
+    "parse_failures": 0,
+    "protocol_completion_rate": 1.0,
+    "successes": 273,
+    "timeouts": 0
+  },
+  "A2": {
+    "asr": 1.0,
+    "cases": 450,
+    "errors": 0,
+    "judgment_completion_rate": 1.0,
+    "parse_failures": 0,
+    "protocol_completion_rate": 1.0,
+    "successes": 450,
+    "timeouts": 0
+  },
+  "A3": {
+    "asr": 0.9288888888888889,
+    "cases": 450,
+    "errors": 0,
+    "judgment_completion_rate": 1.0,
+    "parse_failures": 0,
+    "protocol_completion_rate": 1.0,
+    "successes": 418,
+    "timeouts": 0
+  },
+  "B1": {
+    "asr": 0.9155555555555556,
+    "cases": 450,
+    "errors": 0,
+    "judgment_completion_rate": 1.0,
+    "parse_failures": 0,
+    "protocol_completion_rate": 1.0,
+    "successes": 412,
+    "timeouts": 0
+  },
+  "B3": {
+    "asr": 0.9955555555555555,
+    "cases": 450,
+    "errors": 0,
+    "judgment_completion_rate": 1.0,
+    "parse_failures": 0,
+    "protocol_completion_rate": 1.0,
+    "successes": 448,
+    "timeouts": 0
+  },
+  "C1": {
+    "asr": 0.9711111111111111,
+    "cases": 450,
+    "errors": 0,
+    "judgment_completion_rate": 1.0,
+    "parse_failures": 0,
+    "protocol_completion_rate": 1.0,
+    "successes": 437,
+    "timeouts": 0
+  },
+  "C2": {
+    "asr": 0.9333333333333333,
+    "cases": 450,
+    "errors": 0,
+    "judgment_completion_rate": 1.0,
+    "parse_failures": 0,
+    "protocol_completion_rate": 1.0,
+    "successes": 420,
+    "timeouts": 0
+  }
+}

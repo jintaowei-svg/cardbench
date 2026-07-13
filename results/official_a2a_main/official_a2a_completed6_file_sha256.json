@@ -1,0 +1,357 @@
+[
+  {
+    "path": "results/official_a2a_main/claude-sonnet-5/by_attack.json",
+    "sha256": "1cd70ec07c0aba668a1fc1fab08647b5df79f6ecdd31c773365b338a466f3d24",
+    "bytes": 1528
+  },
+  {
+    "path": "results/official_a2a_main/claude-sonnet-5/by_domain.json",
+    "sha256": "61a429edba931e1d4f84018f2dba0004b36f569f718fd25dfe112ad8690b3692",
+    "bytes": 684
+  },
+  {
+    "path": "results/official_a2a_main/claude-sonnet-5/by_variant.json",
+    "sha256": "b89f2d8d43ed80146ba880da0da6499f1be8a77e3933ec90914d499eef5406fe",
+    "bytes": 655
+  },
+  {
+    "path": "results/official_a2a_main/claude-sonnet-5/details.jsonl",
+    "sha256": "ff9289782b698996fcaf341ef7d4ba1f59b6187eb0847dd9209f011207525c67",
+    "bytes": 44316651
+  },
+  {
+    "path": "results/official_a2a_main/claude-sonnet-5/failures.jsonl",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0
+  },
+  {
+    "path": "results/official_a2a_main/claude-sonnet-5/manifest.json",
+    "sha256": "923f7692c348f2957086253761bd9f1dce94c83674628353605236fbcfe3a6cd",
+    "bytes": 1458091
+  },
+  {
+    "path": "results/official_a2a_main/claude-sonnet-5/progress.jsonl",
+    "sha256": "480f35fc2db7ddff3b09139dec6c3eb24fe8aa85c9fdddd4f044cfcd8ed5c491",
+    "bytes": 951251
+  },
+  {
+    "path": "results/official_a2a_main/claude-sonnet-5/README.md",
+    "sha256": "3bf9990c236fa9b62435a6f79f5c56861c0fd2383bb202a065cf2fccb55f8f79",
+    "bytes": 340
+  },
+  {
+    "path": "results/official_a2a_main/claude-sonnet-5/rerun_manifest.json",
+    "sha256": "6f2fc3e38801b6f8a78a9c712a9b7e1db075066fdef3f798fb83fada0bcba839",
+    "bytes": 195
+  },
+  {
+    "path": "results/official_a2a_main/claude-sonnet-5/RERUN_REPLACEMENT_IN_PROGRESS.json",
+    "sha256": "a70337ddb76ce29b7aad0841a6371604366bdbfff13265d54f372d2745525ba1",
+    "bytes": 1078
+  },
+  {
+    "path": "results/official_a2a_main/claude-sonnet-5/run_config.yaml",
+    "sha256": "1aaf4215d1cf845bbe0701b11a67279ea5d83fa68df8a58a8660815159eb1d1c",
+    "bytes": 1021
+  },
+  {
+    "path": "results/official_a2a_main/claude-sonnet-5/summary.json",
+    "sha256": "a205d75c7f015b1c1893163e546f232427f3ef977c8f46a847aecbd06e792e02",
+    "bytes": 3031
+  },
+  {
+    "path": "results/official_a2a_main/gemini-2.5-flash/by_attack.json",
+    "sha256": "1a7e3f2ce158f78602aac883d7cc4ea5704b50a0a4c1e8578359fcf49a1d899e",
+    "bytes": 1484
+  },
+  {
+    "path": "results/official_a2a_main/gemini-2.5-flash/by_domain.json",
+    "sha256": "0f55b2fa20b657dd3acd22b95695e95ff3217c7bb820568bcbccc1fbac64435b",
+    "bytes": 671
+  },
+  {
+    "path": "results/official_a2a_main/gemini-2.5-flash/by_variant.json",
+    "sha256": "71f30aba78a8812d4b79b0065136c198a85b7593bbb77a2d91b9abf7eb99ba69",
+    "bytes": 672
+  },
+  {
+    "path": "results/official_a2a_main/gemini-2.5-flash/details.jsonl",
+    "sha256": "831c871febe2ae93935768f68f1c59d65efc13a120f85429cb1b6411c959c444",
+    "bytes": 46067117
+  },
+  {
+    "path": "results/official_a2a_main/gemini-2.5-flash/failures.jsonl",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0
+  },
+  {
+    "path": "results/official_a2a_main/gemini-2.5-flash/manifest.json",
+    "sha256": "923f7692c348f2957086253761bd9f1dce94c83674628353605236fbcfe3a6cd",
+    "bytes": 1458091
+  },
+  {
+    "path": "results/official_a2a_main/gemini-2.5-flash/progress.jsonl",
+    "sha256": "7e2a05d8cd3e603010b510759b73de47a9b95d71185c26974a6415fb92a04ef0",
+    "bytes": 953006
+  },
+  {
+    "path": "results/official_a2a_main/gemini-2.5-flash/README.md",
+    "sha256": "6a9efb1418440e0ef05e47d2d6d67321e2db81dd8d5a9ec2e5e8974e09947909",
+    "bytes": 341
+  },
+  {
+    "path": "results/official_a2a_main/gemini-2.5-flash/rerun_manifest.json",
+    "sha256": "9a3b4a372cac6353f2a47bd9e735f2595abd1c5276408bae9ceeddd8205d0d46",
+    "bytes": 196
+  },
+  {
+    "path": "results/official_a2a_main/gemini-2.5-flash/RERUN_REPLACEMENT_IN_PROGRESS.json",
+    "sha256": "e41bb68f0f50ca0b7c9b127e48f1dd50e65026caf9757f8a54ddcb699bc64c9f",
+    "bytes": 1355
+  },
+  {
+    "path": "results/official_a2a_main/gemini-2.5-flash/run_config.yaml",
+    "sha256": "a67ae04f857bb6d1fee443cf4d10a79eb21f3f05f710e3e582133c430e24c193",
+    "bytes": 1023
+  },
+  {
+    "path": "results/official_a2a_main/gemini-2.5-flash/summary.json",
+    "sha256": "b7aba103f309cf36957c5d24f476698fb9e425e0eab570630fb99397ee34ecb8",
+    "bytes": 3032
+  },
+  {
+    "path": "results/official_a2a_main/gemini-3.5-flash/by_attack.json",
+    "sha256": "f31498fa97b78c945797838689db6e93344f737d1b43829857cb7ce115cb1103",
+    "bytes": 1499
+  },
+  {
+    "path": "results/official_a2a_main/gemini-3.5-flash/by_domain.json",
+    "sha256": "65e61921392e6b52d71f9c3b09df49250d21df8b6951e706e4c35f235363badb",
+    "bytes": 684
+  },
+  {
+    "path": "results/official_a2a_main/gemini-3.5-flash/by_variant.json",
+    "sha256": "11704a656439f66c7acac25f15f62bd63fc911ceff86f78838e54636d272a9a8",
+    "bytes": 670
+  },
+  {
+    "path": "results/official_a2a_main/gemini-3.5-flash/details.jsonl",
+    "sha256": "3a2fe37ef6650f2cdf7f0e92ec44ee38f91e94bbacb9e6a4df09e96ee5fe2f5e",
+    "bytes": 45504955
+  },
+  {
+    "path": "results/official_a2a_main/gemini-3.5-flash/failures.jsonl",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0
+  },
+  {
+    "path": "results/official_a2a_main/gemini-3.5-flash/manifest.json",
+    "sha256": "923f7692c348f2957086253761bd9f1dce94c83674628353605236fbcfe3a6cd",
+    "bytes": 1458091
+  },
+  {
+    "path": "results/official_a2a_main/gemini-3.5-flash/progress.jsonl",
+    "sha256": "f335302549ec2b21549c3c56f322e1aeefe84e40ff9d102c3af0d122ea36d4ef",
+    "bytes": 950140
+  },
+  {
+    "path": "results/official_a2a_main/gemini-3.5-flash/README.md",
+    "sha256": "762fa32a06b78475c35dd9597324109bfb09cef767214e4e5270ee42bca1ea43",
+    "bytes": 341
+  },
+  {
+    "path": "results/official_a2a_main/gemini-3.5-flash/rerun_manifest.json",
+    "sha256": "458ebca7b128d997d3f0658658fa1e121efeee8a470c044d2fb363c828ee37a1",
+    "bytes": 196
+  },
+  {
+    "path": "results/official_a2a_main/gemini-3.5-flash/RERUN_REPLACEMENT_IN_PROGRESS.json",
+    "sha256": "5147576f940790a426a7244a0f39645b29d6fd65e59538a40751443f7c0473b6",
+    "bytes": 967
+  },
+  {
+    "path": "results/official_a2a_main/gemini-3.5-flash/run_config.yaml",
+    "sha256": "e5f1c65484447315bd4264dbf5ce217da4a0545d8d6fa74715e96719263506e2",
+    "bytes": 1023
+  },
+  {
+    "path": "results/official_a2a_main/gemini-3.5-flash/summary.json",
+    "sha256": "433778ec6e8dedf4ec71ec0a26cf1a234741a16ecd8111c51d48121bedd11c07",
+    "bytes": 3032
+  },
+  {
+    "path": "results/official_a2a_main/gpt-5-mini/by_attack.json",
+    "sha256": "627b78eed3538b68983c62a5e70ec4487d5e7c1f2ac509e8412ebe93d0f33476",
+    "bytes": 1498
+  },
+  {
+    "path": "results/official_a2a_main/gpt-5-mini/by_domain.json",
+    "sha256": "d79c8513124e14b296c831961dcf9774835c305f911297a6e0b39b88731c996b",
+    "bytes": 671
+  },
+  {
+    "path": "results/official_a2a_main/gpt-5-mini/by_variant.json",
+    "sha256": "82d11fd9bb606858994a7cc24f7e1abec4b3a49936c5fb27dc96566a152c2729",
+    "bytes": 672
+  },
+  {
+    "path": "results/official_a2a_main/gpt-5-mini/details.jsonl",
+    "sha256": "39a89cae820b526dbae06c6fb6553fe27a168feb2bfffbad645de1b897728452",
+    "bytes": 45600976
+  },
+  {
+    "path": "results/official_a2a_main/gpt-5-mini/failures.jsonl",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0
+  },
+  {
+    "path": "results/official_a2a_main/gpt-5-mini/manifest.json",
+    "sha256": "923f7692c348f2957086253761bd9f1dce94c83674628353605236fbcfe3a6cd",
+    "bytes": 1458091
+  },
+  {
+    "path": "results/official_a2a_main/gpt-5-mini/progress.jsonl",
+    "sha256": "e8b3bd89016887aa19c0c20928f44e9327a549b6a4d5ad633a6c3bd0ba617856",
+    "bytes": 951014
+  },
+  {
+    "path": "results/official_a2a_main/gpt-5-mini/README.md",
+    "sha256": "9e5c88bd01fcb796f5a3449d485e6aa0c3aa95b2b990fef721496af0cfe5bfc8",
+    "bytes": 335
+  },
+  {
+    "path": "results/official_a2a_main/gpt-5-mini/rerun_manifest.json",
+    "sha256": "ef35ebd31f402a881eb060bc0270f3bffa6fb856065287bdd329caa2e31686fb",
+    "bytes": 190
+  },
+  {
+    "path": "results/official_a2a_main/gpt-5-mini/RERUN_REPLACEMENT_IN_PROGRESS.json",
+    "sha256": "94400bf3d580c3bf706c94d25b8ab7738203e3ba59cbe9a01823be16da4578d8",
+    "bytes": 1073
+  },
+  {
+    "path": "results/official_a2a_main/gpt-5-mini/run_config.yaml",
+    "sha256": "ef21c58cd97b8d1411fab0376fa7160e47daef96a9bda20a10af8c5c9964b666",
+    "bytes": 1011
+  },
+  {
+    "path": "results/official_a2a_main/gpt-5-mini/summary.json",
+    "sha256": "e29b6dd4f951ff776496a840de221ffd2b79fb059561b49e6376f0037c3f07b5",
+    "bytes": 3026
+  },
+  {
+    "path": "results/official_a2a_main/gpt-5.4-mini/by_attack.json",
+    "sha256": "53eb09f7de0d696e8c0f239acf996459550355c3a3e753b1b784f2fd48482ae1",
+    "bytes": 1528
+  },
+  {
+    "path": "results/official_a2a_main/gpt-5.4-mini/by_domain.json",
+    "sha256": "96563e75abfbe9de09fc3b01ae444d3ccc49a2e17c78a0ff123067cae6ecda3c",
+    "bytes": 671
+  },
+  {
+    "path": "results/official_a2a_main/gpt-5.4-mini/by_variant.json",
+    "sha256": "1b0a0427b678178dce23bdb883708b7c7e0f09b3b1721e544a2c0cbff919e49a",
+    "bytes": 668
+  },
+  {
+    "path": "results/official_a2a_main/gpt-5.4-mini/details.jsonl",
+    "sha256": "a4fdc80101da5d6a12b1884702c7c1b5d72f4a97aa51117ffb0b604f39fd7a7f",
+    "bytes": 44592625
+  },
+  {
+    "path": "results/official_a2a_main/gpt-5.4-mini/failures.jsonl",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0
+  },
+  {
+    "path": "results/official_a2a_main/gpt-5.4-mini/manifest.json",
+    "sha256": "923f7692c348f2957086253761bd9f1dce94c83674628353605236fbcfe3a6cd",
+    "bytes": 1458091
+  },
+  {
+    "path": "results/official_a2a_main/gpt-5.4-mini/progress.jsonl",
+    "sha256": "514aec788b80042a3a446b75d235f7111b396a921a338c2b3536483fa1753d79",
+    "bytes": 950536
+  },
+  {
+    "path": "results/official_a2a_main/gpt-5.4-mini/README.md",
+    "sha256": "5c1a85bcbe8ed197f1f09291286d2bab630b9f3d492f8be985261f7c9caa3554",
+    "bytes": 337
+  },
+  {
+    "path": "results/official_a2a_main/gpt-5.4-mini/rerun_manifest.json",
+    "sha256": "4159a69d5b8458cb87c2d8c18a44a850f50873e4ddce4c2210666bc991cdb235",
+    "bytes": 192
+  },
+  {
+    "path": "results/official_a2a_main/gpt-5.4-mini/RERUN_REPLACEMENT_IN_PROGRESS.json",
+    "sha256": "d9486b9a36f6c878ad6c69ce37efff147e6732c68e3af11d95b4ddb0502460e2",
+    "bytes": 1036
+  },
+  {
+    "path": "results/official_a2a_main/gpt-5.4-mini/run_config.yaml",
+    "sha256": "25c309bc629a8cafbfff70e6b1229213073febaf1ea43f97ca823af39273e477",
+    "bytes": 1015
+  },
+  {
+    "path": "results/official_a2a_main/gpt-5.4-mini/summary.json",
+    "sha256": "86456fd5db5fe04c9d695e576aab43a142fd91f3fb4be85ed781941837f4d055",
+    "bytes": 3028
+  },
+  {
+    "path": "results/official_a2a_main/gpt-5.6-Luna/by_attack.json",
+    "sha256": "1dc5faf8c0187d3f2bebc25858c26843b3804e88aaf3fc60421f6dd0cd800897",
+    "bytes": 1469
+  },
+  {
+    "path": "results/official_a2a_main/gpt-5.6-Luna/by_domain.json",
+    "sha256": "e8879a0beba64d17e3376119b67a6daf165b520102a3ba824e75ec3e512242f0",
+    "bytes": 685
+  },
+  {
+    "path": "results/official_a2a_main/gpt-5.6-Luna/by_variant.json",
+    "sha256": "99d9799600c6eaa2fec6cf35fe143ae461b2e0d9ceefda96007e99f2e18f8764",
+    "bytes": 672
+  },
+  {
+    "path": "results/official_a2a_main/gpt-5.6-Luna/details.jsonl",
+    "sha256": "3ef93a3b5dbc54d6555f1e924940acded150d074a2e2ad61e5ed3abfdb99073a",
+    "bytes": 45269511
+  },
+  {
+    "path": "results/official_a2a_main/gpt-5.6-Luna/failures.jsonl",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0
+  },
+  {
+    "path": "results/official_a2a_main/gpt-5.6-Luna/manifest.json",
+    "sha256": "923f7692c348f2957086253761bd9f1dce94c83674628353605236fbcfe3a6cd",
+    "bytes": 1458091
+  },
+  {
+    "path": "results/official_a2a_main/gpt-5.6-Luna/progress.jsonl",
+    "sha256": "2bdca69c91d8ba0cda440cd9f138dda359edb6d11230f6f694a5f5c49c1a263d",
+    "bytes": 944061
+  },
+  {
+    "path": "results/official_a2a_main/gpt-5.6-Luna/README.md",
+    "sha256": "6f1ec2d63918f4f3cb31734f7fb8c543bb136c6e03f5d77530ef0db210ed05f7",
+    "bytes": 337
+  },
+  {
+    "path": "results/official_a2a_main/gpt-5.6-Luna/rerun_manifest.json",
+    "sha256": "67df12d2cbf79ebbbabf407a6ec20b93328342f1e2105b616b66da51ec9c2103",
+    "bytes": 192
+  },
+  {
+    "path": "results/official_a2a_main/gpt-5.6-Luna/run_config.yaml",
+    "sha256": "173220dc26bf7685801dd2a43e4322cfbcf3ef252ad73ad5e8b64abbc388b37b",
+    "bytes": 1015
+  },
+  {
+    "path": "results/official_a2a_main/gpt-5.6-Luna/summary.json",
+    "sha256": "001fd67d0671a30daa18c5e182186cc8568e2a27d4c98cfff6e5f59cf420aff4",
+    "bytes": 3028
+  }
+]

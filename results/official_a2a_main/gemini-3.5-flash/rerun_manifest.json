@@ -1,0 +1,6 @@
+{
+  "cases": [],
+  "schema_version": "official-a2a-rerun-v1",
+  "source_details_sha256": "3a2fe37ef6650f2cdf7f0e92ec44ee38f91e94bbacb9e6a4df09e96ee5fe2f5e",
+  "source_model": "gemini-3.5-flash"
+}

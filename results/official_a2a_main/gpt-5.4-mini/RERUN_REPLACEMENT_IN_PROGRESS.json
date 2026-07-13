@@ -1,0 +1,20 @@
+{
+  "plan": {
+    "created_at": "2026-07-13T11:57:14+0800",
+    "filtered_details_sha256": "a8f5abed2b25229d881fd83f30190f26c3bd8e6a8722f140987cfa3526a39261",
+    "kept_completed_judgment_rows": 3147,
+    "missing_case_ids_before_resume": [],
+    "model": "gpt-5.4-mini",
+    "original_completed_rows": 3150,
+    "removed_case_ids": [
+      "CARDDIFF_A3_FINANCE_T024_V001",
+      "CARDDIFF_A3_FINANCE_T037_V003",
+      "CARDDIFF_B1_TRAVEL_T034_V002"
+    ],
+    "removed_nonjudgment_rows": 3,
+    "replacement_policy": "Remove only judgment_status != completed records from working details.jsonl, preserve originals in provenance, rerun canonical full manifest so case_id skip logic precisely replaces removed and missing cases without duplicate counting.",
+    "schema_version": "official-a2a-nonjudgment-replacement-v1",
+    "source_details_sha256": "cda9d7ce6066ca69d6ea2bbb9de12cb2d2d4a19d1af1e97028c2d4667107b32b"
+  },
+  "provenance_dir": "results/official_a2a_main_provenance/rerun_nonjudgment_20260713T115711+0800/gpt-5.4-mini"
+}

@@ -1,0 +1,28 @@
+{
+  "plan": {
+    "created_at": "2026-07-13T11:57:16+0800",
+    "filtered_details_sha256": "515a04b191d3113be9c9024c9995c88fa2a418af153d4c702f6d2d0b511523e8",
+    "kept_completed_judgment_rows": 3139,
+    "missing_case_ids_before_resume": [],
+    "model": "gemini-2.5-flash",
+    "original_completed_rows": 3150,
+    "removed_case_ids": [
+      "CARDDIFF_A3_FINANCE_T005_V001",
+      "CARDDIFF_C1_TRAVEL_T040_V003",
+      "CARDDIFF_C1_FINANCE_T018_V003",
+      "CARDDIFF_C1_FINANCE_T043_V003",
+      "CARDDIFF_C1_FINANCE_T050_V003",
+      "CARDDIFF_C2_TRAVEL_T007_V001",
+      "CARDDIFF_C2_TRAVEL_T020_V001",
+      "CARDDIFF_C2_TRAVEL_T028_V001",
+      "CARDDIFF_C2_TRAVEL_T050_V001",
+      "CARDDIFF_C2_TRAVEL_T049_V002",
+      "CARDDIFF_C2_HEALTHCARE_T015_V002"
+    ],
+    "removed_nonjudgment_rows": 11,
+    "replacement_policy": "Remove only judgment_status != completed records from working details.jsonl, preserve originals in provenance, rerun canonical full manifest so case_id skip logic precisely replaces removed and missing cases without duplicate counting.",
+    "schema_version": "official-a2a-nonjudgment-replacement-v1",
+    "source_details_sha256": "0c54200df6bc810ded2faf0d3f729f6100a5cd8ba31ff12766002f8bc9cd1387"
+  },
+  "provenance_dir": "results/official_a2a_main_provenance/rerun_nonjudgment_20260713T115711+0800/gemini-2.5-flash"
+}

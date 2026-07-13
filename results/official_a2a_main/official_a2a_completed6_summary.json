@@ -1,0 +1,188 @@
+{
+  "claude-sonnet-5": {
+    "asr": 0.907302,
+    "attack_counts": {
+      "A1": 450,
+      "A2": 450,
+      "A3": 450,
+      "B1": 450,
+      "B3": 450,
+      "C1": 450,
+      "C2": 450
+    },
+    "b2_cases": 0,
+    "domain_counts": {
+      "finance": 1050,
+      "healthcare": 1050,
+      "travel": 1050
+    },
+    "duplicate_case_ids": 0,
+    "non_judgment": 0,
+    "parse_failure": 0,
+    "rows": 3150,
+    "runtime_error": 0,
+    "success": 2858,
+    "timeout": 0,
+    "unique_case_ids": 3150,
+    "variant_counts": {
+      "001": 1050,
+      "002": 1050,
+      "003": 1050
+    }
+  },
+  "gemini-2.5-flash": {
+    "asr": 0.995238,
+    "attack_counts": {
+      "A1": 450,
+      "A2": 450,
+      "A3": 450,
+      "B1": 450,
+      "B3": 450,
+      "C1": 450,
+      "C2": 450
+    },
+    "b2_cases": 0,
+    "domain_counts": {
+      "finance": 1050,
+      "healthcare": 1050,
+      "travel": 1050
+    },
+    "duplicate_case_ids": 0,
+    "non_judgment": 0,
+    "parse_failure": 0,
+    "rows": 3150,
+    "runtime_error": 0,
+    "success": 3135,
+    "timeout": 0,
+    "unique_case_ids": 3150,
+    "variant_counts": {
+      "001": 1050,
+      "002": 1050,
+      "003": 1050
+    }
+  },
+  "gemini-3.5-flash": {
+    "asr": 0.954603,
+    "attack_counts": {
+      "A1": 450,
+      "A2": 450,
+      "A3": 450,
+      "B1": 450,
+      "B3": 450,
+      "C1": 450,
+      "C2": 450
+    },
+    "b2_cases": 0,
+    "domain_counts": {
+      "finance": 1050,
+      "healthcare": 1050,
+      "travel": 1050
+    },
+    "duplicate_case_ids": 0,
+    "non_judgment": 0,
+    "parse_failure": 0,
+    "rows": 3150,
+    "runtime_error": 0,
+    "success": 3007,
+    "timeout": 0,
+    "unique_case_ids": 3150,
+    "variant_counts": {
+      "001": 1050,
+      "002": 1050,
+      "003": 1050
+    }
+  },
+  "gpt-5-mini": {
+    "asr": 0.989206,
+    "attack_counts": {
+      "A1": 450,
+      "A2": 450,
+      "A3": 450,
+      "B1": 450,
+      "B3": 450,
+      "C1": 450,
+      "C2": 450
+    },
+    "b2_cases": 0,
+    "domain_counts": {
+      "finance": 1050,
+      "healthcare": 1050,
+      "travel": 1050
+    },
+    "duplicate_case_ids": 0,
+    "non_judgment": 0,
+    "parse_failure": 0,
+    "rows": 3150,
+    "runtime_error": 0,
+    "success": 3116,
+    "timeout": 0,
+    "unique_case_ids": 3150,
+    "variant_counts": {
+      "001": 1050,
+      "002": 1050,
+      "003": 1050
+    }
+  },
+  "gpt-5.4-mini": {
+    "asr": 0.920635,
+    "attack_counts": {
+      "A1": 450,
+      "A2": 450,
+      "A3": 450,
+      "B1": 450,
+      "B3": 450,
+      "C1": 450,
+      "C2": 450
+    },
+    "b2_cases": 0,
+    "domain_counts": {
+      "finance": 1050,
+      "healthcare": 1050,
+      "travel": 1050
+    },
+    "duplicate_case_ids": 0,
+    "non_judgment": 0,
+    "parse_failure": 0,
+    "rows": 3150,
+    "runtime_error": 0,
+    "success": 2900,
+    "timeout": 0,
+    "unique_case_ids": 3150,
+    "variant_counts": {
+      "001": 1050,
+      "002": 1050,
+      "003": 1050
+    }
+  },
+  "gpt-5.6-Luna": {
+    "asr": 0.969524,
+    "attack_counts": {
+      "A1": 450,
+      "A2": 450,
+      "A3": 450,
+      "B1": 450,
+      "B3": 450,
+      "C1": 450,
+      "C2": 450
+    },
+    "b2_cases": 0,
+    "domain_counts": {
+      "finance": 1050,
+      "healthcare": 1050,
+      "travel": 1050
+    },
+    "duplicate_case_ids": 0,
+    "non_judgment": 0,
+    "parse_failure": 0,
+    "rows": 3150,
+    "runtime_error": 0,
+    "success": 3054,
+    "timeout": 0,
+    "unique_case_ids": 3150,
+    "variant_counts": {
+      "001": 1050,
+      "002": 1050,
+      "003": 1050
+    }
+  }
+}
