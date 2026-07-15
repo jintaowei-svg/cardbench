@@ -1,0 +1,1608 @@
+{
+  "active_attacks": [
+    "A1",
+    "A2",
+    "A3",
+    "B1",
+    "B3",
+    "C1",
+    "C2"
+  ],
+  "models": {
+    "claude-sonnet-5": {
+      "asr": 0.9073015873015873,
+      "by_attack": {
+        "A1": {
+          "asr": 0.6066666666666667,
+          "successes": 273,
+          "trials": 450
+        },
+        "A2": {
+          "asr": 1.0,
+          "successes": 450,
+          "trials": 450
+        },
+        "A3": {
+          "asr": 0.9288888888888889,
+          "successes": 418,
+          "trials": 450
+        },
+        "B1": {
+          "asr": 0.9155555555555556,
+          "successes": 412,
+          "trials": 450
+        },
+        "B3": {
+          "asr": 0.9955555555555555,
+          "successes": 448,
+          "trials": 450
+        },
+        "C1": {
+          "asr": 0.9711111111111111,
+          "successes": 437,
+          "trials": 450
+        },
+        "C2": {
+          "asr": 0.9333333333333333,
+          "successes": 420,
+          "trials": 450
+        }
+      },
+      "by_domain": {
+        "finance": {
+          "asr": 0.8285714285714286,
+          "successes": 870,
+          "trials": 1050
+        },
+        "healthcare": {
+          "asr": 0.9704761904761905,
+          "successes": 1019,
+          "trials": 1050
+        },
+        "travel": {
+          "asr": 0.9228571428571428,
+          "successes": 969,
+          "trials": 1050
+        }
+      },
+      "by_variant": {
+        "001": {
+          "asr": 0.8980952380952381,
+          "successes": 943,
+          "trials": 1050
+        },
+        "002": {
+          "asr": 0.92,
+          "successes": 966,
+          "trials": 1050
+        },
+        "003": {
+          "asr": 0.9038095238095238,
+          "successes": 949,
+          "trials": 1050
+        }
+      },
+      "error_records": 0,
+      "matrix": {
+        "A1": {
+          "finance": {
+            "asr": 0.07333333333333333,
+            "successes": 11,
+            "trials": 150
+          },
+          "healthcare": {
+            "asr": 0.9866666666666667,
+            "successes": 148,
+            "trials": 150
+          },
+          "travel": {
+            "asr": 0.76,
+            "successes": 114,
+            "trials": 150
+          }
+        },
+        "A2": {
+          "finance": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          },
+          "healthcare": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          },
+          "travel": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          }
+        },
+        "A3": {
+          "finance": {
+            "asr": 0.98,
+            "successes": 147,
+            "trials": 150
+          },
+          "healthcare": {
+            "asr": 0.8466666666666667,
+            "successes": 127,
+            "trials": 150
+          },
+          "travel": {
+            "asr": 0.96,
+            "successes": 144,
+            "trials": 150
+          }
+        },
+        "B1": {
+          "finance": {
+            "asr": 0.98,
+            "successes": 147,
+            "trials": 150
+          },
+          "healthcare": {
+            "asr": 0.98,
+            "successes": 147,
+            "trials": 150
+          },
+          "travel": {
+            "asr": 0.7866666666666666,
+            "successes": 118,
+            "trials": 150
+          }
+        },
+        "B3": {
+          "finance": {
+            "asr": 0.9933333333333333,
+            "successes": 149,
+            "trials": 150
+          },
+          "healthcare": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          },
+          "travel": {
+            "asr": 0.9933333333333333,
+            "successes": 149,
+            "trials": 150
+          }
+        },
+        "C1": {
+          "finance": {
+            "asr": 0.9733333333333334,
+            "successes": 146,
+            "trials": 150
+          },
+          "healthcare": {
+            "asr": 0.98,
+            "successes": 147,
+            "trials": 150
+          },
+          "travel": {
+            "asr": 0.96,
+            "successes": 144,
+            "trials": 150
+          }
+        },
+        "C2": {
+          "finance": {
+            "asr": 0.8,
+            "successes": 120,
+            "trials": 150
+          },
+          "healthcare": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          },
+          "travel": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          }
+        }
+      },
+      "metric": "ASR",
+      "successes": 2858,
+      "trials": 3150
+    },
+    "deepseek-v4-flash": {
+      "asr": 0.9857142857142858,
+      "by_attack": {
+        "A1": {
+          "asr": 0.9955555555555555,
+          "successes": 448,
+          "trials": 450
+        },
+        "A2": {
+          "asr": 1.0,
+          "successes": 450,
+          "trials": 450
+        },
+        "A3": {
+          "asr": 0.9977777777777778,
+          "successes": 449,
+          "trials": 450
+        },
+        "B1": {
+          "asr": 0.9822222222222222,
+          "successes": 442,
+          "trials": 450
+        },
+        "B3": {
+          "asr": 0.9955555555555555,
+          "successes": 448,
+          "trials": 450
+        },
+        "C1": {
+          "asr": 0.9955555555555555,
+          "successes": 448,
+          "trials": 450
+        },
+        "C2": {
+          "asr": 0.9333333333333333,
+          "successes": 420,
+          "trials": 450
+        }
+      },
+      "by_domain": {
+        "finance": {
+          "asr": 0.9752380952380952,
+          "successes": 1024,
+          "trials": 1050
+        },
+        "healthcare": {
+          "asr": 0.9885714285714285,
+          "successes": 1038,
+          "trials": 1050
+        },
+        "travel": {
+          "asr": 0.9933333333333333,
+          "successes": 1043,
+          "trials": 1050
+        }
+      },
+      "by_variant": {
+        "001": {
+          "asr": 0.981904761904762,
+          "successes": 1031,
+          "trials": 1050
+        },
+        "002": {
+          "asr": 0.9857142857142858,
+          "successes": 1035,
+          "trials": 1050
+        },
+        "003": {
+          "asr": 0.9895238095238095,
+          "successes": 1039,
+          "trials": 1050
+        }
+      },
+      "error_records": 3,
+      "matrix": {
+        "A1": {
+          "finance": {
+            "asr": 0.9866666666666667,
+            "successes": 148,
+            "trials": 150
+          },
+          "healthcare": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          },
+          "travel": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          }
+        },
+        "A2": {
+          "finance": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          },
+          "healthcare": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          },
+          "travel": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          }
+        },
+        "A3": {
+          "finance": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          },
+          "healthcare": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          },
+          "travel": {
+            "asr": 0.9933333333333333,
+            "successes": 149,
+            "trials": 150
+          }
+        },
+        "B1": {
+          "finance": {
+            "asr": 0.9866666666666667,
+            "successes": 148,
+            "trials": 150
+          },
+          "healthcare": {
+            "asr": 0.9666666666666667,
+            "successes": 145,
+            "trials": 150
+          },
+          "travel": {
+            "asr": 0.9933333333333333,
+            "successes": 149,
+            "trials": 150
+          }
+        },
+        "B3": {
+          "finance": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          },
+          "healthcare": {
+            "asr": 0.9933333333333333,
+            "successes": 149,
+            "trials": 150
+          },
+          "travel": {
+            "asr": 0.9933333333333333,
+            "successes": 149,
+            "trials": 150
+          }
+        },
+        "C1": {
+          "finance": {
+            "asr": 0.9933333333333333,
+            "successes": 149,
+            "trials": 150
+          },
+          "healthcare": {
+            "asr": 0.9933333333333333,
+            "successes": 149,
+            "trials": 150
+          },
+          "travel": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          }
+        },
+        "C2": {
+          "finance": {
+            "asr": 0.86,
+            "successes": 129,
+            "trials": 150
+          },
+          "healthcare": {
+            "asr": 0.9666666666666667,
+            "successes": 145,
+            "trials": 150
+          },
+          "travel": {
+            "asr": 0.9733333333333334,
+            "successes": 146,
+            "trials": 150
+          }
+        }
+      },
+      "metric": "ASR",
+      "successes": 3105,
+      "trials": 3150
+    },
+    "gemini-2.5-flash": {
+      "asr": 0.9952380952380953,
+      "by_attack": {
+        "A1": {
+          "asr": 1.0,
+          "successes": 450,
+          "trials": 450
+        },
+        "A2": {
+          "asr": 0.9977777777777778,
+          "successes": 449,
+          "trials": 450
+        },
+        "A3": {
+          "asr": 0.9977777777777778,
+          "successes": 449,
+          "trials": 450
+        },
+        "B1": {
+          "asr": 0.98,
+          "successes": 441,
+          "trials": 450
+        },
+        "B3": {
+          "asr": 1.0,
+          "successes": 450,
+          "trials": 450
+        },
+        "C1": {
+          "asr": 1.0,
+          "successes": 450,
+          "trials": 450
+        },
+        "C2": {
+          "asr": 0.9911111111111112,
+          "successes": 446,
+          "trials": 450
+        }
+      },
+      "by_domain": {
+        "finance": {
+          "asr": 0.9961904761904762,
+          "successes": 1046,
+          "trials": 1050
+        },
+        "healthcare": {
+          "asr": 0.9895238095238095,
+          "successes": 1039,
+          "trials": 1050
+        },
+        "travel": {
+          "asr": 1.0,
+          "successes": 1050,
+          "trials": 1050
+        }
+      },
+      "by_variant": {
+        "001": {
+          "asr": 0.9942857142857143,
+          "successes": 1044,
+          "trials": 1050
+        },
+        "002": {
+          "asr": 0.9961904761904762,
+          "successes": 1046,
+          "trials": 1050
+        },
+        "003": {
+          "asr": 0.9952380952380953,
+          "successes": 1045,
+          "trials": 1050
+        }
+      },
+      "error_records": 0,
+      "matrix": {
+        "A1": {
+          "finance": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          },
+          "healthcare": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          },
+          "travel": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          }
+        },
+        "A2": {
+          "finance": {
+            "asr": 0.9933333333333333,
+            "successes": 149,
+            "trials": 150
+          },
+          "healthcare": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          },
+          "travel": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          }
+        },
+        "A3": {
+          "finance": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          },
+          "healthcare": {
+            "asr": 0.9933333333333333,
+            "successes": 149,
+            "trials": 150
+          },
+          "travel": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          }
+        },
+        "B1": {
+          "finance": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          },
+          "healthcare": {
+            "asr": 0.94,
+            "successes": 141,
+            "trials": 150
+          },
+          "travel": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          }
+        },
+        "B3": {
+          "finance": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          },
+          "healthcare": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          },
+          "travel": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          }
+        },
+        "C1": {
+          "finance": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          },
+          "healthcare": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          },
+          "travel": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          }
+        },
+        "C2": {
+          "finance": {
+            "asr": 0.98,
+            "successes": 147,
+            "trials": 150
+          },
+          "healthcare": {
+            "asr": 0.9933333333333333,
+            "successes": 149,
+            "trials": 150
+          },
+          "travel": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          }
+        }
+      },
+      "metric": "ASR",
+      "successes": 3135,
+      "trials": 3150
+    },
+    "gemini-3.5-flash": {
+      "asr": 0.9546031746031746,
+      "by_attack": {
+        "A1": {
+          "asr": 0.98,
+          "successes": 441,
+          "trials": 450
+        },
+        "A2": {
+          "asr": 1.0,
+          "successes": 450,
+          "trials": 450
+        },
+        "A3": {
+          "asr": 0.9977777777777778,
+          "successes": 449,
+          "trials": 450
+        },
+        "B1": {
+          "asr": 0.9911111111111112,
+          "successes": 446,
+          "trials": 450
+        },
+        "B3": {
+          "asr": 1.0,
+          "successes": 450,
+          "trials": 450
+        },
+        "C1": {
+          "asr": 0.9977777777777778,
+          "successes": 449,
+          "trials": 450
+        },
+        "C2": {
+          "asr": 0.7155555555555555,
+          "successes": 322,
+          "trials": 450
+        }
+      },
+      "by_domain": {
+        "finance": {
+          "asr": 0.9428571428571428,
+          "successes": 990,
+          "trials": 1050
+        },
+        "healthcare": {
+          "asr": 0.9457142857142857,
+          "successes": 993,
+          "trials": 1050
+        },
+        "travel": {
+          "asr": 0.9752380952380952,
+          "successes": 1024,
+          "trials": 1050
+        }
+      },
+      "by_variant": {
+        "001": {
+          "asr": 0.9466666666666667,
+          "successes": 994,
+          "trials": 1050
+        },
+        "002": {
+          "asr": 0.959047619047619,
+          "successes": 1007,
+          "trials": 1050
+        },
+        "003": {
+          "asr": 0.9580952380952381,
+          "successes": 1006,
+          "trials": 1050
+        }
+      },
+      "error_records": 0,
+      "matrix": {
+        "A1": {
+          "finance": {
+            "asr": 0.96,
+            "successes": 144,
+            "trials": 150
+          },
+          "healthcare": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          },
+          "travel": {
+            "asr": 0.98,
+            "successes": 147,
+            "trials": 150
+          }
+        },
+        "A2": {
+          "finance": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          },
+          "healthcare": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          },
+          "travel": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          }
+        },
+        "A3": {
+          "finance": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          },
+          "healthcare": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          },
+          "travel": {
+            "asr": 0.9933333333333333,
+            "successes": 149,
+            "trials": 150
+          }
+        },
+        "B1": {
+          "finance": {
+            "asr": 0.9866666666666667,
+            "successes": 148,
+            "trials": 150
+          },
+          "healthcare": {
+            "asr": 0.9866666666666667,
+            "successes": 148,
+            "trials": 150
+          },
+          "travel": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          }
+        },
+        "B3": {
+          "finance": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          },
+          "healthcare": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          },
+          "travel": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          }
+        },
+        "C1": {
+          "finance": {
+            "asr": 0.9933333333333333,
+            "successes": 149,
+            "trials": 150
+          },
+          "healthcare": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          },
+          "travel": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          }
+        },
+        "C2": {
+          "finance": {
+            "asr": 0.66,
+            "successes": 99,
+            "trials": 150
+          },
+          "healthcare": {
+            "asr": 0.6333333333333333,
+            "successes": 95,
+            "trials": 150
+          },
+          "travel": {
+            "asr": 0.8533333333333334,
+            "successes": 128,
+            "trials": 150
+          }
+        }
+      },
+      "metric": "ASR",
+      "successes": 3007,
+      "trials": 3150
+    },
+    "gpt-5-mini": {
+      "asr": 0.9892063492063492,
+      "by_attack": {
+        "A1": {
+          "asr": 0.9488888888888889,
+          "successes": 427,
+          "trials": 450
+        },
+        "A2": {
+          "asr": 1.0,
+          "successes": 450,
+          "trials": 450
+        },
+        "A3": {
+          "asr": 0.9977777777777778,
+          "successes": 449,
+          "trials": 450
+        },
+        "B1": {
+          "asr": 1.0,
+          "successes": 450,
+          "trials": 450
+        },
+        "B3": {
+          "asr": 1.0,
+          "successes": 450,
+          "trials": 450
+        },
+        "C1": {
+          "asr": 0.9911111111111112,
+          "successes": 446,
+          "trials": 450
+        },
+        "C2": {
+          "asr": 0.9866666666666667,
+          "successes": 444,
+          "trials": 450
+        }
+      },
+      "by_domain": {
+        "finance": {
+          "asr": 0.9685714285714285,
+          "successes": 1017,
+          "trials": 1050
+        },
+        "healthcare": {
+          "asr": 1.0,
+          "successes": 1050,
+          "trials": 1050
+        },
+        "travel": {
+          "asr": 0.9990476190476191,
+          "successes": 1049,
+          "trials": 1050
+        }
+      },
+      "by_variant": {
+        "001": {
+          "asr": 0.9895238095238095,
+          "successes": 1039,
+          "trials": 1050
+        },
+        "002": {
+          "asr": 0.9914285714285714,
+          "successes": 1041,
+          "trials": 1050
+        },
+        "003": {
+          "asr": 0.9866666666666667,
+          "successes": 1036,
+          "trials": 1050
+        }
+      },
+      "error_records": 0,
+      "matrix": {
+        "A1": {
+          "finance": {
+            "asr": 0.8466666666666667,
+            "successes": 127,
+            "trials": 150
+          },
+          "healthcare": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          },
+          "travel": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          }
+        },
+        "A2": {
+          "finance": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          },
+          "healthcare": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          },
+          "travel": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          }
+        },
+        "A3": {
+          "finance": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          },
+          "healthcare": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          },
+          "travel": {
+            "asr": 0.9933333333333333,
+            "successes": 149,
+            "trials": 150
+          }
+        },
+        "B1": {
+          "finance": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          },
+          "healthcare": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          },
+          "travel": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          }
+        },
+        "B3": {
+          "finance": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          },
+          "healthcare": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          },
+          "travel": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          }
+        },
+        "C1": {
+          "finance": {
+            "asr": 0.9733333333333334,
+            "successes": 146,
+            "trials": 150
+          },
+          "healthcare": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          },
+          "travel": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          }
+        },
+        "C2": {
+          "finance": {
+            "asr": 0.96,
+            "successes": 144,
+            "trials": 150
+          },
+          "healthcare": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          },
+          "travel": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          }
+        }
+      },
+      "metric": "ASR",
+      "successes": 3116,
+      "trials": 3150
+    },
+    "gpt-5.4-mini": {
+      "asr": 0.9206349206349206,
+      "by_attack": {
+        "A1": {
+          "asr": 0.7844444444444445,
+          "successes": 353,
+          "trials": 450
+        },
+        "A2": {
+          "asr": 0.9644444444444444,
+          "successes": 434,
+          "trials": 450
+        },
+        "A3": {
+          "asr": 0.9844444444444445,
+          "successes": 443,
+          "trials": 450
+        },
+        "B1": {
+          "asr": 0.8933333333333333,
+          "successes": 402,
+          "trials": 450
+        },
+        "B3": {
+          "asr": 1.0,
+          "successes": 450,
+          "trials": 450
+        },
+        "C1": {
+          "asr": 0.9622222222222222,
+          "successes": 433,
+          "trials": 450
+        },
+        "C2": {
+          "asr": 0.8555555555555555,
+          "successes": 385,
+          "trials": 450
+        }
+      },
+      "by_domain": {
+        "finance": {
+          "asr": 0.8466666666666667,
+          "successes": 889,
+          "trials": 1050
+        },
+        "healthcare": {
+          "asr": 0.9552380952380952,
+          "successes": 1003,
+          "trials": 1050
+        },
+        "travel": {
+          "asr": 0.96,
+          "successes": 1008,
+          "trials": 1050
+        }
+      },
+      "by_variant": {
+        "001": {
+          "asr": 0.900952380952381,
+          "successes": 946,
+          "trials": 1050
+        },
+        "002": {
+          "asr": 0.9247619047619048,
+          "successes": 971,
+          "trials": 1050
+        },
+        "003": {
+          "asr": 0.9361904761904762,
+          "successes": 983,
+          "trials": 1050
+        }
+      },
+      "error_records": 0,
+      "matrix": {
+        "A1": {
+          "finance": {
+            "asr": 0.5,
+            "successes": 75,
+            "trials": 150
+          },
+          "healthcare": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          },
+          "travel": {
+            "asr": 0.8533333333333334,
+            "successes": 128,
+            "trials": 150
+          }
+        },
+        "A2": {
+          "finance": {
+            "asr": 0.98,
+            "successes": 147,
+            "trials": 150
+          },
+          "healthcare": {
+            "asr": 0.9733333333333334,
+            "successes": 146,
+            "trials": 150
+          },
+          "travel": {
+            "asr": 0.94,
+            "successes": 141,
+            "trials": 150
+          }
+        },
+        "A3": {
+          "finance": {
+            "asr": 0.98,
+            "successes": 147,
+            "trials": 150
+          },
+          "healthcare": {
+            "asr": 0.9866666666666667,
+            "successes": 148,
+            "trials": 150
+          },
+          "travel": {
+            "asr": 0.9866666666666667,
+            "successes": 148,
+            "trials": 150
+          }
+        },
+        "B1": {
+          "finance": {
+            "asr": 0.98,
+            "successes": 147,
+            "trials": 150
+          },
+          "healthcare": {
+            "asr": 0.7333333333333333,
+            "successes": 110,
+            "trials": 150
+          },
+          "travel": {
+            "asr": 0.9666666666666667,
+            "successes": 145,
+            "trials": 150
+          }
+        },
+        "B3": {
+          "finance": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          },
+          "healthcare": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          },
+          "travel": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          }
+        },
+        "C1": {
+          "finance": {
+            "asr": 0.8933333333333333,
+            "successes": 134,
+            "trials": 150
+          },
+          "healthcare": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          },
+          "travel": {
+            "asr": 0.9933333333333333,
+            "successes": 149,
+            "trials": 150
+          }
+        },
+        "C2": {
+          "finance": {
+            "asr": 0.5933333333333334,
+            "successes": 89,
+            "trials": 150
+          },
+          "healthcare": {
+            "asr": 0.9933333333333333,
+            "successes": 149,
+            "trials": 150
+          },
+          "travel": {
+            "asr": 0.98,
+            "successes": 147,
+            "trials": 150
+          }
+        }
+      },
+      "metric": "ASR",
+      "successes": 2900,
+      "trials": 3150
+    },
+    "gpt-5.6-Luna": {
+      "asr": 0.9695238095238096,
+      "by_attack": {
+        "A1": {
+          "asr": 0.9711111111111111,
+          "successes": 437,
+          "trials": 450
+        },
+        "A2": {
+          "asr": 1.0,
+          "successes": 450,
+          "trials": 450
+        },
+        "A3": {
+          "asr": 1.0,
+          "successes": 450,
+          "trials": 450
+        },
+        "B1": {
+          "asr": 0.98,
+          "successes": 441,
+          "trials": 450
+        },
+        "B3": {
+          "asr": 1.0,
+          "successes": 450,
+          "trials": 450
+        },
+        "C1": {
+          "asr": 1.0,
+          "successes": 450,
+          "trials": 450
+        },
+        "C2": {
+          "asr": 0.8355555555555556,
+          "successes": 376,
+          "trials": 450
+        }
+      },
+      "by_domain": {
+        "finance": {
+          "asr": 0.9161904761904762,
+          "successes": 962,
+          "trials": 1050
+        },
+        "healthcare": {
+          "asr": 0.9952380952380953,
+          "successes": 1045,
+          "trials": 1050
+        },
+        "travel": {
+          "asr": 0.9971428571428571,
+          "successes": 1047,
+          "trials": 1050
+        }
+      },
+      "by_variant": {
+        "001": {
+          "asr": 0.9676190476190476,
+          "successes": 1016,
+          "trials": 1050
+        },
+        "002": {
+          "asr": 0.9752380952380952,
+          "successes": 1024,
+          "trials": 1050
+        },
+        "003": {
+          "asr": 0.9657142857142857,
+          "successes": 1014,
+          "trials": 1050
+        }
+      },
+      "error_records": 0,
+      "matrix": {
+        "A1": {
+          "finance": {
+            "asr": 0.9133333333333333,
+            "successes": 137,
+            "trials": 150
+          },
+          "healthcare": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          },
+          "travel": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          }
+        },
+        "A2": {
+          "finance": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          },
+          "healthcare": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          },
+          "travel": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          }
+        },
+        "A3": {
+          "finance": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          },
+          "healthcare": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          },
+          "travel": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          }
+        },
+        "B1": {
+          "finance": {
+            "asr": 0.9733333333333334,
+            "successes": 146,
+            "trials": 150
+          },
+          "healthcare": {
+            "asr": 0.98,
+            "successes": 147,
+            "trials": 150
+          },
+          "travel": {
+            "asr": 0.9866666666666667,
+            "successes": 148,
+            "trials": 150
+          }
+        },
+        "B3": {
+          "finance": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          },
+          "healthcare": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          },
+          "travel": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          }
+        },
+        "C1": {
+          "finance": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          },
+          "healthcare": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          },
+          "travel": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          }
+        },
+        "C2": {
+          "finance": {
+            "asr": 0.5266666666666666,
+            "successes": 79,
+            "trials": 150
+          },
+          "healthcare": {
+            "asr": 0.9866666666666667,
+            "successes": 148,
+            "trials": 150
+          },
+          "travel": {
+            "asr": 0.9933333333333333,
+            "successes": 149,
+            "trials": 150
+          }
+        }
+      },
+      "metric": "ASR",
+      "successes": 3054,
+      "trials": 3150
+    },
+    "grok-4.5": {
+      "asr": 0.973015873015873,
+      "by_attack": {
+        "A1": {
+          "asr": 0.9911111111111112,
+          "successes": 446,
+          "trials": 450
+        },
+        "A2": {
+          "asr": 1.0,
+          "successes": 450,
+          "trials": 450
+        },
+        "A3": {
+          "asr": 0.9888888888888889,
+          "successes": 445,
+          "trials": 450
+        },
+        "B1": {
+          "asr": 0.9888888888888889,
+          "successes": 445,
+          "trials": 450
+        },
+        "B3": {
+          "asr": 1.0,
+          "successes": 450,
+          "trials": 450
+        },
+        "C1": {
+          "asr": 1.0,
+          "successes": 450,
+          "trials": 450
+        },
+        "C2": {
+          "asr": 0.8422222222222222,
+          "successes": 379,
+          "trials": 450
+        }
+      },
+      "by_domain": {
+        "finance": {
+          "asr": 0.9238095238095239,
+          "successes": 970,
+          "trials": 1050
+        },
+        "healthcare": {
+          "asr": 0.9961904761904762,
+          "successes": 1046,
+          "trials": 1050
+        },
+        "travel": {
+          "asr": 0.9990476190476191,
+          "successes": 1049,
+          "trials": 1050
+        }
+      },
+      "by_variant": {
+        "001": {
+          "asr": 0.9695238095238096,
+          "successes": 1018,
+          "trials": 1050
+        },
+        "002": {
+          "asr": 0.9771428571428571,
+          "successes": 1026,
+          "trials": 1050
+        },
+        "003": {
+          "asr": 0.9723809523809523,
+          "successes": 1021,
+          "trials": 1050
+        }
+      },
+      "error_records": 0,
+      "matrix": {
+        "A1": {
+          "finance": {
+            "asr": 0.9733333333333334,
+            "successes": 146,
+            "trials": 150
+          },
+          "healthcare": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          },
+          "travel": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          }
+        },
+        "A2": {
+          "finance": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          },
+          "healthcare": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          },
+          "travel": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          }
+        },
+        "A3": {
+          "finance": {
+            "asr": 0.9733333333333334,
+            "successes": 146,
+            "trials": 150
+          },
+          "healthcare": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          },
+          "travel": {
+            "asr": 0.9933333333333333,
+            "successes": 149,
+            "trials": 150
+          }
+        },
+        "B1": {
+          "finance": {
+            "asr": 0.9866666666666667,
+            "successes": 148,
+            "trials": 150
+          },
+          "healthcare": {
+            "asr": 0.98,
+            "successes": 147,
+            "trials": 150
+          },
+          "travel": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          }
+        },
+        "B3": {
+          "finance": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          },
+          "healthcare": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          },
+          "travel": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          }
+        },
+        "C1": {
+          "finance": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          },
+          "healthcare": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          },
+          "travel": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          }
+        },
+        "C2": {
+          "finance": {
+            "asr": 0.5333333333333333,
+            "successes": 80,
+            "trials": 150
+          },
+          "healthcare": {
+            "asr": 0.9933333333333333,
+            "successes": 149,
+            "trials": 150
+          },
+          "travel": {
+            "asr": 1.0,
+            "successes": 150,
+            "trials": 150
+          }
+        }
+      },
+      "metric": "ASR",
+      "successes": 3065,
+      "trials": 3150
+    }
+  },
+  "models_count": 8,
+  "paper_section": "Cross-Model Matrix",
+  "trials": 25200
+}

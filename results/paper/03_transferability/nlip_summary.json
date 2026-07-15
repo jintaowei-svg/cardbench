@@ -1,0 +1,118 @@
+{
+  "asr": 0.9962962962962963,
+  "by_attack": {
+    "A3": {
+      "asr": 0.9888888888888889,
+      "successes": 89,
+      "trials": 90
+    },
+    "C1": {
+      "asr": 1.0,
+      "successes": 90,
+      "trials": 90
+    },
+    "C2": {
+      "asr": 1.0,
+      "successes": 90,
+      "trials": 90
+    }
+  },
+  "by_domain": {
+    "finance": {
+      "asr": 1.0,
+      "successes": 90,
+      "trials": 90
+    },
+    "healthcare": {
+      "asr": 1.0,
+      "successes": 90,
+      "trials": 90
+    },
+    "travel": {
+      "asr": 0.9888888888888889,
+      "successes": 89,
+      "trials": 90
+    }
+  },
+  "by_variant": {
+    "001": {
+      "asr": 0.9888888888888889,
+      "successes": 89,
+      "trials": 90
+    },
+    "002": {
+      "asr": 1.0,
+      "successes": 90,
+      "trials": 90
+    },
+    "003": {
+      "asr": 1.0,
+      "successes": 90,
+      "trials": 90
+    }
+  },
+  "error_records": 0,
+  "formal_comparison_eligible": true,
+  "invalid_native_execution_records": 0,
+  "invalid_source_case_ids": [],
+  "matrix": {
+    "A3": {
+      "finance": {
+        "asr": 1.0,
+        "successes": 30,
+        "trials": 30
+      },
+      "healthcare": {
+        "asr": 1.0,
+        "successes": 30,
+        "trials": 30
+      },
+      "travel": {
+        "asr": 0.9666666666666667,
+        "successes": 29,
+        "trials": 30
+      }
+    },
+    "C1": {
+      "finance": {
+        "asr": 1.0,
+        "successes": 30,
+        "trials": 30
+      },
+      "healthcare": {
+        "asr": 1.0,
+        "successes": 30,
+        "trials": 30
+      },
+      "travel": {
+        "asr": 1.0,
+        "successes": 30,
+        "trials": 30
+      }
+    },
+    "C2": {
+      "finance": {
+        "asr": 1.0,
+        "successes": 30,
+        "trials": 30
+      },
+      "healthcare": {
+        "asr": 1.0,
+        "successes": 30,
+        "trials": 30
+      },
+      "travel": {
+        "asr": 1.0,
+        "successes": 30,
+        "trials": 30
+      }
+    }
+  },
+  "metric": "ASR",
+  "native_execution_rate": 1.0,
+  "non_dispatched_records": 1,
+  "status": "complete",
+  "successes": 269,
+  "target": "NLIP",
+  "trials": 270
+}

@@ -18,11 +18,11 @@ def _first_choice(**kwargs: object) -> str:
 
 
 def test_balanced_manifests_are_generated() -> None:
-    expected = {"official_a2a_720": 720, "anp_540": 540, "langgraph_270": 270}
+    expected = {"master_cases": 540, "anp_cases": 450, "nlip_cases": 270}
     for split, count in expected.items():
-        data = json.loads((ROOT / "attacks/carddiff/transfer/splits" / f"{split}.json").read_text(encoding="utf-8"))
+        data = json.loads((ROOT / "attacks/carddiff/transfer_native" / f"{split}.json").read_text(encoding="utf-8"))
         assert len(data["cases"]) == count
-        assert len({case["case_id"] for case in data["cases"]}) == count
+        assert len({case["master_case_id"] for case in data["cases"]}) == count
 
 
 def test_canonical_view_cannot_include_private_case_fields() -> None:

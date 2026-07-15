@@ -23,8 +23,12 @@ dependencies = [
 [project.optional-dependencies]
 dev = ["pytest>=8.0.0"]
 defense-nemo = ["nemoguardrails==0.23.0"]
-transfer-langgraph = ["langgraph==0.6.11"]
-transfer-anp = ["anp[api]==0.8.8"]
+transfer-native = [
+  "anp[api]==0.8.8",
+  "nlip_sdk==0.1.2",
+  "nlip_server==0.1.2",
+  "nlip_client @ git+https://github.com/nlip-project/nlip_client.git@b91edb72a387882ecdc912d5949e707d4727b203",
+]
 
 [tool.setuptools.packages.find]
 include = ["attacks*", "defense*", "harness*", "sut*", "utils*", "prompts*"]
@@ -33,7 +37,7 @@ include = ["attacks*", "defense*", "harness*", "sut*", "utils*", "prompts*"]
 attacks = [
   "carddiff/*.json",
   "carddiff/*.jsonl",
-  "carddiff/transfer/**/*.json"
+  "carddiff/transfer_native/*.json"
 ]
 prompts = [
   "carddiff/*.md"

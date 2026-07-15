@@ -283,8 +283,8 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--manifest", type=Path,
-        default=ROOT / "attacks/carddiff/transfer/splits/official_a2a_720.json",
-        help="Frozen Official A2A manifest; B2 is deterministically excluded.",
+        default=ROOT / "attacks/carddiff/defense/nemo_official_a2a_630.json",
+        help="Frozen 630-case Official A2A defense manifest.",
     )
     parser.add_argument(
         "--guardrail-config", type=Path,

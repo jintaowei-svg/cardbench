@@ -1,10 +1,6 @@
-"""Independent CardDiff transferability Hosts."""
+"""Official A2A implementation retained by the main experiment."""
 
-from sut.transfer.anp_host import ANPCardDiffHostSUT
-from sut.transfer.langgraph_host import LangGraphCardDiffHostSUT
-from sut.transfer.source_host import MinimalReferenceTransferHostSUT
-
-__all__ = ["ANPCardDiffHostSUT", "LangGraphCardDiffHostSUT", "MinimalReferenceTransferHostSUT", "OfficialSDKCardDiffHostSUT"]
+__all__ = ["OfficialSDKCardDiffHostSUT"]
 
 
 def __getattr__(name: str):

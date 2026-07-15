@@ -15,16 +15,16 @@ ROOT = Path(__file__).resolve().parents[2]
 
 def test_official_a2a_defense_split_is_frozen_630() -> None:
     payload, cases, manifest_hash = _manifest_cases(
-        ROOT / "attacks/carddiff/transfer/splits/official_a2a_720.json"
+        ROOT / "attacks/carddiff/defense/nemo_official_a2a_630.json"
     )
-    assert payload["split_id"] == "official_a2a_720"
+    assert payload["manifest_id"] == "nemo_official_a2a_630"
     assert len(cases) == 630
-    assert manifest_hash == "6adee51fc98113d27dfa361b1375317d898b17c94a932a59817daa21f8c8a8b8"
+    assert manifest_hash == "1d8b3cc78aa2f994c46db16db03302405e20207e54b47c6d18c6957efc878fe3"
 
 
 def test_balanced_sample_selects_uniform_50_cases() -> None:
     _, cases, _ = _manifest_cases(
-        ROOT / "attacks/carddiff/transfer/splits/official_a2a_720.json"
+        ROOT / "attacks/carddiff/defense/nemo_official_a2a_630.json"
     )
     sample = _balanced_sample_cases(cases, 50)
     counts: dict[tuple[str, str], int] = {}

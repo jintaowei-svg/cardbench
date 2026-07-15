@@ -1,0 +1,5 @@
+anp[api]==0.8.8
+nlip_sdk==0.1.2
+nlip_server==0.1.2
+# nlip_client has no PyPI release; pin the audited upstream commit.
+nlip_client @ git+https://github.com/nlip-project/nlip_client.git@b91edb72a387882ecdc912d5949e707d4727b203

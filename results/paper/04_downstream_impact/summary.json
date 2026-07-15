@@ -1,0 +1,69 @@
+{
+  "by_attack": {
+    "A1": {
+      "dir": 1.0,
+      "impact_types": [
+        "confidentiality",
+        "integrity"
+      ],
+      "impacts": 85,
+      "trials": 85
+    },
+    "A2": {
+      "dir": 1.0,
+      "impact_types": [
+        "confidentiality"
+      ],
+      "impacts": 90,
+      "trials": 90
+    },
+    "A3": {
+      "dir": 1.0,
+      "impact_types": [
+        "confidentiality",
+        "integrity"
+      ],
+      "impacts": 90,
+      "trials": 90
+    },
+    "B1": {
+      "dir": 1.0,
+      "impact_types": [
+        "confidentiality"
+      ],
+      "impacts": 87,
+      "trials": 87
+    },
+    "B3": {
+      "dir": 1.0,
+      "impact_types": [
+        "availability",
+        "integrity"
+      ],
+      "impacts": 90,
+      "trials": 90
+    },
+    "C1": {
+      "dir": 1.0,
+      "impact_types": [
+        "confidentiality",
+        "integrity"
+      ],
+      "impacts": 89,
+      "trials": 89
+    },
+    "C2": {
+      "dir": 1.0,
+      "impact_types": [
+        "integrity"
+      ],
+      "impacts": 90,
+      "trials": 90
+    }
+  },
+  "dir": 1.0,
+  "impacts": 621,
+  "metric": "DIR",
+  "paper_section": "Downstream Impact Experiment",
+  "trials": 621
+}

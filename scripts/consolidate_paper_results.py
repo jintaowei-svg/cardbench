@@ -1,9 +1,7 @@
 """Build a canonical result tree that follows the paper's experiment sections.
 
-The repository contains raw batches, retries, repaired batches, smoke runs, and
-already-merged outputs.  This script does not delete those provenance sources.
-It selects the accepted batches, replaces only explicitly rerun cases, excludes
-the inactive B2 attack, and writes one canonical JSONL per paper experiment.
+Cross-protocol results are read only from the native transfer experiment. Old
+source-host, ANP wrapper, and LangGraph runs are never canonical inputs.
 """
 
 from __future__ import annotations
@@ -12,6 +10,7 @@ import argparse
 import csv
 import hashlib
 import json
+import shutil
 from collections import defaultdict
 from pathlib import Path
 from typing import Any, Iterable
@@ -20,6 +19,16 @@ from typing import Any, Iterable
 ROOT = Path(__file__).resolve().parents[1]
 ACTIVE_ATTACKS = ("A1", "A2", "A3", "B1", "B3", "C1", "C2")
 DOMAINS = ("travel", "healthcare", "finance")
+OFFICIAL_A2A_MODELS = (
+    "claude-sonnet-5",
+    "deepseek-v4-flash",
+    "gemini-2.5-flash",
+    "gemini-3.5-flash",
+    "gpt-5-mini",
+    "gpt-5.4-mini",
+    "gpt-5.6-Luna",
+    "grok-4.5",
+)
 
 
 def read_jsonl(path: Path) -> list[dict[str, Any]]:
@@ -57,13 +66,22 @@ def attack_domain_variant(case_id: str) -> tuple[str, str, str]:
     return parts[1], parts[2].lower(), parts[-1].removeprefix("V")
 
 
+def row_case_id(row: dict[str, Any]) -> str:
+    for key in ("case_id", "source_case_id"):
+        value = row.get(key)
+        if value:
+            return str(value)
+    raise ValueError("Result row does not expose case_id or source_case_id")
+
+
 def canonical_sort_key(row: dict[str, Any]) -> tuple[str, str, str, str]:
-    attack, domain, variant = attack_domain_variant(str(row["case_id"]))
-    return attack, domain, variant, str(row["case_id"])
+    case_id = row_case_id(row)
+    attack, domain, variant = attack_domain_variant(case_id)
+    return attack, domain, variant, case_id
 
 
 def validate_unique(rows: list[dict[str, Any]], expected: int, label: str) -> None:
-    ids = [str(row["case_id"]) for row in rows]
+    ids = [row_case_id(row) for row in rows]
     duplicates = len(ids) - len(set(ids))
     if duplicates:
         raise ValueError(f"{label}: {duplicates} duplicate case ids remain")
@@ -83,10 +101,10 @@ def summarize_asr(rows: list[dict[str, Any]]) -> dict[str, Any]:
     successes = 0
     error_records = 0
     for row in rows:
-        attack, domain, variant = attack_domain_variant(str(row["case_id"]))
+        attack, domain, variant = attack_domain_variant(row_case_id(row))
         success = int(bool(row.get("success")))
         successes += success
-        error_records += int(bool(row.get("errors")))
+        error_records += int(bool(row.get("errors") or row.get("error")))
         for name, key in (
             ("by_attack", attack),
             ("by_domain", domain),
@@ -172,57 +190,40 @@ def source_record(path: Path, role: str) -> dict[str, Any]:
 
 def main_and_cross_model(output: Path) -> tuple[dict[str, Any], list[dict[str, Any]]]:
     inventory: list[dict[str, Any]] = []
-    main_rows, main_sources = selected_ledger_rows(
-        ROOT / ".codex_work/experiment_planning/run_ledger.csv"
-    )
-    main_ledger = ROOT / ".codex_work/experiment_planning/run_ledger.csv"
+    result_root = ROOT / "results/official_a2a_main"
+    model_rows: dict[str, list[dict[str, Any]]] = {}
+    for model in OFFICIAL_A2A_MODELS:
+        details_path = result_root / model / "details.jsonl"
+        summary_path = result_root / model / "summary.json"
+        rows = sorted(read_jsonl(details_path), key=canonical_sort_key)
+        validate_unique(rows, 3150, f"Official A2A {model}")
+        model_rows[model] = rows
+        inventory.extend(
+            (
+                source_record(details_path, "official_a2a_model_details"),
+                source_record(summary_path, "official_a2a_model_summary"),
+            )
+        )
+
+    main_rows = model_rows["gpt-5-mini"]
     main_dir = output / "01_main"
     write_jsonl(main_dir / "details.jsonl", main_rows)
     main_summary = summarize_asr(main_rows)
     main_summary.update({"model": "gpt-5-mini", "paper_section": "Main Results"})
     write_json(main_dir / "summary.json", main_summary)
-    inventory.extend(source_record(path, "selected_main_batch") for path in main_sources)
-    inventory.append(source_record(main_ledger, "main_batch_selection_ledger"))
-
-    cross_specs: list[tuple[str, list[dict[str, Any]], list[Path]]] = []
-    luna_paths = [
-        ROOT / ".codex_work/carddiff_full_results.jsonl",
-        ROOT / ".codex_work/gpt56_luna_resume_307_3600_results.jsonl",
-    ]
-    luna_rows, luna_sources = active_rows(luna_paths, "gpt-5.6-Luna")
-    cross_specs.append(("gpt-5.6-Luna", luna_rows, luna_sources))
-
-    for model, ledger in (
-        ("gpt-5.4-mini", ROOT / ".codex_work/gpt54mini_perturbed3600/gpt54mini_perturbed3600_ledger.csv"),
-        ("gemini-2.5-flash", ROOT / ".codex_work/gemini25flash_perturbed3600/gemini25flash_perturbed3600_ledger.csv"),
-    ):
-        rows, sources = selected_ledger_rows(ledger)
-        cross_specs.append((model, rows, sources))
-        inventory.append(source_record(ledger, "cross_model_batch_selection_ledger"))
-
-    server_root = ROOT / ".codex_work/server_sync_20260710_125502/CardDiffBench/.codex_work/runs"
-    for model, relative in (
-        (
-            "gemini-3.5-flash",
-            "full_gemini35flash_20260709_214230/results/full_gemini35flash_combined.jsonl",
-        ),
-        (
-            "claude-haiku-4.5",
-            "full_claude_haiku45_20260709_234523/results/full_claude_haiku45_combined.jsonl",
-        ),
-    ):
-        rows, sources = active_rows([server_root / relative], model)
-        cross_specs.append((model, rows, sources))
 
     combined: list[dict[str, Any]] = []
     model_summaries: dict[str, Any] = {}
-    for model, rows, sources in cross_specs:
+    for model in OFFICIAL_A2A_MODELS:
+        rows = model_rows[model]
         for row in rows:
             combined.append({"paper_model": model, **row})
         model_summaries[model] = summarize_asr(rows)
-        inventory.extend(source_record(path, "selected_cross_model_source") for path in sources)
-    if len(combined) != 5 * 3150:
-        raise ValueError(f"cross-model: expected 15750 rows, found {len(combined)}")
+    expected_cross_trials = len(OFFICIAL_A2A_MODELS) * 3150
+    if len(combined) != expected_cross_trials:
+        raise ValueError(
+            f"cross-model: expected {expected_cross_trials} rows, found {len(combined)}"
+        )
     cross_dir = output / "02_cross_model"
     write_jsonl(cross_dir / "details.jsonl", combined)
     write_json(
@@ -241,55 +242,74 @@ def main_and_cross_model(output: Path) -> tuple[dict[str, Any], list[dict[str, A
 def transferability(output: Path) -> tuple[dict[str, Any], list[dict[str, Any]]]:
     inventory: list[dict[str, Any]] = []
     transfer_dir = output / "03_transferability"
+    applicability_path = ROOT / "attacks/carddiff/transfer_native/applicability.json"
+    applicability = json.loads(applicability_path.read_text(encoding="utf-8"))
+    if applicability.get("frozen") is not True:
+        raise ValueError("Native transfer applicability is not frozen")
 
-    original_path = ROOT / ".codex_work/official_a2a_l3_full/details.jsonl"
-    rerun_path = ROOT / "remote_results/official_a2a_l3_rerun_nonjudgment_20260711/details.jsonl"
-    original = {
-        str(row["case_id"]): {"result_phase": "original", **row}
-        for row in read_jsonl(original_path)
-        if row.get("attack_type") in ACTIVE_ATTACKS
-    }
-    reruns = read_jsonl(rerun_path)
-    unknown = sorted({str(row["case_id"]) for row in reruns} - set(original))
-    if unknown:
-        raise ValueError(f"Official A2A rerun contains {len(unknown)} unknown case ids")
-    for row in reruns:
-        original[str(row["case_id"])] = {"result_phase": "rerun", **row}
-    official_rows = sorted(original.values(), key=canonical_sort_key)
-    validate_unique(official_rows, 630, "Official A2A transfer")
+    official_path = ROOT / "results/transfer_native/official_a2a_reference/details.jsonl"
+    official_rows = sorted(read_jsonl(official_path), key=canonical_sort_key)
+    validate_unique(official_rows, 540, "Official A2A native reference")
     write_jsonl(transfer_dir / "official_a2a.jsonl", official_rows)
     official_summary = summarize_asr(official_rows)
-    official_summary.update({"target": "Official A2A", "replaced_cases": len(reruns)})
+    official_summary.update({"target": "Official A2A", "execution": "extracted_from_main_results"})
     write_json(transfer_dir / "official_a2a_summary.json", official_summary)
-    inventory.extend(
-        [source_record(original_path, "official_a2a_original"), source_record(rerun_path, "official_a2a_replacements")]
-    )
+    inventory.extend([source_record(official_path, "official_a2a_reference"), source_record(applicability_path, "frozen_applicability")])
 
-    langgraph_path = ROOT / "remote_results/langgraph_transfer_20260710/langgraph_timeout_retry/langgraph_270_timeout_repaired.jsonl"
-    langgraph_rows = [
-        row
-        for row in read_jsonl(langgraph_path)
-        if attack_domain_variant(str(row["case_id"]))[0] in ("C1", "C2")
-    ]
-    langgraph_rows = sorted(langgraph_rows, key=canonical_sort_key)
-    validate_unique(langgraph_rows, 180, "LangGraph transfer")
-    write_jsonl(transfer_dir / "langgraph.jsonl", langgraph_rows)
-    langgraph_summary = summarize_asr(langgraph_rows)
-    langgraph_summary.update({"target": "LangGraph", "applicable_attacks": ["C1", "C2"]})
-    write_json(transfer_dir / "langgraph_summary.json", langgraph_summary)
-    inventory.append(source_record(langgraph_path, "langgraph_timeout_repaired"))
+    targets: dict[str, Any] = {"official_a2a": official_summary}
+    expected_trials = {
+        protocol: 90 * sum(1 for status in applicability[protocol].values() if status == "applicable")
+        for protocol in ("anp", "nlip")
+    }
+    for protocol, expected in expected_trials.items():
+        path = ROOT / f"results/transfer_native/{protocol}/details.jsonl"
+        if not path.is_file():
+            targets[protocol] = {
+                "status": "formal_run_pending",
+                "expected_trials": expected,
+                "applicable_attacks": [attack for attack, status in applicability[protocol].items() if status == "applicable"],
+            }
+            continue
+        rows = sorted(read_jsonl(path), key=lambda row: str(row.get("target_case_id", "")))
+        validate_unique(rows, expected, f"{protocol} native results")
+        invalid_rows = [row for row in rows if row.get("native_execution_valid") is False]
+        native_rows = [row for row in rows if row.get("native_execution_valid") is not None]
+        non_dispatched_rows = [row for row in rows if row.get("native_execution_valid") is None]
+        protocol_summary = summarize_asr(rows)
+        protocol_summary.update(
+            {
+                "target": protocol.upper(),
+                "native_execution_rate": (
+                    (len(native_rows) - len(invalid_rows)) / len(native_rows)
+                    if native_rows
+                    else 0.0
+                ),
+                "invalid_native_execution_records": len(invalid_rows),
+                "invalid_source_case_ids": [row_case_id(row) for row in invalid_rows],
+                "non_dispatched_records": len(non_dispatched_rows),
+                "status": "complete" if not invalid_rows else "evidence_repair_required",
+                "formal_comparison_eligible": not invalid_rows,
+            }
+        )
+        output_name = (
+            f"{protocol}_summary.json"
+            if not invalid_rows
+            else f"{protocol}_diagnostic_summary.json"
+        )
+        if not invalid_rows:
+            write_jsonl(transfer_dir / f"{protocol}.jsonl", rows)
+        write_json(transfer_dir / output_name, protocol_summary)
+        targets[protocol] = protocol_summary
+        role = f"{protocol}_native_formal" if not invalid_rows else f"{protocol}_native_diagnostic"
+        inventory.append(source_record(path, role))
 
     summary = {
         "paper_section": "Transferability Experiment",
-        "targets": {
-            "official_a2a": official_summary,
-            "langgraph": langgraph_summary,
-            "anp": {
-                "status": "raw_results_missing_locally",
-                "paper_applicable_attacks": ["A1", "A2", "B1", "B3", "C1", "C2"],
-                "note": "The paper table contains ANP aggregates, but no ANP trial JSONL was found locally; no synthetic rows were created.",
-            },
-        },
+        "common_attacks": ["A3", "C1"],
+        "targets": targets,
+        "excluded_legacy_targets": ["source", "langgraph", "anp_wrapper"],
+        "overall_asr": None,
+        "overall_asr_reason": "Protocol-specific attack sets differ.",
     }
     write_json(transfer_dir / "summary.json", summary)
     return summary, inventory
@@ -338,6 +358,40 @@ def downstream(output: Path) -> tuple[dict[str, Any], list[dict[str, Any]]]:
     return summary, [source_record(source, "selected_downstream_final")]
 
 
+def defense(output: Path) -> tuple[dict[str, Any], list[dict[str, Any]]]:
+    source_dir = ROOT / "defense/nemo/results"
+    raw_path = source_dir / "raw/nemo_official_a2a_630.jsonl"
+    summary_path = source_dir / "summary/nemo_official_a2a_630_summary.json"
+    table_path = source_dir / "summary/defense_table.csv"
+    rows = read_jsonl(raw_path)
+    validate_unique(rows, 630, "NeMo defense")
+    summary = json.loads(summary_path.read_text(encoding="utf-8"))
+    overall = summary.get("overall", {})
+    if overall.get("planned") != 630:
+        raise ValueError("NeMo defense summary does not cover the complete 630-case split")
+
+    target = output / "05_defense"
+    write_jsonl(target / "details.jsonl", rows)
+    write_json(target / "summary.json", summary)
+    shutil.copyfile(table_path, target / "defense_table.csv")
+    write_json(
+        target / "status.json",
+        {
+            "status": "complete",
+            "planned_trials": overall["planned"],
+            "completed_trials": overall["completed"],
+            "infrastructure_errors": overall["errors"],
+            "successes": overall["successes"],
+            "planned_case_asr": overall["planned_case_asr"],
+        },
+    )
+    return summary, [
+        source_record(raw_path, "nemo_defense_raw"),
+        source_record(summary_path, "nemo_defense_summary"),
+        source_record(table_path, "nemo_defense_table"),
+    ]
+
+
 def legacy_inventory() -> list[dict[str, str]]:
     return [
         {"path": "results/downstream/official_a2a_llm_rqd1_v2_final", "status": "selected_canonical_source"},
@@ -359,12 +413,22 @@ def build(output: Path) -> None:
     resolved = output.resolve()
     if ROOT.resolve() not in resolved.parents:
         raise ValueError(f"Output must stay inside the repository: {resolved}")
+    for child in ("01_main", "02_cross_model", "03_transferability", "04_downstream_impact", "05_defense"):
+        target = output / child
+        if target.exists():
+            shutil.rmtree(target)
+    for child in ("manifest.json", "README.md"):
+        target = output / child
+        if target.exists():
+            target.unlink()
     output.mkdir(parents=True, exist_ok=True)
     main_summary, inventory = main_and_cross_model(output)
     transfer_summary, transfer_sources = transferability(output)
     downstream_summary, downstream_sources = downstream(output)
+    defense_summary, defense_sources = defense(output)
     inventory.extend(transfer_sources)
     inventory.extend(downstream_sources)
+    inventory.extend(defense_sources)
 
     manifest = {
         "layout_version": 1,
@@ -372,36 +436,38 @@ def build(output: Path) -> None:
         "paper_domains": list(DOMAINS),
         "canonical_experiments": {
             "01_main": {"trials": main_summary["trials"], "model": "gpt-5-mini"},
-            "02_cross_model": {"trials": 15750, "models": 5},
+            "02_cross_model": {
+                "trials": len(OFFICIAL_A2A_MODELS) * 3150,
+                "models": len(OFFICIAL_A2A_MODELS),
+            },
             "03_transferability": {
                 "official_a2a_trials": transfer_summary["targets"]["official_a2a"]["trials"],
-                "langgraph_trials": transfer_summary["targets"]["langgraph"]["trials"],
                 "anp_status": transfer_summary["targets"]["anp"]["status"],
+                "nlip_status": transfer_summary["targets"]["nlip"]["status"],
             },
             "04_downstream_impact": {"trials": downstream_summary["trials"]},
-            "05_defense": {"status": "no_local_results_and_no_result_table_in_paper"},
+            "05_defense": {
+                "status": "complete",
+                "planned_trials": defense_summary["overall"]["planned"],
+                "planned_case_asr": defense_summary["overall"]["planned_case_asr"],
+            },
         },
         "selected_sources": inventory,
         "legacy_results": legacy_inventory(),
     }
     write_json(output / "manifest.json", manifest)
-    write_json(
-        output / "05_defense/status.json",
-        {
-            "status": "not_available",
-            "note": "The supplied paper describes a defense experiment design but contains no defense result table, and no local defense result run was found.",
-        },
-    )
     readme = """# Canonical paper results
 
 This directory is generated by `python scripts/consolidate_paper_results.py`.
 It is the local single source of truth for the experiment structure in the paper.
 
-- `01_main/`: accepted gpt-5-mini batches, B2 excluded (3,150 trials).
-- `02_cross_model/`: five comparison models in one JSONL, B2 excluded (15,750 trials).
-- `03_transferability/`: repaired Official A2A and LangGraph results. ANP is marked missing because no raw local JSONL was found.
+- `01_main/`: completed Official A2A gpt-5-mini run, B2 excluded (3,150 trials).
+- `02_cross_model/`: eight complete Official A2A models, B2 excluded (25,200 trials).
+- `03_transferability/`: Official A2A reference extracted from the main run,
+  plus protocol-native ANP/NLIP results. Runs that fail native-evidence checks
+  are diagnostic only and are not eligible for formal comparison.
 - `04_downstream_impact/`: the final 621-case LLM downstream result.
-- `05_defense/`: explicit status only; the supplied paper has a design but no result table.
+- `05_defense/`: the complete 630-case NeMo Guardrails result and table.
 
 Raw runs and retries remain in their original locations for provenance. Use
 `manifest.json` to see exactly which source files were selected and which older

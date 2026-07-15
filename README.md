@@ -124,12 +124,23 @@ python scripts/generate_carddiff_perturbed_cases.py --variant-ids 001,002,003
 ## NeMo Guardrails Defense
 
 The optional defense experiment deploys NVIDIA NeMo Guardrails as one generic
-input gateway before the unchanged Official A2A Host. It uses the frozen
-630-case split (the Official A2A manifest excluding B2), preserves the original
-event-level scorer, and reports Guardrail errors as non-judgments.
+input gateway before the unchanged Official A2A Host. It uses the dedicated
+`attacks/carddiff/defense/nemo_official_a2a_630.json` manifest, preserves the
+original event-level scorer, and reports Guardrail errors as non-judgments.
 
 See [the NeMo defense experiment guide](docs/nemo_defense.md) for the pinned
 environment, seven-case dry run, full run, resume, and aggregation commands.
+
+## Cross-Protocol Transferability
+
+The current transfer experiment reuses the completed Official A2A main results
+and runs only protocol-native ANP and NLIP counterparts. The old source-host,
+ANP wrapper, and LangGraph targets are not formal transfer targets and are not
+read by canonical aggregation.
+
+See [the native transfer experiment guide](docs/transfer_native.md) for the
+frozen applicability matrix, SDK gates, case construction, formal commands,
+required evidence, and aggregation rules.
 
 ## Validation
 

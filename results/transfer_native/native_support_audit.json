@@ -1,0 +1,64 @@
+{
+  "anp": {
+    "A2": {
+      "evidence": [
+        {
+          "check": "openanp_server_api",
+          "passed": true
+        },
+        {
+          "check": "remote_agent_discovery",
+          "passed": true
+        },
+        {
+          "check": "generated_agent_description",
+          "passed": true
+        },
+        {
+          "check": "generated_openrpc_and_jsonrpc",
+          "passed": true
+        }
+      ],
+      "sdk_version": "0.8.8",
+      "status": "applicable"
+    },
+    "C2": {
+      "evidence": [
+        {
+          "check": "native_media_or_attachment_object",
+          "exports": [],
+          "passed": false
+        }
+      ],
+      "reason": "SDK lacks a native attachment/MIME result object",
+      "sdk_version": "0.8.8",
+      "status": "not_applicable"
+    }
+  },
+  "model_called": false,
+  "nlip": {
+    "B3": {
+      "evidence": [
+        {
+          "check": "sdk_and_server_installed",
+          "passed": true
+        },
+        {
+          "check": "native_websocket_text_and_binary_client",
+          "passed": false
+        },
+        {
+          "check": "native_cbor_codec",
+          "passed": false
+        }
+      ],
+      "reason": "Python SDK/client lacks WebSocket binary+CBOR and text+JSON dual paths",
+      "sdk_versions": {
+        "nlip_sdk": "0.1.2",
+        "nlip_server": "0.1.2"
+      },
+      "status": "not_applicable"
+    }
+  },
+  "schema_version": "carddiff-native-support-audit-v1"
+}

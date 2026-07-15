@@ -3,40 +3,39 @@
 Run:
 
 ```powershell
+python scripts/extract_official_a2a_reference.py
 python scripts/consolidate_paper_results.py
 ```
 
-The command builds `results/paper/`, organized in the same order as the paper:
-main results, cross-model matrix, transferability, downstream impact, and
-defense status. It intentionally excludes B2, which is retained in source data
-but inactive in the supplied paper.
+The canonical paper tree remains `results/paper/`. Main Experiment and the
+Cross-Model Matrix are read exclusively from `results/official_a2a_main`.
+The matrix contains the eight complete 3,150-case model runs; the
+`claude-haiku-4.5/smoke` directory is excluded. Cross-Protocol Transferability
+has three valid targets:
 
-Selection rules are deliberately conservative:
+- Official A2A: 540 records are selected from the completed gpt-5-mini main
+  run by exact `source_case_id`; the model and Official A2A Host are not rerun.
+- ANP: 450 new protocol-native trials over A2, A3, B1, B3, and C1.
+- NLIP: 270 new protocol-native trials over A3, C1, and C2.
 
-1. For gpt-5-mini, gpt-5.4-mini, and gemini-2.5-flash, the accepted batch named
-   by each run ledger is selected. This prevents abandoned or partial reruns
-   from overwriting accepted results.
-2. The two non-overlapping gpt-5.6-Luna segments are concatenated.
-3. The complete gemini-3.5-flash and claude-haiku-4.5 server results are used.
-4. Official A2A starts from the 720-case original run, excludes B2, and replaces
-   exactly the 72 explicitly rerun non-judgment cases.
-5. LangGraph uses the already repaired 270-case file and keeps only C1 and C2,
-   the active attacks applicable to that target.
-6. Downstream impact uses the final 621-case merged result. Pilot, sanity,
-   incomplete, non-C2, and C2-only constituent directories are recorded as
-   provenance but are not counted again.
+The frozen Native Support Audit marks ANP C2 and NLIP B3 not applicable. The
+three-way common comparison is therefore A3 + C1 (180 matched cases per
+protocol). A2 and B1 are reported separately for the A2A–ANP comparison when
+ANP formal results are present. No overall ASR is computed across unequal
+attack sets.
 
-Every selected source is recorded with a SHA-256 digest in
-`results/paper/manifest.json`. Raw inputs are left untouched, so the canonical
-files are reproducible without losing rerun provenance.
+`source_720`, the old ANP wrapper, and LangGraph are excluded from canonical
+aggregation. Historical raw result directories may remain only as provenance;
+the canonical scripts never read them.
 
-The local data has two explicit gaps. No ANP trial-level JSONL was found even
-though the paper contains aggregate ANP values, and no defense result run or
-result table was found. The generated layout marks both gaps instead of
-inventing trial records.
+Every dispatched native record must have a complete required event sequence and
+a `native_execution_valid` value of `true`. Parse failures, refusals, and
+incomplete safe decisions remain trial outcomes with no dispatch and a null
+native-execution status. Formal aggregation fails closed on a dispatched record
+with missing evidence, a duplicate case, non-frozen applicability, protocol
+mismatch, or case-alignment mismatch.
 
-There is also one table-level inconsistency in the supplied manuscript text.
-The final 621-case downstream JSONL records integrity impacts for A3 but not B1;
-the supplied table marks the reverse. The canonical summary follows the raw
-trial evidence: A3 has confidentiality and integrity impacts, while B1 has
-confidentiality impact only.
+The NeMo defense section is read from the complete 630-record run under
+`defense/nemo/results/`. Its canonical table uses planned-case ASR, so the seven
+infrastructure errors remain in the denominator and are never counted as
+successful defenses or successful attacks.
