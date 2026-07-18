@@ -4,6 +4,7 @@ import argparse
 import importlib
 import json
 import sys
+from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -16,7 +17,7 @@ import yaml
 
 from harness.downstream.impact_oracles import classify_impact
 from harness.downstream.llm_workers import worker_registry_from_config
-from harness.downstream.trace_loader import load_manifest
+from harness.downstream.trace_loader import load_manifest_payload
 from scripts.summarize_downstream_impact import summarize
 
 
@@ -28,8 +29,10 @@ def _load(path: str) -> Any:
 def run(config_path: Path) -> dict[str, Any]:
     config = yaml.safe_load(config_path.read_text(encoding="utf-8"))
     manifest_path = Path(config["manifest"]["path"])
-    cases = load_manifest(manifest_path)
+    manifest_payload = load_manifest_payload(manifest_path)
+    cases = list(manifest_payload["cases"])
     cases = _select_cases(cases, config["manifest"].get("selection"))
+    expected_counts = dict(Counter(case["attack_type"] for case in cases))
     out_dir = Path(config["output"]["directory"])
     out_dir.mkdir(parents=True, exist_ok=True)
     host = _load(config["sut"]["carddiff_host"])(**config["sut"].get("kwargs", {}))
@@ -60,7 +63,7 @@ def run(config_path: Path) -> dict[str, Any]:
         for worker in workers.values():
             worker.close()
 
-    summary = summarize(rows)
+    summary = summarize(rows, expected_counts=expected_counts)
     (out_dir / "summary.json").write_text(
         json.dumps(summary, indent=2, sort_keys=True) + "\n", encoding="utf-8"
     )
@@ -80,6 +83,9 @@ def run(config_path: Path) -> dict[str, Any]:
         "mode": config["mode"],
         "timestamp": datetime.now(timezone.utc).isoformat(),
         "manifest": str(manifest_path),
+        "manifest_mode": manifest_payload.get("mode"),
+        "source_results": manifest_payload.get("source_results"),
+        "source_counts": manifest_payload.get("source_counts"),
         "cases": len(cases),
     }
     (out_dir / "metadata.json").write_text(
@@ -129,7 +135,7 @@ def _run_case(*, item: dict[str, Any], host: Any, env_cls: Any,
             worker_infra = any(
                 x["event_type"] == "worker_infrastructure_error" for x in env.impact_events
             )
-            if (result.error_message and item["attack_type"] == "B3" and
+            if (result.error_message and item["attack_type"] == "B2" and
                     not worker_infra and not _is_transient(result.error_message)):
                 env.impact_recorder.record(
                     "task_unavailable", "carddiff-host", error=result.error_message
@@ -149,6 +155,7 @@ def _run_case(*, item: dict[str, Any], host: Any, env_cls: Any,
     impact_types = classify_impact(events, item)
     return {
         "case_id": item["case_id"],
+        "decision_source": item["decision_source"],
         "attack_type": item["attack_type"],
         "scenario": item["scenario"],
         "variant": item["variant"],

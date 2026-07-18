@@ -1,0 +1,18 @@
+{
+  "cases": 140,
+  "experiment_id": "official_a2a_llm_downstream_recorded_v3_smoke",
+  "manifest": "attacks\\carddiff\\downstream\\official_a2a_recorded_smoke_140.json",
+  "manifest_mode": "recorded_trace_capability_scoped_llm",
+  "mode": "recorded_trace_capability_scoped_llm",
+  "source_counts": {
+    "A1": 450,
+    "A2": 450,
+    "A3": 450,
+    "B1": 450,
+    "B2": 450,
+    "C1": 450,
+    "C2": 450
+  },
+  "source_results": "results\\paper\\01_main\\details.jsonl",
+  "timestamp": "2026-07-17T14:21:49.290857+00:00"
+}

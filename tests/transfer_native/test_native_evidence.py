@@ -12,5 +12,5 @@ def test_evidence_validation_fails_closed() -> None:
     assert valid is False and len(missing) == 1
 
 
-def test_nlip_b3_requires_extra_wire_events() -> None:
-    assert required_events("nlip", "B3") > required_events("nlip", "C1")
+def test_nlip_b2_requires_extra_wire_events() -> None:
+    assert required_events("nlip", "B2") > required_events("nlip", "C1")

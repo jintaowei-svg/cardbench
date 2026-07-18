@@ -157,6 +157,16 @@ results/
 output/
 .pytest_cache/
 
+# Local Codex sync/auth state (never publish credentials or workspace mirrors)
+.codex/
+.codex_server_sync/
+.codex_ssh_askpass.cmd
+.code_commit_sha
+
+# Runtime logs and process markers
+logs/
+*.pid
+
 # Keep the repository's checked-in site/ directory trackable.
 # mkdocs users may re-add /site here if it becomes generated output.
 

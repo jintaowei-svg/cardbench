@@ -13,6 +13,6 @@ def native_codec_support() -> dict[str, bool]:
     }
 
 
-def b3_gate_passes() -> bool:
+def b2_gate_passes() -> bool:
     support = native_codec_support()
     return all(support[key] for key in ("websocket_text", "websocket_binary", "cbor"))

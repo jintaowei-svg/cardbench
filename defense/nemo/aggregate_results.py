@@ -10,7 +10,7 @@ from pathlib import Path
 from typing import Any
 
 
-ATTACKS = ("A1", "A2", "A3", "B1", "B3", "C1", "C2")
+ATTACKS = ("A1", "A2", "A3", "B1", "B2", "C1", "C2")
 DOMAINS = ("travel", "healthcare", "finance")
 
 

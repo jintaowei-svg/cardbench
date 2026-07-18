@@ -1,0 +1,93 @@
+schema_version: carddiff-transfer-campaign-v1
+status: awaiting_user_approval
+name: migration_150_per_attack
+
+source_population:
+  cases_per_attack: 450
+  domains: [finance, healthcare, travel]
+  variants: ["001", "002", "003"]
+  cases_per_domain_variant: 50
+
+planned_sample:
+  cases_per_attack: 150
+  interpretation: stratified_subsample_not_full_source_population
+  selection: deterministic_balanced_across_domain_x_variant
+  note: The repository contains 450 source cases per attack. A 150-case campaign is one third of that population.
+
+host_policy:
+  model: gpt-5-mini
+  temperature: 0.0
+  max_retries: 1
+  strict_json_parsing: true
+  parse_failure_fallback: false
+  interface_fallback: false
+  capability_fallback: false
+  attack_specific_prompt: false
+  model_specific_prompt: false
+  event_level_oracle: true
+  api_base_env: SUT_API_BASE
+  api_key_env: SUT_API_KEY
+  credentials_must_not_be_stored_in_config: true
+
+decision_schedule:
+  default_llm_decisions_per_trial: 1
+  A3_llm_decisions_per_trial: 2
+  alignment_basis: one decision per authentication phase, matching Official A2A
+
+targets:
+  anp:
+    kind: protocol
+    config: configs/transfer_native/anp.yaml
+    runtime: anp[api]==0.8.8
+    attacks: [A2, A3, B1, B2, C1]
+    planned_trials: 750
+    planned_llm_calls: 900
+  nlip:
+    kind: protocol
+    config: configs/transfer_native/nlip.yaml
+    runtime: [nlip_sdk==0.1.2, nlip_server==0.1.2, nlip_client@b91edb72a387882ecdc912d5949e707d4727b203]
+    attacks: [A3, C1, C2]
+    planned_trials: 450
+    planned_llm_calls: 600
+  agntcy:
+    kind: ecosystem_native
+    config: configs/transfer_native/agntcy.yaml
+    runtime: [agntcy-dir==1.5.0, a2a-sdk==0.3.26]
+    attacks: [A2, B2]
+    planned_trials: 300
+    planned_llm_calls: 300
+  autogen:
+    kind: framework
+    config: configs/transfer_framework/autogen.yaml
+    runtime: [autogen-agentchat==0.7.5, autogen-core==0.7.5]
+    attacks: [A3, C1, C2]
+    removed_attacks: [B1]
+    planned_trials: 450
+    planned_llm_calls: 600
+  langgraph:
+    kind: framework
+    config: configs/transfer_framework/langgraph.yaml
+    runtime: [langgraph==1.2.9, langchain-core==1.4.9]
+    attacks: [A3, B1, C1, C2]
+    planned_trials: 600
+    planned_llm_calls: 750
+
+totals:
+  planned_trials: 2550
+  planned_llm_calls: 3150
+  official_a2a_reference_calls: 0
+
+reporting:
+  primary_metric: asr_planned
+  secondary_metrics: [asr_judged, completion_rate]
+  canonical_attack_identifier: B2
+  table_panels:
+    protocol_transfer: [ANP, NLIP]
+    ecosystem_framework_transfer: [AGNTCY, AutoGen, LangGraph]
+
+preflight:
+  generate_150_case_manifests_after_approval: true
+  run_one_smoke_per_target_attack_after_approval: true
+  formal_run_requires_smoke_pass: true
+  aggregate_expected_per_attack: 150
+  semantic_revision_reruns_required: [anp.A3, nlip.A3, nlip.C1, autogen.A3]

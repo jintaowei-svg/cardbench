@@ -64,9 +64,14 @@ class NLIPNativeEnvironment(NativeProtocolEnvironment):
             )
             for operation in operations
         }
+        token_identities = {
+            str(step["token_label"]): str(step["identity_label"])
+            for step in native["identity_sequence"]
+        }
         application = build_nlip_application(
             authorization,
             {"format": native["response_format"], "subformat": native["response_subformat"]},
+            token_identities,
         )
         app = create_app(application)
         with socket.socket() as probe:
@@ -113,7 +118,7 @@ class NLIPNativeEnvironment(NativeProtocolEnvironment):
         message.add_authentication_token(str(step["token_label"]))
         return message
 
-    def execute(self, decision: dict[str, Any]) -> NativeExecution:
+    def execute(self, decision: dict[str, Any] | list[dict[str, Any] | None]) -> NativeExecution:
         native = self.case["native"]
         facts: dict[str, Any] = dict(native.get("oracle_facts", {}))
         response_payload: dict[str, Any] | None = None
@@ -121,6 +126,11 @@ class NLIPNativeEnvironment(NativeProtocolEnvironment):
             raise RuntimeError("NLIP peer was not initialized.")
         base_url = self.peer_url
         for step_index, step in enumerate(native["identity_sequence"]):
+            phase_decision = (
+                decision[step_index]
+                if isinstance(decision, list) and step_index < len(decision)
+                else decision
+            )
             identity = str(step["identity_label"])
             session_key = str(step.get("session_key", identity))
             if step.get("resume_session") and session_key in self.clients:
@@ -134,12 +144,14 @@ class NLIPNativeEnvironment(NativeProtocolEnvironment):
             self.evidence.record("nlip_session_created_or_resumed", session_key=session_key, owner=owner)
             self.evidence.record("nlip_identity_bound", identity=identity, session_key=session_key)
             operation = str(native["operation"])
-            if self.case["attack_type"] != "A3" or step_index == len(native["identity_sequence"]) - 1:
-                if decision.get("capability_id") is None or decision.get("interface_index") is None:
+            if phase_decision is not None:
+                if phase_decision.get("capability_id") is None or phase_decision.get("interface_index") is None:
                     raise ValueError(
                         "NLIP dispatch requires explicit capability_id and interface_index; fallback is disabled."
                     )
-                operation = str(decision["capability_id"])
+                operation = str(phase_decision["capability_id"])
+            else:
+                continue
             message = self._message(step, operation)
             self.evidence.record(
                 "nlip_sdk_message_constructed",
@@ -179,14 +191,16 @@ class NLIPNativeEnvironment(NativeProtocolEnvironment):
                 format=_enum_value(response.format),
                 subformat=_enum_value(response.subformat),
             )
-            host_accept = bool(decision.get("accept_output"))
+            host_accept = bool(phase_decision.get("accept_output"))
             self.evidence.record("nlip_output_policy_applied", accepted=host_accept)
             response_payload = response.to_dict()
             sensitive = operation == native.get("sensitive_operation")
             returned_type = f"{_enum_value(response.format)}/{_enum_value(response.subformat)}"
             facts.update(
                 {
-                    "current_identity": identity,
+                    "current_identity": str(
+                        server_evidence.get("authenticated_identity", identity)
+                    ),
                     "cached_state_owner": owner,
                     "privileged_operation_attempted": sensitive,
                     "sensitive_native_request_sent": sensitive,

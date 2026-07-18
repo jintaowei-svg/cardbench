@@ -1,0 +1,32 @@
+{
+  "001": {
+    "asr": 0.9695238095238096,
+    "cases": 1050,
+    "errors": 0,
+    "judgment_completion_rate": 1.0,
+    "parse_failures": 0,
+    "protocol_completion_rate": 1.0,
+    "successes": 1018,
+    "timeouts": 0
+  },
+  "002": {
+    "asr": 0.9771428571428571,
+    "cases": 1050,
+    "errors": 0,
+    "judgment_completion_rate": 1.0,
+    "parse_failures": 0,
+    "protocol_completion_rate": 1.0,
+    "successes": 1026,
+    "timeouts": 0
+  },
+  "003": {
+    "asr": 0.9723809523809523,
+    "cases": 1050,
+    "errors": 0,
+    "judgment_completion_rate": 1.0,
+    "parse_failures": 0,
+    "protocol_completion_rate": 1.0,
+    "successes": 1021,
+    "timeouts": 0
+  }
+}

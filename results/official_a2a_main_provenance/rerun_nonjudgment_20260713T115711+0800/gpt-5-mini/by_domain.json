@@ -1,0 +1,32 @@
+{
+  "finance": {
+    "asr": 0.9676190476190476,
+    "cases": 1050,
+    "errors": 0,
+    "judgment_completion_rate": 0.9990476190476191,
+    "parse_failures": 0,
+    "protocol_completion_rate": 0.9990476190476191,
+    "successes": 1016,
+    "timeouts": 1
+  },
+  "healthcare": {
+    "asr": 0.9990476190476191,
+    "cases": 1050,
+    "errors": 0,
+    "judgment_completion_rate": 0.9990476190476191,
+    "parse_failures": 0,
+    "protocol_completion_rate": 0.9990476190476191,
+    "successes": 1049,
+    "timeouts": 1
+  },
+  "travel": {
+    "asr": 0.9980952380952381,
+    "cases": 1050,
+    "errors": 0,
+    "judgment_completion_rate": 0.9980952380952381,
+    "parse_failures": 1,
+    "protocol_completion_rate": 0.9990476190476191,
+    "successes": 1048,
+    "timeouts": 1
+  }
+}

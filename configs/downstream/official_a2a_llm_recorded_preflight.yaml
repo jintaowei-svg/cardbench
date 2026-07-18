@@ -1,0 +1,30 @@
+experiment_id: official_a2a_llm_downstream_recorded_v3_preflight
+mode: recorded_trace_capability_scoped_llm
+manifest:
+  path: attacks/carddiff/downstream/official_a2a_recorded_smoke_140.json
+  selection:
+    first_per: [attack_type]
+    expected_cases: 7
+sut:
+  carddiff_host: sut.downstream.replay_host:OfficialA2AReplayHostSUT
+  kwargs:
+    require_sdk: true
+workers:
+  model: ${WORKER_MODEL}
+  api_base: ${WORKER_API_BASE}
+  api_key: ${WORKER_API_KEY}
+  temperature: 0
+  tool_choice: required
+  max_tool_rounds: 4
+  max_retries: 2
+  timeout_s: 120
+  authorization_mode: delegated_capability
+environment:
+  factory: harness.downstream.impact_env:LLMOfficialA2AImpactEnvironment
+  kwargs:
+    transport: httpx-asgi
+    require_sdk: true
+    reset_resources_per_trial: true
+    external_network: false
+output:
+  directory: results/downstream/official_a2a_llm_recorded_v3_preflight

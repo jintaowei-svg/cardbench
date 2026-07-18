@@ -1,0 +1,169 @@
+{
+  "by_attack": [
+    {
+      "asr": 0.9069767441860465,
+      "attack": "A1",
+      "error_rate": 0.0,
+      "errors": 0,
+      "llm_calls": 87,
+      "successes": 78,
+      "target": "official_a2a_720",
+      "trials": 86
+    },
+    {
+      "asr": 1.0,
+      "attack": "A2",
+      "error_rate": 0.0,
+      "errors": 0,
+      "llm_calls": 89,
+      "successes": 86,
+      "target": "official_a2a_720",
+      "trials": 86
+    },
+    {
+      "asr": 0.9871794871794872,
+      "attack": "A3",
+      "error_rate": 0.0,
+      "errors": 0,
+      "llm_calls": 157,
+      "successes": 77,
+      "target": "official_a2a_720",
+      "trials": 78
+    },
+    {
+      "asr": 0.9647058823529412,
+      "attack": "B1",
+      "error_rate": 0.0,
+      "errors": 0,
+      "llm_calls": 85,
+      "successes": 82,
+      "target": "official_a2a_720",
+      "trials": 85
+    },
+    {
+      "asr": 1.0,
+      "attack": "B2",
+      "error_rate": 0.0,
+      "errors": 0,
+      "llm_calls": 85,
+      "successes": 85,
+      "target": "official_a2a_720",
+      "trials": 85
+    },
+    {
+      "asr": 1.0,
+      "attack": "B3",
+      "error_rate": 0.0,
+      "errors": 0,
+      "llm_calls": 85,
+      "successes": 85,
+      "target": "official_a2a_720",
+      "trials": 85
+    },
+    {
+      "asr": 0.9882352941176471,
+      "attack": "C1",
+      "error_rate": 0.0,
+      "errors": 0,
+      "llm_calls": 85,
+      "successes": 84,
+      "target": "official_a2a_720",
+      "trials": 85
+    },
+    {
+      "asr": 1.0,
+      "attack": "C2",
+      "error_rate": 0.0,
+      "errors": 0,
+      "llm_calls": 87,
+      "successes": 86,
+      "target": "official_a2a_720",
+      "trials": 86
+    },
+    {
+      "asr": 1.0,
+      "attack": "A1",
+      "error_rate": 0.0,
+      "errors": 0,
+      "llm_calls": 4,
+      "successes": 4,
+      "target": "official_a2a_timeout_retry_44",
+      "trials": 4
+    },
+    {
+      "asr": 1.0,
+      "attack": "A2",
+      "error_rate": 0.0,
+      "errors": 0,
+      "llm_calls": 4,
+      "successes": 4,
+      "target": "official_a2a_timeout_retry_44",
+      "trials": 4
+    },
+    {
+      "asr": 1.0,
+      "attack": "A3",
+      "error_rate": 0.0,
+      "errors": 0,
+      "llm_calls": 24,
+      "successes": 12,
+      "target": "official_a2a_timeout_retry_44",
+      "trials": 12
+    },
+    {
+      "asr": 0.6,
+      "attack": "B1",
+      "error_rate": 0.4,
+      "errors": 2,
+      "llm_calls": 3,
+      "successes": 3,
+      "target": "official_a2a_timeout_retry_44",
+      "trials": 5
+    },
+    {
+      "asr": 1.0,
+      "attack": "B2",
+      "error_rate": 0.0,
+      "errors": 0,
+      "llm_calls": 5,
+      "successes": 5,
+      "target": "official_a2a_timeout_retry_44",
+      "trials": 5
+    },
+    {
+      "asr": 1.0,
+      "attack": "B3",
+      "error_rate": 0.0,
+      "errors": 0,
+      "llm_calls": 5,
+      "successes": 5,
+      "target": "official_a2a_timeout_retry_44",
+      "trials": 5
+    },
+    {
+      "asr": 1.0,
+      "attack": "C1",
+      "error_rate": 0.0,
+      "errors": 0,
+      "llm_calls": 5,
+      "successes": 5,
+      "target": "official_a2a_timeout_retry_44",
+      "trials": 5
+    },
+    {
+      "asr": 1.0,
+      "attack": "C2",
+      "error_rate": 0.0,
+      "errors": 0,
+      "llm_calls": 4,
+      "successes": 4,
+      "target": "official_a2a_timeout_retry_44",
+      "trials": 4
+    }
+  ],
+  "targets": [
+    "official_a2a_720",
+    "official_a2a_timeout_retry_44"
+  ],
+  "trials": 720
+}

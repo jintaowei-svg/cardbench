@@ -1,0 +1,29 @@
+api_model: gpt-5.4-mini
+attack_specific_prompt: false
+code_commit_sha: 736833100bcda47c3efc9bcf06d0a61172872176
+config_sha256: 996da9797d8ad02edc0587684c5c061249a1ec65d583cc75304bb423f28fd7b8
+environment: harness.transfer.official_a2a_env:OfficialSDKCardDiffEnvironment
+event_level_oracle: true
+host: sut.transfer.official_a2a_host:OfficialSDKCardDiffHostSUT
+http_request_retries: 1
+interface_fallback: false
+manifest: attacks/carddiff/official_a2a_main_3150.json
+manifest_sha256: 923f7692c348f2957086253761bd9f1dce94c83674628353605236fbcfe3a6cd
+max_retries: 1
+model: gpt-5.4-mini
+model_specific_prompt: false
+official_a2a_sdk_version: 0.3.26
+parse_failure_fallback: false
+phase: smoke
+prompt_sha256: 816d32bb91a222ca08a643b7b67b07e37b0604b2a0ecdc88c5b72fdaf745a23e
+remote_peer: deterministic
+requests_a2a_fallback: false
+response_format:
+  type: json_object
+schema_version: official-a2a-main-v1
+skill_fallback: false
+smoke_cases: 7
+strict_json_parsing: true
+temperature: 0.0
+timeout_s: 60.0
+transport: httpx-asgi

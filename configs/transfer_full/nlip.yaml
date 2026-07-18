@@ -1,0 +1,21 @@
+target: nlip
+phase: formal_full_450_per_attack
+case_manifest: attacks/carddiff/transfer_full/nlip_cases.json
+applicability_manifest: attacks/carddiff/transfer_native/applicability.json
+adapter: harness.transfer_native.nlip.adapter:NLIPNativeAdapter
+model: gpt-5-mini
+temperature: 0.0
+max_retries: 1
+strict_json_parsing: true
+attack_specific_prompt: false
+model_specific_prompt: false
+parse_failure_fallback: false
+interface_fallback: false
+capability_fallback: false
+remote_peer: deterministic
+event_level_oracle: true
+require_native_sdk: true
+sdk:
+  - nlip_sdk==0.1.2
+  - nlip_server==0.1.2
+  - nlip_client@b91edb72a387882ecdc912d5949e707d4727b203

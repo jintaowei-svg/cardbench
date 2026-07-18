@@ -1,0 +1,21 @@
+target: agntcy
+phase: formal_full_450_per_attack
+case_manifest: attacks/carddiff/transfer_full/agntcy_cases.json
+applicability_manifest: attacks/carddiff/transfer_extension/applicability.json
+adapter: harness.transfer_native.agntcy.adapter:AGNTCYNativeAdapter
+model: gpt-5-mini
+temperature: 0.0
+max_retries: 1
+strict_json_parsing: true
+attack_specific_prompt: false
+model_specific_prompt: false
+parse_failure_fallback: false
+interface_fallback: false
+capability_fallback: false
+remote_peer: deterministic
+event_level_oracle: true
+require_native_sdk: true
+runtime:
+  directory_release: v1.5.0
+  sdk_version: 1.5.0
+  execution_transport: a2a-sdk==0.3.26

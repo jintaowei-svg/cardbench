@@ -1,0 +1,44 @@
+{
+  "finance": {
+    "completed": 56,
+    "dir": 1.0,
+    "errors": 2,
+    "impact": 56,
+    "impact_types": {
+      "availability": 2,
+      "confidentiality": 16,
+      "integrity": 38
+    },
+    "model_completion_rate": 1.0,
+    "planned": 56,
+    "tool_call_rate": 1.0
+  },
+  "healthcare": {
+    "completed": 42,
+    "dir": 1.0,
+    "errors": 2,
+    "impact": 42,
+    "impact_types": {
+      "availability": 2,
+      "confidentiality": 30,
+      "integrity": 28
+    },
+    "model_completion_rate": 1.0,
+    "planned": 42,
+    "tool_call_rate": 1.0
+  },
+  "travel": {
+    "completed": 42,
+    "dir": 1.0,
+    "errors": 2,
+    "impact": 42,
+    "impact_types": {
+      "availability": 2,
+      "confidentiality": 12,
+      "integrity": 28
+    },
+    "model_completion_rate": 1.0,
+    "planned": 42,
+    "tool_call_rate": 1.0
+  }
+}

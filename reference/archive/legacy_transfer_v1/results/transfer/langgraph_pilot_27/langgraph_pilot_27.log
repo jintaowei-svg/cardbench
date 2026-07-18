@@ -1,0 +1,5 @@
+/home/wjt/CardDiffBench_transfer_formal_20260710/.venv/lib/python3.10/site-packages/langgraph/cache/base/__init__.py:8: LangChainPendingDeprecationWarning: The default value of `allowed_objects` will change in a future version. Pass an explicit value (e.g., allowed_objects='messages' or allowed_objects='core') to suppress this warning.
+  from langgraph.checkpoint.serde.jsonplus import JsonPlusSerializer
+{"level": "INFO", "logger": "orchestration", "message": "Run started", "payload": {"attack_id": "CARDDIFF", "config_hash": "7cf006e7ce116c1e341937028e73b154bdf0a2aa8623983b77d07b8dc2b539bf", "config_path": "results/transfer/langgraph_pilot_27/langgraph_pilot_27.yaml", "mode": null, "out": "results/transfer/langgraph_pilot_27/langgraph_pilot_27.jsonl", "trials": 1}, "timestamp": "2026-07-10T16:00:36.663519+00:00"}
+{"level": "INFO", "logger": "orchestration", "message": "Run finished", "payload": {"asr": 0.8888888888888888, "records": 27, "summary_path": "results/transfer/langgraph_pilot_27/summary.json"}, "timestamp": "2026-07-10T16:06:53.057251+00:00"}
+ASR (CARDDIFF): 0.8889

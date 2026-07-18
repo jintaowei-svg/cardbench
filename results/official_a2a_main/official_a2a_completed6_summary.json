@@ -6,17 +6,17 @@
       "A2": 450,
       "A3": 450,
       "B1": 450,
-      "B3": 450,
+      "B2": 450,
       "C1": 450,
       "C2": 450
     },
-    "b2_cases": 0,
     "domain_counts": {
       "finance": 1050,
       "healthcare": 1050,
       "travel": 1050
     },
     "duplicate_case_ids": 0,
+    "legacy_tenant_confusion_cases": 0,
     "non_judgment": 0,
     "parse_failure": 0,
     "rows": 3150,
@@ -37,17 +37,17 @@
       "A2": 450,
       "A3": 450,
       "B1": 450,
-      "B3": 450,
+      "B2": 450,
       "C1": 450,
       "C2": 450
     },
-    "b2_cases": 0,
     "domain_counts": {
       "finance": 1050,
       "healthcare": 1050,
       "travel": 1050
     },
     "duplicate_case_ids": 0,
+    "legacy_tenant_confusion_cases": 0,
     "non_judgment": 0,
     "parse_failure": 0,
     "rows": 3150,
@@ -68,17 +68,17 @@
       "A2": 450,
       "A3": 450,
       "B1": 450,
-      "B3": 450,
+      "B2": 450,
       "C1": 450,
       "C2": 450
     },
-    "b2_cases": 0,
     "domain_counts": {
       "finance": 1050,
       "healthcare": 1050,
       "travel": 1050
     },
     "duplicate_case_ids": 0,
+    "legacy_tenant_confusion_cases": 0,
     "non_judgment": 0,
     "parse_failure": 0,
     "rows": 3150,
@@ -99,17 +99,17 @@
       "A2": 450,
       "A3": 450,
       "B1": 450,
-      "B3": 450,
+      "B2": 450,
       "C1": 450,
       "C2": 450
     },
-    "b2_cases": 0,
     "domain_counts": {
       "finance": 1050,
       "healthcare": 1050,
       "travel": 1050
     },
     "duplicate_case_ids": 0,
+    "legacy_tenant_confusion_cases": 0,
     "non_judgment": 0,
     "parse_failure": 0,
     "rows": 3150,
@@ -130,17 +130,17 @@
       "A2": 450,
       "A3": 450,
       "B1": 450,
-      "B3": 450,
+      "B2": 450,
       "C1": 450,
       "C2": 450
     },
-    "b2_cases": 0,
     "domain_counts": {
       "finance": 1050,
       "healthcare": 1050,
       "travel": 1050
     },
     "duplicate_case_ids": 0,
+    "legacy_tenant_confusion_cases": 0,
     "non_judgment": 0,
     "parse_failure": 0,
     "rows": 3150,
@@ -161,17 +161,17 @@
       "A2": 450,
       "A3": 450,
       "B1": 450,
-      "B3": 450,
+      "B2": 450,
       "C1": 450,
       "C2": 450
     },
-    "b2_cases": 0,
     "domain_counts": {
       "finance": 1050,
       "healthcare": 1050,
       "travel": 1050
     },
     "duplicate_case_ids": 0,
+    "legacy_tenant_confusion_cases": 0,
     "non_judgment": 0,
     "parse_failure": 0,
     "rows": 3150,

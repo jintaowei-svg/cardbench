@@ -1,0 +1,72 @@
+{
+  "A1": {
+    "asr": 0.9311111111111111,
+    "cases": 450,
+    "errors": 0,
+    "judgment_completion_rate": 0.9911111111111112,
+    "parse_failures": 0,
+    "protocol_completion_rate": 0.9911111111111112,
+    "successes": 419,
+    "timeouts": 4
+  },
+  "A2": {
+    "asr": 0.9866666666666667,
+    "cases": 450,
+    "errors": 0,
+    "judgment_completion_rate": 0.9866666666666667,
+    "parse_failures": 0,
+    "protocol_completion_rate": 0.9866666666666667,
+    "successes": 444,
+    "timeouts": 6
+  },
+  "A3": {
+    "asr": 0.9955555555555555,
+    "cases": 450,
+    "errors": 0,
+    "judgment_completion_rate": 0.9822222222222222,
+    "parse_failures": 0,
+    "protocol_completion_rate": 0.9822222222222222,
+    "successes": 448,
+    "timeouts": 8
+  },
+  "B1": {
+    "asr": 0.9933333333333333,
+    "cases": 450,
+    "errors": 0,
+    "judgment_completion_rate": 0.9977777777777778,
+    "parse_failures": 0,
+    "protocol_completion_rate": 0.9977777777777778,
+    "successes": 447,
+    "timeouts": 1
+  },
+  "B2": {
+    "asr": 0.9933333333333333,
+    "cases": 450,
+    "errors": 0,
+    "judgment_completion_rate": 0.9933333333333333,
+    "parse_failures": 0,
+    "protocol_completion_rate": 0.9933333333333333,
+    "successes": 447,
+    "timeouts": 3
+  },
+  "C1": {
+    "asr": 0.9933333333333333,
+    "cases": 450,
+    "errors": 0,
+    "judgment_completion_rate": 0.9955555555555555,
+    "parse_failures": 0,
+    "protocol_completion_rate": 0.9955555555555555,
+    "successes": 447,
+    "timeouts": 2
+  },
+  "C2": {
+    "asr": 0.9844444444444445,
+    "cases": 450,
+    "errors": 0,
+    "judgment_completion_rate": 0.9888888888888889,
+    "parse_failures": 0,
+    "protocol_completion_rate": 0.9888888888888889,
+    "successes": 443,
+    "timeouts": 5
+  }
+}

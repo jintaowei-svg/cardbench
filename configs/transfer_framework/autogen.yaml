@@ -1,0 +1,21 @@
+target: autogen
+target_kind: framework
+phase: formal
+case_manifest: attacks/carddiff/transfer_framework/autogen_cases.json
+applicability_manifest: attacks/carddiff/transfer_extension/applicability.json
+adapter: harness.transfer_framework.autogen.adapter:AutoGenFrameworkAdapter
+model: gpt-5-mini
+temperature: 0.0
+max_retries: 1
+strict_json_parsing: true
+attack_specific_prompt: false
+model_specific_prompt: false
+parse_failure_fallback: false
+interface_fallback: false
+capability_fallback: false
+remote_peer: deterministic
+event_level_oracle: true
+require_native_sdk: true
+runtime:
+  autogen_agentchat: 0.7.5
+  autogen_core: 0.7.5

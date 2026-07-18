@@ -1,0 +1,112 @@
+{
+  "cases_per_target_attack": 450,
+  "schema_version": "carddiff-transfer-full-plan-v1",
+  "semantic_reruns": [
+    "anp.A3",
+    "nlip.A3",
+    "nlip.C1",
+    "autogen.A3"
+  ],
+  "targets": {
+    "agntcy": {
+      "planned": 900,
+      "planned_by_attack": {
+        "A2": 450,
+        "B2": 450
+      },
+      "reused": 180,
+      "reused_by_attack": {
+        "A2": 90,
+        "B2": 90
+      },
+      "to_run": 720,
+      "to_run_by_attack": {
+        "A2": 360,
+        "B2": 360
+      }
+    },
+    "anp": {
+      "planned": 2250,
+      "planned_by_attack": {
+        "A2": 450,
+        "A3": 450,
+        "B1": 450,
+        "B2": 450,
+        "C1": 450
+      },
+      "reused": 360,
+      "reused_by_attack": {
+        "A2": 90,
+        "B1": 90,
+        "B2": 90,
+        "C1": 90
+      },
+      "to_run": 1890,
+      "to_run_by_attack": {
+        "A2": 360,
+        "A3": 450,
+        "B1": 360,
+        "B2": 360,
+        "C1": 360
+      }
+    },
+    "autogen": {
+      "planned": 1350,
+      "planned_by_attack": {
+        "A3": 450,
+        "C1": 450,
+        "C2": 450
+      },
+      "reused": 177,
+      "reused_by_attack": {
+        "C1": 88,
+        "C2": 89
+      },
+      "to_run": 1173,
+      "to_run_by_attack": {
+        "A3": 450,
+        "C1": 362,
+        "C2": 361
+      }
+    },
+    "langgraph": {
+      "planned": 1800,
+      "planned_by_attack": {
+        "A3": 450,
+        "B1": 450,
+        "C1": 450,
+        "C2": 450
+      },
+      "reused": 0,
+      "reused_by_attack": {},
+      "to_run": 1800,
+      "to_run_by_attack": {
+        "A3": 450,
+        "B1": 450,
+        "C1": 450,
+        "C2": 450
+      }
+    },
+    "nlip": {
+      "planned": 1350,
+      "planned_by_attack": {
+        "A3": 450,
+        "C1": 450,
+        "C2": 450
+      },
+      "reused": 90,
+      "reused_by_attack": {
+        "C2": 90
+      },
+      "to_run": 1260,
+      "to_run_by_attack": {
+        "A3": 450,
+        "C1": 450,
+        "C2": 360
+      }
+    }
+  },
+  "total_planned": 7650,
+  "total_reused": 807,
+  "total_to_run": 6843
+}

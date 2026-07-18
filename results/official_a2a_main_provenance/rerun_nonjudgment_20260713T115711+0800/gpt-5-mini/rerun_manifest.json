@@ -1,0 +1,31 @@
+{
+  "cases": [
+    {
+      "attack_type": "A2",
+      "case_id": "CARDDIFF_A2_HEALTHCARE_T036_V001",
+      "domain": "healthcare",
+      "variant": "001"
+    },
+    {
+      "attack_type": "A2",
+      "case_id": "CARDDIFF_A2_FINANCE_T009_V003",
+      "domain": "finance",
+      "variant": "003"
+    },
+    {
+      "attack_type": "A3",
+      "case_id": "CARDDIFF_A3_TRAVEL_T030_V001",
+      "domain": "travel",
+      "variant": "001"
+    },
+    {
+      "attack_type": "C1",
+      "case_id": "CARDDIFF_C1_TRAVEL_T017_V002",
+      "domain": "travel",
+      "variant": "002"
+    }
+  ],
+  "schema_version": "official-a2a-rerun-v1",
+  "source_details_sha256": "8583ae888a0b1d1d5ddc47b2922b746cae22548b61486d361eeedca458034d2b",
+  "source_model": "gpt-5-mini"
+}

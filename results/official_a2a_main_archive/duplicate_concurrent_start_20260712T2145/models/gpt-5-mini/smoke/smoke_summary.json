@@ -1,0 +1,10 @@
+{
+  "completed": 21,
+  "generated_at": "2026-07-12T13:19:33.951191+00:00",
+  "model": "gpt-5-mini",
+  "non_judgment_cases": [
+    "CARDDIFF_B1_HEALTHCARE_T001_V002"
+  ],
+  "passed": false,
+  "planned": 21
+}

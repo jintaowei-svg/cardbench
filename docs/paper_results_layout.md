@@ -15,18 +15,18 @@ has three valid targets:
 
 - Official A2A: 540 records are selected from the completed gpt-5-mini main
   run by exact `source_case_id`; the model and Official A2A Host are not rerun.
-- ANP: 450 new protocol-native trials over A2, A3, B1, B3, and C1.
+- ANP: 450 new protocol-native trials over A2, A3, B1, B2, and C1.
 - NLIP: 270 new protocol-native trials over A3, C1, and C2.
 
-The frozen Native Support Audit marks ANP C2 and NLIP B3 not applicable. The
+The frozen Native Support Audit marks ANP C2 and NLIP B2 not applicable. The
 three-way common comparison is therefore A3 + C1 (180 matched cases per
 protocol). A2 and B1 are reported separately for the A2A–ANP comparison when
 ANP formal results are present. No overall ASR is computed across unequal
 attack sets.
 
-`source_720`, the old ANP wrapper, and LangGraph are excluded from canonical
-aggregation. Historical raw result directories may remain only as provenance;
-the canonical scripts never read them.
+The superseded `source_720`, old ANP wrapper, and old LangGraph run are retained
+under `reference/archive/legacy_transfer_v1/` and excluded from canonical
+aggregation. The canonical scripts never read them.
 
 Every dispatched native record must have a complete required event sequence and
 a `native_execution_valid` value of `true`. Parse failures, refusals, and

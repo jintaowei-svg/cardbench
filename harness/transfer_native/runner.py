@@ -68,6 +68,8 @@ def run_manifest(
     output_path: Path,
     decision_callable: Callable[..., str] | None = None,
     limit: int | None = None,
+    case_id_manifest: Path | None = None,
+    resume: bool = False,
 ) -> list[dict[str, Any]]:
     config = load_config(config_path)
     manifest_path = ROOT / str(config["case_manifest"])
@@ -87,9 +89,36 @@ def run_manifest(
         max_retries=int(config["max_retries"]),
         decision_callable=decision_callable,
     )
+    output_path.parent.mkdir(parents=True, exist_ok=True)
     records: list[dict[str, Any]] = []
-    cases = manifest["cases"][:limit] if limit is not None else manifest["cases"]
+    if resume and output_path.exists():
+        records = [
+            json.loads(line)
+            for line in output_path.read_text(encoding="utf-8").splitlines()
+            if line.strip()
+        ]
+    else:
+        output_path.write_text("", encoding="utf-8")
+    cases = list(manifest["cases"])
+    if case_id_manifest is not None:
+        smoke = json.loads(case_id_manifest.read_text(encoding="utf-8"))
+        wanted = set(smoke[protocol])
+        cases = [case for case in cases if case["target_case_id"] in wanted]
+        if len(cases) != len(wanted):
+            raise ValueError("Smoke case-ID manifest does not exactly match the native cases.")
+    if limit is not None:
+        cases = cases[:limit]
+    completed_ids = [str(record["target_case_id"]) for record in records]
+    if len(completed_ids) != len(set(completed_ids)):
+        raise ValueError("Resume output contains duplicate target_case_id values.")
+    planned_ids = {str(case["target_case_id"]) for case in cases}
+    unexpected = sorted(set(completed_ids) - planned_ids)
+    if unexpected:
+        raise ValueError(f"Resume output contains IDs outside the selected manifest: {unexpected[:3]}")
+    completed = set(completed_ids)
     for trial_index, case in enumerate(cases):
+        if str(case["target_case_id"]) in completed:
+            continue
         error = None
         decision = None
         metrics: dict[str, Any] = {}
@@ -136,14 +165,16 @@ def run_manifest(
             "manifest_sha256": sha256_file(manifest_path),
             "config_sha256": sha256_file(config_path),
             "applicability_sha256": sha256_file(applicability_path),
+            "target_runtime_version": config.get("runtime", {}).get("sdk_version"),
+            "target_runtime_commit": config.get("runtime", {}).get("sdk_commit"),
+            "target_runtime_digest": config.get("runtime", {}).get(
+                "directory_binary_sha256"
+            ),
         }
         records.append(record)
-
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-    output_path.write_text(
-        "".join(json.dumps(record, ensure_ascii=False, sort_keys=True) + "\n" for record in records),
-        encoding="utf-8",
-    )
+        with output_path.open("a", encoding="utf-8") as handle:
+            handle.write(json.dumps(record, ensure_ascii=False, sort_keys=True) + "\n")
+            handle.flush()
     return records
 
 
@@ -152,8 +183,16 @@ def main() -> None:
     parser.add_argument("config", type=Path)
     parser.add_argument("--output", required=True, type=Path)
     parser.add_argument("--limit", type=int)
+    parser.add_argument("--case-id-manifest", type=Path)
+    parser.add_argument("--resume", action="store_true")
     args = parser.parse_args()
-    run_manifest(args.config, output_path=args.output, limit=args.limit)
+    run_manifest(
+        args.config,
+        output_path=args.output,
+        limit=args.limit,
+        case_id_manifest=args.case_id_manifest,
+        resume=args.resume,
+    )
 
 
 if __name__ == "__main__":

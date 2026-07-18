@@ -17,7 +17,7 @@ CardDiffBench focuses on Host control-plane behavior around AgentCard state:
 | Family | Attack types | What can go wrong |
 | --- | --- | --- |
 | Extended-card differentials | A1, A2, A3 | A Host trusts authenticated extended-card state that diverges from the public card. |
-| Interface and tenant confusion | B1, B2, B3 | A Host routes through the wrong ordered interface, tenant, binding, or protocol version. |
+| Interface selection and binding confusion | B1, B2 | A Host routes through the wrong ordered interface, binding, or protocol version. |
 | Policy and output-mode drift | C1, C2 | A Host invokes restricted skills or accepts artifacts outside the requested output modes. |
 
 CardDiffBench borrows the scenario-adapter generation style from A2ASecBench,
@@ -49,8 +49,8 @@ The active frozen dataset is built from:
 - `attacks/carddiff/cases.jsonl`
 - `attacks/carddiff/perturbed_cases.jsonl`
 
-The current frozen split contains 1,200 base scenario-adapted cases and 3,600
-perturbed cases. This corresponds to 3 domains, 8 attack families, 50 scenario
+The current frozen split contains 1,050 base scenario-adapted cases and 3,150
+perturbed cases. This corresponds to 3 domains, 7 attack vectors, 50 scenario
 tasks per attack-domain cell, and 3 perturbation variants.
 
 ## Installation
@@ -141,6 +141,13 @@ read by canonical aggregation.
 See [the native transfer experiment guide](docs/transfer_native.md) for the
 frozen applicability matrix, SDK gates, case construction, formal commands,
 required evidence, and aggregation rules.
+
+The implemented extension adds AGNTCY as an ecosystem-native target and AutoGen as
+a separate framework-native generalization target. See the
+[AGNTCY and AutoGen extension experiment guide](docs/transfer_agntcy_autogen.md)
+for audit gates, source-case alignment, execution evidence, smoke tests, formal
+runs, and non-pooled reporting rules. Its native-support audit and applicability
+matrix are frozen; Official A2A, ANP, and NLIP results are reused rather than rerun.
 
 ## Validation
 

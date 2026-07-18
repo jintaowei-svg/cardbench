@@ -1,0 +1,129 @@
+{
+  "by_attack": [
+    {
+      "asr": 0.9176470588235294,
+      "attack": "A1",
+      "error_rate": 0.0,
+      "errors": 0,
+      "llm_calls": 85,
+      "successes": 78,
+      "target": "anp_540",
+      "trials": 85
+    },
+    {
+      "asr": 1.0,
+      "attack": "A2",
+      "error_rate": 0.0,
+      "errors": 0,
+      "llm_calls": 86,
+      "successes": 86,
+      "target": "anp_540",
+      "trials": 86
+    },
+    {
+      "asr": 0.9772727272727273,
+      "attack": "B1",
+      "error_rate": 0.0,
+      "errors": 0,
+      "llm_calls": 88,
+      "successes": 86,
+      "target": "anp_540",
+      "trials": 88
+    },
+    {
+      "asr": 1.0,
+      "attack": "B3",
+      "error_rate": 0.0,
+      "errors": 0,
+      "llm_calls": 87,
+      "successes": 86,
+      "target": "anp_540",
+      "trials": 86
+    },
+    {
+      "asr": 0.9883720930232558,
+      "attack": "C1",
+      "error_rate": 0.0,
+      "errors": 0,
+      "llm_calls": 86,
+      "successes": 85,
+      "target": "anp_540",
+      "trials": 86
+    },
+    {
+      "asr": 0.9764705882352941,
+      "attack": "C2",
+      "error_rate": 0.0,
+      "errors": 0,
+      "llm_calls": 87,
+      "successes": 83,
+      "target": "anp_540",
+      "trials": 85
+    },
+    {
+      "asr": 0.8,
+      "attack": "A1",
+      "error_rate": 0.2,
+      "errors": 1,
+      "llm_calls": 4,
+      "successes": 4,
+      "target": "anp_timeout_retry_24",
+      "trials": 5
+    },
+    {
+      "asr": 1.0,
+      "attack": "A2",
+      "error_rate": 0.0,
+      "errors": 0,
+      "llm_calls": 4,
+      "successes": 4,
+      "target": "anp_timeout_retry_24",
+      "trials": 4
+    },
+    {
+      "asr": 1.0,
+      "attack": "B1",
+      "error_rate": 0.0,
+      "errors": 0,
+      "llm_calls": 2,
+      "successes": 2,
+      "target": "anp_timeout_retry_24",
+      "trials": 2
+    },
+    {
+      "asr": 1.0,
+      "attack": "B3",
+      "error_rate": 0.0,
+      "errors": 0,
+      "llm_calls": 4,
+      "successes": 4,
+      "target": "anp_timeout_retry_24",
+      "trials": 4
+    },
+    {
+      "asr": 1.0,
+      "attack": "C1",
+      "error_rate": 0.0,
+      "errors": 0,
+      "llm_calls": 4,
+      "successes": 4,
+      "target": "anp_timeout_retry_24",
+      "trials": 4
+    },
+    {
+      "asr": 1.0,
+      "attack": "C2",
+      "error_rate": 0.0,
+      "errors": 0,
+      "llm_calls": 5,
+      "successes": 5,
+      "target": "anp_timeout_retry_24",
+      "trials": 5
+    }
+  ],
+  "targets": [
+    "anp_540",
+    "anp_timeout_retry_24"
+  ],
+  "trials": 540
+}

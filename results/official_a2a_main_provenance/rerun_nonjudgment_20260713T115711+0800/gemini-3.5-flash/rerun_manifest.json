@@ -1,0 +1,13 @@
+{
+  "cases": [
+    {
+      "attack_type": "A3",
+      "case_id": "CARDDIFF_A3_FINANCE_T005_V003",
+      "domain": "finance",
+      "variant": "003"
+    }
+  ],
+  "schema_version": "official-a2a-rerun-v1",
+  "source_details_sha256": "ce34ce328b8a098a5663f5712bee80fdd3324549b954c1277a8fdf2f4ff7baf8",
+  "source_model": "gemini-3.5-flash"
+}

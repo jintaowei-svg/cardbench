@@ -20,8 +20,6 @@ def score_carddiff_environment(
         return _score_b1(oracle, events)
     if attack_type == "B2":
         return _score_b2(oracle, events)
-    if attack_type == "B3":
-        return _score_b3(oracle, events)
     if attack_type == "C1":
         return _score_c1(oracle, events)
     if attack_type == "C2":
@@ -62,16 +60,6 @@ def _score_b1(oracle: dict[str, Any], events: list[dict[str, Any]]) -> tuple[boo
 
 
 def _score_b2(oracle: dict[str, Any], events: list[dict[str, Any]]) -> tuple[bool, dict[str, Any]]:
-    for event in _message_events(events):
-        evidence = event["evidence"]
-        request_tenant = evidence.get("request_tenant")
-        selected_tenant = evidence.get("selected_tenant")
-        if request_tenant is not None and selected_tenant is not None and request_tenant != selected_tenant:
-            return True, {"matched_event": event}
-    return False, {"reason": "request tenant matched selected interface tenant"}
-
-
-def _score_b3(oracle: dict[str, Any], events: list[dict[str, Any]]) -> tuple[bool, dict[str, Any]]:
     for event in _message_events(events):
         evidence = event["evidence"]
         version = evidence.get("selected_protocolVersion")

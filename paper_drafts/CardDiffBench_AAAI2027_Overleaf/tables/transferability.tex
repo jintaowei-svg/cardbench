@@ -1,0 +1,37 @@
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{7pt}
+\renewcommand{\arraystretch}{1.08}
+\textbf{Panel A: Protocol transfer}\\[2pt]
+\begin{tabular}{lcc}
+\toprule
+Attack & ANP & NLIP \\
+\midrule
+A1 & N/A & N/A \\
+A2 & 100.00\% (100.00\%) & N/A \\
+A3 & 98.89\% (100.00\%)$^\dagger$ & 98.89\% (98.89\%)$^\dagger$ \\
+B1 & 100.00\% (100.00\%) & N/A \\
+B2 & 100.00\% (100.00\%) & N/A \\
+C1 & 100.00\% (100.00\%) & 100.00\% (100.00\%)$^\dagger$ \\
+C2 & N/A & 100.00\% (100.00\%) \\
+\bottomrule
+\end{tabular}
+\vspace{5pt}
+\textbf{Panel B: Ecosystem and framework transfer}\\[2pt]
+\begin{tabular}{lccc}
+\toprule
+Attack & AGNTCY & AutoGen & LangGraph \\
+\midrule
+A1 & N/A & N/A & N/A \\
+A2 & 100.00\% (100.00\%) & N/A & N/A \\
+A3 & N/A & 100.00\% (100.00\%)$^\dagger$ & Pending \\
+B1 & N/A & N/A & Pending \\
+B2 & 100.00\% (100.00\%) & N/A & N/A \\
+C1 & N/A & 97.78\% (97.78\%) & Pending \\
+C2 & N/A & 98.89\% (98.89\%) & Pending \\
+\bottomrule
+\end{tabular}
+\caption{Transferability results. Each reported cell gives planned-trial ASR, with completion rate in parentheses. N/A denotes no verified native counterpart; Pending denotes an applicable formal run not yet executed. A dagger marks a legacy result requiring rerun after an implementation-semantic revision.}
+\label{tab:transferability}
+\end{table*}

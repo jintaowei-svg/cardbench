@@ -1,0 +1,13 @@
+target,attack,trials,successes,errors,llm_calls,asr,error_rate
+anp_540,A1,85,78,0,85,0.9176470588235294,0.0
+anp_540,A2,86,86,0,86,1.0,0.0
+anp_540,B1,88,86,0,88,0.9772727272727273,0.0
+anp_540,B3,86,86,0,87,1.0,0.0
+anp_540,C1,86,85,0,86,0.9883720930232558,0.0
+anp_540,C2,85,83,0,87,0.9764705882352941,0.0
+anp_timeout_retry_24,A1,5,4,1,4,0.8,0.2
+anp_timeout_retry_24,A2,4,4,0,4,1.0,0.0
+anp_timeout_retry_24,B1,2,2,0,2,1.0,0.0
+anp_timeout_retry_24,B3,4,4,0,4,1.0,0.0
+anp_timeout_retry_24,C1,4,4,0,4,1.0,0.0
+anp_timeout_retry_24,C2,5,5,0,5,1.0,0.0

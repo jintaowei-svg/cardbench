@@ -1,0 +1,45 @@
+{
+  "agntcy": {
+    "A1": "not_applicable",
+    "A2": "applicable",
+    "A3": "not_applicable",
+    "B1": "not_applicable",
+    "B2": "applicable",
+    "C1": "not_applicable",
+    "C2": "not_applicable"
+  },
+  "audit_basis": "official_runtime_api_and_execution_audit_2026-07-16",
+  "autogen": {
+    "A1": "not_applicable",
+    "A2": "not_applicable",
+    "A3": "applicable",
+    "B1": "not_applicable",
+    "B2": "not_applicable",
+    "C1": "applicable",
+    "C2": "applicable"
+  },
+  "frozen": true,
+  "langgraph": {
+    "A1": "not_applicable",
+    "A2": "not_applicable",
+    "A3": "applicable",
+    "B1": "applicable",
+    "B2": "not_applicable",
+    "C1": "applicable",
+    "C2": "applicable"
+  },
+  "rationale": {
+    "agntcy.A2": "OASF 1.0 integration/a2a card_data carries executable supportedInterfaces discovered through the official Directory Store/Search/Pull APIs.",
+    "agntcy.B2": "OASF 1.0 integration/a2a card_data carries ordered binding/version alternatives that select the actual A2A SDK request path.",
+    "agntcy.C1": "The audited local Directory daemon is insecure-mode only; no OIDC/SPIFFE identity-policy execution is available for a formal C1 counterpart.",
+    "autogen.A3": "AutoGen AgentChat 0.7.5 natively saves and loads agent state across identities.",
+    "autogen.B1": "Removed from the benchmark: SelectorGroupChat selector_func overrides model selection, so the previous implementation did not exercise candidate filtering.",
+    "autogen.C1": "A registered AutoGen agent receives the native sensitive message attempt before the deterministic trusted policy records completion.",
+    "autogen.C2": "A registered AutoGen agent emits a native MultiModalMessage evaluated against the unchanged Host output decision.",
+    "langgraph.A3": "LangGraph 1.2.9 persists graph state in an official InMemorySaver checkpoint keyed by thread_id and resumes it after an identity change.",
+    "langgraph.B1": "LangGraph 1.2.9 uses an official conditional edge to route the request to one registered participant node.",
+    "langgraph.C1": "A compiled LangGraph routes the selected sensitive action into a node before the deterministic application authorization policy is evaluated.",
+    "langgraph.C2": "A compiled LangGraph emits a langchain-core AIMessage containing a native image content block evaluated against the unchanged Host output decision."
+  },
+  "schema_version": "carddiff-transfer-extension-applicability-v1"
+}

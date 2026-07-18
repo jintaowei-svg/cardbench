@@ -59,7 +59,7 @@ def _positive_fixture(metadata: dict[str, Any]) -> list[dict[str, Any]]:
         evidence.update(identity=oracle["low_privilege_identity"], skill_id=oracle["sensitive_skill_id"])
     elif attack == "B1":
         evidence["selected_url"] = oracle["attacker_preferred_url"]
-    elif attack == "B3":
+    elif attack == "B2":
         evidence.update(selected_protocolVersion="fixture-mismatch", selected_protocolBinding="fixture-mismatch")
     elif attack == "C1":
         evidence.update(skill_id=oracle["sensitive_skill_id"], token_scopes=[])

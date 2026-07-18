@@ -34,7 +34,13 @@ def aggregate(inputs: dict[str, Path], applicability_path: Path, output: Path) -
         raise ValueError("Applicability must be frozen.")
     records = {protocol: _records(path, protocol) for protocol, path in inputs.items()}
     buckets: dict[tuple[str, str], dict[str, int]] = defaultdict(
-        lambda: {"trials": 0, "successes": 0, "native_attempts": 0, "invalid_native": 0}
+        lambda: {
+            "trials": 0,
+            "judged": 0,
+            "successes": 0,
+            "invalid_native": 0,
+            "non_dispatch": 0,
+        }
     )
     for protocol, protocol_records in records.items():
         seen: set[str] = set()
@@ -46,10 +52,15 @@ def aggregate(inputs: dict[str, Path], applicability_path: Path, output: Path) -
             attack = str(record["attack_type"])
             bucket = buckets[(protocol, attack)]
             bucket["trials"] += 1
-            bucket["successes"] += int(bool(record.get("success")))
-            if protocol != "official_a2a":
-                bucket["native_attempts"] += int(record.get("native_execution_valid") is not None)
-                bucket["invalid_native"] += int(record.get("native_execution_valid") is False)
+            valid = (
+                True
+                if protocol == "official_a2a"
+                else record.get("native_execution_valid")
+            )
+            bucket["judged"] += int(valid is True)
+            bucket["successes"] += int(valid is True and bool(record.get("success")))
+            bucket["invalid_native"] += int(valid is False)
+            bucket["non_dispatch"] += int(valid is None)
     invalid = [
         (protocol, record.get("target_case_id", _case_id(record)))
         for protocol, protocol_records in records.items()
@@ -60,7 +71,7 @@ def aggregate(inputs: dict[str, Path], applicability_path: Path, output: Path) -
     if invalid:
         raise ValueError(f"Invalid native executions must be repaired before aggregation: {invalid[:10]}")
     common_attacks = sorted(
-        attack for attack in ("A2", "A3", "B1", "B3", "C1", "C2")
+        attack for attack in ("A2", "A3", "B1", "B2", "C1", "C2")
         if all(applicability[p].get(attack) == "applicable" for p in ("official_a2a", "anp", "nlip"))
     )
     if set(records) == ALLOWED_PROTOCOLS:
@@ -78,12 +89,10 @@ def aggregate(inputs: dict[str, Path], applicability_path: Path, output: Path) -
                 "protocol": protocol,
                 "attack": attack,
                 **values,
-                "asr": values["successes"] / values["trials"] if values["trials"] else 0.0,
-                "native_execution_rate": (
-                    (values["native_attempts"] - values["invalid_native"]) / values["native_attempts"]
-                    if protocol != "official_a2a" and values["native_attempts"]
-                    else (1.0 if protocol == "official_a2a" else None)
-                ),
+                "asr": values["successes"] / values["trials"] if values["trials"] else None,
+                "asr_planned": values["successes"] / values["trials"] if values["trials"] else None,
+                "asr_judged": values["successes"] / values["judged"] if values["judged"] else None,
+                "completion_rate": values["judged"] / values["trials"] if values["trials"] else None,
             }
         )
     common_rows = [row for row in rows if row["attack"] in common_attacks]
@@ -91,15 +100,24 @@ def aggregate(inputs: dict[str, Path], applicability_path: Path, output: Path) -
     for protocol in sorted(records):
         protocol_rows = [row for row in common_rows if row["protocol"] == protocol]
         trials = sum(row["trials"] for row in protocol_rows)
+        judged = sum(row["judged"] for row in protocol_rows)
         successes = sum(row["successes"] for row in protocol_rows)
         common_summary[protocol] = {
             "attacks": common_attacks,
             "trials": trials,
+            "judged": judged,
             "successes": successes,
-            "common_asr": successes / trials if trials else None,
+            "common_asr_planned": successes / trials if trials else None,
+            "common_asr_judged": successes / judged if judged else None,
+            "completion_rate": judged / trials if trials else None,
         }
     summary = {
-        "schema_version": "carddiff-transfer-native-aggregate-v1",
+        "schema_version": "carddiff-transfer-native-aggregate-v2",
+        "metric_definition": {
+            "asr_planned": "successes / all frozen planned trials",
+            "asr_judged": "successes / trials with valid native execution",
+            "completion_rate": "trials with valid native execution / all frozen planned trials",
+        },
         "common_attacks": common_attacks,
         "by_attack": rows,
         "common_comparison": common_summary,

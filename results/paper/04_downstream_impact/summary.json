@@ -6,16 +6,16 @@
         "confidentiality",
         "integrity"
       ],
-      "impacts": 85,
-      "trials": 85
+      "impacts": 427,
+      "trials": 427
     },
     "A2": {
       "dir": 1.0,
       "impact_types": [
         "confidentiality"
       ],
-      "impacts": 90,
-      "trials": 90
+      "impacts": 450,
+      "trials": 450
     },
     "A3": {
       "dir": 1.0,
@@ -23,25 +23,25 @@
         "confidentiality",
         "integrity"
       ],
-      "impacts": 90,
-      "trials": 90
+      "impacts": 449,
+      "trials": 449
     },
     "B1": {
       "dir": 1.0,
       "impact_types": [
         "confidentiality"
       ],
-      "impacts": 87,
-      "trials": 87
+      "impacts": 450,
+      "trials": 450
     },
-    "B3": {
+    "B2": {
       "dir": 1.0,
       "impact_types": [
         "availability",
         "integrity"
       ],
-      "impacts": 90,
-      "trials": 90
+      "impacts": 450,
+      "trials": 450
     },
     "C1": {
       "dir": 1.0,
@@ -49,21 +49,23 @@
         "confidentiality",
         "integrity"
       ],
-      "impacts": 89,
-      "trials": 89
+      "impacts": 446,
+      "trials": 446
     },
     "C2": {
-      "dir": 1.0,
+      "dir": 0.918918918918919,
       "impact_types": [
         "integrity"
       ],
-      "impacts": 90,
-      "trials": 90
+      "impacts": 408,
+      "trials": 444
     }
   },
-  "dir": 1.0,
-  "impacts": 621,
+  "dir": 0.9884467265725289,
+  "eir": 0.9777777777777777,
+  "impacts": 3080,
   "metric": "DIR",
   "paper_section": "Downstream Impact Experiment",
-  "trials": 621
+  "source_trials": 3150,
+  "trials": 3116
 }

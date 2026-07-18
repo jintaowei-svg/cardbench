@@ -1,0 +1,408 @@
+{
+  "attack_identifiers": [
+    "A1",
+    "A2",
+    "A3",
+    "B1",
+    "B2",
+    "C1",
+    "C2"
+  ],
+  "notes": [
+    "All local, generated, and paper artifacts use the canonical attack identifiers.",
+    "AutoGen B1 was removed and is represented as N/A, not as a zero result.",
+    "Each reported cell is ASR over planned trials, followed by completion rate in parentheses.",
+    "Pending denotes an applicable target/attack whose formal run has not been executed.",
+    "A dagger marks a legacy result that must be rerun after an implementation-semantic revision."
+  ],
+  "panels": {
+    "ecosystem_framework_transfer": {
+      "A1": {
+        "AGNTCY": {
+          "asr_judged": null,
+          "asr_planned": null,
+          "completion_rate": null,
+          "judged": null,
+          "rerun_required": false,
+          "status": "not_applicable",
+          "successes": null,
+          "trials": null
+        },
+        "AutoGen": {
+          "asr_judged": null,
+          "asr_planned": null,
+          "completion_rate": null,
+          "judged": null,
+          "rerun_required": false,
+          "status": "not_applicable",
+          "successes": null,
+          "trials": null
+        },
+        "LangGraph": {
+          "asr_judged": null,
+          "asr_planned": null,
+          "completion_rate": null,
+          "judged": null,
+          "rerun_required": false,
+          "status": "not_applicable",
+          "successes": null,
+          "trials": null
+        }
+      },
+      "A2": {
+        "AGNTCY": {
+          "asr_judged": 1.0,
+          "asr_planned": 1.0,
+          "completion_rate": 1.0,
+          "judged": 90,
+          "rerun_required": false,
+          "status": "reported",
+          "successes": 90,
+          "trials": 90
+        },
+        "AutoGen": {
+          "asr_judged": null,
+          "asr_planned": null,
+          "completion_rate": null,
+          "judged": null,
+          "rerun_required": false,
+          "status": "not_applicable",
+          "successes": null,
+          "trials": null
+        },
+        "LangGraph": {
+          "asr_judged": null,
+          "asr_planned": null,
+          "completion_rate": null,
+          "judged": null,
+          "rerun_required": false,
+          "status": "not_applicable",
+          "successes": null,
+          "trials": null
+        }
+      },
+      "A3": {
+        "AGNTCY": {
+          "asr_judged": null,
+          "asr_planned": null,
+          "completion_rate": null,
+          "judged": null,
+          "rerun_required": false,
+          "status": "not_applicable",
+          "successes": null,
+          "trials": null
+        },
+        "AutoGen": {
+          "asr_judged": 1.0,
+          "asr_planned": 1.0,
+          "completion_rate": 1.0,
+          "judged": 90,
+          "rerun_required": true,
+          "status": "reported",
+          "successes": 90,
+          "trials": 90
+        },
+        "LangGraph": {
+          "asr_judged": null,
+          "asr_planned": null,
+          "completion_rate": null,
+          "judged": null,
+          "rerun_required": false,
+          "status": "pending",
+          "successes": null,
+          "trials": null
+        }
+      },
+      "B1": {
+        "AGNTCY": {
+          "asr_judged": null,
+          "asr_planned": null,
+          "completion_rate": null,
+          "judged": null,
+          "rerun_required": false,
+          "status": "not_applicable",
+          "successes": null,
+          "trials": null
+        },
+        "AutoGen": {
+          "asr_judged": null,
+          "asr_planned": null,
+          "completion_rate": null,
+          "judged": null,
+          "rerun_required": false,
+          "status": "not_applicable",
+          "successes": null,
+          "trials": null
+        },
+        "LangGraph": {
+          "asr_judged": null,
+          "asr_planned": null,
+          "completion_rate": null,
+          "judged": null,
+          "rerun_required": false,
+          "status": "pending",
+          "successes": null,
+          "trials": null
+        }
+      },
+      "B2": {
+        "AGNTCY": {
+          "asr_judged": 1.0,
+          "asr_planned": 1.0,
+          "completion_rate": 1.0,
+          "judged": 90,
+          "rerun_required": false,
+          "status": "reported",
+          "successes": 90,
+          "trials": 90
+        },
+        "AutoGen": {
+          "asr_judged": null,
+          "asr_planned": null,
+          "completion_rate": null,
+          "judged": null,
+          "rerun_required": false,
+          "status": "not_applicable",
+          "successes": null,
+          "trials": null
+        },
+        "LangGraph": {
+          "asr_judged": null,
+          "asr_planned": null,
+          "completion_rate": null,
+          "judged": null,
+          "rerun_required": false,
+          "status": "not_applicable",
+          "successes": null,
+          "trials": null
+        }
+      },
+      "C1": {
+        "AGNTCY": {
+          "asr_judged": null,
+          "asr_planned": null,
+          "completion_rate": null,
+          "judged": null,
+          "rerun_required": false,
+          "status": "not_applicable",
+          "successes": null,
+          "trials": null
+        },
+        "AutoGen": {
+          "asr_judged": 1.0,
+          "asr_planned": 0.9777777777777777,
+          "completion_rate": 0.9777777777777777,
+          "judged": 88,
+          "rerun_required": false,
+          "status": "reported",
+          "successes": 88,
+          "trials": 90
+        },
+        "LangGraph": {
+          "asr_judged": null,
+          "asr_planned": null,
+          "completion_rate": null,
+          "judged": null,
+          "rerun_required": false,
+          "status": "pending",
+          "successes": null,
+          "trials": null
+        }
+      },
+      "C2": {
+        "AGNTCY": {
+          "asr_judged": null,
+          "asr_planned": null,
+          "completion_rate": null,
+          "judged": null,
+          "rerun_required": false,
+          "status": "not_applicable",
+          "successes": null,
+          "trials": null
+        },
+        "AutoGen": {
+          "asr_judged": 1.0,
+          "asr_planned": 0.9888888888888889,
+          "completion_rate": 0.9888888888888889,
+          "judged": 89,
+          "rerun_required": false,
+          "status": "reported",
+          "successes": 89,
+          "trials": 90
+        },
+        "LangGraph": {
+          "asr_judged": null,
+          "asr_planned": null,
+          "completion_rate": null,
+          "judged": null,
+          "rerun_required": false,
+          "status": "pending",
+          "successes": null,
+          "trials": null
+        }
+      }
+    },
+    "protocol_transfer": {
+      "A1": {
+        "ANP": {
+          "asr_judged": null,
+          "asr_planned": null,
+          "completion_rate": null,
+          "judged": null,
+          "rerun_required": false,
+          "status": "not_applicable",
+          "successes": null,
+          "trials": null
+        },
+        "NLIP": {
+          "asr_judged": null,
+          "asr_planned": null,
+          "completion_rate": null,
+          "judged": null,
+          "rerun_required": false,
+          "status": "not_applicable",
+          "successes": null,
+          "trials": null
+        }
+      },
+      "A2": {
+        "ANP": {
+          "asr_judged": 1.0,
+          "asr_planned": 1.0,
+          "completion_rate": 1.0,
+          "judged": 90,
+          "rerun_required": false,
+          "status": "reported",
+          "successes": 90,
+          "trials": 90
+        },
+        "NLIP": {
+          "asr_judged": null,
+          "asr_planned": null,
+          "completion_rate": null,
+          "judged": null,
+          "rerun_required": false,
+          "status": "not_applicable",
+          "successes": null,
+          "trials": null
+        }
+      },
+      "A3": {
+        "ANP": {
+          "asr_judged": 0.9888888888888889,
+          "asr_planned": 0.9888888888888889,
+          "completion_rate": 1.0,
+          "judged": 90,
+          "rerun_required": true,
+          "status": "reported",
+          "successes": 89,
+          "trials": 90
+        },
+        "NLIP": {
+          "asr_judged": 1.0,
+          "asr_planned": 0.9888888888888889,
+          "completion_rate": 0.9888888888888889,
+          "judged": 89,
+          "rerun_required": true,
+          "status": "reported",
+          "successes": 89,
+          "trials": 90
+        }
+      },
+      "B1": {
+        "ANP": {
+          "asr_judged": 1.0,
+          "asr_planned": 1.0,
+          "completion_rate": 1.0,
+          "judged": 90,
+          "rerun_required": false,
+          "status": "reported",
+          "successes": 90,
+          "trials": 90
+        },
+        "NLIP": {
+          "asr_judged": null,
+          "asr_planned": null,
+          "completion_rate": null,
+          "judged": null,
+          "rerun_required": false,
+          "status": "not_applicable",
+          "successes": null,
+          "trials": null
+        }
+      },
+      "B2": {
+        "ANP": {
+          "asr_judged": 1.0,
+          "asr_planned": 1.0,
+          "completion_rate": 1.0,
+          "judged": 90,
+          "rerun_required": false,
+          "status": "reported",
+          "successes": 90,
+          "trials": 90
+        },
+        "NLIP": {
+          "asr_judged": null,
+          "asr_planned": null,
+          "completion_rate": null,
+          "judged": null,
+          "rerun_required": false,
+          "status": "not_applicable",
+          "successes": null,
+          "trials": null
+        }
+      },
+      "C1": {
+        "ANP": {
+          "asr_judged": 1.0,
+          "asr_planned": 1.0,
+          "completion_rate": 1.0,
+          "judged": 90,
+          "rerun_required": false,
+          "status": "reported",
+          "successes": 90,
+          "trials": 90
+        },
+        "NLIP": {
+          "asr_judged": 1.0,
+          "asr_planned": 1.0,
+          "completion_rate": 1.0,
+          "judged": 90,
+          "rerun_required": true,
+          "status": "reported",
+          "successes": 90,
+          "trials": 90
+        }
+      },
+      "C2": {
+        "ANP": {
+          "asr_judged": null,
+          "asr_planned": null,
+          "completion_rate": null,
+          "judged": null,
+          "rerun_required": false,
+          "status": "not_applicable",
+          "successes": null,
+          "trials": null
+        },
+        "NLIP": {
+          "asr_judged": 1.0,
+          "asr_planned": 1.0,
+          "completion_rate": 1.0,
+          "judged": 90,
+          "rerun_required": false,
+          "status": "reported",
+          "successes": 90,
+          "trials": 90
+        }
+      }
+    }
+  },
+  "primary_metric": "asr_planned",
+  "schema_version": "carddiff-transfer-all-v2",
+  "secondary_metrics": [
+    "asr_judged",
+    "completion_rate"
+  ]
+}

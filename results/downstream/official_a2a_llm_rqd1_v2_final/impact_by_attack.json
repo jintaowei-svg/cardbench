@@ -1,44 +1,44 @@
-﻿{
-    "A1":  {
-               "completed":  85,
-               "dir":  1.0,
-               "impact":  85,
-               "planned":  85
-           },
-    "A2":  {
-               "completed":  90,
-               "dir":  1.0,
-               "impact":  90,
-               "planned":  90
-           },
-    "A3":  {
-               "completed":  90,
-               "dir":  1.0,
-               "impact":  90,
-               "planned":  90
-           },
-    "B1":  {
-               "completed":  87,
-               "dir":  1.0,
-               "impact":  87,
-               "planned":  87
-           },
-    "B3":  {
-               "completed":  90,
-               "dir":  1.0,
-               "impact":  90,
-               "planned":  90
-           },
-    "C1":  {
-               "completed":  89,
-               "dir":  1.0,
-               "impact":  89,
-               "planned":  89
-           },
-    "C2":  {
-               "completed":  90,
-               "dir":  1.0,
-               "impact":  90,
-               "planned":  90
-           }
+{
+  "A1": {
+    "completed": 85,
+    "dir": 1.0,
+    "impact": 85,
+    "planned": 85
+  },
+  "A2": {
+    "completed": 90,
+    "dir": 1.0,
+    "impact": 90,
+    "planned": 90
+  },
+  "A3": {
+    "completed": 90,
+    "dir": 1.0,
+    "impact": 90,
+    "planned": 90
+  },
+  "B1": {
+    "completed": 87,
+    "dir": 1.0,
+    "impact": 87,
+    "planned": 87
+  },
+  "B2": {
+    "completed": 90,
+    "dir": 1.0,
+    "impact": 90,
+    "planned": 90
+  },
+  "C1": {
+    "completed": 89,
+    "dir": 1.0,
+    "impact": 89,
+    "planned": 89
+  },
+  "C2": {
+    "completed": 90,
+    "dir": 1.0,
+    "impact": 90,
+    "planned": 90
+  }
 }

@@ -1,0 +1,181 @@
+{
+  "cases": [
+    {
+      "attack_type": "A1",
+      "case_id": "CARDDIFF_A1_FINANCE_T034_V001",
+      "domain": "finance",
+      "variant": "001"
+    },
+    {
+      "attack_type": "A1",
+      "case_id": "CARDDIFF_A1_TRAVEL_T016_V002",
+      "domain": "travel",
+      "variant": "002"
+    },
+    {
+      "attack_type": "A1",
+      "case_id": "CARDDIFF_A1_FINANCE_T015_V002",
+      "domain": "finance",
+      "variant": "002"
+    },
+    {
+      "attack_type": "A1",
+      "case_id": "CARDDIFF_A1_TRAVEL_T046_V003",
+      "domain": "travel",
+      "variant": "003"
+    },
+    {
+      "attack_type": "A2",
+      "case_id": "CARDDIFF_A2_TRAVEL_T047_V001",
+      "domain": "travel",
+      "variant": "001"
+    },
+    {
+      "attack_type": "A2",
+      "case_id": "CARDDIFF_A2_HEALTHCARE_T037_V001",
+      "domain": "healthcare",
+      "variant": "001"
+    },
+    {
+      "attack_type": "A2",
+      "case_id": "CARDDIFF_A2_FINANCE_T031_V001",
+      "domain": "finance",
+      "variant": "001"
+    },
+    {
+      "attack_type": "A2",
+      "case_id": "CARDDIFF_A2_FINANCE_T017_V002",
+      "domain": "finance",
+      "variant": "002"
+    },
+    {
+      "attack_type": "A2",
+      "case_id": "CARDDIFF_A2_TRAVEL_T016_V003",
+      "domain": "travel",
+      "variant": "003"
+    },
+    {
+      "attack_type": "A2",
+      "case_id": "CARDDIFF_A2_FINANCE_T008_V003",
+      "domain": "finance",
+      "variant": "003"
+    },
+    {
+      "attack_type": "A3",
+      "case_id": "CARDDIFF_A3_HEALTHCARE_T006_V001",
+      "domain": "healthcare",
+      "variant": "001"
+    },
+    {
+      "attack_type": "A3",
+      "case_id": "CARDDIFF_A3_FINANCE_T020_V001",
+      "domain": "finance",
+      "variant": "001"
+    },
+    {
+      "attack_type": "A3",
+      "case_id": "CARDDIFF_A3_TRAVEL_T036_V002",
+      "domain": "travel",
+      "variant": "002"
+    },
+    {
+      "attack_type": "A3",
+      "case_id": "CARDDIFF_A3_HEALTHCARE_T007_V002",
+      "domain": "healthcare",
+      "variant": "002"
+    },
+    {
+      "attack_type": "A3",
+      "case_id": "CARDDIFF_A3_FINANCE_T019_V002",
+      "domain": "finance",
+      "variant": "002"
+    },
+    {
+      "attack_type": "A3",
+      "case_id": "CARDDIFF_A3_HEALTHCARE_T020_V003",
+      "domain": "healthcare",
+      "variant": "003"
+    },
+    {
+      "attack_type": "A3",
+      "case_id": "CARDDIFF_A3_HEALTHCARE_T041_V003",
+      "domain": "healthcare",
+      "variant": "003"
+    },
+    {
+      "attack_type": "A3",
+      "case_id": "CARDDIFF_A3_FINANCE_T011_V003",
+      "domain": "finance",
+      "variant": "003"
+    },
+    {
+      "attack_type": "B1",
+      "case_id": "CARDDIFF_B1_HEALTHCARE_T016_V001",
+      "domain": "healthcare",
+      "variant": "001"
+    },
+    {
+      "attack_type": "B2",
+      "case_id": "CARDDIFF_B2_TRAVEL_T001_V001",
+      "domain": "travel",
+      "variant": "001"
+    },
+    {
+      "attack_type": "B2",
+      "case_id": "CARDDIFF_B2_FINANCE_T024_V002",
+      "domain": "finance",
+      "variant": "002"
+    },
+    {
+      "attack_type": "B2",
+      "case_id": "CARDDIFF_B2_FINANCE_T024_V003",
+      "domain": "finance",
+      "variant": "003"
+    },
+    {
+      "attack_type": "C1",
+      "case_id": "CARDDIFF_C1_HEALTHCARE_T021_V001",
+      "domain": "healthcare",
+      "variant": "001"
+    },
+    {
+      "attack_type": "C1",
+      "case_id": "CARDDIFF_C1_HEALTHCARE_T002_V002",
+      "domain": "healthcare",
+      "variant": "002"
+    },
+    {
+      "attack_type": "C2",
+      "case_id": "CARDDIFF_C2_HEALTHCARE_T037_V001",
+      "domain": "healthcare",
+      "variant": "001"
+    },
+    {
+      "attack_type": "C2",
+      "case_id": "CARDDIFF_C2_FINANCE_T035_V001",
+      "domain": "finance",
+      "variant": "001"
+    },
+    {
+      "attack_type": "C2",
+      "case_id": "CARDDIFF_C2_TRAVEL_T028_V002",
+      "domain": "travel",
+      "variant": "002"
+    },
+    {
+      "attack_type": "C2",
+      "case_id": "CARDDIFF_C2_HEALTHCARE_T030_V002",
+      "domain": "healthcare",
+      "variant": "002"
+    },
+    {
+      "attack_type": "C2",
+      "case_id": "CARDDIFF_C2_FINANCE_T029_V002",
+      "domain": "finance",
+      "variant": "002"
+    }
+  ],
+  "schema_version": "official-a2a-rerun-v1",
+  "source_details_sha256": "f1a345fca20a609c7fa477c67df6d1310dd4da4c3655295919fbcf0d4bb7f9d4",
+  "source_model": "gpt-5-mini"
+}

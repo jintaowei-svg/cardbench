@@ -1,0 +1,236 @@
+{
+  "by_attack": [
+    {
+      "asr": 1.0,
+      "asr_judged": 1.0,
+      "asr_planned": 1.0,
+      "attack": "A2",
+      "completion_rate": 1.0,
+      "invalid_native": 0,
+      "judged": 90,
+      "non_dispatch": 0,
+      "protocol": "anp",
+      "successes": 90,
+      "trials": 90
+    },
+    {
+      "asr": 0.9888888888888889,
+      "asr_judged": 0.9888888888888889,
+      "asr_planned": 0.9888888888888889,
+      "attack": "A3",
+      "completion_rate": 1.0,
+      "invalid_native": 0,
+      "judged": 90,
+      "non_dispatch": 0,
+      "protocol": "anp",
+      "successes": 89,
+      "trials": 90
+    },
+    {
+      "asr": 1.0,
+      "asr_judged": 1.0,
+      "asr_planned": 1.0,
+      "attack": "B1",
+      "completion_rate": 1.0,
+      "invalid_native": 0,
+      "judged": 90,
+      "non_dispatch": 0,
+      "protocol": "anp",
+      "successes": 90,
+      "trials": 90
+    },
+    {
+      "asr": 1.0,
+      "asr_judged": 1.0,
+      "asr_planned": 1.0,
+      "attack": "B2",
+      "completion_rate": 1.0,
+      "invalid_native": 0,
+      "judged": 90,
+      "non_dispatch": 0,
+      "protocol": "anp",
+      "successes": 90,
+      "trials": 90
+    },
+    {
+      "asr": 1.0,
+      "asr_judged": 1.0,
+      "asr_planned": 1.0,
+      "attack": "C1",
+      "completion_rate": 1.0,
+      "invalid_native": 0,
+      "judged": 90,
+      "non_dispatch": 0,
+      "protocol": "anp",
+      "successes": 90,
+      "trials": 90
+    },
+    {
+      "asr": 0.9888888888888889,
+      "asr_judged": 1.0,
+      "asr_planned": 0.9888888888888889,
+      "attack": "A3",
+      "completion_rate": 0.9888888888888889,
+      "invalid_native": 0,
+      "judged": 89,
+      "non_dispatch": 1,
+      "protocol": "nlip",
+      "successes": 89,
+      "trials": 90
+    },
+    {
+      "asr": 1.0,
+      "asr_judged": 1.0,
+      "asr_planned": 1.0,
+      "attack": "C1",
+      "completion_rate": 1.0,
+      "invalid_native": 0,
+      "judged": 90,
+      "non_dispatch": 0,
+      "protocol": "nlip",
+      "successes": 90,
+      "trials": 90
+    },
+    {
+      "asr": 1.0,
+      "asr_judged": 1.0,
+      "asr_planned": 1.0,
+      "attack": "C2",
+      "completion_rate": 1.0,
+      "invalid_native": 0,
+      "judged": 90,
+      "non_dispatch": 0,
+      "protocol": "nlip",
+      "successes": 90,
+      "trials": 90
+    },
+    {
+      "asr": 1.0,
+      "asr_judged": 1.0,
+      "asr_planned": 1.0,
+      "attack": "A2",
+      "completion_rate": 1.0,
+      "invalid_native": 0,
+      "judged": 90,
+      "non_dispatch": 0,
+      "protocol": "official_a2a",
+      "successes": 90,
+      "trials": 90
+    },
+    {
+      "asr": 1.0,
+      "asr_judged": 1.0,
+      "asr_planned": 1.0,
+      "attack": "A3",
+      "completion_rate": 1.0,
+      "invalid_native": 0,
+      "judged": 90,
+      "non_dispatch": 0,
+      "protocol": "official_a2a",
+      "successes": 90,
+      "trials": 90
+    },
+    {
+      "asr": 1.0,
+      "asr_judged": 1.0,
+      "asr_planned": 1.0,
+      "attack": "B1",
+      "completion_rate": 1.0,
+      "invalid_native": 0,
+      "judged": 90,
+      "non_dispatch": 0,
+      "protocol": "official_a2a",
+      "successes": 90,
+      "trials": 90
+    },
+    {
+      "asr": 1.0,
+      "asr_judged": 1.0,
+      "asr_planned": 1.0,
+      "attack": "B2",
+      "completion_rate": 1.0,
+      "invalid_native": 0,
+      "judged": 90,
+      "non_dispatch": 0,
+      "protocol": "official_a2a",
+      "successes": 90,
+      "trials": 90
+    },
+    {
+      "asr": 0.9888888888888889,
+      "asr_judged": 0.9888888888888889,
+      "asr_planned": 0.9888888888888889,
+      "attack": "C1",
+      "completion_rate": 1.0,
+      "invalid_native": 0,
+      "judged": 90,
+      "non_dispatch": 0,
+      "protocol": "official_a2a",
+      "successes": 89,
+      "trials": 90
+    },
+    {
+      "asr": 0.9666666666666667,
+      "asr_judged": 0.9666666666666667,
+      "asr_planned": 0.9666666666666667,
+      "attack": "C2",
+      "completion_rate": 1.0,
+      "invalid_native": 0,
+      "judged": 90,
+      "non_dispatch": 0,
+      "protocol": "official_a2a",
+      "successes": 87,
+      "trials": 90
+    }
+  ],
+  "common_attacks": [
+    "A3",
+    "C1"
+  ],
+  "common_comparison": {
+    "anp": {
+      "attacks": [
+        "A3",
+        "C1"
+      ],
+      "common_asr_judged": 0.9944444444444445,
+      "common_asr_planned": 0.9944444444444445,
+      "completion_rate": 1.0,
+      "judged": 180,
+      "successes": 179,
+      "trials": 180
+    },
+    "nlip": {
+      "attacks": [
+        "A3",
+        "C1"
+      ],
+      "common_asr_judged": 1.0,
+      "common_asr_planned": 0.9944444444444445,
+      "completion_rate": 0.9944444444444445,
+      "judged": 179,
+      "successes": 179,
+      "trials": 180
+    },
+    "official_a2a": {
+      "attacks": [
+        "A3",
+        "C1"
+      ],
+      "common_asr_judged": 0.9944444444444445,
+      "common_asr_planned": 0.9944444444444445,
+      "completion_rate": 1.0,
+      "judged": 180,
+      "successes": 179,
+      "trials": 180
+    }
+  },
+  "metric_definition": {
+    "asr_judged": "successes / trials with valid native execution",
+    "asr_planned": "successes / all frozen planned trials",
+    "completion_rate": "trials with valid native execution / all frozen planned trials"
+  },
+  "overall_asr": null,
+  "overall_asr_reason": "Different protocol-specific attack sets must not be pooled.",
+  "schema_version": "carddiff-transfer-native-aggregate-v2"
+}

@@ -1,9 +1,9 @@
 # NVIDIA NeMo Guardrails Defense Experiment
 
 This experiment places one generic NeMo input rail before the Official A2A
-Host. It reuses the frozen Official A2A transfer manifest and deterministically
-excludes B2, producing the paper design of 7 attacks x 3 domains x 30 cases =
-630 trials. It never regenerates or resamples tasks.
+Host. It reuses the frozen seven-attack Official A2A defense manifest, producing
+7 attacks x 3 domains x 30 cases = 630 trials. It never regenerates or resamples
+tasks.
 
 The gateway receives the user task and Host-visible AgentCard control-plane
 context. Attack labels and the private event-level oracle are excluded. A NeMo
@@ -68,5 +68,5 @@ judgment and 7 ended with infrastructure errors. The planned-case ASR is
 NeMo blocked 25/630 cases (3.97%), and the relative ASR reduction is 4.19%.
 
 By attack, planned-case ASR is A1 83.33%, A2 100.00%, A3 98.89%, B1 97.78%,
-B3 100.00%, C1 83.33%, and C2 97.78%. The canonical outputs are under
+B2 100.00%, C1 83.33%, and C2 97.78%. The canonical outputs are under
 `results/paper/05_defense/`.

@@ -1,0 +1,25 @@
+{
+  "api_checks": {
+    "base_agent_state_load": true,
+    "base_agent_state_save": true,
+    "candidate_func_parameter": true,
+    "multimodal_message": true,
+    "selector_func_parameter": true,
+    "selector_group_chat": true,
+    "text_message": true
+  },
+  "applicability": {
+    "A3": "applicable",
+    "B1": "not_applicable",
+    "C1": "applicable",
+    "C2": "applicable"
+  },
+  "model_called": false,
+  "runtime": {
+    "autogen-agentchat": "0.7.5",
+    "autogen-core": "0.7.5"
+  },
+  "status": "passed",
+  "target": "autogen",
+  "target_kind": "framework"
+}

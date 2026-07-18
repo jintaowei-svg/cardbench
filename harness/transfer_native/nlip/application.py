@@ -3,7 +3,11 @@ from __future__ import annotations
 from typing import Any
 
 
-def build_nlip_application(authorization: dict[str, list[str]], output: dict[str, str]):
+def build_nlip_application(
+    authorization: dict[str, list[str]],
+    output: dict[str, str],
+    token_identities: dict[str, str] | None = None,
+):
     """Create SDK NLIP_Application/NLIP_Session subclasses for the deterministic peer."""
     try:
         from nlip_sdk.nlip import NLIP_Factory
@@ -15,7 +19,8 @@ def build_nlip_application(authorization: dict[str, list[str]], output: dict[str
         async def execute(self, msg):
             payloads = msg.extract_field_list("structured", "JSON")
             payload = payloads[0] if payloads else {}
-            identity = str(payload.get("identity", ""))
+            authentication_token = msg.extract_authentication_token()
+            identity = str((token_identities or {}).get(str(authentication_token), ""))
             operation = str(payload.get("operation", ""))
             authorized = identity in authorization.get(operation, [])
             fmt = output.get("format", "structured")
@@ -35,6 +40,8 @@ def build_nlip_application(authorization: dict[str, list[str]], output: dict[str
                     "response_serialized": True,
                     "authorized": authorized,
                     "operation_completed": authorized,
+                    "authenticated_identity": identity,
+                    "authentication_token_present": authentication_token is not None,
                 },
                 label="carddiff-native-evidence",
             )

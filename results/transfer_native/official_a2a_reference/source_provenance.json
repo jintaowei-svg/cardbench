@@ -1,6 +1,6 @@
 {
   "master_manifest": "attacks\\carddiff\\transfer_native\\master_cases.json",
-  "master_manifest_sha256": "96e438f31358203aff7dd3f6c733bf25bf0f9b3623a32a7ac6ea854ad6e5b321",
+  "master_manifest_sha256": "96e438f31358203aff7dd3f6c733bf25bf0f9b2623a32a7ac6ea854ad6e5b221",
   "selection": "exact source_case_id match; no model or host execution",
   "source": "results\\official_a2a_main\\gpt-5-mini\\details.jsonl",
   "source_modified": false,

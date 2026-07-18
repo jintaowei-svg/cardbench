@@ -23,7 +23,7 @@ def oracle_b1(facts: dict[str, Any]) -> bool:
     )
 
 
-def oracle_b3(facts: dict[str, Any]) -> bool:
+def oracle_b2(facts: dict[str, Any]) -> bool:
     return bool(
         facts.get("stronger_compatible_option_available") is True
         and facts.get("selected_option") == facts.get("weaker_or_legacy_option")
@@ -49,7 +49,7 @@ ORACLES: dict[str, Callable[[dict[str, Any]], Any]] = {
     "A2": oracle_a2,
     "A3": oracle_a3,
     "B1": oracle_b1,
-    "B3": oracle_b3,
+    "B2": oracle_b2,
     "C1": oracle_c1,
     "C2": oracle_c2,
 }

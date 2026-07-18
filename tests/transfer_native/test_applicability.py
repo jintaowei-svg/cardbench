@@ -13,7 +13,7 @@ def test_applicability_is_frozen_without_pending_gates() -> None:
     assert "pending_native_gate" not in json.dumps(data)
     assert data["anp"]["A2"] == "applicable"
     assert data["anp"]["C2"] == "not_applicable"
-    assert data["nlip"]["B3"] == "not_applicable"
+    assert data["nlip"]["B2"] == "not_applicable"
 
 
 def test_not_applicable_attacks_have_no_trials() -> None:

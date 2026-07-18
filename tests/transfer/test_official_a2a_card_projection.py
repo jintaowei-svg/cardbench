@@ -36,7 +36,7 @@ def test_projection_rejects_mismatched_extension_hash() -> None:
 
 def test_projection_preserves_query_while_sdk_route_uses_only_path() -> None:
     raw = deepcopy(CardDiffPerturbed001().metadata["agent"]["public_card"])
-    interface_url = "http://carddiff.a2a.local/shared-tenant/travel?route=primary"
+    interface_url = "http://carddiff.a2a.local/binding-version/travel?route=primary"
     raw["supportedInterfaces"][0]["url"] = interface_url
 
     sdk = build_sdk_agent_card(
@@ -45,5 +45,5 @@ def test_projection_preserves_query_while_sdk_route_uses_only_path() -> None:
         base_url="http://carddiff.a2a.local",
     )
 
-    assert str(sdk.url) == "http://carddiff.a2a.local/shared-tenant/travel/?route=primary"
-    assert _mount_path_for_interface_url(interface_url, "http://carddiff.a2a.local") == "/shared-tenant/travel"
+    assert str(sdk.url) == "http://carddiff.a2a.local/binding-version/travel/?route=primary"
+    assert _mount_path_for_interface_url(interface_url, "http://carddiff.a2a.local") == "/binding-version/travel"

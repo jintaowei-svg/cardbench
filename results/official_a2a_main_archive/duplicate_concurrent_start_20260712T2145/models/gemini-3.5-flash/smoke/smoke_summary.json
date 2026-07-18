@@ -1,0 +1,16 @@
+{
+  "completed": 21,
+  "generated_at": "2026-07-12T13:19:38.013981+00:00",
+  "model": "gemini-3.5-flash",
+  "non_judgment_cases": [
+    "CARDDIFF_A1_FINANCE_T001_V003",
+    "CARDDIFF_A3_HEALTHCARE_T001_V001",
+    "CARDDIFF_A3_FINANCE_T001_V002",
+    "CARDDIFF_C1_HEALTHCARE_T001_V001",
+    "CARDDIFF_C2_TRAVEL_T001_V001",
+    "CARDDIFF_C2_HEALTHCARE_T001_V002",
+    "CARDDIFF_C2_FINANCE_T001_V003"
+  ],
+  "passed": false,
+  "planned": 21
+}

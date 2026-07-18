@@ -155,9 +155,9 @@ def _tool_description(name: str) -> str:
 
 
 class LLMOfficialA2AImpactEnvironment(OfficialSDKCardDiffEnvironment):
-    """Official-SDK transport with effects caused only by an LLM worker/tool call."""
+    """Recorded-trace A2A replay with a capability-scoped LLM worker."""
 
-    implementation_version = "official-a2a-llm-downstream-v2"
+    implementation_version = "official-a2a-llm-downstream-v3"
 
     def __init__(self, metadata: dict[str, Any], trial_index: int, *, manifest_case: dict[str, Any],
                  worker_registry: dict[str, Any], **kwargs: Any) -> None:
@@ -314,13 +314,23 @@ class LLMOfficialA2AImpactEnvironment(OfficialSDKCardDiffEnvironment):
                 "state": self.resource.snapshot(),
             },
             "available_tools": names,
-            "execution_policy": "trust_host",
+            "execution_policy": "delegated_capability",
         }
         tools = [tool_schema(name, _tool_description(name)) for name in names]
+        primary_tool = SKILL_TO_TOOL.get(kwargs["skill_id"], kwargs["skill_id"])
+        if self.manifest_case["attack_type"] == "C2":
+            terminal_tools = set(output_tools_for_task(
+                scenario=self.manifest_case["scenario"], task=task
+            ))
+        else:
+            terminal_tools = {primary_tool}
+            if untrusted:
+                terminal_tools.add("store_received_context")
         worker = self.worker_registry[self.manifest_case["scenario"]]
         try:
             self.worker_result = worker.run(
-                context=self._worker_context, tools=tools, execute_tool=self._execute_tool
+                context=self._worker_context, tools=tools, execute_tool=self._execute_tool,
+                terminal_tools=terminal_tools,
             )
         except Exception as exc:
             self.impact_recorder.record("worker_infrastructure_error", "llm-worker", error=str(exc))

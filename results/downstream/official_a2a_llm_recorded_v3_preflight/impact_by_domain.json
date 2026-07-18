@@ -1,0 +1,15 @@
+{
+  "finance": {
+    "completed": 7,
+    "dir": 1.0,
+    "errors": 0,
+    "impact": 7,
+    "impact_types": {
+      "confidentiality": 2,
+      "integrity": 5
+    },
+    "model_completion_rate": 1.0,
+    "planned": 7,
+    "tool_call_rate": 1.0
+  }
+}

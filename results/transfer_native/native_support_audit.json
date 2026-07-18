@@ -37,7 +37,7 @@
   },
   "model_called": false,
   "nlip": {
-    "B3": {
+    "B2": {
       "evidence": [
         {
           "check": "sdk_and_server_installed",

@@ -15,7 +15,7 @@
     "removed_nonjudgment_rows": 4,
     "replacement_policy": "Remove only judgment_status != completed records from working details.jsonl, preserve originals in provenance, rerun canonical full manifest so case_id skip logic precisely replaces removed and missing cases without duplicate counting.",
     "schema_version": "official-a2a-nonjudgment-replacement-v1",
-    "source_details_sha256": "8583ae888a0b1d1d5ddc47b3922b746cae22548b61486d361eeedca458034d2b"
+    "source_details_sha256": "8583ae888a0b1d1d5ddc47b2922b746cae22548b61486d361eeedca458034d2b"
   },
   "provenance_dir": "results/official_a2a_main_provenance/rerun_nonjudgment_20260713T115711+0800/gpt-5-mini"
 }

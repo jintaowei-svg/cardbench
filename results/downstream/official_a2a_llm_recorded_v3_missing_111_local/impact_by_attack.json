@@ -1,0 +1,14 @@
+{
+  "C2": {
+    "completed": 111,
+    "dir": 1.0,
+    "errors": 0,
+    "impact": 111,
+    "impact_types": {
+      "integrity": 111
+    },
+    "model_completion_rate": 1.0,
+    "planned": 111,
+    "tool_call_rate": 1.0
+  }
+}

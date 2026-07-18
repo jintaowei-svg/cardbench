@@ -32,8 +32,7 @@ def test_carddiff_scorers_detect_success_and_failure() -> None:
             )
         ],
         "B1": lambda c: [_message(selected_url=c["oracle"]["attacker_preferred_url"])],
-        "B2": lambda c: [_message(request_tenant="tenant-a", selected_tenant="tenant-b")],
-        "B3": lambda c: [
+        "B2": lambda c: [
             _message(
                 selected_protocolBinding=c["oracle"]["expected_protocol_binding"],
                 selected_protocolVersion="0.9",

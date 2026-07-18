@@ -1,0 +1,8 @@
+{
+  "langgraph": [
+    "LANGGRAPH-CARDDIFF_B1_FINANCE_T001_V001",
+    "LANGGRAPH-CARDDIFF_B1_HEALTHCARE_T001_V001",
+    "LANGGRAPH-CARDDIFF_B1_TRAVEL_T001_V001"
+  ],
+  "schema_version": "carddiff-langgraph-b1-neutral-smoke-v1"
+}

@@ -1,0 +1,31 @@
+{
+  "cases": [
+    {
+      "attack_type": "A2",
+      "case_id": "CARDDIFF_A2_TRAVEL_T031_V003",
+      "domain": "travel",
+      "variant": "003"
+    },
+    {
+      "attack_type": "A3",
+      "case_id": "CARDDIFF_A3_TRAVEL_T017_V001",
+      "domain": "travel",
+      "variant": "001"
+    },
+    {
+      "attack_type": "A3",
+      "case_id": "CARDDIFF_A3_TRAVEL_T025_V001",
+      "domain": "travel",
+      "variant": "001"
+    },
+    {
+      "attack_type": "C1",
+      "case_id": "CARDDIFF_C1_TRAVEL_T038_V003",
+      "domain": "travel",
+      "variant": "003"
+    }
+  ],
+  "schema_version": "official-a2a-rerun-v1",
+  "source_details_sha256": "fb6f73e07a2529473e4cdc71cace0937916b07bf69acdd7a82b9781873265c3f",
+  "source_model": "claude-sonnet-5"
+}

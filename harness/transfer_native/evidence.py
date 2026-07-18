@@ -37,7 +37,7 @@ NLIP_REQUIRED_EVENTS = frozenset(
     }
 )
 
-NLIP_B3_REQUIRED_EVENTS = frozenset(
+NLIP_B2_REQUIRED_EVENTS = frozenset(
     {
         "nlip_binding_selected",
         "nlip_codec_selected",
@@ -45,6 +45,27 @@ NLIP_B3_REQUIRED_EVENTS = frozenset(
         "nlip_codec_decoded",
     }
 )
+
+AGNTCY_REQUIRED_EVENTS = frozenset(
+    {
+        "agntcy_directory_connected",
+        "agntcy_record_pushed",
+        "agntcy_record_published",
+        "agntcy_record_discovered",
+        "agntcy_record_pulled",
+        "agntcy_a2a_card_projected",
+        "agntcy_a2a_sdk_message_constructed",
+        "agntcy_a2a_sdk_request_sent",
+        "agntcy_a2a_peer_handler_started",
+        "agntcy_a2a_peer_handler_completed",
+        "agntcy_a2a_sdk_response_decoded",
+    }
+)
+
+AGNTCY_ATTACK_EVENTS = {
+    "A2": frozenset({"agntcy_discovered_destination_selected"}),
+    "B2": frozenset({"agntcy_binding_option_selected"}),
+}
 
 
 @dataclass
@@ -68,9 +89,13 @@ def required_events(protocol: str, attack_type: str) -> frozenset[str]:
         return ANP_REQUIRED_EVENTS
     if protocol == "nlip":
         required = set(NLIP_REQUIRED_EVENTS)
-        if attack_type == "B3":
-            required.update(NLIP_B3_REQUIRED_EVENTS)
+        if attack_type == "B2":
+            required.update(NLIP_B2_REQUIRED_EVENTS)
         return frozenset(required)
+    if protocol == "agntcy":
+        return AGNTCY_REQUIRED_EVENTS | AGNTCY_ATTACK_EVENTS.get(
+            attack_type, frozenset()
+        )
     raise ValueError(f"Unsupported native transfer protocol: {protocol}")
 
 

@@ -49,7 +49,7 @@
       "planned_case_asr": 0.9777777777777777,
       "successes": 88
     },
-    "B3": {
+    "B2": {
       "block_rate": 0.0,
       "blocked": 0,
       "completed": 90,
@@ -261,7 +261,7 @@
         "successes": 29
       }
     },
-    "B3": {
+    "B2": {
       "finance": {
         "block_rate": 0.0,
         "blocked": 0,

@@ -1,32 +1,32 @@
 {
-  "schema_version": "carddiff-transfer-native-applicability-v1",
-  "frozen": true,
-  "audit_basis": "pinned_sdk_source_and_api_audit_2026-07-14",
-  "official_a2a": {
-    "A1": "main_only",
-    "A2": "applicable",
-    "A3": "applicable",
-    "B1": "applicable",
-    "B3": "applicable",
-    "C1": "applicable",
-    "C2": "applicable"
-  },
   "anp": {
     "A1": "not_applicable",
     "A2": "applicable",
     "A3": "applicable",
     "B1": "applicable",
-    "B3": "applicable",
+    "B2": "applicable",
     "C1": "applicable",
     "C2": "not_applicable"
   },
+  "audit_basis": "pinned_sdk_source_and_api_audit_2026-07-14",
+  "frozen": true,
   "nlip": {
     "A1": "not_applicable",
     "A2": "not_applicable",
     "A3": "applicable",
     "B1": "not_applicable",
-    "B3": "not_applicable",
+    "B2": "not_applicable",
     "C1": "applicable",
     "C2": "applicable"
-  }
+  },
+  "official_a2a": {
+    "A1": "main_only",
+    "A2": "applicable",
+    "A3": "applicable",
+    "B1": "applicable",
+    "B2": "applicable",
+    "C1": "applicable",
+    "C2": "applicable"
+  },
+  "schema_version": "carddiff-transfer-native-applicability-v1"
 }

@@ -1,0 +1,28 @@
+{
+  "applicable_attacks": [
+    "A1",
+    "A2",
+    "A3",
+    "B1",
+    "B2",
+    "B3",
+    "C1",
+    "C2"
+  ],
+  "cases": [
+    {
+      "case_id": "CARDDIFF_B1_HEALTHCARE_T016_V001",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed516"
+    },
+    {
+      "case_id": "CARDDIFF_B1_TRAVEL_T047_V002",
+      "class_path": "attacks.instances.carddiff_perturbed:CardDiffPerturbed1697"
+    }
+  ],
+  "dataset_sha256": "74eaec2d22e740a28259562ef239e1a8f61380e3361fa8894ec38fdc4fab1b26",
+  "parent_split": "official_a2a_timeout_retry_44",
+  "retry_reason": "api_read_timeout_second_pass",
+  "retry_source": "results/transfer/official_a2a_timeout_retry/official_a2a_timeout_retry_44.jsonl",
+  "sampling_seed": "carddiff-transfer-v1",
+  "split_id": "official_a2a_timeout_second_retry_2"
+}

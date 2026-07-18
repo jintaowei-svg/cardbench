@@ -1,0 +1,42 @@
+{
+    "001":  {
+                "completed":  1039,
+                "dir":  0.9884504331087585,
+                "errors":  0,
+                "impact":  1027,
+                "impact_types":  {
+                                     "confidentiality":  450,
+                                     "integrity":  727
+                                 },
+                "model_completion_rate":  1.0,
+                "planned":  1039,
+                "tool_call_rate":  1.0
+            },
+    "002":  {
+                "completed":  1041,
+                "dir":  0.9884726224783862,
+                "errors":  0,
+                "impact":  1029,
+                "impact_types":  {
+                                     "confidentiality":  450,
+                                     "integrity":  729
+                                 },
+                "model_completion_rate":  1.0,
+                "planned":  1041,
+                "tool_call_rate":  1.0
+            },
+    "003":  {
+                "completed":  1036,
+                "dir":  0.9884169884169884,
+                "errors":  150,
+                "impact":  1024,
+                "impact_types":  {
+                                     "availability":  150,
+                                     "confidentiality":  450,
+                                     "integrity":  574
+                                 },
+                "model_completion_rate":  1.0,
+                "planned":  1036,
+                "tool_call_rate":  1.0
+            }
+}

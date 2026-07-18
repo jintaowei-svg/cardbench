@@ -1,0 +1,1 @@
+{"already_completed": 0, "config_sha256": "3de4547a4b2b9b0bff3ee8b5ec829fe2a1f2b5942537e714e1613ad23efb07cc", "event": "run_start_or_resume", "manifest_sha256": "923f7692c348f2957086253761bd9f1dce94c83674628353605236fbcfe3a6cd", "model": "gpt-5-mini", "planned_cases": 21, "timestamp": "2026-07-12T13:23:32.628314+00:00"}

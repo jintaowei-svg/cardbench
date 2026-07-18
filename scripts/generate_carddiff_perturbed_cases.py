@@ -32,7 +32,8 @@ def main() -> None:
     )
     args = parser.parse_args()
 
-    path = write_perturbed_cases(args.output, variant_ids=_parse_variant_ids(args.variant_ids))
+    variant_ids = _parse_variant_ids(args.variant_ids) or {"001", "002", "003"}
+    path = write_perturbed_cases(args.output, variant_ids=variant_ids)
     print(f"Wrote {path}")
 
 

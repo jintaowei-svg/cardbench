@@ -93,7 +93,7 @@ def audit_nlip() -> dict[str, Any]:
         {"check": "native_cbor_codec", "passed": cbor_codec},
     ]
     return {
-        "B3": {
+        "B2": {
             "status": "applicable" if passed else "not_applicable",
             "sdk_versions": versions,
             "evidence": evidence,

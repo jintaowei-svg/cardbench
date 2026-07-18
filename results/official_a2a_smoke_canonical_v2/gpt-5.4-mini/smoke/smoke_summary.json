@@ -1,0 +1,11 @@
+{
+  "completed": 7,
+  "generated_at": "2026-07-12T13:26:40.297467+00:00",
+  "judgment_completed": 7,
+  "judgment_completion_rate": 1.0,
+  "model": "gpt-5.4-mini",
+  "non_judgment_cases": [],
+  "passed": true,
+  "planned": 7,
+  "sdk_evidence_failures": []
+}

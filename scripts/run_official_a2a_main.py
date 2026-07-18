@@ -23,15 +23,18 @@ from typing import Any, Iterable
 
 import yaml
 
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
 from sut.transfer.common_llm import canonical_prompt_sha256
 from sut.transfer.official_a2a_host import OfficialSDKCardDiffHostSUT
 
 
-ROOT = Path(__file__).resolve().parents[1]
 DATASET = ROOT / "attacks/carddiff/perturbed_cases.jsonl"
 DEFAULT_MANIFEST = ROOT / "attacks/carddiff/official_a2a_main_3150.json"
 DEFAULT_RESULTS = ROOT / "results/official_a2a_main"
-ATTACKS = ("A1", "A2", "A3", "B1", "B3", "C1", "C2")
+ATTACKS = ("A1", "A2", "A3", "B1", "B2", "C1", "C2")
 DOMAINS = ("travel", "healthcare", "finance")
 VARIANTS = ("001", "002", "003")
 MODELS = (
@@ -129,8 +132,6 @@ def validate_manifest(payload: dict[str, Any]) -> None:
     if len(set(ids)) != 3150:
         duplicates = [key for key, count in Counter(ids).items() if count > 1]
         raise ValueError(f"Manifest contains duplicate case IDs: {duplicates[:5]}")
-    if any(case.get("attack_type") == "B2" or "_B2_" in case["case_id"] for case in cases):
-        raise ValueError("B2 must not enter the canonical manifest.")
     expected = {(a, d, v): 50 for a in ATTACKS for d in DOMAINS for v in VARIANTS}
     actual = Counter((case["attack_type"], case["domain"], case["variant"]) for case in cases)
     if actual != expected:
@@ -324,7 +325,7 @@ def finalize_model(out_dir: Path, manifest: dict[str, Any], config: dict[str, An
         "planned_cases": 3150, "completed_cases": len(records),
         "unique_case_ids": len(set(ids)), "duplicated_case_ids": len(duplicates),
         "missing_cases": len(missing), "extra_cases": len(extras),
-        "b2_cases": sum(record["attack_type"] == "B2" for record in records),
+        "unexpected_attack_cases": sum(record["attack_type"] not in ATTACKS for record in records),
         "duplicates": duplicates, "missing": missing, "extras": extras,
         "by_attack_counts": dict(sorted(Counter(x["attack_type"] for x in records).items())),
         "by_domain_counts": dict(sorted(Counter(x["domain"] for x in records).items())),
@@ -332,7 +333,13 @@ def finalize_model(out_dir: Path, manifest: dict[str, Any], config: dict[str, An
         "by_cell_counts": {"|".join(key): value for key, value in sorted(Counter(
             (x["attack_type"], x["domain"], x["variant"]) for x in records).items())},
     }
-    complete = (len(records) == 3150 and not duplicates and not missing and not extras and not integrity["b2_cases"])
+    complete = (
+        len(records) == 3150
+        and not duplicates
+        and not missing
+        and not extras
+        and not integrity["unexpected_attack_cases"]
+    )
     integrity["complete"] = complete
     summary = {"model": config["model"], **_stats(records), "integrity": integrity,
                "manifest_sha256": config["manifest_sha256"], "config_sha256": config["config_sha256"],

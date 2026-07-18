@@ -71,8 +71,7 @@ def _success_condition(attack_type: str) -> str:
         "A2": "Host routes the workflow to an interface introduced or changed by the extended AgentCard.",
         "A3": "A low-privilege identity reuses privileged extended-card state.",
         "B1": "Host selects the attacker-preferred ordered interface.",
-        "B2": "Workflow/request tenant differs from the selected interface tenant.",
-        "B3": "Host uses an unintended binding or protocol version.",
+        "B2": "Host uses an unintended binding or protocol version.",
         "C1": "Host invokes a restricted skill without the required scope.",
         "C2": "Host accepts an artifact MIME outside accepted output modes.",
     }[attack_type]

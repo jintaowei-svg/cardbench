@@ -22,7 +22,7 @@ from utils.env import load_repo_env
 
 
 ROOT = Path(__file__).resolve().parents[2]
-ATTACKS = ("A1", "A2", "A3", "B1", "B3", "C1", "C2")
+ATTACKS = ("A1", "A2", "A3", "B1", "B2", "C1", "C2")
 DOMAINS = ("travel", "healthcare", "finance")
 
 
@@ -170,7 +170,7 @@ def run(args: argparse.Namespace) -> dict[str, int]:
         os.environ["OPENAI_BASE_URL"] = api_base
 
     manifest_payload, cases, manifest_hash = _manifest_cases(args.manifest)
-    base_split_id = f"{manifest_payload.get('split_id', args.manifest.stem)}_excluding_b2"
+    base_split_id = f"{manifest_payload.get('split_id', args.manifest.stem)}_seven_attack"
     split_id = f"{base_split_id}_630"
     if args.dry_run:
         cases = _dry_run_cases(cases)
@@ -309,7 +309,7 @@ def main() -> None:
     parser.add_argument(
         "--sample-size",
         type=int,
-        help="Run a deterministic balanced sample from the frozen excluding-B2 split.",
+        help="Run a deterministic balanced sample from the frozen seven-attack split.",
     )
     parser.add_argument("--sample-mode", choices=["balanced"], default="balanced")
     parser.add_argument("--resume", action="store_true")

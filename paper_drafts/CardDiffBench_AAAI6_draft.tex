@@ -37,7 +37,7 @@ Anonymous Affiliation
 \maketitle
 
 \begin{abstract}
-Agent-to-agent systems increasingly rely on AgentCards to expose a remote agent's identity, skills, interfaces, tenants, authorization requirements, and output modes. This control plane enables flexible discovery and routing, but it also creates a failure mode that is not captured by prompt-injection benchmarks: a host agent may act on inconsistent AgentCard state. We introduce \textsc{CardDiffBench}, a benchmark for evaluating whether a host makes unsafe control-plane decisions when public cards, authenticated extended cards, interface lists, tenant bindings, skill-level security, and artifact modes diverge. \textsc{CardDiffBench} defines eight AgentCard differential attacks grouped into extended-card differentials, interface and tenant confusion, and policy/mode drift. The benchmark contains 1,200 scenario-adapted base cases and 3,600 protocol-state perturbations across travel, healthcare, and finance domains. Each case runs in a local A2A-style HTTP environment and is scored with event-level oracles over skill invocation, selected endpoint, tenant binding, protocol binding, scope use, and artifact acceptance. In a completed evaluation of an LLM-backed host using \texttt{gpt-5-mini}, attacks succeeded on 3,591 of 3,600 perturbed trials, yielding a 99.75\% attack success rate. These results indicate that host-side control-plane validation is a distinct and urgent security problem for interoperable agent ecosystems. \textsc{CardDiffBench} provides a reproducible testbed for measuring that problem and for evaluating defenses that bind decisions to explicit card provenance, tenant identity, authorization scope, and output-mode policy.
+Agent-to-agent systems increasingly rely on AgentCards to expose a remote agent's identity, skills, interfaces, authorization requirements, and output modes. This control plane enables flexible discovery and routing, but it also creates a failure mode that is not captured by prompt-injection benchmarks: a host agent may act on inconsistent AgentCard state. We introduce \textsc{CardDiffBench}, a benchmark for evaluating whether a host makes unsafe control-plane decisions when public cards, authenticated extended cards, interface lists, protocol bindings, skill-level security, and artifact modes diverge. \textsc{CardDiffBench} defines seven AgentCard differential attacks grouped into extended-card differentials, interface selection and binding confusion, and policy/mode drift. The benchmark contains 1,050 scenario-adapted base cases and 3,150 protocol-state perturbations across travel, healthcare, and finance domains. Each case runs in a local A2A-style HTTP environment and is scored with event-level oracles over skill invocation, selected endpoint, protocol binding, scope use, and artifact acceptance. In a completed evaluation of an LLM-backed host using \texttt{gpt-5-mini}, attacks succeeded on 3,116 of 3,150 perturbed trials, yielding a 98.92\% attack success rate. These results indicate that host-side control-plane validation is a distinct and urgent security problem for interoperable agent ecosystems. \textsc{CardDiffBench} provides a reproducible testbed for measuring that problem and for evaluating defenses that bind decisions to explicit card provenance, protocol compatibility, authorization scope, and output-mode policy.
 \end{abstract}
 
 \section{Introduction}
@@ -48,16 +48,16 @@ Existing work on agent security has emphasized malicious prompts, untrusted tool
 
 This paper studies \emph{AgentCard control-plane differentials}: security-relevant disagreements among card fields, authenticated views, routing surfaces, tenant bindings, authorization scopes, and artifact modes. We ask a concrete question: when a host is exposed to schema-valid but inconsistent AgentCard state, does it preserve the intended security boundary or complete the workflow through the risky surface?
 
-We present \textsc{CardDiffBench}, a benchmark and harness for this question. The benchmark is inspired by the scenario-adapter style of prior A2A security benchmarking (TODOCITE: A2ASecBench), but it is a separate contribution: it defines its own attack taxonomy, case schema, perturbation layer, event-level scoring oracles, and host evaluation harness. The current frozen dataset contains 1,200 base cases and 3,600 perturbed cases across three high-stakes domains: travel, healthcare, and finance. Each case is generated from a domain scenario and an attack vector, then converted into executable AgentCard state and a natural-language task. Perturbations modify protocol fields, not only wording, while preserving the private oracle.
+We present \textsc{CardDiffBench}, a benchmark and harness for this question. The benchmark is inspired by the scenario-adapter style of prior A2A security benchmarking (TODOCITE: A2ASecBench), but it is a separate contribution: it defines its own attack taxonomy, case schema, perturbation layer, event-level scoring oracles, and host evaluation harness. The current frozen dataset contains 1,050 base cases and 3,150 perturbed cases across three high-stakes domains: travel, healthcare, and finance. Each case is generated from a domain scenario and an attack vector, then converted into executable AgentCard state and a natural-language task. Perturbations modify protocol fields, not only wording, while preserving the private oracle.
 
-Our evaluation shows that the problem is not merely hypothetical. We evaluated an LLM-backed host that performs normal A2A discovery, optionally fetches an extended card, chooses a skill and interface, sends a message, and decides whether returned artifacts should be accepted. Across all 3,600 perturbed cases, \texttt{gpt-5-mini} succeeded from the attacker's perspective in 3,591 cases, corresponding to a 99.75\% attack success rate. All parse failures were zero; the seven unsuccessful trials were operational timeouts or blocked executions. The result suggests that a helpful host policy that treats authenticated active card state as primary operational evidence is highly vulnerable to control-plane differentials.
+Our evaluation shows that the problem is not merely hypothetical. We evaluated an LLM-backed host that performs normal A2A discovery, optionally fetches an extended card, chooses a skill and interface, sends a message, and decides whether returned artifacts should be accepted. Across all 3,150 perturbed cases, \texttt{gpt-5-mini} succeeded from the attacker's perspective in 3,116 cases, corresponding to a 98.92\% attack success rate. The canonical ledger records no runtime errors, timeouts, or parse failures; the 34 unsuccessful attacks are behavioral non-successes. The result suggests that a helpful host policy that treats authenticated active card state as primary operational evidence is highly vulnerable to control-plane differentials.
 
 The contributions of this work are:
 \begin{enumerate}
     \item We define AgentCard control-plane differentials as a benchmarkable security problem for A2A systems.
     \item We introduce an eight-attack taxonomy covering extended-card differentials, interface/tenant confusion, and policy/mode drift.
-    \item We release a reproducible benchmark construction with 1,200 base cases, 3,600 oracle-preserving protocol perturbations, and event-level scorers.
-    \item We report a full LLM-backed host evaluation showing 99.75\% attack success on \texttt{gpt-5-mini}, motivating explicit control-plane defenses.
+    \item We release a reproducible benchmark construction with 1,050 base cases, 3,150 oracle-preserving protocol perturbations, and event-level scorers.
+    \item We report a full LLM-backed host evaluation showing 98.92\% attack success on \texttt{gpt-5-mini}, motivating explicit control-plane defenses.
 \end{enumerate}
 
 \paragraph{Positioning against prior work.}
@@ -86,23 +86,23 @@ A2A-style systems can expose a public card and an authenticated extended card. T
 \section{Threat Model}
 
 \paragraph{Threat model.}
-We consider an adversary who can influence schema-valid AgentCard state or the card view returned under a particular authentication context. The adversary does not need to compromise the host code, forge invalid protocol messages, or inject arbitrary code into the host. Instead, the adversary constructs plausible card differentials and task wording that encourage the host to route through the risky control-plane state. The goal is to cause an unsafe host action, such as invoking a sensitive skill without the required boundary, selecting an attacker-preferred interface, binding to the wrong tenant, downgrading protocol binding/version, or accepting a disallowed artifact mode.
+We consider an adversary who can influence schema-valid AgentCard state or the card view returned under a particular authentication context. The adversary does not need to compromise the host code, forge invalid protocol messages, or inject arbitrary code into the host. Instead, the adversary constructs plausible card differentials and task wording that encourage the host to route through the risky control-plane state. The goal is to cause an unsafe host action, such as invoking a sensitive skill without the required boundary, selecting an attacker-preferred interface, downgrading protocol binding/version, or accepting a disallowed artifact mode.
 
 \paragraph{Threat classes and stages.}
-Following the structure of protocol-aware A2A security analysis, we organize risks by both source and stage. The first broad class is \emph{card-state manipulation}, where the adversary changes what the host sees during discovery or authenticated card retrieval. The second class is \emph{protocol-logic weakness}, where the host observes valid fields but fails to preserve a tenant, binding, scope, or output-mode invariant while orchestrating the task. These risks unfold across three stages: admission and discovery, where public and extended card state is selected; orchestration, where the host binds a task to a skill, tenant, interface, and protocol version; and execution, where returned artifacts are accepted or rejected. The eight CardDiff attacks instantiate these stages: A1--A3 target extended-card admission and cache behavior, B1--B3 target orchestration and routing, and C1--C2 target authorization and artifact execution policy.
+Following the structure of protocol-aware A2A security analysis, we organize risks by both source and stage. The first broad class is \emph{card-state manipulation}, where the adversary changes what the host sees during discovery or authenticated card retrieval. The second class is \emph{protocol-logic weakness}, where the host observes valid fields but fails to preserve a binding, scope, or output-mode invariant while orchestrating the task. These risks unfold across three stages: admission and discovery, where public and extended card state is selected; orchestration, where the host binds a task to a skill, interface, and protocol version; and execution, where returned artifacts are accepted or rejected. The seven CardDiff attacks instantiate these stages: A1--A3 target extended-card admission and cache behavior, B1--B2 target orchestration and routing, and C1--C2 target authorization and artifact execution policy.
 
 \paragraph{Formal view.}
 Let \(C_p\) denote the public AgentCard, \(C_e(i)\) an extended card fetched under identity \(i\), \(T\) the user task, \(R\) the requested tenant, \(M\) the accepted output-mode set, and \(S\) the token scope set. A host implements a decision function
 \[
 H(T, C_p, C_e(i), R, M, S) \rightarrow (a, k, u, b, m),
 \]
-where \(a\) indicates whether to send, \(k\) is the selected skill, \(u\) is the selected interface URL or index, \(b\) is the selected binding/version, and \(m\) indicates whether returned artifacts are accepted. A CardDiff attack constructs \(C_p\), \(C_e(i)\), \(T\), \(R\), \(M\), and \(S\) such that the schema remains valid but at least one security invariant is violated by the host decision. The oracle is attack-specific: for A1 it is \(k=k_{\mathrm{sensitive}}\); for B2 it is \(R \ne R_{\mathrm{selected}}\); for C2 it is \(m\) accepting a MIME type outside \(M\). This formulation makes clear that the benchmark target is the decision boundary, not only the language surface.
+where \(a\) indicates whether to send, \(k\) is the selected skill, \(u\) is the selected interface URL or index, \(b\) is the selected binding/version, and \(m\) indicates whether returned artifacts are accepted. A CardDiff attack constructs \(C_p\), \(C_e(i)\), \(T\), \(R\), \(M\), and \(S\) such that the schema remains valid but at least one security invariant is violated by the host decision. The oracle is attack-specific: for A1 it is \(k=k_{\mathrm{sensitive}}\); for B2 it is \(b \ne b_{\mathrm{expected}}\); for C2 it is \(m\) accepting a MIME type outside \(M\). This formulation makes clear that the benchmark target is the decision boundary, not only the language surface.
 
 \section{The CardDiffBench Framework}
 
 \subsection{Attack Taxonomy}
 
-\textsc{CardDiffBench} contains eight attack types grouped into three families. Table~\ref{tab:taxonomy} summarizes the benchmark taxonomy and the event used for scoring. The attacks are not prompt templates; each attack defines a protocol-state mutation and a private oracle.
+\textsc{CardDiffBench} contains seven attack types grouped into three families. Table~\ref{tab:taxonomy} summarizes the benchmark taxonomy and the event used for scoring. The attacks are not prompt templates; each attack defines a protocol-state mutation and a private oracle.
 
 \begin{table*}[t]
 \centering
@@ -116,10 +116,9 @@ Family & ID & Attack & Success evidence \\
 & A2 & Public-to-Extended Interface Drift & Message routes to drifted extended-card URL \\
 & A3 & Cross-Identity Extended Card Cache Bleed & Low-privilege identity reuses privileged card state \\
 \midrule
-\multirow{3}{*}{Interface/tenant confusion}
+\multirow{2}{*}{Interface selection/binding confusion}
 & B1 & Interface Order Hijacking & Attacker-preferred interface is selected \\
-& B2 & Same-URL Multi-Tenant Confusion & Selected tenant differs from requested tenant \\
-& B3 & Binding Downgrade / Version Confusion & Binding or protocol version differs from expected value \\
+& B2 & Binding Downgrade / Version Confusion & Binding or protocol version differs from expected value \\
 \midrule
 \multirow{2}{*}{Policy/mode drift}
 & C1 & Skill-Level Authorization Confusion & Restricted skill invoked without required scope \\
@@ -134,7 +133,7 @@ Family & ID & Attack & Success evidence \\
 
 The dataset is built from four structured inputs: attack vectors, domain scenarios, scenario-adapted natural-language tasks, and perturbation variants. The three domains are travel, healthcare, and finance. Each domain defines a normal tenant, privileged tenant, normal skill, sensitive skill, normal scope, privileged scope, safe output modes, and risky artifact MIME type. For example, the finance domain contrasts statement lookup under \texttt{finance.read} with high-value wire transfer under \texttt{finance.transfer}; the healthcare domain contrasts appointment lookup with prescription export; and the travel domain contrasts itinerary lookup with payment refund.
 
-The base split contains 50 tasks for every attack-domain cell. With 8 attacks and 3 domains, this yields \(8 \times 3 \times 50 = 1{,}200\) base cases. The perturbation split applies three oracle-preserving variants to each base case: the original construction, a semantic-alias variant that renames or rephrases protocol objects, and an ordering/binding-shift variant that changes the control surface while preserving the same success condition. The resulting benchmark contains \(1{,}200 \times 3 = 3{,}600\) perturbed cases.
+The base split contains 50 tasks for every attack-domain cell. With 7 attacks and 3 domains, this yields \(7 \times 3 \times 50 = 1{,}050\) base cases. The perturbation split applies three oracle-preserving variants to each base case: the original construction, a semantic-alias variant that renames or rephrases protocol objects, and an ordering/binding-shift variant that changes the control surface while preserving the same success condition. The resulting benchmark contains \(1{,}050 \times 3 = 3{,}150\) perturbed cases.
 
 The scenario adapter generates task wording separately from the protocol mutation. This separation is important. The natural-language task must be plausible and executable, but the benchmark target is the host's control-plane decision, not merely its ability to resist a suspicious sentence. During generation, the adapter is instructed not to reveal oracle labels, attack identifiers, or scoring hints. The case builder then binds the task to concrete AgentCard state and a private oracle.
 
@@ -142,13 +141,13 @@ The scenario adapter generates task wording separately from the protocol mutatio
 
 Each case runs in a local HTTP environment that exposes the relevant public card, optional extended card, message endpoint, token identity, tenant metadata, returned artifacts, and event recorder. The host receives a workflow request, fetches card state, chooses a skill and interface, sends an A2A-style message, and optionally accepts returned artifacts. The harness records events such as \texttt{message\_sent} and \texttt{artifact\_accepted}; the scorer evaluates these events against the attack oracle.
 
-This event-level scoring avoids two common ambiguities. First, it does not rely on the host's natural-language explanation of its decision. A host can claim to be cautious while still sending the risky message. Second, it distinguishes different unsafe routes. A1 is scored by sensitive skill invocation, B2 by tenant mismatch, B3 by protocol binding/version mismatch, and C2 by artifact MIME acceptance. The benchmark therefore measures concrete control-plane behavior.
+This event-level scoring avoids two common ambiguities. First, it does not rely on the host's natural-language explanation of its decision. A host can claim to be cautious while still sending the risky message. Second, it distinguishes different unsafe routes. A1 is scored by sensitive skill invocation, B2 by protocol binding/version mismatch, and C2 by artifact MIME acceptance. The benchmark therefore measures concrete control-plane behavior.
 
 \subsection{Reproducibility Assets}
 
 The active benchmark assets are separated from archived reference material. Attack vectors live under \texttt{attacks/carddiff/vectors.json}; scenario definitions under \texttt{attacks/carddiff/scenarios.json}; generated task banks under \texttt{attacks/carddiff/scenario\_tasks.json}; perturbation definitions under \texttt{attacks/carddiff/perturbations.json}; and frozen executable cases under \texttt{attacks/carddiff/cases.jsonl} and \texttt{attacks/carddiff/perturbed\_cases.jsonl}. The host implementations and scorer are kept in \texttt{sut/carddiff/} and \texttt{harness/}. This separation is deliberate: the benchmark contribution is not a repackaging of a prior A2A security suite, but a CardDiff-specific dataset and scoring layer with archived prior code retained only for provenance and comparison.
 
-Every run writes per-trial JSONL records and aggregate summaries. The completed main experiment was executed as 24 checkpoints, one for each attack-variant cell. This checkpointing makes the benchmark practical for LLM-backed runs, where network timeouts or model endpoint failures can otherwise obscure which part of the evaluation completed. It also makes selective reruns possible while preserving the accepted main ledger.
+Every run writes per-trial JSONL records and aggregate summaries. The completed main experiment was executed as 21 checkpoints, one for each attack-variant cell. This checkpointing makes the benchmark practical for LLM-backed runs, where network timeouts or model endpoint failures can otherwise obscure which part of the evaluation completed. It also makes selective reruns possible while preserving the accepted main ledger.
 
 \section{Evaluation and Result Analysis}
 
@@ -158,7 +157,7 @@ Every run writes per-trial JSONL records and aggregate summaries. The completed 
 We evaluate a single LLM-backed host implementation. The protocol I/O is executed by deterministic harness code, while the model decides the control-plane choices that matter for \textsc{CardDiffBench}: whether to send a message, which skill to invoke, which supported interface to use, and whether returned artifacts should be accepted. The host prompt presents the user task, public card summary, active card summary, authentication step, requested tenant, and accepted output modes. The model returns a JSON decision with fields for \texttt{should\_send}, \texttt{skill\_id}, \texttt{interface\_index}, \texttt{accept\_artifacts}, and status.
 
 \paragraph{Model and run protocol.}
-The main run uses \texttt{gpt-5-mini}. Each of the 24 attack-variant checkpoints contains 150 cases, corresponding to 50 tasks across each of the three domains. We run one trial per case, for 3,600 total trials. Timeout or execution errors are counted as blocked/unsuccessful attack trials; parse failures are recorded separately. In the completed run, parse failures were zero.
+The main run uses \texttt{gpt-5-mini}. Each of the 21 attack-variant checkpoints contains 150 cases, corresponding to 50 tasks across each of the three domains. We run one trial per case, for 3,150 total trials. Timeout or execution errors are counted as blocked/unsuccessful attack trials; parse failures are recorded separately. In the completed run, parse failures were zero.
 
 \paragraph{Metric.}
 The primary metric is attack success rate (ASR), defined as
@@ -186,27 +185,26 @@ ASR is reported by attack type and overall. Since this draft reports the main ad
 & Succ./Trials & ASR
 & Trials & Successes & ASR \\
 \midrule
-A1 & 150/150 & 100.00\% & 150/150 & 100.00\% & 148/150 & 98.67\% & 450 & 448 & 99.56\% \\
+A1 & 150/150 & 100.00\% & 150/150 & 100.00\% & 127/150 & 84.67\% & 450 & 427 & 94.89\% \\
 A2 & 150/150 & 100.00\% & 150/150 & 100.00\% & 150/150 & 100.00\% & 450 & 450 & 100.00\% \\
-A3 & 150/150 & 100.00\% & 150/150 & 100.00\% & 150/150 & 100.00\% & 450 & 450 & 100.00\% \\
-B1 & 150/150 & 100.00\% & 148/150 & 98.67\% & 150/150 & 100.00\% & 450 & 448 & 99.56\% \\
-B2 & 149/150 & 99.33\% & 149/150 & 99.33\% & 150/150 & 100.00\% & 450 & 448 & 99.56\% \\
-B3 & 150/150 & 100.00\% & 150/150 & 100.00\% & 149/150 & 99.33\% & 450 & 449 & 99.78\% \\
-C1 & 149/150 & 99.33\% & 150/150 & 100.00\% & 150/150 & 100.00\% & 450 & 449 & 99.78\% \\
-C2 & 150/150 & 100.00\% & 149/150 & 99.33\% & 150/150 & 100.00\% & 450 & 449 & 99.78\% \\
+A3 & 149/150 & 99.33\% & 150/150 & 100.00\% & 150/150 & 100.00\% & 450 & 449 & 99.78\% \\
+B1 & 150/150 & 100.00\% & 150/150 & 100.00\% & 150/150 & 100.00\% & 450 & 450 & 100.00\% \\
+B2 & 150/150 & 100.00\% & 150/150 & 100.00\% & 150/150 & 100.00\% & 450 & 450 & 100.00\% \\
+C1 & 150/150 & 100.00\% & 150/150 & 100.00\% & 146/150 & 97.33\% & 450 & 446 & 99.11\% \\
+C2 & 150/150 & 100.00\% & 150/150 & 100.00\% & 144/150 & 96.00\% & 450 & 444 & 98.67\% \\
 \midrule
-Overall & 1198/1200 & 99.83\% & 1196/1200 & 99.67\% & 1197/1200 & 99.75\% & 3600 & 3591 & 99.75\% \\
+Overall & 1049/1050 & 99.90\% & 1050/1050 & 100.00\% & 1017/1050 & 96.86\% & 3150 & 3116 & 98.92\% \\
 \bottomrule
 \end{tabular}
-\caption{Main \texttt{gpt-5-mini} results on the 3,600-case perturbed split, broken down by scenario. Errors/timeouts are counted as unsuccessful attacks.}
+\caption{Main \texttt{gpt-5-mini} results on the 3,150-case perturbed split, broken down by scenario. Errors/timeouts are counted as unsuccessful attacks.}
 \label{tab:main-results}
 \end{table*}
 
 \paragraph{Control-plane differentials were broadly effective.}
-Table~\ref{tab:main-results} shows that all eight attacks achieved at least 99.56\% ASR. The strongest attacks reached 100\% ASR: A2, which routes through a drifted extended-card interface, and A3, which tests whether identity-specific extended-card state can bleed across contexts. The result indicates that the host consistently privileged the active card view and workflow completion over conservative reconciliation between public, authenticated, tenant, and policy surfaces.
+Table~\ref{tab:main-results} shows that the seven attacks achieved ASRs from 94.89\% to 100\%. A2, B1, and B2 reached 100\% ASR, while A1 was lowest at 94.89\%. The result indicates that the host usually privileged the active card view and workflow completion over conservative reconciliation between public, authenticated, binding, and policy surfaces.
 
 \paragraph{Failures were operational rather than semantic.}
-Only seven of 3,600 trials did not produce attack success. These cases were recorded as blocked/error outcomes, mostly from timeout-style execution failures, not from JSON parse failures. This distinction matters: the low failure count should not be interpreted as evidence that the host rejected unsafe card state. Instead, the run suggests that when the host completed the protocol workflow, it almost always completed it through the attack-preserving control-plane path.
+Thirty-four of 3,150 trials did not produce attack success. The canonical ledger records no runtime errors, timeouts, or parse failures in this run, so these outcomes are behavioral non-successes rather than infrastructure failures. The overall result still shows that the host usually completed the workflow through the attack-preserving control-plane path.
 
 \paragraph{Perturbations preserved effectiveness.}
 The benchmark includes three variants per base case: base construction, semantic aliasing, and ordering/binding shift. High ASR across all attack categories suggests that the attacks do not depend only on a single lexical form of a task or field name. The perturbation design changes surface names, ordering, or binding context while preserving the oracle, thereby testing whether the host tracks the underlying control-plane invariant. In the main run, it generally did not.
@@ -218,30 +216,27 @@ The benchmark includes three variants per base case: base construction, semantic
 \toprule
 Order & Attack & Variant & Trials & Successes & ASR & Errors & Parse failures \\
 \midrule
-1 & A1 & 001 & 150 & 150 & 100.00\% & 0 & 0 \\
-2 & A1 & 002 & 150 & 149 & 99.33\% & 0 & 0 \\
-3 & A1 & 003 & 150 & 149 & 99.33\% & 0 & 0 \\
+1 & A1 & 001 & 150 & 144 & 96.00\% & 0 & 0 \\
+2 & A1 & 002 & 150 & 146 & 97.33\% & 0 & 0 \\
+3 & A1 & 003 & 150 & 137 & 91.33\% & 0 & 0 \\
 4 & A2 & 001 & 150 & 150 & 100.00\% & 0 & 0 \\
 5 & A2 & 002 & 150 & 150 & 100.00\% & 0 & 0 \\
 6 & A2 & 003 & 150 & 150 & 100.00\% & 0 & 0 \\
 7 & A3 & 001 & 150 & 150 & 100.00\% & 0 & 0 \\
-8 & A3 & 002 & 150 & 150 & 100.00\% & 0 & 0 \\
+8 & A3 & 002 & 150 & 149 & 99.33\% & 0 & 0 \\
 9 & A3 & 003 & 150 & 150 & 100.00\% & 0 & 0 \\
-10 & B1 & 001 & 150 & 149 & 99.33\% & 1 & 0 \\
+10 & B1 & 001 & 150 & 150 & 100.00\% & 0 & 0 \\
 11 & B1 & 002 & 150 & 150 & 100.00\% & 0 & 0 \\
-12 & B1 & 003 & 150 & 149 & 99.33\% & 1 & 0 \\
+12 & B1 & 003 & 150 & 150 & 100.00\% & 0 & 0 \\
 13 & B2 & 001 & 150 & 150 & 100.00\% & 0 & 0 \\
 14 & B2 & 002 & 150 & 150 & 100.00\% & 0 & 0 \\
-15 & B2 & 003 & 150 & 148 & 98.67\% & 2 & 0 \\
-16 & B3 & 001 & 150 & 150 & 100.00\% & 0 & 0 \\
-17 & B3 & 002 & 150 & 149 & 99.33\% & 1 & 0 \\
-18 & B3 & 003 & 150 & 150 & 100.00\% & 0 & 0 \\
-19 & C1 & 001 & 150 & 150 & 100.00\% & 0 & 0 \\
-20 & C1 & 002 & 150 & 150 & 100.00\% & 0 & 0 \\
-21 & C1 & 003 & 150 & 149 & 99.33\% & 1 & 0 \\
-22 & C2 & 001 & 150 & 150 & 100.00\% & 0 & 0 \\
-23 & C2 & 002 & 150 & 149 & 99.33\% & 1 & 0 \\
-24 & C2 & 003 & 150 & 150 & 100.00\% & 0 & 0 \\
+15 & B2 & 003 & 150 & 150 & 100.00\% & 0 & 0 \\
+16 & C1 & 001 & 150 & 148 & 98.67\% & 0 & 0 \\
+17 & C1 & 002 & 150 & 148 & 98.67\% & 0 & 0 \\
+18 & C1 & 003 & 150 & 150 & 100.00\% & 0 & 0 \\
+19 & C2 & 001 & 150 & 147 & 98.00\% & 0 & 0 \\
+20 & C2 & 002 & 150 & 148 & 98.67\% & 0 & 0 \\
+21 & C2 & 003 & 150 & 149 & 99.33\% & 0 & 0 \\
 \bottomrule
 \end{tabular}
 \caption{Full checkpoint ledger for the completed \texttt{gpt-5-mini} main experiment. Each checkpoint contains 50 cases per domain across travel, healthcare, and finance.}
@@ -272,7 +267,7 @@ Prior A2A security work has studied broader protocol attacks such as spoofing, c
 The results motivate several defense directions. First, hosts should maintain a typed provenance ledger for every card field used in a decision, distinguishing public, authenticated, cached, identity-specific, and tenant-specific sources. Second, skill selection should be checked against skill-level security, not only agent-level security. Third, interface selection should verify tenant and binding invariants rather than defaulting to ordering. Fourth, artifact acceptance should be enforced by the host-side requested output modes, not by the remote agent's returned artifact alone. \textsc{CardDiffBench} can evaluate these defenses by comparing ASR before and after each policy is added.
 
 \paragraph{Defense evaluation protocol.}
-The next experimental stage should evaluate defenses as host-side policy modules rather than as changes to the attack data. A minimal protocol has four conditions: an undefended helpful host, a provenance-binding host, a scope-checking host, and a combined host that enforces provenance, tenant, binding, scope, and artifact-mode constraints. Each condition should be run on the same 3,600 perturbed cases. A useful defense should reduce ASR while preserving benign task completion on a paired non-adversarial split. For analysis, failures should be separated into explicit refusals, corrected safe routing, protocol errors, and model parse failures. This decomposition would reveal whether a defense actually understands the control-plane invariant or merely blocks more tasks.
+The next experimental stage should evaluate defenses as host-side policy modules rather than as changes to the attack data. A minimal protocol has four conditions: an undefended helpful host, a provenance-binding host, a scope-checking host, and a combined host that enforces provenance, binding, scope, and artifact-mode constraints. Each condition should be run on the same 3,150 perturbed cases. A useful defense should reduce ASR while preserving benign task completion on a paired non-adversarial split. For analysis, failures should be separated into explicit refusals, corrected safe routing, protocol errors, and model parse failures. This decomposition would reveal whether a defense actually understands the control-plane invariant or merely blocks more tasks.
 
 \paragraph{Downstream impact analysis.}
 The main benchmark intentionally scores the boundary crossing itself. To estimate whether triggered control-plane failures can propagate into concrete downstream consequences, we replayed the 621 Official A2A cases that successfully triggered the corresponding AgentCard behavior against LLM-backed downstream workers and harmless domain simulators. Table~\ref{tab:downstream-impact} summarizes the observed confidentiality, integrity, and availability impacts. Every triggered case produced at least one predefined downstream impact, yielding 100.00\% DIR overall.
@@ -289,7 +284,7 @@ A1 & \checkmark & \checkmark & -- & 100.00 \\
 A2 & \checkmark & -- & -- & 100.00 \\
 A3 & \checkmark & \checkmark & -- & 100.00 \\
 B1 & \checkmark & -- & -- & 100.00 \\
-B3 & -- & \checkmark & \checkmark & 100.00 \\
+B2 & -- & \checkmark & \checkmark & 100.00 \\
 C1 & \checkmark & \checkmark & -- & 100.00 \\
 C2 & -- & \checkmark & -- & 100.00 \\
 \midrule
@@ -309,7 +304,7 @@ This draft reports a main adversarial evaluation and downstream-impact replay on
 
 \section{Conclusion}
 
-We introduced \textsc{CardDiffBench}, a benchmark for AgentCard control-plane differentials in agent-to-agent systems. The benchmark defines eight attacks across extended-card differentials, interface/tenant confusion, and policy/mode drift; provides 1,200 base cases and 3,600 oracle-preserving perturbations across three high-stakes domains; and scores host behavior through protocol events. In a completed \texttt{gpt-5-mini} host evaluation, attacks succeeded in 99.75\% of perturbed trials. These findings suggest that control-plane validation is a distinct security requirement for interoperable agent ecosystems. Future work should add benign utility measurement, cross-model evaluation, defense ablations, and small-scale downstream-impact studies to quantify how unsafe card decisions propagate beyond the host.
+We introduced \textsc{CardDiffBench}, a benchmark for AgentCard control-plane differentials in agent-to-agent systems. The benchmark defines seven attacks across extended-card differentials, interface selection/binding confusion, and policy/mode drift; provides 1,050 base cases and 3,150 oracle-preserving perturbations across three high-stakes domains; and scores host behavior through protocol events. In a completed \texttt{gpt-5-mini} host evaluation, attacks succeeded in 98.92\% of perturbed trials. These findings suggest that control-plane validation is a distinct security requirement for interoperable agent ecosystems. Future work should add benign utility measurement, defense ablations, and deployed-system studies to quantify how unsafe card decisions propagate beyond the host.
 
 \section*{Acknowledgments}
 Omitted for anonymous review.

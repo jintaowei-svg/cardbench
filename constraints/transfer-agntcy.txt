@@ -1,0 +1,6 @@
+# AGNTCY Directory SDK 1.5.0, audited at this source commit.
+# Its generated gRPC packages are resolved from https://buf.build/gen/python.
+agntcy-dir @ git+https://github.com/agntcy/dir-sdk-python.git@a425262075a3db425dc9457806feadff5990e9e5
+# Official Directory/dirctl release: v1.5.0, commit b18b5a29da1ed03b334f02ce78e191464aca656b
+# Windows amd64 binary SHA256: 037279351f06738024df88d02a3b8337fcad1b8e1818e1d7adc0d7ee6eadd5f9
+# Python 3.11+ is required in practice because SDK 1.5.0 imports datetime.UTC.

@@ -20,19 +20,13 @@
   {
     "attack_type": "B1",
     "name": "Interface Order Hijacking",
-    "taxonomy": "Interface/Tenant Confusion",
+    "taxonomy": "Interface Selection/Binding Confusion",
     "mutation": "attacker_preferred_interface_first"
   },
   {
     "attack_type": "B2",
-    "name": "Same-URL Multi-Tenant Confusion",
-    "taxonomy": "Interface/Tenant Confusion",
-    "mutation": "same_url_multiple_tenants"
-  },
-  {
-    "attack_type": "B3",
     "name": "Binding Downgrade / Version Confusion",
-    "taxonomy": "Interface/Tenant Confusion",
+    "taxonomy": "Interface Selection/Binding Confusion",
     "mutation": "same_url_multiple_bindings"
   },
   {

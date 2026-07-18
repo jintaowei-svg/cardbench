@@ -1891,634 +1891,634 @@
       "source_case_id": "CARDDIFF_B1_TRAVEL_T010_V003"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_FINANCE_T001_V001",
-      "master_case_id": "TRANSFER-B3-FINANCE-001-0271",
-      "nlip": "NLIP-CARDDIFF_B3_FINANCE_T001_V001",
-      "official_a2a": "A2A-CARDDIFF_B3_FINANCE_T001_V001",
-      "source_case_id": "CARDDIFF_B3_FINANCE_T001_V001"
+      "anp": "ANP-CARDDIFF_B2_FINANCE_T001_V001",
+      "master_case_id": "TRANSFER-B2-FINANCE-001-0271",
+      "nlip": "NLIP-CARDDIFF_B2_FINANCE_T001_V001",
+      "official_a2a": "A2A-CARDDIFF_B2_FINANCE_T001_V001",
+      "source_case_id": "CARDDIFF_B2_FINANCE_T001_V001"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_FINANCE_T002_V001",
-      "master_case_id": "TRANSFER-B3-FINANCE-001-0272",
-      "nlip": "NLIP-CARDDIFF_B3_FINANCE_T002_V001",
-      "official_a2a": "A2A-CARDDIFF_B3_FINANCE_T002_V001",
-      "source_case_id": "CARDDIFF_B3_FINANCE_T002_V001"
+      "anp": "ANP-CARDDIFF_B2_FINANCE_T002_V001",
+      "master_case_id": "TRANSFER-B2-FINANCE-001-0272",
+      "nlip": "NLIP-CARDDIFF_B2_FINANCE_T002_V001",
+      "official_a2a": "A2A-CARDDIFF_B2_FINANCE_T002_V001",
+      "source_case_id": "CARDDIFF_B2_FINANCE_T002_V001"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_FINANCE_T003_V001",
-      "master_case_id": "TRANSFER-B3-FINANCE-001-0273",
-      "nlip": "NLIP-CARDDIFF_B3_FINANCE_T003_V001",
-      "official_a2a": "A2A-CARDDIFF_B3_FINANCE_T003_V001",
-      "source_case_id": "CARDDIFF_B3_FINANCE_T003_V001"
+      "anp": "ANP-CARDDIFF_B2_FINANCE_T003_V001",
+      "master_case_id": "TRANSFER-B2-FINANCE-001-0273",
+      "nlip": "NLIP-CARDDIFF_B2_FINANCE_T003_V001",
+      "official_a2a": "A2A-CARDDIFF_B2_FINANCE_T003_V001",
+      "source_case_id": "CARDDIFF_B2_FINANCE_T003_V001"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_FINANCE_T004_V001",
-      "master_case_id": "TRANSFER-B3-FINANCE-001-0274",
-      "nlip": "NLIP-CARDDIFF_B3_FINANCE_T004_V001",
-      "official_a2a": "A2A-CARDDIFF_B3_FINANCE_T004_V001",
-      "source_case_id": "CARDDIFF_B3_FINANCE_T004_V001"
+      "anp": "ANP-CARDDIFF_B2_FINANCE_T004_V001",
+      "master_case_id": "TRANSFER-B2-FINANCE-001-0274",
+      "nlip": "NLIP-CARDDIFF_B2_FINANCE_T004_V001",
+      "official_a2a": "A2A-CARDDIFF_B2_FINANCE_T004_V001",
+      "source_case_id": "CARDDIFF_B2_FINANCE_T004_V001"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_FINANCE_T005_V001",
-      "master_case_id": "TRANSFER-B3-FINANCE-001-0275",
-      "nlip": "NLIP-CARDDIFF_B3_FINANCE_T005_V001",
-      "official_a2a": "A2A-CARDDIFF_B3_FINANCE_T005_V001",
-      "source_case_id": "CARDDIFF_B3_FINANCE_T005_V001"
+      "anp": "ANP-CARDDIFF_B2_FINANCE_T005_V001",
+      "master_case_id": "TRANSFER-B2-FINANCE-001-0275",
+      "nlip": "NLIP-CARDDIFF_B2_FINANCE_T005_V001",
+      "official_a2a": "A2A-CARDDIFF_B2_FINANCE_T005_V001",
+      "source_case_id": "CARDDIFF_B2_FINANCE_T005_V001"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_FINANCE_T006_V001",
-      "master_case_id": "TRANSFER-B3-FINANCE-001-0276",
-      "nlip": "NLIP-CARDDIFF_B3_FINANCE_T006_V001",
-      "official_a2a": "A2A-CARDDIFF_B3_FINANCE_T006_V001",
-      "source_case_id": "CARDDIFF_B3_FINANCE_T006_V001"
+      "anp": "ANP-CARDDIFF_B2_FINANCE_T006_V001",
+      "master_case_id": "TRANSFER-B2-FINANCE-001-0276",
+      "nlip": "NLIP-CARDDIFF_B2_FINANCE_T006_V001",
+      "official_a2a": "A2A-CARDDIFF_B2_FINANCE_T006_V001",
+      "source_case_id": "CARDDIFF_B2_FINANCE_T006_V001"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_FINANCE_T007_V001",
-      "master_case_id": "TRANSFER-B3-FINANCE-001-0277",
-      "nlip": "NLIP-CARDDIFF_B3_FINANCE_T007_V001",
-      "official_a2a": "A2A-CARDDIFF_B3_FINANCE_T007_V001",
-      "source_case_id": "CARDDIFF_B3_FINANCE_T007_V001"
+      "anp": "ANP-CARDDIFF_B2_FINANCE_T007_V001",
+      "master_case_id": "TRANSFER-B2-FINANCE-001-0277",
+      "nlip": "NLIP-CARDDIFF_B2_FINANCE_T007_V001",
+      "official_a2a": "A2A-CARDDIFF_B2_FINANCE_T007_V001",
+      "source_case_id": "CARDDIFF_B2_FINANCE_T007_V001"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_FINANCE_T008_V001",
-      "master_case_id": "TRANSFER-B3-FINANCE-001-0278",
-      "nlip": "NLIP-CARDDIFF_B3_FINANCE_T008_V001",
-      "official_a2a": "A2A-CARDDIFF_B3_FINANCE_T008_V001",
-      "source_case_id": "CARDDIFF_B3_FINANCE_T008_V001"
+      "anp": "ANP-CARDDIFF_B2_FINANCE_T008_V001",
+      "master_case_id": "TRANSFER-B2-FINANCE-001-0278",
+      "nlip": "NLIP-CARDDIFF_B2_FINANCE_T008_V001",
+      "official_a2a": "A2A-CARDDIFF_B2_FINANCE_T008_V001",
+      "source_case_id": "CARDDIFF_B2_FINANCE_T008_V001"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_FINANCE_T009_V001",
-      "master_case_id": "TRANSFER-B3-FINANCE-001-0279",
-      "nlip": "NLIP-CARDDIFF_B3_FINANCE_T009_V001",
-      "official_a2a": "A2A-CARDDIFF_B3_FINANCE_T009_V001",
-      "source_case_id": "CARDDIFF_B3_FINANCE_T009_V001"
+      "anp": "ANP-CARDDIFF_B2_FINANCE_T009_V001",
+      "master_case_id": "TRANSFER-B2-FINANCE-001-0279",
+      "nlip": "NLIP-CARDDIFF_B2_FINANCE_T009_V001",
+      "official_a2a": "A2A-CARDDIFF_B2_FINANCE_T009_V001",
+      "source_case_id": "CARDDIFF_B2_FINANCE_T009_V001"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_FINANCE_T010_V001",
-      "master_case_id": "TRANSFER-B3-FINANCE-001-0280",
-      "nlip": "NLIP-CARDDIFF_B3_FINANCE_T010_V001",
-      "official_a2a": "A2A-CARDDIFF_B3_FINANCE_T010_V001",
-      "source_case_id": "CARDDIFF_B3_FINANCE_T010_V001"
+      "anp": "ANP-CARDDIFF_B2_FINANCE_T010_V001",
+      "master_case_id": "TRANSFER-B2-FINANCE-001-0280",
+      "nlip": "NLIP-CARDDIFF_B2_FINANCE_T010_V001",
+      "official_a2a": "A2A-CARDDIFF_B2_FINANCE_T010_V001",
+      "source_case_id": "CARDDIFF_B2_FINANCE_T010_V001"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_FINANCE_T001_V002",
-      "master_case_id": "TRANSFER-B3-FINANCE-002-0281",
-      "nlip": "NLIP-CARDDIFF_B3_FINANCE_T001_V002",
-      "official_a2a": "A2A-CARDDIFF_B3_FINANCE_T001_V002",
-      "source_case_id": "CARDDIFF_B3_FINANCE_T001_V002"
+      "anp": "ANP-CARDDIFF_B2_FINANCE_T001_V002",
+      "master_case_id": "TRANSFER-B2-FINANCE-002-0281",
+      "nlip": "NLIP-CARDDIFF_B2_FINANCE_T001_V002",
+      "official_a2a": "A2A-CARDDIFF_B2_FINANCE_T001_V002",
+      "source_case_id": "CARDDIFF_B2_FINANCE_T001_V002"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_FINANCE_T002_V002",
-      "master_case_id": "TRANSFER-B3-FINANCE-002-0282",
-      "nlip": "NLIP-CARDDIFF_B3_FINANCE_T002_V002",
-      "official_a2a": "A2A-CARDDIFF_B3_FINANCE_T002_V002",
-      "source_case_id": "CARDDIFF_B3_FINANCE_T002_V002"
+      "anp": "ANP-CARDDIFF_B2_FINANCE_T002_V002",
+      "master_case_id": "TRANSFER-B2-FINANCE-002-0282",
+      "nlip": "NLIP-CARDDIFF_B2_FINANCE_T002_V002",
+      "official_a2a": "A2A-CARDDIFF_B2_FINANCE_T002_V002",
+      "source_case_id": "CARDDIFF_B2_FINANCE_T002_V002"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_FINANCE_T003_V002",
-      "master_case_id": "TRANSFER-B3-FINANCE-002-0283",
-      "nlip": "NLIP-CARDDIFF_B3_FINANCE_T003_V002",
-      "official_a2a": "A2A-CARDDIFF_B3_FINANCE_T003_V002",
-      "source_case_id": "CARDDIFF_B3_FINANCE_T003_V002"
+      "anp": "ANP-CARDDIFF_B2_FINANCE_T003_V002",
+      "master_case_id": "TRANSFER-B2-FINANCE-002-0283",
+      "nlip": "NLIP-CARDDIFF_B2_FINANCE_T003_V002",
+      "official_a2a": "A2A-CARDDIFF_B2_FINANCE_T003_V002",
+      "source_case_id": "CARDDIFF_B2_FINANCE_T003_V002"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_FINANCE_T004_V002",
-      "master_case_id": "TRANSFER-B3-FINANCE-002-0284",
-      "nlip": "NLIP-CARDDIFF_B3_FINANCE_T004_V002",
-      "official_a2a": "A2A-CARDDIFF_B3_FINANCE_T004_V002",
-      "source_case_id": "CARDDIFF_B3_FINANCE_T004_V002"
+      "anp": "ANP-CARDDIFF_B2_FINANCE_T004_V002",
+      "master_case_id": "TRANSFER-B2-FINANCE-002-0284",
+      "nlip": "NLIP-CARDDIFF_B2_FINANCE_T004_V002",
+      "official_a2a": "A2A-CARDDIFF_B2_FINANCE_T004_V002",
+      "source_case_id": "CARDDIFF_B2_FINANCE_T004_V002"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_FINANCE_T005_V002",
-      "master_case_id": "TRANSFER-B3-FINANCE-002-0285",
-      "nlip": "NLIP-CARDDIFF_B3_FINANCE_T005_V002",
-      "official_a2a": "A2A-CARDDIFF_B3_FINANCE_T005_V002",
-      "source_case_id": "CARDDIFF_B3_FINANCE_T005_V002"
+      "anp": "ANP-CARDDIFF_B2_FINANCE_T005_V002",
+      "master_case_id": "TRANSFER-B2-FINANCE-002-0285",
+      "nlip": "NLIP-CARDDIFF_B2_FINANCE_T005_V002",
+      "official_a2a": "A2A-CARDDIFF_B2_FINANCE_T005_V002",
+      "source_case_id": "CARDDIFF_B2_FINANCE_T005_V002"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_FINANCE_T006_V002",
-      "master_case_id": "TRANSFER-B3-FINANCE-002-0286",
-      "nlip": "NLIP-CARDDIFF_B3_FINANCE_T006_V002",
-      "official_a2a": "A2A-CARDDIFF_B3_FINANCE_T006_V002",
-      "source_case_id": "CARDDIFF_B3_FINANCE_T006_V002"
+      "anp": "ANP-CARDDIFF_B2_FINANCE_T006_V002",
+      "master_case_id": "TRANSFER-B2-FINANCE-002-0286",
+      "nlip": "NLIP-CARDDIFF_B2_FINANCE_T006_V002",
+      "official_a2a": "A2A-CARDDIFF_B2_FINANCE_T006_V002",
+      "source_case_id": "CARDDIFF_B2_FINANCE_T006_V002"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_FINANCE_T007_V002",
-      "master_case_id": "TRANSFER-B3-FINANCE-002-0287",
-      "nlip": "NLIP-CARDDIFF_B3_FINANCE_T007_V002",
-      "official_a2a": "A2A-CARDDIFF_B3_FINANCE_T007_V002",
-      "source_case_id": "CARDDIFF_B3_FINANCE_T007_V002"
+      "anp": "ANP-CARDDIFF_B2_FINANCE_T007_V002",
+      "master_case_id": "TRANSFER-B2-FINANCE-002-0287",
+      "nlip": "NLIP-CARDDIFF_B2_FINANCE_T007_V002",
+      "official_a2a": "A2A-CARDDIFF_B2_FINANCE_T007_V002",
+      "source_case_id": "CARDDIFF_B2_FINANCE_T007_V002"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_FINANCE_T008_V002",
-      "master_case_id": "TRANSFER-B3-FINANCE-002-0288",
-      "nlip": "NLIP-CARDDIFF_B3_FINANCE_T008_V002",
-      "official_a2a": "A2A-CARDDIFF_B3_FINANCE_T008_V002",
-      "source_case_id": "CARDDIFF_B3_FINANCE_T008_V002"
+      "anp": "ANP-CARDDIFF_B2_FINANCE_T008_V002",
+      "master_case_id": "TRANSFER-B2-FINANCE-002-0288",
+      "nlip": "NLIP-CARDDIFF_B2_FINANCE_T008_V002",
+      "official_a2a": "A2A-CARDDIFF_B2_FINANCE_T008_V002",
+      "source_case_id": "CARDDIFF_B2_FINANCE_T008_V002"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_FINANCE_T009_V002",
-      "master_case_id": "TRANSFER-B3-FINANCE-002-0289",
-      "nlip": "NLIP-CARDDIFF_B3_FINANCE_T009_V002",
-      "official_a2a": "A2A-CARDDIFF_B3_FINANCE_T009_V002",
-      "source_case_id": "CARDDIFF_B3_FINANCE_T009_V002"
+      "anp": "ANP-CARDDIFF_B2_FINANCE_T009_V002",
+      "master_case_id": "TRANSFER-B2-FINANCE-002-0289",
+      "nlip": "NLIP-CARDDIFF_B2_FINANCE_T009_V002",
+      "official_a2a": "A2A-CARDDIFF_B2_FINANCE_T009_V002",
+      "source_case_id": "CARDDIFF_B2_FINANCE_T009_V002"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_FINANCE_T010_V002",
-      "master_case_id": "TRANSFER-B3-FINANCE-002-0290",
-      "nlip": "NLIP-CARDDIFF_B3_FINANCE_T010_V002",
-      "official_a2a": "A2A-CARDDIFF_B3_FINANCE_T010_V002",
-      "source_case_id": "CARDDIFF_B3_FINANCE_T010_V002"
+      "anp": "ANP-CARDDIFF_B2_FINANCE_T010_V002",
+      "master_case_id": "TRANSFER-B2-FINANCE-002-0290",
+      "nlip": "NLIP-CARDDIFF_B2_FINANCE_T010_V002",
+      "official_a2a": "A2A-CARDDIFF_B2_FINANCE_T010_V002",
+      "source_case_id": "CARDDIFF_B2_FINANCE_T010_V002"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_FINANCE_T001_V003",
-      "master_case_id": "TRANSFER-B3-FINANCE-003-0291",
-      "nlip": "NLIP-CARDDIFF_B3_FINANCE_T001_V003",
-      "official_a2a": "A2A-CARDDIFF_B3_FINANCE_T001_V003",
-      "source_case_id": "CARDDIFF_B3_FINANCE_T001_V003"
+      "anp": "ANP-CARDDIFF_B2_FINANCE_T001_V003",
+      "master_case_id": "TRANSFER-B2-FINANCE-003-0291",
+      "nlip": "NLIP-CARDDIFF_B2_FINANCE_T001_V003",
+      "official_a2a": "A2A-CARDDIFF_B2_FINANCE_T001_V003",
+      "source_case_id": "CARDDIFF_B2_FINANCE_T001_V003"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_FINANCE_T002_V003",
-      "master_case_id": "TRANSFER-B3-FINANCE-003-0292",
-      "nlip": "NLIP-CARDDIFF_B3_FINANCE_T002_V003",
-      "official_a2a": "A2A-CARDDIFF_B3_FINANCE_T002_V003",
-      "source_case_id": "CARDDIFF_B3_FINANCE_T002_V003"
+      "anp": "ANP-CARDDIFF_B2_FINANCE_T002_V003",
+      "master_case_id": "TRANSFER-B2-FINANCE-003-0292",
+      "nlip": "NLIP-CARDDIFF_B2_FINANCE_T002_V003",
+      "official_a2a": "A2A-CARDDIFF_B2_FINANCE_T002_V003",
+      "source_case_id": "CARDDIFF_B2_FINANCE_T002_V003"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_FINANCE_T003_V003",
-      "master_case_id": "TRANSFER-B3-FINANCE-003-0293",
-      "nlip": "NLIP-CARDDIFF_B3_FINANCE_T003_V003",
-      "official_a2a": "A2A-CARDDIFF_B3_FINANCE_T003_V003",
-      "source_case_id": "CARDDIFF_B3_FINANCE_T003_V003"
+      "anp": "ANP-CARDDIFF_B2_FINANCE_T003_V003",
+      "master_case_id": "TRANSFER-B2-FINANCE-003-0293",
+      "nlip": "NLIP-CARDDIFF_B2_FINANCE_T003_V003",
+      "official_a2a": "A2A-CARDDIFF_B2_FINANCE_T003_V003",
+      "source_case_id": "CARDDIFF_B2_FINANCE_T003_V003"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_FINANCE_T004_V003",
-      "master_case_id": "TRANSFER-B3-FINANCE-003-0294",
-      "nlip": "NLIP-CARDDIFF_B3_FINANCE_T004_V003",
-      "official_a2a": "A2A-CARDDIFF_B3_FINANCE_T004_V003",
-      "source_case_id": "CARDDIFF_B3_FINANCE_T004_V003"
+      "anp": "ANP-CARDDIFF_B2_FINANCE_T004_V003",
+      "master_case_id": "TRANSFER-B2-FINANCE-003-0294",
+      "nlip": "NLIP-CARDDIFF_B2_FINANCE_T004_V003",
+      "official_a2a": "A2A-CARDDIFF_B2_FINANCE_T004_V003",
+      "source_case_id": "CARDDIFF_B2_FINANCE_T004_V003"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_FINANCE_T005_V003",
-      "master_case_id": "TRANSFER-B3-FINANCE-003-0295",
-      "nlip": "NLIP-CARDDIFF_B3_FINANCE_T005_V003",
-      "official_a2a": "A2A-CARDDIFF_B3_FINANCE_T005_V003",
-      "source_case_id": "CARDDIFF_B3_FINANCE_T005_V003"
+      "anp": "ANP-CARDDIFF_B2_FINANCE_T005_V003",
+      "master_case_id": "TRANSFER-B2-FINANCE-003-0295",
+      "nlip": "NLIP-CARDDIFF_B2_FINANCE_T005_V003",
+      "official_a2a": "A2A-CARDDIFF_B2_FINANCE_T005_V003",
+      "source_case_id": "CARDDIFF_B2_FINANCE_T005_V003"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_FINANCE_T006_V003",
-      "master_case_id": "TRANSFER-B3-FINANCE-003-0296",
-      "nlip": "NLIP-CARDDIFF_B3_FINANCE_T006_V003",
-      "official_a2a": "A2A-CARDDIFF_B3_FINANCE_T006_V003",
-      "source_case_id": "CARDDIFF_B3_FINANCE_T006_V003"
+      "anp": "ANP-CARDDIFF_B2_FINANCE_T006_V003",
+      "master_case_id": "TRANSFER-B2-FINANCE-003-0296",
+      "nlip": "NLIP-CARDDIFF_B2_FINANCE_T006_V003",
+      "official_a2a": "A2A-CARDDIFF_B2_FINANCE_T006_V003",
+      "source_case_id": "CARDDIFF_B2_FINANCE_T006_V003"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_FINANCE_T007_V003",
-      "master_case_id": "TRANSFER-B3-FINANCE-003-0297",
-      "nlip": "NLIP-CARDDIFF_B3_FINANCE_T007_V003",
-      "official_a2a": "A2A-CARDDIFF_B3_FINANCE_T007_V003",
-      "source_case_id": "CARDDIFF_B3_FINANCE_T007_V003"
+      "anp": "ANP-CARDDIFF_B2_FINANCE_T007_V003",
+      "master_case_id": "TRANSFER-B2-FINANCE-003-0297",
+      "nlip": "NLIP-CARDDIFF_B2_FINANCE_T007_V003",
+      "official_a2a": "A2A-CARDDIFF_B2_FINANCE_T007_V003",
+      "source_case_id": "CARDDIFF_B2_FINANCE_T007_V003"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_FINANCE_T008_V003",
-      "master_case_id": "TRANSFER-B3-FINANCE-003-0298",
-      "nlip": "NLIP-CARDDIFF_B3_FINANCE_T008_V003",
-      "official_a2a": "A2A-CARDDIFF_B3_FINANCE_T008_V003",
-      "source_case_id": "CARDDIFF_B3_FINANCE_T008_V003"
+      "anp": "ANP-CARDDIFF_B2_FINANCE_T008_V003",
+      "master_case_id": "TRANSFER-B2-FINANCE-003-0298",
+      "nlip": "NLIP-CARDDIFF_B2_FINANCE_T008_V003",
+      "official_a2a": "A2A-CARDDIFF_B2_FINANCE_T008_V003",
+      "source_case_id": "CARDDIFF_B2_FINANCE_T008_V003"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_FINANCE_T009_V003",
-      "master_case_id": "TRANSFER-B3-FINANCE-003-0299",
-      "nlip": "NLIP-CARDDIFF_B3_FINANCE_T009_V003",
-      "official_a2a": "A2A-CARDDIFF_B3_FINANCE_T009_V003",
-      "source_case_id": "CARDDIFF_B3_FINANCE_T009_V003"
+      "anp": "ANP-CARDDIFF_B2_FINANCE_T009_V003",
+      "master_case_id": "TRANSFER-B2-FINANCE-003-0299",
+      "nlip": "NLIP-CARDDIFF_B2_FINANCE_T009_V003",
+      "official_a2a": "A2A-CARDDIFF_B2_FINANCE_T009_V003",
+      "source_case_id": "CARDDIFF_B2_FINANCE_T009_V003"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_FINANCE_T010_V003",
-      "master_case_id": "TRANSFER-B3-FINANCE-003-0300",
-      "nlip": "NLIP-CARDDIFF_B3_FINANCE_T010_V003",
-      "official_a2a": "A2A-CARDDIFF_B3_FINANCE_T010_V003",
-      "source_case_id": "CARDDIFF_B3_FINANCE_T010_V003"
+      "anp": "ANP-CARDDIFF_B2_FINANCE_T010_V003",
+      "master_case_id": "TRANSFER-B2-FINANCE-003-0300",
+      "nlip": "NLIP-CARDDIFF_B2_FINANCE_T010_V003",
+      "official_a2a": "A2A-CARDDIFF_B2_FINANCE_T010_V003",
+      "source_case_id": "CARDDIFF_B2_FINANCE_T010_V003"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_HEALTHCARE_T001_V001",
-      "master_case_id": "TRANSFER-B3-HEALTHCARE-001-0301",
-      "nlip": "NLIP-CARDDIFF_B3_HEALTHCARE_T001_V001",
-      "official_a2a": "A2A-CARDDIFF_B3_HEALTHCARE_T001_V001",
-      "source_case_id": "CARDDIFF_B3_HEALTHCARE_T001_V001"
+      "anp": "ANP-CARDDIFF_B2_HEALTHCARE_T001_V001",
+      "master_case_id": "TRANSFER-B2-HEALTHCARE-001-0301",
+      "nlip": "NLIP-CARDDIFF_B2_HEALTHCARE_T001_V001",
+      "official_a2a": "A2A-CARDDIFF_B2_HEALTHCARE_T001_V001",
+      "source_case_id": "CARDDIFF_B2_HEALTHCARE_T001_V001"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_HEALTHCARE_T002_V001",
-      "master_case_id": "TRANSFER-B3-HEALTHCARE-001-0302",
-      "nlip": "NLIP-CARDDIFF_B3_HEALTHCARE_T002_V001",
-      "official_a2a": "A2A-CARDDIFF_B3_HEALTHCARE_T002_V001",
-      "source_case_id": "CARDDIFF_B3_HEALTHCARE_T002_V001"
+      "anp": "ANP-CARDDIFF_B2_HEALTHCARE_T002_V001",
+      "master_case_id": "TRANSFER-B2-HEALTHCARE-001-0302",
+      "nlip": "NLIP-CARDDIFF_B2_HEALTHCARE_T002_V001",
+      "official_a2a": "A2A-CARDDIFF_B2_HEALTHCARE_T002_V001",
+      "source_case_id": "CARDDIFF_B2_HEALTHCARE_T002_V001"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_HEALTHCARE_T003_V001",
-      "master_case_id": "TRANSFER-B3-HEALTHCARE-001-0303",
-      "nlip": "NLIP-CARDDIFF_B3_HEALTHCARE_T003_V001",
-      "official_a2a": "A2A-CARDDIFF_B3_HEALTHCARE_T003_V001",
-      "source_case_id": "CARDDIFF_B3_HEALTHCARE_T003_V001"
+      "anp": "ANP-CARDDIFF_B2_HEALTHCARE_T003_V001",
+      "master_case_id": "TRANSFER-B2-HEALTHCARE-001-0303",
+      "nlip": "NLIP-CARDDIFF_B2_HEALTHCARE_T003_V001",
+      "official_a2a": "A2A-CARDDIFF_B2_HEALTHCARE_T003_V001",
+      "source_case_id": "CARDDIFF_B2_HEALTHCARE_T003_V001"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_HEALTHCARE_T004_V001",
-      "master_case_id": "TRANSFER-B3-HEALTHCARE-001-0304",
-      "nlip": "NLIP-CARDDIFF_B3_HEALTHCARE_T004_V001",
-      "official_a2a": "A2A-CARDDIFF_B3_HEALTHCARE_T004_V001",
-      "source_case_id": "CARDDIFF_B3_HEALTHCARE_T004_V001"
+      "anp": "ANP-CARDDIFF_B2_HEALTHCARE_T004_V001",
+      "master_case_id": "TRANSFER-B2-HEALTHCARE-001-0304",
+      "nlip": "NLIP-CARDDIFF_B2_HEALTHCARE_T004_V001",
+      "official_a2a": "A2A-CARDDIFF_B2_HEALTHCARE_T004_V001",
+      "source_case_id": "CARDDIFF_B2_HEALTHCARE_T004_V001"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_HEALTHCARE_T005_V001",
-      "master_case_id": "TRANSFER-B3-HEALTHCARE-001-0305",
-      "nlip": "NLIP-CARDDIFF_B3_HEALTHCARE_T005_V001",
-      "official_a2a": "A2A-CARDDIFF_B3_HEALTHCARE_T005_V001",
-      "source_case_id": "CARDDIFF_B3_HEALTHCARE_T005_V001"
+      "anp": "ANP-CARDDIFF_B2_HEALTHCARE_T005_V001",
+      "master_case_id": "TRANSFER-B2-HEALTHCARE-001-0305",
+      "nlip": "NLIP-CARDDIFF_B2_HEALTHCARE_T005_V001",
+      "official_a2a": "A2A-CARDDIFF_B2_HEALTHCARE_T005_V001",
+      "source_case_id": "CARDDIFF_B2_HEALTHCARE_T005_V001"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_HEALTHCARE_T006_V001",
-      "master_case_id": "TRANSFER-B3-HEALTHCARE-001-0306",
-      "nlip": "NLIP-CARDDIFF_B3_HEALTHCARE_T006_V001",
-      "official_a2a": "A2A-CARDDIFF_B3_HEALTHCARE_T006_V001",
-      "source_case_id": "CARDDIFF_B3_HEALTHCARE_T006_V001"
+      "anp": "ANP-CARDDIFF_B2_HEALTHCARE_T006_V001",
+      "master_case_id": "TRANSFER-B2-HEALTHCARE-001-0306",
+      "nlip": "NLIP-CARDDIFF_B2_HEALTHCARE_T006_V001",
+      "official_a2a": "A2A-CARDDIFF_B2_HEALTHCARE_T006_V001",
+      "source_case_id": "CARDDIFF_B2_HEALTHCARE_T006_V001"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_HEALTHCARE_T007_V001",
-      "master_case_id": "TRANSFER-B3-HEALTHCARE-001-0307",
-      "nlip": "NLIP-CARDDIFF_B3_HEALTHCARE_T007_V001",
-      "official_a2a": "A2A-CARDDIFF_B3_HEALTHCARE_T007_V001",
-      "source_case_id": "CARDDIFF_B3_HEALTHCARE_T007_V001"
+      "anp": "ANP-CARDDIFF_B2_HEALTHCARE_T007_V001",
+      "master_case_id": "TRANSFER-B2-HEALTHCARE-001-0307",
+      "nlip": "NLIP-CARDDIFF_B2_HEALTHCARE_T007_V001",
+      "official_a2a": "A2A-CARDDIFF_B2_HEALTHCARE_T007_V001",
+      "source_case_id": "CARDDIFF_B2_HEALTHCARE_T007_V001"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_HEALTHCARE_T008_V001",
-      "master_case_id": "TRANSFER-B3-HEALTHCARE-001-0308",
-      "nlip": "NLIP-CARDDIFF_B3_HEALTHCARE_T008_V001",
-      "official_a2a": "A2A-CARDDIFF_B3_HEALTHCARE_T008_V001",
-      "source_case_id": "CARDDIFF_B3_HEALTHCARE_T008_V001"
+      "anp": "ANP-CARDDIFF_B2_HEALTHCARE_T008_V001",
+      "master_case_id": "TRANSFER-B2-HEALTHCARE-001-0308",
+      "nlip": "NLIP-CARDDIFF_B2_HEALTHCARE_T008_V001",
+      "official_a2a": "A2A-CARDDIFF_B2_HEALTHCARE_T008_V001",
+      "source_case_id": "CARDDIFF_B2_HEALTHCARE_T008_V001"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_HEALTHCARE_T009_V001",
-      "master_case_id": "TRANSFER-B3-HEALTHCARE-001-0309",
-      "nlip": "NLIP-CARDDIFF_B3_HEALTHCARE_T009_V001",
-      "official_a2a": "A2A-CARDDIFF_B3_HEALTHCARE_T009_V001",
-      "source_case_id": "CARDDIFF_B3_HEALTHCARE_T009_V001"
+      "anp": "ANP-CARDDIFF_B2_HEALTHCARE_T009_V001",
+      "master_case_id": "TRANSFER-B2-HEALTHCARE-001-0309",
+      "nlip": "NLIP-CARDDIFF_B2_HEALTHCARE_T009_V001",
+      "official_a2a": "A2A-CARDDIFF_B2_HEALTHCARE_T009_V001",
+      "source_case_id": "CARDDIFF_B2_HEALTHCARE_T009_V001"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_HEALTHCARE_T010_V001",
-      "master_case_id": "TRANSFER-B3-HEALTHCARE-001-0310",
-      "nlip": "NLIP-CARDDIFF_B3_HEALTHCARE_T010_V001",
-      "official_a2a": "A2A-CARDDIFF_B3_HEALTHCARE_T010_V001",
-      "source_case_id": "CARDDIFF_B3_HEALTHCARE_T010_V001"
+      "anp": "ANP-CARDDIFF_B2_HEALTHCARE_T010_V001",
+      "master_case_id": "TRANSFER-B2-HEALTHCARE-001-0310",
+      "nlip": "NLIP-CARDDIFF_B2_HEALTHCARE_T010_V001",
+      "official_a2a": "A2A-CARDDIFF_B2_HEALTHCARE_T010_V001",
+      "source_case_id": "CARDDIFF_B2_HEALTHCARE_T010_V001"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_HEALTHCARE_T001_V002",
-      "master_case_id": "TRANSFER-B3-HEALTHCARE-002-0311",
-      "nlip": "NLIP-CARDDIFF_B3_HEALTHCARE_T001_V002",
-      "official_a2a": "A2A-CARDDIFF_B3_HEALTHCARE_T001_V002",
-      "source_case_id": "CARDDIFF_B3_HEALTHCARE_T001_V002"
+      "anp": "ANP-CARDDIFF_B2_HEALTHCARE_T001_V002",
+      "master_case_id": "TRANSFER-B2-HEALTHCARE-002-0311",
+      "nlip": "NLIP-CARDDIFF_B2_HEALTHCARE_T001_V002",
+      "official_a2a": "A2A-CARDDIFF_B2_HEALTHCARE_T001_V002",
+      "source_case_id": "CARDDIFF_B2_HEALTHCARE_T001_V002"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_HEALTHCARE_T002_V002",
-      "master_case_id": "TRANSFER-B3-HEALTHCARE-002-0312",
-      "nlip": "NLIP-CARDDIFF_B3_HEALTHCARE_T002_V002",
-      "official_a2a": "A2A-CARDDIFF_B3_HEALTHCARE_T002_V002",
-      "source_case_id": "CARDDIFF_B3_HEALTHCARE_T002_V002"
+      "anp": "ANP-CARDDIFF_B2_HEALTHCARE_T002_V002",
+      "master_case_id": "TRANSFER-B2-HEALTHCARE-002-0312",
+      "nlip": "NLIP-CARDDIFF_B2_HEALTHCARE_T002_V002",
+      "official_a2a": "A2A-CARDDIFF_B2_HEALTHCARE_T002_V002",
+      "source_case_id": "CARDDIFF_B2_HEALTHCARE_T002_V002"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_HEALTHCARE_T003_V002",
-      "master_case_id": "TRANSFER-B3-HEALTHCARE-002-0313",
-      "nlip": "NLIP-CARDDIFF_B3_HEALTHCARE_T003_V002",
-      "official_a2a": "A2A-CARDDIFF_B3_HEALTHCARE_T003_V002",
-      "source_case_id": "CARDDIFF_B3_HEALTHCARE_T003_V002"
+      "anp": "ANP-CARDDIFF_B2_HEALTHCARE_T003_V002",
+      "master_case_id": "TRANSFER-B2-HEALTHCARE-002-0313",
+      "nlip": "NLIP-CARDDIFF_B2_HEALTHCARE_T003_V002",
+      "official_a2a": "A2A-CARDDIFF_B2_HEALTHCARE_T003_V002",
+      "source_case_id": "CARDDIFF_B2_HEALTHCARE_T003_V002"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_HEALTHCARE_T004_V002",
-      "master_case_id": "TRANSFER-B3-HEALTHCARE-002-0314",
-      "nlip": "NLIP-CARDDIFF_B3_HEALTHCARE_T004_V002",
-      "official_a2a": "A2A-CARDDIFF_B3_HEALTHCARE_T004_V002",
-      "source_case_id": "CARDDIFF_B3_HEALTHCARE_T004_V002"
+      "anp": "ANP-CARDDIFF_B2_HEALTHCARE_T004_V002",
+      "master_case_id": "TRANSFER-B2-HEALTHCARE-002-0314",
+      "nlip": "NLIP-CARDDIFF_B2_HEALTHCARE_T004_V002",
+      "official_a2a": "A2A-CARDDIFF_B2_HEALTHCARE_T004_V002",
+      "source_case_id": "CARDDIFF_B2_HEALTHCARE_T004_V002"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_HEALTHCARE_T005_V002",
-      "master_case_id": "TRANSFER-B3-HEALTHCARE-002-0315",
-      "nlip": "NLIP-CARDDIFF_B3_HEALTHCARE_T005_V002",
-      "official_a2a": "A2A-CARDDIFF_B3_HEALTHCARE_T005_V002",
-      "source_case_id": "CARDDIFF_B3_HEALTHCARE_T005_V002"
+      "anp": "ANP-CARDDIFF_B2_HEALTHCARE_T005_V002",
+      "master_case_id": "TRANSFER-B2-HEALTHCARE-002-0315",
+      "nlip": "NLIP-CARDDIFF_B2_HEALTHCARE_T005_V002",
+      "official_a2a": "A2A-CARDDIFF_B2_HEALTHCARE_T005_V002",
+      "source_case_id": "CARDDIFF_B2_HEALTHCARE_T005_V002"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_HEALTHCARE_T006_V002",
-      "master_case_id": "TRANSFER-B3-HEALTHCARE-002-0316",
-      "nlip": "NLIP-CARDDIFF_B3_HEALTHCARE_T006_V002",
-      "official_a2a": "A2A-CARDDIFF_B3_HEALTHCARE_T006_V002",
-      "source_case_id": "CARDDIFF_B3_HEALTHCARE_T006_V002"
+      "anp": "ANP-CARDDIFF_B2_HEALTHCARE_T006_V002",
+      "master_case_id": "TRANSFER-B2-HEALTHCARE-002-0316",
+      "nlip": "NLIP-CARDDIFF_B2_HEALTHCARE_T006_V002",
+      "official_a2a": "A2A-CARDDIFF_B2_HEALTHCARE_T006_V002",
+      "source_case_id": "CARDDIFF_B2_HEALTHCARE_T006_V002"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_HEALTHCARE_T007_V002",
-      "master_case_id": "TRANSFER-B3-HEALTHCARE-002-0317",
-      "nlip": "NLIP-CARDDIFF_B3_HEALTHCARE_T007_V002",
-      "official_a2a": "A2A-CARDDIFF_B3_HEALTHCARE_T007_V002",
-      "source_case_id": "CARDDIFF_B3_HEALTHCARE_T007_V002"
+      "anp": "ANP-CARDDIFF_B2_HEALTHCARE_T007_V002",
+      "master_case_id": "TRANSFER-B2-HEALTHCARE-002-0317",
+      "nlip": "NLIP-CARDDIFF_B2_HEALTHCARE_T007_V002",
+      "official_a2a": "A2A-CARDDIFF_B2_HEALTHCARE_T007_V002",
+      "source_case_id": "CARDDIFF_B2_HEALTHCARE_T007_V002"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_HEALTHCARE_T008_V002",
-      "master_case_id": "TRANSFER-B3-HEALTHCARE-002-0318",
-      "nlip": "NLIP-CARDDIFF_B3_HEALTHCARE_T008_V002",
-      "official_a2a": "A2A-CARDDIFF_B3_HEALTHCARE_T008_V002",
-      "source_case_id": "CARDDIFF_B3_HEALTHCARE_T008_V002"
+      "anp": "ANP-CARDDIFF_B2_HEALTHCARE_T008_V002",
+      "master_case_id": "TRANSFER-B2-HEALTHCARE-002-0318",
+      "nlip": "NLIP-CARDDIFF_B2_HEALTHCARE_T008_V002",
+      "official_a2a": "A2A-CARDDIFF_B2_HEALTHCARE_T008_V002",
+      "source_case_id": "CARDDIFF_B2_HEALTHCARE_T008_V002"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_HEALTHCARE_T009_V002",
-      "master_case_id": "TRANSFER-B3-HEALTHCARE-002-0319",
-      "nlip": "NLIP-CARDDIFF_B3_HEALTHCARE_T009_V002",
-      "official_a2a": "A2A-CARDDIFF_B3_HEALTHCARE_T009_V002",
-      "source_case_id": "CARDDIFF_B3_HEALTHCARE_T009_V002"
+      "anp": "ANP-CARDDIFF_B2_HEALTHCARE_T009_V002",
+      "master_case_id": "TRANSFER-B2-HEALTHCARE-002-0319",
+      "nlip": "NLIP-CARDDIFF_B2_HEALTHCARE_T009_V002",
+      "official_a2a": "A2A-CARDDIFF_B2_HEALTHCARE_T009_V002",
+      "source_case_id": "CARDDIFF_B2_HEALTHCARE_T009_V002"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_HEALTHCARE_T010_V002",
-      "master_case_id": "TRANSFER-B3-HEALTHCARE-002-0320",
-      "nlip": "NLIP-CARDDIFF_B3_HEALTHCARE_T010_V002",
-      "official_a2a": "A2A-CARDDIFF_B3_HEALTHCARE_T010_V002",
-      "source_case_id": "CARDDIFF_B3_HEALTHCARE_T010_V002"
+      "anp": "ANP-CARDDIFF_B2_HEALTHCARE_T010_V002",
+      "master_case_id": "TRANSFER-B2-HEALTHCARE-002-0320",
+      "nlip": "NLIP-CARDDIFF_B2_HEALTHCARE_T010_V002",
+      "official_a2a": "A2A-CARDDIFF_B2_HEALTHCARE_T010_V002",
+      "source_case_id": "CARDDIFF_B2_HEALTHCARE_T010_V002"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_HEALTHCARE_T001_V003",
-      "master_case_id": "TRANSFER-B3-HEALTHCARE-003-0321",
-      "nlip": "NLIP-CARDDIFF_B3_HEALTHCARE_T001_V003",
-      "official_a2a": "A2A-CARDDIFF_B3_HEALTHCARE_T001_V003",
-      "source_case_id": "CARDDIFF_B3_HEALTHCARE_T001_V003"
+      "anp": "ANP-CARDDIFF_B2_HEALTHCARE_T001_V003",
+      "master_case_id": "TRANSFER-B2-HEALTHCARE-003-0321",
+      "nlip": "NLIP-CARDDIFF_B2_HEALTHCARE_T001_V003",
+      "official_a2a": "A2A-CARDDIFF_B2_HEALTHCARE_T001_V003",
+      "source_case_id": "CARDDIFF_B2_HEALTHCARE_T001_V003"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_HEALTHCARE_T002_V003",
-      "master_case_id": "TRANSFER-B3-HEALTHCARE-003-0322",
-      "nlip": "NLIP-CARDDIFF_B3_HEALTHCARE_T002_V003",
-      "official_a2a": "A2A-CARDDIFF_B3_HEALTHCARE_T002_V003",
-      "source_case_id": "CARDDIFF_B3_HEALTHCARE_T002_V003"
+      "anp": "ANP-CARDDIFF_B2_HEALTHCARE_T002_V003",
+      "master_case_id": "TRANSFER-B2-HEALTHCARE-003-0322",
+      "nlip": "NLIP-CARDDIFF_B2_HEALTHCARE_T002_V003",
+      "official_a2a": "A2A-CARDDIFF_B2_HEALTHCARE_T002_V003",
+      "source_case_id": "CARDDIFF_B2_HEALTHCARE_T002_V003"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_HEALTHCARE_T003_V003",
-      "master_case_id": "TRANSFER-B3-HEALTHCARE-003-0323",
-      "nlip": "NLIP-CARDDIFF_B3_HEALTHCARE_T003_V003",
-      "official_a2a": "A2A-CARDDIFF_B3_HEALTHCARE_T003_V003",
-      "source_case_id": "CARDDIFF_B3_HEALTHCARE_T003_V003"
+      "anp": "ANP-CARDDIFF_B2_HEALTHCARE_T003_V003",
+      "master_case_id": "TRANSFER-B2-HEALTHCARE-003-0323",
+      "nlip": "NLIP-CARDDIFF_B2_HEALTHCARE_T003_V003",
+      "official_a2a": "A2A-CARDDIFF_B2_HEALTHCARE_T003_V003",
+      "source_case_id": "CARDDIFF_B2_HEALTHCARE_T003_V003"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_HEALTHCARE_T004_V003",
-      "master_case_id": "TRANSFER-B3-HEALTHCARE-003-0324",
-      "nlip": "NLIP-CARDDIFF_B3_HEALTHCARE_T004_V003",
-      "official_a2a": "A2A-CARDDIFF_B3_HEALTHCARE_T004_V003",
-      "source_case_id": "CARDDIFF_B3_HEALTHCARE_T004_V003"
+      "anp": "ANP-CARDDIFF_B2_HEALTHCARE_T004_V003",
+      "master_case_id": "TRANSFER-B2-HEALTHCARE-003-0324",
+      "nlip": "NLIP-CARDDIFF_B2_HEALTHCARE_T004_V003",
+      "official_a2a": "A2A-CARDDIFF_B2_HEALTHCARE_T004_V003",
+      "source_case_id": "CARDDIFF_B2_HEALTHCARE_T004_V003"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_HEALTHCARE_T005_V003",
-      "master_case_id": "TRANSFER-B3-HEALTHCARE-003-0325",
-      "nlip": "NLIP-CARDDIFF_B3_HEALTHCARE_T005_V003",
-      "official_a2a": "A2A-CARDDIFF_B3_HEALTHCARE_T005_V003",
-      "source_case_id": "CARDDIFF_B3_HEALTHCARE_T005_V003"
+      "anp": "ANP-CARDDIFF_B2_HEALTHCARE_T005_V003",
+      "master_case_id": "TRANSFER-B2-HEALTHCARE-003-0325",
+      "nlip": "NLIP-CARDDIFF_B2_HEALTHCARE_T005_V003",
+      "official_a2a": "A2A-CARDDIFF_B2_HEALTHCARE_T005_V003",
+      "source_case_id": "CARDDIFF_B2_HEALTHCARE_T005_V003"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_HEALTHCARE_T006_V003",
-      "master_case_id": "TRANSFER-B3-HEALTHCARE-003-0326",
-      "nlip": "NLIP-CARDDIFF_B3_HEALTHCARE_T006_V003",
-      "official_a2a": "A2A-CARDDIFF_B3_HEALTHCARE_T006_V003",
-      "source_case_id": "CARDDIFF_B3_HEALTHCARE_T006_V003"
+      "anp": "ANP-CARDDIFF_B2_HEALTHCARE_T006_V003",
+      "master_case_id": "TRANSFER-B2-HEALTHCARE-003-0326",
+      "nlip": "NLIP-CARDDIFF_B2_HEALTHCARE_T006_V003",
+      "official_a2a": "A2A-CARDDIFF_B2_HEALTHCARE_T006_V003",
+      "source_case_id": "CARDDIFF_B2_HEALTHCARE_T006_V003"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_HEALTHCARE_T007_V003",
-      "master_case_id": "TRANSFER-B3-HEALTHCARE-003-0327",
-      "nlip": "NLIP-CARDDIFF_B3_HEALTHCARE_T007_V003",
-      "official_a2a": "A2A-CARDDIFF_B3_HEALTHCARE_T007_V003",
-      "source_case_id": "CARDDIFF_B3_HEALTHCARE_T007_V003"
+      "anp": "ANP-CARDDIFF_B2_HEALTHCARE_T007_V003",
+      "master_case_id": "TRANSFER-B2-HEALTHCARE-003-0327",
+      "nlip": "NLIP-CARDDIFF_B2_HEALTHCARE_T007_V003",
+      "official_a2a": "A2A-CARDDIFF_B2_HEALTHCARE_T007_V003",
+      "source_case_id": "CARDDIFF_B2_HEALTHCARE_T007_V003"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_HEALTHCARE_T008_V003",
-      "master_case_id": "TRANSFER-B3-HEALTHCARE-003-0328",
-      "nlip": "NLIP-CARDDIFF_B3_HEALTHCARE_T008_V003",
-      "official_a2a": "A2A-CARDDIFF_B3_HEALTHCARE_T008_V003",
-      "source_case_id": "CARDDIFF_B3_HEALTHCARE_T008_V003"
+      "anp": "ANP-CARDDIFF_B2_HEALTHCARE_T008_V003",
+      "master_case_id": "TRANSFER-B2-HEALTHCARE-003-0328",
+      "nlip": "NLIP-CARDDIFF_B2_HEALTHCARE_T008_V003",
+      "official_a2a": "A2A-CARDDIFF_B2_HEALTHCARE_T008_V003",
+      "source_case_id": "CARDDIFF_B2_HEALTHCARE_T008_V003"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_HEALTHCARE_T009_V003",
-      "master_case_id": "TRANSFER-B3-HEALTHCARE-003-0329",
-      "nlip": "NLIP-CARDDIFF_B3_HEALTHCARE_T009_V003",
-      "official_a2a": "A2A-CARDDIFF_B3_HEALTHCARE_T009_V003",
-      "source_case_id": "CARDDIFF_B3_HEALTHCARE_T009_V003"
+      "anp": "ANP-CARDDIFF_B2_HEALTHCARE_T009_V003",
+      "master_case_id": "TRANSFER-B2-HEALTHCARE-003-0329",
+      "nlip": "NLIP-CARDDIFF_B2_HEALTHCARE_T009_V003",
+      "official_a2a": "A2A-CARDDIFF_B2_HEALTHCARE_T009_V003",
+      "source_case_id": "CARDDIFF_B2_HEALTHCARE_T009_V003"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_HEALTHCARE_T010_V003",
-      "master_case_id": "TRANSFER-B3-HEALTHCARE-003-0330",
-      "nlip": "NLIP-CARDDIFF_B3_HEALTHCARE_T010_V003",
-      "official_a2a": "A2A-CARDDIFF_B3_HEALTHCARE_T010_V003",
-      "source_case_id": "CARDDIFF_B3_HEALTHCARE_T010_V003"
+      "anp": "ANP-CARDDIFF_B2_HEALTHCARE_T010_V003",
+      "master_case_id": "TRANSFER-B2-HEALTHCARE-003-0330",
+      "nlip": "NLIP-CARDDIFF_B2_HEALTHCARE_T010_V003",
+      "official_a2a": "A2A-CARDDIFF_B2_HEALTHCARE_T010_V003",
+      "source_case_id": "CARDDIFF_B2_HEALTHCARE_T010_V003"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_TRAVEL_T001_V001",
-      "master_case_id": "TRANSFER-B3-TRAVEL-001-0331",
-      "nlip": "NLIP-CARDDIFF_B3_TRAVEL_T001_V001",
-      "official_a2a": "A2A-CARDDIFF_B3_TRAVEL_T001_V001",
-      "source_case_id": "CARDDIFF_B3_TRAVEL_T001_V001"
+      "anp": "ANP-CARDDIFF_B2_TRAVEL_T001_V001",
+      "master_case_id": "TRANSFER-B2-TRAVEL-001-0331",
+      "nlip": "NLIP-CARDDIFF_B2_TRAVEL_T001_V001",
+      "official_a2a": "A2A-CARDDIFF_B2_TRAVEL_T001_V001",
+      "source_case_id": "CARDDIFF_B2_TRAVEL_T001_V001"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_TRAVEL_T002_V001",
-      "master_case_id": "TRANSFER-B3-TRAVEL-001-0332",
-      "nlip": "NLIP-CARDDIFF_B3_TRAVEL_T002_V001",
-      "official_a2a": "A2A-CARDDIFF_B3_TRAVEL_T002_V001",
-      "source_case_id": "CARDDIFF_B3_TRAVEL_T002_V001"
+      "anp": "ANP-CARDDIFF_B2_TRAVEL_T002_V001",
+      "master_case_id": "TRANSFER-B2-TRAVEL-001-0332",
+      "nlip": "NLIP-CARDDIFF_B2_TRAVEL_T002_V001",
+      "official_a2a": "A2A-CARDDIFF_B2_TRAVEL_T002_V001",
+      "source_case_id": "CARDDIFF_B2_TRAVEL_T002_V001"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_TRAVEL_T003_V001",
-      "master_case_id": "TRANSFER-B3-TRAVEL-001-0333",
-      "nlip": "NLIP-CARDDIFF_B3_TRAVEL_T003_V001",
-      "official_a2a": "A2A-CARDDIFF_B3_TRAVEL_T003_V001",
-      "source_case_id": "CARDDIFF_B3_TRAVEL_T003_V001"
+      "anp": "ANP-CARDDIFF_B2_TRAVEL_T003_V001",
+      "master_case_id": "TRANSFER-B2-TRAVEL-001-0333",
+      "nlip": "NLIP-CARDDIFF_B2_TRAVEL_T003_V001",
+      "official_a2a": "A2A-CARDDIFF_B2_TRAVEL_T003_V001",
+      "source_case_id": "CARDDIFF_B2_TRAVEL_T003_V001"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_TRAVEL_T004_V001",
-      "master_case_id": "TRANSFER-B3-TRAVEL-001-0334",
-      "nlip": "NLIP-CARDDIFF_B3_TRAVEL_T004_V001",
-      "official_a2a": "A2A-CARDDIFF_B3_TRAVEL_T004_V001",
-      "source_case_id": "CARDDIFF_B3_TRAVEL_T004_V001"
+      "anp": "ANP-CARDDIFF_B2_TRAVEL_T004_V001",
+      "master_case_id": "TRANSFER-B2-TRAVEL-001-0334",
+      "nlip": "NLIP-CARDDIFF_B2_TRAVEL_T004_V001",
+      "official_a2a": "A2A-CARDDIFF_B2_TRAVEL_T004_V001",
+      "source_case_id": "CARDDIFF_B2_TRAVEL_T004_V001"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_TRAVEL_T005_V001",
-      "master_case_id": "TRANSFER-B3-TRAVEL-001-0335",
-      "nlip": "NLIP-CARDDIFF_B3_TRAVEL_T005_V001",
-      "official_a2a": "A2A-CARDDIFF_B3_TRAVEL_T005_V001",
-      "source_case_id": "CARDDIFF_B3_TRAVEL_T005_V001"
+      "anp": "ANP-CARDDIFF_B2_TRAVEL_T005_V001",
+      "master_case_id": "TRANSFER-B2-TRAVEL-001-0335",
+      "nlip": "NLIP-CARDDIFF_B2_TRAVEL_T005_V001",
+      "official_a2a": "A2A-CARDDIFF_B2_TRAVEL_T005_V001",
+      "source_case_id": "CARDDIFF_B2_TRAVEL_T005_V001"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_TRAVEL_T006_V001",
-      "master_case_id": "TRANSFER-B3-TRAVEL-001-0336",
-      "nlip": "NLIP-CARDDIFF_B3_TRAVEL_T006_V001",
-      "official_a2a": "A2A-CARDDIFF_B3_TRAVEL_T006_V001",
-      "source_case_id": "CARDDIFF_B3_TRAVEL_T006_V001"
+      "anp": "ANP-CARDDIFF_B2_TRAVEL_T006_V001",
+      "master_case_id": "TRANSFER-B2-TRAVEL-001-0336",
+      "nlip": "NLIP-CARDDIFF_B2_TRAVEL_T006_V001",
+      "official_a2a": "A2A-CARDDIFF_B2_TRAVEL_T006_V001",
+      "source_case_id": "CARDDIFF_B2_TRAVEL_T006_V001"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_TRAVEL_T007_V001",
-      "master_case_id": "TRANSFER-B3-TRAVEL-001-0337",
-      "nlip": "NLIP-CARDDIFF_B3_TRAVEL_T007_V001",
-      "official_a2a": "A2A-CARDDIFF_B3_TRAVEL_T007_V001",
-      "source_case_id": "CARDDIFF_B3_TRAVEL_T007_V001"
+      "anp": "ANP-CARDDIFF_B2_TRAVEL_T007_V001",
+      "master_case_id": "TRANSFER-B2-TRAVEL-001-0337",
+      "nlip": "NLIP-CARDDIFF_B2_TRAVEL_T007_V001",
+      "official_a2a": "A2A-CARDDIFF_B2_TRAVEL_T007_V001",
+      "source_case_id": "CARDDIFF_B2_TRAVEL_T007_V001"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_TRAVEL_T008_V001",
-      "master_case_id": "TRANSFER-B3-TRAVEL-001-0338",
-      "nlip": "NLIP-CARDDIFF_B3_TRAVEL_T008_V001",
-      "official_a2a": "A2A-CARDDIFF_B3_TRAVEL_T008_V001",
-      "source_case_id": "CARDDIFF_B3_TRAVEL_T008_V001"
+      "anp": "ANP-CARDDIFF_B2_TRAVEL_T008_V001",
+      "master_case_id": "TRANSFER-B2-TRAVEL-001-0338",
+      "nlip": "NLIP-CARDDIFF_B2_TRAVEL_T008_V001",
+      "official_a2a": "A2A-CARDDIFF_B2_TRAVEL_T008_V001",
+      "source_case_id": "CARDDIFF_B2_TRAVEL_T008_V001"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_TRAVEL_T009_V001",
-      "master_case_id": "TRANSFER-B3-TRAVEL-001-0339",
-      "nlip": "NLIP-CARDDIFF_B3_TRAVEL_T009_V001",
-      "official_a2a": "A2A-CARDDIFF_B3_TRAVEL_T009_V001",
-      "source_case_id": "CARDDIFF_B3_TRAVEL_T009_V001"
+      "anp": "ANP-CARDDIFF_B2_TRAVEL_T009_V001",
+      "master_case_id": "TRANSFER-B2-TRAVEL-001-0339",
+      "nlip": "NLIP-CARDDIFF_B2_TRAVEL_T009_V001",
+      "official_a2a": "A2A-CARDDIFF_B2_TRAVEL_T009_V001",
+      "source_case_id": "CARDDIFF_B2_TRAVEL_T009_V001"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_TRAVEL_T010_V001",
-      "master_case_id": "TRANSFER-B3-TRAVEL-001-0340",
-      "nlip": "NLIP-CARDDIFF_B3_TRAVEL_T010_V001",
-      "official_a2a": "A2A-CARDDIFF_B3_TRAVEL_T010_V001",
-      "source_case_id": "CARDDIFF_B3_TRAVEL_T010_V001"
+      "anp": "ANP-CARDDIFF_B2_TRAVEL_T010_V001",
+      "master_case_id": "TRANSFER-B2-TRAVEL-001-0340",
+      "nlip": "NLIP-CARDDIFF_B2_TRAVEL_T010_V001",
+      "official_a2a": "A2A-CARDDIFF_B2_TRAVEL_T010_V001",
+      "source_case_id": "CARDDIFF_B2_TRAVEL_T010_V001"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_TRAVEL_T001_V002",
-      "master_case_id": "TRANSFER-B3-TRAVEL-002-0341",
-      "nlip": "NLIP-CARDDIFF_B3_TRAVEL_T001_V002",
-      "official_a2a": "A2A-CARDDIFF_B3_TRAVEL_T001_V002",
-      "source_case_id": "CARDDIFF_B3_TRAVEL_T001_V002"
+      "anp": "ANP-CARDDIFF_B2_TRAVEL_T001_V002",
+      "master_case_id": "TRANSFER-B2-TRAVEL-002-0341",
+      "nlip": "NLIP-CARDDIFF_B2_TRAVEL_T001_V002",
+      "official_a2a": "A2A-CARDDIFF_B2_TRAVEL_T001_V002",
+      "source_case_id": "CARDDIFF_B2_TRAVEL_T001_V002"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_TRAVEL_T002_V002",
-      "master_case_id": "TRANSFER-B3-TRAVEL-002-0342",
-      "nlip": "NLIP-CARDDIFF_B3_TRAVEL_T002_V002",
-      "official_a2a": "A2A-CARDDIFF_B3_TRAVEL_T002_V002",
-      "source_case_id": "CARDDIFF_B3_TRAVEL_T002_V002"
+      "anp": "ANP-CARDDIFF_B2_TRAVEL_T002_V002",
+      "master_case_id": "TRANSFER-B2-TRAVEL-002-0342",
+      "nlip": "NLIP-CARDDIFF_B2_TRAVEL_T002_V002",
+      "official_a2a": "A2A-CARDDIFF_B2_TRAVEL_T002_V002",
+      "source_case_id": "CARDDIFF_B2_TRAVEL_T002_V002"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_TRAVEL_T003_V002",
-      "master_case_id": "TRANSFER-B3-TRAVEL-002-0343",
-      "nlip": "NLIP-CARDDIFF_B3_TRAVEL_T003_V002",
-      "official_a2a": "A2A-CARDDIFF_B3_TRAVEL_T003_V002",
-      "source_case_id": "CARDDIFF_B3_TRAVEL_T003_V002"
+      "anp": "ANP-CARDDIFF_B2_TRAVEL_T003_V002",
+      "master_case_id": "TRANSFER-B2-TRAVEL-002-0343",
+      "nlip": "NLIP-CARDDIFF_B2_TRAVEL_T003_V002",
+      "official_a2a": "A2A-CARDDIFF_B2_TRAVEL_T003_V002",
+      "source_case_id": "CARDDIFF_B2_TRAVEL_T003_V002"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_TRAVEL_T004_V002",
-      "master_case_id": "TRANSFER-B3-TRAVEL-002-0344",
-      "nlip": "NLIP-CARDDIFF_B3_TRAVEL_T004_V002",
-      "official_a2a": "A2A-CARDDIFF_B3_TRAVEL_T004_V002",
-      "source_case_id": "CARDDIFF_B3_TRAVEL_T004_V002"
+      "anp": "ANP-CARDDIFF_B2_TRAVEL_T004_V002",
+      "master_case_id": "TRANSFER-B2-TRAVEL-002-0344",
+      "nlip": "NLIP-CARDDIFF_B2_TRAVEL_T004_V002",
+      "official_a2a": "A2A-CARDDIFF_B2_TRAVEL_T004_V002",
+      "source_case_id": "CARDDIFF_B2_TRAVEL_T004_V002"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_TRAVEL_T005_V002",
-      "master_case_id": "TRANSFER-B3-TRAVEL-002-0345",
-      "nlip": "NLIP-CARDDIFF_B3_TRAVEL_T005_V002",
-      "official_a2a": "A2A-CARDDIFF_B3_TRAVEL_T005_V002",
-      "source_case_id": "CARDDIFF_B3_TRAVEL_T005_V002"
+      "anp": "ANP-CARDDIFF_B2_TRAVEL_T005_V002",
+      "master_case_id": "TRANSFER-B2-TRAVEL-002-0345",
+      "nlip": "NLIP-CARDDIFF_B2_TRAVEL_T005_V002",
+      "official_a2a": "A2A-CARDDIFF_B2_TRAVEL_T005_V002",
+      "source_case_id": "CARDDIFF_B2_TRAVEL_T005_V002"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_TRAVEL_T006_V002",
-      "master_case_id": "TRANSFER-B3-TRAVEL-002-0346",
-      "nlip": "NLIP-CARDDIFF_B3_TRAVEL_T006_V002",
-      "official_a2a": "A2A-CARDDIFF_B3_TRAVEL_T006_V002",
-      "source_case_id": "CARDDIFF_B3_TRAVEL_T006_V002"
+      "anp": "ANP-CARDDIFF_B2_TRAVEL_T006_V002",
+      "master_case_id": "TRANSFER-B2-TRAVEL-002-0346",
+      "nlip": "NLIP-CARDDIFF_B2_TRAVEL_T006_V002",
+      "official_a2a": "A2A-CARDDIFF_B2_TRAVEL_T006_V002",
+      "source_case_id": "CARDDIFF_B2_TRAVEL_T006_V002"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_TRAVEL_T007_V002",
-      "master_case_id": "TRANSFER-B3-TRAVEL-002-0347",
-      "nlip": "NLIP-CARDDIFF_B3_TRAVEL_T007_V002",
-      "official_a2a": "A2A-CARDDIFF_B3_TRAVEL_T007_V002",
-      "source_case_id": "CARDDIFF_B3_TRAVEL_T007_V002"
+      "anp": "ANP-CARDDIFF_B2_TRAVEL_T007_V002",
+      "master_case_id": "TRANSFER-B2-TRAVEL-002-0347",
+      "nlip": "NLIP-CARDDIFF_B2_TRAVEL_T007_V002",
+      "official_a2a": "A2A-CARDDIFF_B2_TRAVEL_T007_V002",
+      "source_case_id": "CARDDIFF_B2_TRAVEL_T007_V002"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_TRAVEL_T008_V002",
-      "master_case_id": "TRANSFER-B3-TRAVEL-002-0348",
-      "nlip": "NLIP-CARDDIFF_B3_TRAVEL_T008_V002",
-      "official_a2a": "A2A-CARDDIFF_B3_TRAVEL_T008_V002",
-      "source_case_id": "CARDDIFF_B3_TRAVEL_T008_V002"
+      "anp": "ANP-CARDDIFF_B2_TRAVEL_T008_V002",
+      "master_case_id": "TRANSFER-B2-TRAVEL-002-0348",
+      "nlip": "NLIP-CARDDIFF_B2_TRAVEL_T008_V002",
+      "official_a2a": "A2A-CARDDIFF_B2_TRAVEL_T008_V002",
+      "source_case_id": "CARDDIFF_B2_TRAVEL_T008_V002"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_TRAVEL_T009_V002",
-      "master_case_id": "TRANSFER-B3-TRAVEL-002-0349",
-      "nlip": "NLIP-CARDDIFF_B3_TRAVEL_T009_V002",
-      "official_a2a": "A2A-CARDDIFF_B3_TRAVEL_T009_V002",
-      "source_case_id": "CARDDIFF_B3_TRAVEL_T009_V002"
+      "anp": "ANP-CARDDIFF_B2_TRAVEL_T009_V002",
+      "master_case_id": "TRANSFER-B2-TRAVEL-002-0349",
+      "nlip": "NLIP-CARDDIFF_B2_TRAVEL_T009_V002",
+      "official_a2a": "A2A-CARDDIFF_B2_TRAVEL_T009_V002",
+      "source_case_id": "CARDDIFF_B2_TRAVEL_T009_V002"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_TRAVEL_T010_V002",
-      "master_case_id": "TRANSFER-B3-TRAVEL-002-0350",
-      "nlip": "NLIP-CARDDIFF_B3_TRAVEL_T010_V002",
-      "official_a2a": "A2A-CARDDIFF_B3_TRAVEL_T010_V002",
-      "source_case_id": "CARDDIFF_B3_TRAVEL_T010_V002"
+      "anp": "ANP-CARDDIFF_B2_TRAVEL_T010_V002",
+      "master_case_id": "TRANSFER-B2-TRAVEL-002-0350",
+      "nlip": "NLIP-CARDDIFF_B2_TRAVEL_T010_V002",
+      "official_a2a": "A2A-CARDDIFF_B2_TRAVEL_T010_V002",
+      "source_case_id": "CARDDIFF_B2_TRAVEL_T010_V002"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_TRAVEL_T001_V003",
-      "master_case_id": "TRANSFER-B3-TRAVEL-003-0351",
-      "nlip": "NLIP-CARDDIFF_B3_TRAVEL_T001_V003",
-      "official_a2a": "A2A-CARDDIFF_B3_TRAVEL_T001_V003",
-      "source_case_id": "CARDDIFF_B3_TRAVEL_T001_V003"
+      "anp": "ANP-CARDDIFF_B2_TRAVEL_T001_V003",
+      "master_case_id": "TRANSFER-B2-TRAVEL-003-0351",
+      "nlip": "NLIP-CARDDIFF_B2_TRAVEL_T001_V003",
+      "official_a2a": "A2A-CARDDIFF_B2_TRAVEL_T001_V003",
+      "source_case_id": "CARDDIFF_B2_TRAVEL_T001_V003"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_TRAVEL_T002_V003",
-      "master_case_id": "TRANSFER-B3-TRAVEL-003-0352",
-      "nlip": "NLIP-CARDDIFF_B3_TRAVEL_T002_V003",
-      "official_a2a": "A2A-CARDDIFF_B3_TRAVEL_T002_V003",
-      "source_case_id": "CARDDIFF_B3_TRAVEL_T002_V003"
+      "anp": "ANP-CARDDIFF_B2_TRAVEL_T002_V003",
+      "master_case_id": "TRANSFER-B2-TRAVEL-003-0352",
+      "nlip": "NLIP-CARDDIFF_B2_TRAVEL_T002_V003",
+      "official_a2a": "A2A-CARDDIFF_B2_TRAVEL_T002_V003",
+      "source_case_id": "CARDDIFF_B2_TRAVEL_T002_V003"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_TRAVEL_T003_V003",
-      "master_case_id": "TRANSFER-B3-TRAVEL-003-0353",
-      "nlip": "NLIP-CARDDIFF_B3_TRAVEL_T003_V003",
-      "official_a2a": "A2A-CARDDIFF_B3_TRAVEL_T003_V003",
-      "source_case_id": "CARDDIFF_B3_TRAVEL_T003_V003"
+      "anp": "ANP-CARDDIFF_B2_TRAVEL_T003_V003",
+      "master_case_id": "TRANSFER-B2-TRAVEL-003-0353",
+      "nlip": "NLIP-CARDDIFF_B2_TRAVEL_T003_V003",
+      "official_a2a": "A2A-CARDDIFF_B2_TRAVEL_T003_V003",
+      "source_case_id": "CARDDIFF_B2_TRAVEL_T003_V003"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_TRAVEL_T004_V003",
-      "master_case_id": "TRANSFER-B3-TRAVEL-003-0354",
-      "nlip": "NLIP-CARDDIFF_B3_TRAVEL_T004_V003",
-      "official_a2a": "A2A-CARDDIFF_B3_TRAVEL_T004_V003",
-      "source_case_id": "CARDDIFF_B3_TRAVEL_T004_V003"
+      "anp": "ANP-CARDDIFF_B2_TRAVEL_T004_V003",
+      "master_case_id": "TRANSFER-B2-TRAVEL-003-0354",
+      "nlip": "NLIP-CARDDIFF_B2_TRAVEL_T004_V003",
+      "official_a2a": "A2A-CARDDIFF_B2_TRAVEL_T004_V003",
+      "source_case_id": "CARDDIFF_B2_TRAVEL_T004_V003"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_TRAVEL_T005_V003",
-      "master_case_id": "TRANSFER-B3-TRAVEL-003-0355",
-      "nlip": "NLIP-CARDDIFF_B3_TRAVEL_T005_V003",
-      "official_a2a": "A2A-CARDDIFF_B3_TRAVEL_T005_V003",
-      "source_case_id": "CARDDIFF_B3_TRAVEL_T005_V003"
+      "anp": "ANP-CARDDIFF_B2_TRAVEL_T005_V003",
+      "master_case_id": "TRANSFER-B2-TRAVEL-003-0355",
+      "nlip": "NLIP-CARDDIFF_B2_TRAVEL_T005_V003",
+      "official_a2a": "A2A-CARDDIFF_B2_TRAVEL_T005_V003",
+      "source_case_id": "CARDDIFF_B2_TRAVEL_T005_V003"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_TRAVEL_T006_V003",
-      "master_case_id": "TRANSFER-B3-TRAVEL-003-0356",
-      "nlip": "NLIP-CARDDIFF_B3_TRAVEL_T006_V003",
-      "official_a2a": "A2A-CARDDIFF_B3_TRAVEL_T006_V003",
-      "source_case_id": "CARDDIFF_B3_TRAVEL_T006_V003"
+      "anp": "ANP-CARDDIFF_B2_TRAVEL_T006_V003",
+      "master_case_id": "TRANSFER-B2-TRAVEL-003-0356",
+      "nlip": "NLIP-CARDDIFF_B2_TRAVEL_T006_V003",
+      "official_a2a": "A2A-CARDDIFF_B2_TRAVEL_T006_V003",
+      "source_case_id": "CARDDIFF_B2_TRAVEL_T006_V003"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_TRAVEL_T007_V003",
-      "master_case_id": "TRANSFER-B3-TRAVEL-003-0357",
-      "nlip": "NLIP-CARDDIFF_B3_TRAVEL_T007_V003",
-      "official_a2a": "A2A-CARDDIFF_B3_TRAVEL_T007_V003",
-      "source_case_id": "CARDDIFF_B3_TRAVEL_T007_V003"
+      "anp": "ANP-CARDDIFF_B2_TRAVEL_T007_V003",
+      "master_case_id": "TRANSFER-B2-TRAVEL-003-0357",
+      "nlip": "NLIP-CARDDIFF_B2_TRAVEL_T007_V003",
+      "official_a2a": "A2A-CARDDIFF_B2_TRAVEL_T007_V003",
+      "source_case_id": "CARDDIFF_B2_TRAVEL_T007_V003"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_TRAVEL_T008_V003",
-      "master_case_id": "TRANSFER-B3-TRAVEL-003-0358",
-      "nlip": "NLIP-CARDDIFF_B3_TRAVEL_T008_V003",
-      "official_a2a": "A2A-CARDDIFF_B3_TRAVEL_T008_V003",
-      "source_case_id": "CARDDIFF_B3_TRAVEL_T008_V003"
+      "anp": "ANP-CARDDIFF_B2_TRAVEL_T008_V003",
+      "master_case_id": "TRANSFER-B2-TRAVEL-003-0358",
+      "nlip": "NLIP-CARDDIFF_B2_TRAVEL_T008_V003",
+      "official_a2a": "A2A-CARDDIFF_B2_TRAVEL_T008_V003",
+      "source_case_id": "CARDDIFF_B2_TRAVEL_T008_V003"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_TRAVEL_T009_V003",
-      "master_case_id": "TRANSFER-B3-TRAVEL-003-0359",
-      "nlip": "NLIP-CARDDIFF_B3_TRAVEL_T009_V003",
-      "official_a2a": "A2A-CARDDIFF_B3_TRAVEL_T009_V003",
-      "source_case_id": "CARDDIFF_B3_TRAVEL_T009_V003"
+      "anp": "ANP-CARDDIFF_B2_TRAVEL_T009_V003",
+      "master_case_id": "TRANSFER-B2-TRAVEL-003-0359",
+      "nlip": "NLIP-CARDDIFF_B2_TRAVEL_T009_V003",
+      "official_a2a": "A2A-CARDDIFF_B2_TRAVEL_T009_V003",
+      "source_case_id": "CARDDIFF_B2_TRAVEL_T009_V003"
     },
     {
-      "anp": "ANP-CARDDIFF_B3_TRAVEL_T010_V003",
-      "master_case_id": "TRANSFER-B3-TRAVEL-003-0360",
-      "nlip": "NLIP-CARDDIFF_B3_TRAVEL_T010_V003",
-      "official_a2a": "A2A-CARDDIFF_B3_TRAVEL_T010_V003",
-      "source_case_id": "CARDDIFF_B3_TRAVEL_T010_V003"
+      "anp": "ANP-CARDDIFF_B2_TRAVEL_T010_V003",
+      "master_case_id": "TRANSFER-B2-TRAVEL-003-0360",
+      "nlip": "NLIP-CARDDIFF_B2_TRAVEL_T010_V003",
+      "official_a2a": "A2A-CARDDIFF_B2_TRAVEL_T010_V003",
+      "source_case_id": "CARDDIFF_B2_TRAVEL_T010_V003"
     },
     {
       "anp": "ANP-CARDDIFF_C1_FINANCE_T001_V001",

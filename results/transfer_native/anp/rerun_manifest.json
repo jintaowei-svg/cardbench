@@ -1,0 +1,12 @@
+{
+  "anp": [
+    "ANP-CARDDIFF_A2_HEALTHCARE_T004_V002",
+    "ANP-CARDDIFF_A2_TRAVEL_T003_V003",
+    "ANP-CARDDIFF_A3_HEALTHCARE_T002_V001",
+    "ANP-CARDDIFF_B1_FINANCE_T008_V001",
+    "ANP-CARDDIFF_B1_TRAVEL_T002_V003",
+    "ANP-CARDDIFF_B2_HEALTHCARE_T004_V003"
+  ],
+  "reason": "Exact replacement of six infrastructure timeout records only.",
+  "schema_version": "carddiff-transfer-rerun-manifest-v1"
+}

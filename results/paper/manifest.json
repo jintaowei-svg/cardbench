@@ -9,12 +9,12 @@
       "trials": 25200
     },
     "03_transferability": {
-      "anp_status": "evidence_repair_required",
+      "anp_status": "complete",
       "nlip_status": "complete",
       "official_a2a_trials": 540
     },
     "04_downstream_impact": {
-      "trials": 621
+      "trials": 3116
     },
     "05_defense": {
       "planned_case_asr": 0.9444444444444444,
@@ -25,44 +25,16 @@
   "layout_version": 1,
   "legacy_results": [
     {
-      "path": "results/downstream/official_a2a_llm_rqd1_v2_final",
+      "path": "results/downstream/official_a2a_llm_recorded_v3_full_merged_3116",
       "status": "selected_canonical_source"
     },
     {
-      "path": "results/downstream/official_a2a_llm_rqd1_v2_non_c2",
-      "status": "superseded_constituent"
+      "path": "results/downstream/official_a2a_llm_recorded_v3_full",
+      "status": "superseded_truncated_source"
     },
     {
-      "path": "results/downstream/official_a2a_llm_rqd1_v2_c2_full_rerun",
-      "status": "superseded_constituent"
-    },
-    {
-      "path": "results/downstream/official_a2a_llm_rqd1_v2",
-      "status": "incomplete_intermediate_run"
-    },
-    {
-      "path": "results/downstream/official_a2a_llm_rqd1_pilot_v1",
-      "status": "pilot_only"
-    },
-    {
-      "path": "results/downstream/official_a2a_llm_rqd1_v2_sanity",
-      "status": "sanity_only"
-    },
-    {
-      "path": "results/downstream/official_a2a_llm_rqd1_v2_c2_sanity",
-      "status": "sanity_only"
-    },
-    {
-      "path": "results/downstream/official_a2a_llm_rqd1_v2_c2_sanity_v2",
-      "status": "incomplete_sanity_only"
-    },
-    {
-      "path": "results/downstream/official_a2a_llm_rqd1_v2_c2_sanity_v3",
-      "status": "sanity_only"
-    },
-    {
-      "path": "results/downstream/official_a2a_rqd1",
-      "status": "pre_llm_replay_baseline"
+      "path": "results/downstream/official_a2a_llm_recorded_v3_smoke",
+      "status": "smoke_only"
     },
     {
       "path": "results/carddiff_llm_probe_001.jsonl",
@@ -78,7 +50,7 @@
     "A2",
     "A3",
     "B1",
-    "B3",
+    "B2",
     "C1",
     "C2"
   ],
@@ -92,145 +64,145 @@
       "bytes": 44316651,
       "path": "results/official_a2a_main/claude-sonnet-5/details.jsonl",
       "role": "official_a2a_model_details",
-      "sha256": "ff9289782b698996fcaf341ef7d4ba1f59b6187eb0847dd9209f011207525c67"
+      "sha256": "61df87a99bc9119ff9d6e4d0e92d6cb720f761a1d0d05aa0e3dd5e55f89fc5ac"
     },
     {
-      "bytes": 3031,
+      "bytes": 3091,
       "path": "results/official_a2a_main/claude-sonnet-5/summary.json",
       "role": "official_a2a_model_summary",
-      "sha256": "a205d75c7f015b1c1893163e546f232427f3ef977c8f46a847aecbd06e792e02"
+      "sha256": "404a42a21d923564bf87b053b45bfda426efaf3c7f5e681696445022d6a7ffd3"
     },
     {
       "bytes": 45753593,
       "path": "results/official_a2a_main/deepseek-v4-flash/details.jsonl",
       "role": "official_a2a_model_details",
-      "sha256": "ed8b027832394ee05eb845f0a2668e4f73cea2b42eaceb89137f782ce167766c"
+      "sha256": "28997f72bb22e58ac20d6840ab7822872b6f3565889a5fe22d1e27e9bc9b39ff"
     },
     {
-      "bytes": 3048,
+      "bytes": 3108,
       "path": "results/official_a2a_main/deepseek-v4-flash/summary.json",
       "role": "official_a2a_model_summary",
-      "sha256": "77e201ca278c0cf56ae0f5775ccc0c4fa17b1139ad51999067f984c714219a68"
+      "sha256": "5b9a85aea405d68bb8a530b377a468fabad7f2699edeabe93cb55474fdf2e777"
     },
     {
       "bytes": 46067117,
       "path": "results/official_a2a_main/gemini-2.5-flash/details.jsonl",
       "role": "official_a2a_model_details",
-      "sha256": "831c871febe2ae93935768f68f1c59d65efc13a120f85429cb1b6411c959c444"
+      "sha256": "b87bd5ac029a7a7b98c1f694d3d4e740addebdf3e7a4e339024aa69bbe9a1fdc"
     },
     {
-      "bytes": 3032,
+      "bytes": 3092,
       "path": "results/official_a2a_main/gemini-2.5-flash/summary.json",
       "role": "official_a2a_model_summary",
-      "sha256": "b7aba103f309cf36957c5d24f476698fb9e425e0eab570630fb99397ee34ecb8"
+      "sha256": "d0faa734238eea22bfa68ebb872f738bc049a106165ce3015d7e3e3a73f88432"
     },
     {
       "bytes": 45504955,
       "path": "results/official_a2a_main/gemini-3.5-flash/details.jsonl",
       "role": "official_a2a_model_details",
-      "sha256": "3a2fe37ef6650f2cdf7f0e92ec44ee38f91e94bbacb9e6a4df09e96ee5fe2f5e"
+      "sha256": "0d4d68ee9891a68d441fa1fd316d09d3579a39887774dd454d7b996f0103b2ad"
     },
     {
-      "bytes": 3032,
+      "bytes": 3092,
       "path": "results/official_a2a_main/gemini-3.5-flash/summary.json",
       "role": "official_a2a_model_summary",
-      "sha256": "433778ec6e8dedf4ec71ec0a26cf1a234741a16ecd8111c51d48121bedd11c07"
+      "sha256": "b6346dd009458e51c3d2e68a1318c1238860a90979145e2560a6e08289e527fa"
     },
     {
       "bytes": 45600976,
       "path": "results/official_a2a_main/gpt-5-mini/details.jsonl",
       "role": "official_a2a_model_details",
-      "sha256": "39a89cae820b526dbae06c6fb6553fe27a168feb2bfffbad645de1b897728452"
+      "sha256": "1ceca713908fb5eb053fe2ffeadb7e4b07d3a6c48cfa81f717c8399573bad526"
     },
     {
-      "bytes": 3026,
+      "bytes": 3086,
       "path": "results/official_a2a_main/gpt-5-mini/summary.json",
       "role": "official_a2a_model_summary",
-      "sha256": "e29b6dd4f951ff776496a840de221ffd2b79fb059561b49e6376f0037c3f07b5"
+      "sha256": "d4723074dbbb5a32d7236baac2a6a1cf8ce627192688dbce1c6d3afb1a36bb3d"
     },
     {
       "bytes": 44592625,
       "path": "results/official_a2a_main/gpt-5.4-mini/details.jsonl",
       "role": "official_a2a_model_details",
-      "sha256": "a4fdc80101da5d6a12b1884702c7c1b5d72f4a97aa51117ffb0b604f39fd7a7f"
+      "sha256": "837450f1a38954b791d223ebb82248c1ad8d7edc4196a6959ad54845143c47a3"
     },
     {
-      "bytes": 3028,
+      "bytes": 3088,
       "path": "results/official_a2a_main/gpt-5.4-mini/summary.json",
       "role": "official_a2a_model_summary",
-      "sha256": "86456fd5db5fe04c9d695e576aab43a142fd91f3fb4be85ed781941837f4d055"
+      "sha256": "ba8cbe20b2988cbb6d263f9515ea39cb8c89efe0469dcf5a4e9988d9250de348"
     },
     {
       "bytes": 45269511,
       "path": "results/official_a2a_main/gpt-5.6-Luna/details.jsonl",
       "role": "official_a2a_model_details",
-      "sha256": "3ef93a3b5dbc54d6555f1e924940acded150d074a2e2ad61e5ed3abfdb99073a"
+      "sha256": "1d0def1edffa5f8eafe1fd0a4200c1a45159eae0022677ddd86dc9a3540a61b7"
     },
     {
-      "bytes": 3028,
+      "bytes": 3088,
       "path": "results/official_a2a_main/gpt-5.6-Luna/summary.json",
       "role": "official_a2a_model_summary",
-      "sha256": "001fd67d0671a30daa18c5e182186cc8568e2a27d4c98cfff6e5f59cf420aff4"
+      "sha256": "a17628ad39471c4f91265aebcb4618715dde0b9adc56e592e8ee4ffdbc82fe6f"
     },
     {
       "bytes": 45241618,
       "path": "results/official_a2a_main/grok-4.5/details.jsonl",
       "role": "official_a2a_model_details",
-      "sha256": "5dce0643e98dcf1167a0f0a36de0aae9a6f086fdbd635c86ece2a0934db46bb3"
+      "sha256": "b2bd998cc623f9d49cd1c7d15a286e06c1c3af0505b8df36c6d2c7a6b758d4bd"
     },
     {
-      "bytes": 3023,
+      "bytes": 3083,
       "path": "results/official_a2a_main/grok-4.5/summary.json",
       "role": "official_a2a_model_summary",
-      "sha256": "27b9214370a4a79afb8ca72734b6f24a527c6fa4a8e1b30f5f8be84d5c4ecba8"
+      "sha256": "92dd773511bce1317975a31d730f48b433707ed532ff6b473cfff33df430338e"
     },
     {
-      "bytes": 7960903,
+      "bytes": 7960363,
       "path": "results/transfer_native/official_a2a_reference/details.jsonl",
       "role": "official_a2a_reference",
-      "sha256": "779912093a62f0d4364abc80f82c0fc9556bed8da77b4e041f2cd5b6ad9db958"
+      "sha256": "9457b0d3b95498c45c7f287f09ffd1395338900f05327f4103550be42d5c442f"
     },
     {
       "bytes": 731,
       "path": "attacks/carddiff/transfer_native/applicability.json",
       "role": "frozen_applicability",
-      "sha256": "bbb253b4aef747d80603de60fe8d0eac5f3b3b34c384608029dfc08e80a1bf2e"
+      "sha256": "c1da7e98049ba922d5ebe2383d0692ec0481ae4b89f2b5d12d27b2c27f229454"
     },
     {
-      "bytes": 1250547,
+      "bytes": 1259322,
       "path": "results/transfer_native/anp/details.jsonl",
-      "role": "anp_native_diagnostic",
-      "sha256": "21eda11f60c6f594a66f52146a081969e3e284c01639b4372cf8e43e6ed25d14"
+      "role": "anp_native_formal",
+      "sha256": "04bd5a26ba02423ecb2375b19378a87d1f3ebafe8e4f590e1ca89366c32a82d2"
     },
     {
-      "bytes": 812920,
+      "bytes": 812650,
       "path": "results/transfer_native/nlip/details.jsonl",
       "role": "nlip_native_formal",
-      "sha256": "495db932b91ee01755f210215b9a49b5e08d7ffdd1511965808ff5f749f2b84e"
+      "sha256": "2beac1651cfbfb8a4ffcff4643734e653afbae9b150240e0e17f427051def298"
     },
     {
-      "bytes": 4552898,
-      "path": "results/downstream/official_a2a_llm_rqd1_v2_final/details.jsonl",
+      "bytes": 15611044,
+      "path": "results/downstream/official_a2a_llm_recorded_v3_full_merged_3116/details.jsonl",
       "role": "selected_downstream_final",
-      "sha256": "9069e7484aa1dec45a074377116b7619ce4fd141e1f856b1c54dd995bcf54956"
+      "sha256": "ee472e1ff4794ec91aa33a552f79c76ddca06cb3f0841b313d17b1f584dbae0a"
     },
     {
       "bytes": 1111326,
       "path": "defense/nemo/results/raw/nemo_official_a2a_630.jsonl",
       "role": "nemo_defense_raw",
-      "sha256": "0814f676cf2a172c3ab7a24c5533ac62d286cf3f053be15ee25fca0bf58dca8c"
+      "sha256": "75a139a56d1b1650d5dd0902c9d4b8667878857dd4f5f7a1b9e95d5257031e06"
     },
     {
-      "bytes": 10009,
+      "bytes": 9626,
       "path": "defense/nemo/results/summary/nemo_official_a2a_630_summary.json",
       "role": "nemo_defense_summary",
-      "sha256": "7fb3a3035a8b4a0c70bd1c1e3fb756b407e02872932a699d65d81330314c3bd2"
+      "sha256": "5c45ba076504c21d951b2ae251af21bbff03e0b34fc453d3e044789a2f38eae7"
     },
     {
-      "bytes": 492,
+      "bytes": 483,
       "path": "defense/nemo/results/summary/defense_table.csv",
       "role": "nemo_defense_table",
-      "sha256": "6d4de784b211cd06432e2088a9c0828393b20384ecd0334a542c45409a45bf29"
+      "sha256": "75af18fbf585eba74762e9fd8979455cd089446c37d851c269a800dd591e2ec4"
     }
   ]
 }

@@ -4,7 +4,7 @@
     "A2",
     "A3",
     "B1",
-    "B3",
+    "B2",
     "C1",
     "C2"
   ],
@@ -32,7 +32,7 @@
           "successes": 412,
           "trials": 450
         },
-        "B3": {
+        "B2": {
           "asr": 0.9955555555555555,
           "successes": 448,
           "trials": 450
@@ -152,7 +152,7 @@
             "trials": 150
           }
         },
-        "B3": {
+        "B2": {
           "finance": {
             "asr": 0.9933333333333333,
             "successes": 149,
@@ -231,7 +231,7 @@
           "successes": 442,
           "trials": 450
         },
-        "B3": {
+        "B2": {
           "asr": 0.9955555555555555,
           "successes": 448,
           "trials": 450
@@ -351,7 +351,7 @@
             "trials": 150
           }
         },
-        "B3": {
+        "B2": {
           "finance": {
             "asr": 1.0,
             "successes": 150,
@@ -430,7 +430,7 @@
           "successes": 441,
           "trials": 450
         },
-        "B3": {
+        "B2": {
           "asr": 1.0,
           "successes": 450,
           "trials": 450
@@ -550,7 +550,7 @@
             "trials": 150
           }
         },
-        "B3": {
+        "B2": {
           "finance": {
             "asr": 1.0,
             "successes": 150,
@@ -629,7 +629,7 @@
           "successes": 446,
           "trials": 450
         },
-        "B3": {
+        "B2": {
           "asr": 1.0,
           "successes": 450,
           "trials": 450
@@ -749,7 +749,7 @@
             "trials": 150
           }
         },
-        "B3": {
+        "B2": {
           "finance": {
             "asr": 1.0,
             "successes": 150,
@@ -828,7 +828,7 @@
           "successes": 450,
           "trials": 450
         },
-        "B3": {
+        "B2": {
           "asr": 1.0,
           "successes": 450,
           "trials": 450
@@ -948,7 +948,7 @@
             "trials": 150
           }
         },
-        "B3": {
+        "B2": {
           "finance": {
             "asr": 1.0,
             "successes": 150,
@@ -1027,7 +1027,7 @@
           "successes": 402,
           "trials": 450
         },
-        "B3": {
+        "B2": {
           "asr": 1.0,
           "successes": 450,
           "trials": 450
@@ -1147,7 +1147,7 @@
             "trials": 150
           }
         },
-        "B3": {
+        "B2": {
           "finance": {
             "asr": 1.0,
             "successes": 150,
@@ -1226,7 +1226,7 @@
           "successes": 441,
           "trials": 450
         },
-        "B3": {
+        "B2": {
           "asr": 1.0,
           "successes": 450,
           "trials": 450
@@ -1346,7 +1346,7 @@
             "trials": 150
           }
         },
-        "B3": {
+        "B2": {
           "finance": {
             "asr": 1.0,
             "successes": 150,
@@ -1425,7 +1425,7 @@
           "successes": 445,
           "trials": 450
         },
-        "B3": {
+        "B2": {
           "asr": 1.0,
           "successes": 450,
           "trials": 450
@@ -1545,7 +1545,7 @@
             "trials": 150
           }
         },
-        "B3": {
+        "B2": {
           "finance": {
             "asr": 1.0,
             "successes": 150,

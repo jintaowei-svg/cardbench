@@ -13,26 +13,26 @@
   "paper_section": "Transferability Experiment",
   "targets": {
     "anp": {
-      "asr": 0.9844444444444445,
+      "asr": 0.9977777777777778,
       "by_attack": {
         "A2": {
-          "asr": 0.9777777777777777,
-          "successes": 88,
+          "asr": 1.0,
+          "successes": 90,
           "trials": 90
         },
         "A3": {
-          "asr": 0.9777777777777777,
-          "successes": 88,
+          "asr": 0.9888888888888889,
+          "successes": 89,
           "trials": 90
         },
         "B1": {
-          "asr": 0.9777777777777777,
-          "successes": 88,
+          "asr": 1.0,
+          "successes": 90,
           "trials": 90
         },
-        "B3": {
-          "asr": 0.9888888888888889,
-          "successes": 89,
+        "B2": {
+          "asr": 1.0,
+          "successes": 90,
           "trials": 90
         },
         "C1": {
@@ -43,49 +43,42 @@
       },
       "by_domain": {
         "finance": {
+          "asr": 1.0,
+          "successes": 150,
+          "trials": 150
+        },
+        "healthcare": {
           "asr": 0.9933333333333333,
           "successes": 149,
           "trials": 150
         },
-        "healthcare": {
-          "asr": 0.9733333333333334,
-          "successes": 146,
-          "trials": 150
-        },
         "travel": {
-          "asr": 0.9866666666666667,
-          "successes": 148,
+          "asr": 1.0,
+          "successes": 150,
           "trials": 150
         }
       },
       "by_variant": {
         "001": {
-          "asr": 0.98,
-          "successes": 147,
-          "trials": 150
-        },
-        "002": {
           "asr": 0.9933333333333333,
           "successes": 149,
           "trials": 150
         },
+        "002": {
+          "asr": 1.0,
+          "successes": 150,
+          "trials": 150
+        },
         "003": {
-          "asr": 0.98,
-          "successes": 147,
+          "asr": 1.0,
+          "successes": 150,
           "trials": 150
         }
       },
-      "error_records": 6,
-      "formal_comparison_eligible": false,
-      "invalid_native_execution_records": 6,
-      "invalid_source_case_ids": [
-        "CARDDIFF_A2_HEALTHCARE_T004_V002",
-        "CARDDIFF_A2_TRAVEL_T003_V003",
-        "CARDDIFF_A3_HEALTHCARE_T002_V001",
-        "CARDDIFF_B1_FINANCE_T008_V001",
-        "CARDDIFF_B1_TRAVEL_T002_V003",
-        "CARDDIFF_B3_HEALTHCARE_T004_V003"
-      ],
+      "error_records": 0,
+      "formal_comparison_eligible": true,
+      "invalid_native_execution_records": 0,
+      "invalid_source_case_ids": [],
       "matrix": {
         "A2": {
           "finance": {
@@ -94,13 +87,13 @@
             "trials": 30
           },
           "healthcare": {
-            "asr": 0.9666666666666667,
-            "successes": 29,
+            "asr": 1.0,
+            "successes": 30,
             "trials": 30
           },
           "travel": {
-            "asr": 0.9666666666666667,
-            "successes": 29,
+            "asr": 1.0,
+            "successes": 30,
             "trials": 30
           }
         },
@@ -111,8 +104,8 @@
             "trials": 30
           },
           "healthcare": {
-            "asr": 0.9333333333333333,
-            "successes": 28,
+            "asr": 0.9666666666666667,
+            "successes": 29,
             "trials": 30
           },
           "travel": {
@@ -123,8 +116,8 @@
         },
         "B1": {
           "finance": {
-            "asr": 0.9666666666666667,
-            "successes": 29,
+            "asr": 1.0,
+            "successes": 30,
             "trials": 30
           },
           "healthcare": {
@@ -133,20 +126,20 @@
             "trials": 30
           },
           "travel": {
-            "asr": 0.9666666666666667,
-            "successes": 29,
+            "asr": 1.0,
+            "successes": 30,
             "trials": 30
           }
         },
-        "B3": {
+        "B2": {
           "finance": {
             "asr": 1.0,
             "successes": 30,
             "trials": 30
           },
           "healthcare": {
-            "asr": 0.9666666666666667,
-            "successes": 29,
+            "asr": 1.0,
+            "successes": 30,
             "trials": 30
           },
           "travel": {
@@ -174,10 +167,10 @@
         }
       },
       "metric": "ASR",
-      "native_execution_rate": 0.9866666666666667,
+      "native_execution_rate": 1.0,
       "non_dispatched_records": 0,
-      "status": "evidence_repair_required",
-      "successes": 443,
+      "status": "complete",
+      "successes": 449,
       "target": "ANP",
       "trials": 450
     },
@@ -317,7 +310,7 @@
           "successes": 90,
           "trials": 90
         },
-        "B3": {
+        "B2": {
           "asr": 1.0,
           "successes": 90,
           "trials": 90
@@ -421,7 +414,7 @@
             "trials": 30
           }
         },
-        "B3": {
+        "B2": {
           "finance": {
             "asr": 1.0,
             "successes": 30,

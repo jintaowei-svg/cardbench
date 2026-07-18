@@ -5,6 +5,7 @@ from typing import Any, Callable
 
 from harness.transfer_native.contracts import NativeExecution
 from harness.transfer_native.nlip.environment import NLIPNativeEnvironment
+from sut.transfer_native.phase_schedule import decide_identity_phases
 
 
 class NLIPNativeAdapter:
@@ -27,6 +28,13 @@ class NLIPNativeAdapter:
 
     def run_trial(self, case: dict[str, Any], decide: Callable[[dict[str, Any]], tuple[Any, dict[str, Any]]]):
         with self.environment_factory(case) as environment:
+            if case.get("attack_type") == "A3":
+                payload, metrics, dispatches = decide_identity_phases(
+                    case, case["canonical_state"], decide
+                )
+                if not any(dispatches):
+                    return payload, {**metrics, "dispatch_skipped": "all_identity_phases"}, None
+                return payload, metrics, environment.execute(dispatches)
             decision, metrics = decide(case["canonical_state"])
             if decision is None:
                 return None, metrics, None

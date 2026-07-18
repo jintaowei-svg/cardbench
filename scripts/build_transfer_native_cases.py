@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "attacks" / "carddiff" / "perturbed_cases.jsonl"
 OUTPUT = ROOT / "attacks" / "carddiff" / "transfer_native"
 APPLICABILITY = OUTPUT / "applicability.json"
-UNION_ATTACKS = ("A2", "A3", "B1", "B3", "C1", "C2")
+UNION_ATTACKS = ("A2", "A3", "B1", "B2", "C1", "C2")
 
 
 def _sha(path: Path) -> str:

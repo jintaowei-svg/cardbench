@@ -21,7 +21,7 @@
       "successes": 450,
       "trials": 450
     },
-    "B3": {
+    "B2": {
       "asr": 1.0,
       "successes": 450,
       "trials": 450
@@ -141,7 +141,7 @@
         "trials": 150
       }
     },
-    "B3": {
+    "B2": {
       "finance": {
         "asr": 1.0,
         "successes": 150,

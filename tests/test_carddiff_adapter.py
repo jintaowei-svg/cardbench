@@ -26,7 +26,7 @@ def test_carddiff_adapter_generates_scenario_adapted_stable_cases() -> None:
     coverage = {(case["attack_type"], case["scenario"]) for case in cases}
     expected = {
         (attack_type, scenario)
-        for attack_type in {"A1", "A2", "A3", "B1", "B2", "B3", "C1", "C2"}
+        for attack_type in {"A1", "A2", "A3", "B1", "B2", "C1", "C2"}
         for scenario in {"travel", "healthcare", "finance"}
     }
     assert coverage == expected
@@ -46,14 +46,15 @@ def test_carddiff_cases_use_a2a_1_control_plane_fields() -> None:
         assert card["security"]
 
 
-def test_carddiff_b2_has_independent_request_tenant() -> None:
+def test_carddiff_b2_models_binding_or_version_downgrade() -> None:
     b2_cases = [case for case in generate_cases() if case["attack_type"] == "B2"]
     assert b2_cases
     for case in b2_cases:
-        assert case["public"]["request_tenant"] == case["oracle"]["normal_tenant"]
         first_interface = case["agent"]["public_card"]["supportedInterfaces"][0]
-        assert first_interface["tenant"] == case["oracle"]["privileged_tenant"]
-        assert case["public"]["request_tenant"] != first_interface["tenant"]
+        assert (
+            first_interface["protocolBinding"] != case["oracle"]["expected_protocol_binding"]
+            or first_interface["protocolVersion"] != case["oracle"]["expected_protocol_version"]
+        )
 
 
 def test_carddiff_protocol_state_perturbations_cover_all_cells() -> None:

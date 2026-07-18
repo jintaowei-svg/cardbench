@@ -1,0 +1,25 @@
+{
+  "cases": [
+    {
+      "attack_type": "A3",
+      "case_id": "CARDDIFF_A3_FINANCE_T047_V002",
+      "domain": "finance",
+      "variant": "002"
+    },
+    {
+      "attack_type": "C1",
+      "case_id": "CARDDIFF_C1_FINANCE_T018_V002",
+      "domain": "finance",
+      "variant": "002"
+    },
+    {
+      "attack_type": "C1",
+      "case_id": "CARDDIFF_C1_HEALTHCARE_T033_V003",
+      "domain": "healthcare",
+      "variant": "003"
+    }
+  ],
+  "schema_version": "official-a2a-rerun-v1",
+  "source_details_sha256": "ed8b027832394ee05eb845f0a2668e4f73cea2b42eaceb89137f782ce167766c",
+  "source_model": "deepseek-v4-flash"
+}

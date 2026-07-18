@@ -1,141 +1,141 @@
-﻿{
-    "details_path":  "remote_results/official_a2a_l3_rerun_nonjudgment_20260711/details.jsonl",
-    "elapsed_since_resume_s":  187.333,
-    "progress_path":  "remote_results/official_a2a_l3_rerun_nonjudgment_20260711/progress.jsonl",
-    "reconciled_excluding_b2":  {
-                                    "completed_cases":  630,
-                                    "distribution_completed":  {
-                                                                   "attack_type":  {
-                                                                                       "A1":  90,
-                                                                                       "A2":  90,
-                                                                                       "A3":  90,
-                                                                                       "B1":  90,
-                                                                                       "B3":  90,
-                                                                                       "C1":  90,
-                                                                                       "C2":  90
-                                                                                   },
-                                                                   "scenario":  {
-                                                                                    "finance":  210,
-                                                                                    "healthcare":  210,
-                                                                                    "travel":  210
-                                                                                },
-                                                                   "variant":  {
-                                                                                   "001":  210,
-                                                                                   "002":  210,
-                                                                                   "003":  210
-                                                                               }
-                                                               },
-                                    "excluded_attack_type":  "B2",
-                                    "excluded_non_judgment_failures":  0,
-                                    "failure_categories":  {
-                                                               "oracle_mismatch_no_runtime_error":  9
-                                                           },
-                                    "failures":  9,
-                                    "final":  true,
-                                    "judgment_denominator":  630,
-                                    "judgment_success_rate":  0.9857,
-                                    "planned_cases":  630,
-                                    "raw_success_rate":  0.9857,
-                                    "remaining_cases":  0,
-                                    "replaced_cases":  72,
-                                    "sdk_evidence_failures_on_success":  0,
-                                    "success_by_attack_type":  {
-                                                                   "A1":  {
-                                                                              "successes":  85,
-                                                                              "total":  90
-                                                                          },
-                                                                   "A2":  {
-                                                                              "successes":  90,
-                                                                              "total":  90
-                                                                          },
-                                                                   "A3":  {
-                                                                              "successes":  90,
-                                                                              "total":  90
-                                                                          },
-                                                                   "B1":  {
-                                                                              "successes":  87,
-                                                                              "total":  90
-                                                                          },
-                                                                   "B3":  {
-                                                                              "successes":  90,
-                                                                              "total":  90
-                                                                          },
-                                                                   "C1":  {
-                                                                              "successes":  89,
-                                                                              "total":  90
-                                                                          },
-                                                                   "C2":  {
-                                                                              "successes":  90,
-                                                                              "total":  90
-                                                                          }
-                                                               },
-                                    "successes":  621
-                                },
-    "rerun_summary":  {
-                          "completed_cases":  72,
-                          "distribution_completed":  {
-                                                         "attack_type":  {
-                                                                             "A1":  28,
-                                                                             "A2":  4,
-                                                                             "A3":  16,
-                                                                             "B1":  2,
-                                                                             "B3":  2,
-                                                                             "C1":  14,
-                                                                             "C2":  6
-                                                                         },
-                                                         "scenario":  {
-                                                                          "finance":  42,
-                                                                          "healthcare":  12,
-                                                                          "travel":  18
-                                                                      },
-                                                         "variant":  {
-                                                                         "001":  24,
-                                                                         "002":  19,
-                                                                         "003":  29
-                                                                     }
-                                                     },
-                          "excluded_non_judgment_failures":  0,
-                          "failure_categories":  {
-                                                     "oracle_mismatch_no_runtime_error":  4
-                                                 },
-                          "failures":  4,
-                          "final":  true,
-                          "judgment_denominator":  72,
-                          "judgment_success_rate":  0.9444,
-                          "planned_cases":  72,
-                          "raw_success_rate":  0.9444,
-                          "remaining_cases":  0,
-                          "sdk_evidence_failures_on_success":  0,
-                          "success_by_attack_type":  {
-                                                         "A1":  {
-                                                                    "successes":  24,
-                                                                    "total":  28
-                                                                },
-                                                         "A2":  {
-                                                                    "successes":  4,
-                                                                    "total":  4
-                                                                },
-                                                         "A3":  {
-                                                                    "successes":  16,
-                                                                    "total":  16
-                                                                },
-                                                         "B1":  {
-                                                                    "successes":  2,
-                                                                    "total":  2
-                                                                },
-                                                         "B3":  {
-                                                                    "successes":  2,
-                                                                    "total":  2
-                                                                },
-                                                         "C1":  {
-                                                                    "successes":  14,
-                                                                    "total":  14
-                                                                },
-                                                         "C2":  {
-                                                                    "successes":  6,
-                                                                    "total":  6
-                                                                }
-                                                     },
-                          "successes":  68
-                      }
+{
+  "details_path": "remote_results/official_a2a_l3_rerun_nonjudgment_20260711/details.jsonl",
+  "elapsed_since_resume_s": 187.333,
+  "progress_path": "remote_results/official_a2a_l3_rerun_nonjudgment_20260711/progress.jsonl",
+  "reconciled_excluding_b2": {
+    "completed_cases": 630,
+    "distribution_completed": {
+      "attack_type": {
+        "A1": 90,
+        "A2": 90,
+        "A3": 90,
+        "B1": 90,
+        "B2": 90,
+        "C1": 90,
+        "C2": 90
+      },
+      "scenario": {
+        "finance": 210,
+        "healthcare": 210,
+        "travel": 210
+      },
+      "variant": {
+        "001": 210,
+        "002": 210,
+        "003": 210
+      }
+    },
+    "excluded_attack_type": "B2",
+    "excluded_non_judgment_failures": 0,
+    "failure_categories": {
+      "oracle_mismatch_no_runtime_error": 9
+    },
+    "failures": 9,
+    "final": true,
+    "judgment_denominator": 630,
+    "judgment_success_rate": 0.9857,
+    "planned_cases": 630,
+    "raw_success_rate": 0.9857,
+    "remaining_cases": 0,
+    "replaced_cases": 72,
+    "sdk_evidence_failures_on_success": 0,
+    "success_by_attack_type": {
+      "A1": {
+        "successes": 85,
+        "total": 90
+      },
+      "A2": {
+        "successes": 90,
+        "total": 90
+      },
+      "A3": {
+        "successes": 90,
+        "total": 90
+      },
+      "B1": {
+        "successes": 87,
+        "total": 90
+      },
+      "B2": {
+        "successes": 90,
+        "total": 90
+      },
+      "C1": {
+        "successes": 89,
+        "total": 90
+      },
+      "C2": {
+        "successes": 90,
+        "total": 90
+      }
+    },
+    "successes": 621
+  },
+  "rerun_summary": {
+    "completed_cases": 72,
+    "distribution_completed": {
+      "attack_type": {
+        "A1": 28,
+        "A2": 4,
+        "A3": 16,
+        "B1": 2,
+        "B2": 2,
+        "C1": 14,
+        "C2": 6
+      },
+      "scenario": {
+        "finance": 42,
+        "healthcare": 12,
+        "travel": 18
+      },
+      "variant": {
+        "001": 24,
+        "002": 19,
+        "003": 29
+      }
+    },
+    "excluded_non_judgment_failures": 0,
+    "failure_categories": {
+      "oracle_mismatch_no_runtime_error": 4
+    },
+    "failures": 4,
+    "final": true,
+    "judgment_denominator": 72,
+    "judgment_success_rate": 0.9444,
+    "planned_cases": 72,
+    "raw_success_rate": 0.9444,
+    "remaining_cases": 0,
+    "sdk_evidence_failures_on_success": 0,
+    "success_by_attack_type": {
+      "A1": {
+        "successes": 24,
+        "total": 28
+      },
+      "A2": {
+        "successes": 4,
+        "total": 4
+      },
+      "A3": {
+        "successes": 16,
+        "total": 16
+      },
+      "B1": {
+        "successes": 2,
+        "total": 2
+      },
+      "B2": {
+        "successes": 2,
+        "total": 2
+      },
+      "C1": {
+        "successes": 14,
+        "total": 14
+      },
+      "C2": {
+        "successes": 6,
+        "total": 6
+      }
+    },
+    "successes": 68
+  }
 }

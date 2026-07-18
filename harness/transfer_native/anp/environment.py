@@ -138,7 +138,7 @@ class ANPNativeEnvironment(NativeProtocolEnvironment):
             )
         return {**configured, "capabilities": capabilities, "interfaces": interfaces}
 
-    def execute(self, decision: dict[str, Any]) -> NativeExecution:
+    def execute(self, decision: dict[str, Any] | list[dict[str, Any] | None]) -> NativeExecution:
         native = self.case["native"]
         attack = self.case["attack_type"]
         steps = native["identity_sequence"]
@@ -148,6 +148,11 @@ class ANPNativeEnvironment(NativeProtocolEnvironment):
         }
         response: dict[str, Any] | None = None
         for step_index, step in enumerate(steps):
+            phase_decision = (
+                decision[step_index]
+                if isinstance(decision, list) and step_index < len(decision)
+                else decision
+            )
             cache_key = str(step.get("cache_key", native["agent_id"]))
             label = str(step["identity_label"])
             prepared = cache_key in self.prepared_cache_keys and step_index == 0
@@ -158,18 +163,24 @@ class ANPNativeEnvironment(NativeProtocolEnvironment):
             else:
                 cached_owner, discovered = self._discover_for(step)
                 self.cache[cache_key] = (cached_owner, discovered)
-            if attack == "A3" and step_index < len(steps) - 1:
-                # The privileged phase seeds discovery state only. The model's
-                # decision is dispatched once, after the low-privilege switch.
+            if (
+                attack == "A3"
+                and not isinstance(decision, list)
+                and step_index < len(steps) - 1
+            ):
+                # Compatibility path used only for exact replacement of the
+                # frozen pre-revision run. New formal runs pass a decision list.
                 continue
-            if decision.get("capability_id") is None or decision.get("interface_index") is None:
+            if phase_decision is None:
+                continue
+            if phase_decision.get("capability_id") is None or phase_decision.get("interface_index") is None:
                 raise ValueError("ANP dispatch requires explicit capability_id and interface_index; fallback is disabled.")
-            method = str(decision["capability_id"])
+            method = str(phase_decision["capability_id"])
             candidates = [item for item in discovered.methods if item.name == method]
             if not candidates:
                 raise RuntimeError(f"Decision selected undiscovered ANP method {method!r}.")
             interface_urls = list(dict.fromkeys(str(item.rpc_url) for item in discovered.methods))
-            selected_index = int(decision["interface_index"])
+            selected_index = int(phase_decision["interface_index"])
             if selected_index < 1 or selected_index > len(interface_urls):
                 raise RuntimeError(f"Decision selected ANP interface index {selected_index} outside discovery.")
             selected_url = interface_urls[selected_index - 1]

@@ -13,7 +13,7 @@ The manifest is ordered by attack type. This partial run covers all A1 cases and
 
 - A1: 85 completed, 3 impacts
 - A2: 68 completed, 48 impacts
-- A3/B1/B3/C1/C2: not reached in this partial run
+- A3/B1/B2/C1/C2: not reached in this partial run
 
 `details.jsonl` is the row-level debugging evidence file. `summary.json` was
 regenerated with `scripts/summarize_downstream_impact.py` so that a partial run

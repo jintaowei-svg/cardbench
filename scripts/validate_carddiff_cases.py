@@ -17,7 +17,7 @@ CASES_PATH = ROOT / "attacks" / "carddiff" / "cases.jsonl"
 PERTURBED_CASES_PATH = ROOT / "attacks" / "carddiff" / "perturbed_cases.jsonl"
 PERTURBATIONS_PATH = ROOT / "attacks" / "carddiff" / "perturbations.json"
 SCENARIO_TASKS_PATH = ROOT / "attacks" / "carddiff" / "scenario_tasks.json"
-ATTACK_TYPES = {"A1", "A2", "A3", "B1", "B2", "B3", "C1", "C2"}
+ATTACK_TYPES = {"A1", "A2", "A3", "B1", "B2", "C1", "C2"}
 SCENARIOS = {"travel", "healthcare", "finance"}
 FORBIDDEN_PUBLIC_TOKENS = (
     "oracle",
@@ -310,7 +310,7 @@ def main() -> None:
     perturbed_cases = load_cases(PERTURBED_CASES_PATH)
     selected_variants = _parse_variant_ids(args.variant_ids)
     all_variants = load_perturbation_variants()
-    expected_variants = selected_variants or all_variants
+    expected_variants = selected_variants or {"001", "002", "003"}
     unknown = expected_variants - all_variants
     if unknown:
         raise ValueError(f"Unknown CardDiff perturbation variants: {sorted(unknown)}")

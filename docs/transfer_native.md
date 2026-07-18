@@ -5,9 +5,14 @@ and NLIP execution. It never projects AgentCard discovery fields into another
 protocol and never treats a generic function call or HTTP wrapper as a transfer
 target.
 
+The implemented AGNTCY ecosystem-native and AutoGen framework-native additions are
+specified separately in [the extension experiment guide](transfer_agntcy_autogen.md).
+They do not alter this experiment's frozen manifests, applicability matrix, or
+formal results.
+
 ## Frozen applicability
 
-| Protocol | A1 | A2 | A3 | B1 | B3 | C1 | C2 |
+| Protocol | A1 | A2 | A3 | B1 | B2 | C1 | C2 |
 |---|---|---|---|---|---|---|---|
 | Official A2A | main only | yes | yes | yes | yes | yes | yes |
 | ANP | N/A | yes | yes | yes | yes | yes | N/A |
@@ -17,7 +22,7 @@ The local audit verifies the pinned ANP 0.8.8 discovery/server path for A2.
 ANP C2 is N/A because no native result/attachment MIME object was verified.
 NLIP 0.1.2 exposes message formats, conversation tokens, `NLIP_Session`, and
 `NLIP_Application`, but its maintained Python client is HTTPX+JSON only. The
-WebSocket binary+CBOR and WebSocket text+JSON pair required by B3 is therefore
+WebSocket binary+CBOR and WebSocket text+JSON pair required by B2 is therefore
 N/A.
 
 ## Build and preflight

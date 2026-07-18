@@ -19,7 +19,7 @@ def test_official_a2a_defense_split_is_frozen_630() -> None:
     )
     assert payload["manifest_id"] == "nemo_official_a2a_630"
     assert len(cases) == 630
-    assert manifest_hash == "1d8b3cc78aa2f994c46db16db03302405e20207e54b47c6d18c6957efc878fe3"
+    assert manifest_hash == "30382d2a896055b2a6f15b91893a280d1521c5843b96850531080e2a4c11f07f"
 
 
 def test_balanced_sample_selects_uniform_50_cases() -> None:

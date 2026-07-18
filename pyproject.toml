@@ -29,6 +29,12 @@ transfer-native = [
   "nlip_server==0.1.2",
   "nlip_client @ git+https://github.com/nlip-project/nlip_client.git@b91edb72a387882ecdc912d5949e707d4727b203",
 ]
+transfer-framework = [
+  "autogen-agentchat==0.7.5",
+  "autogen-core==0.7.5",
+  "langgraph==1.2.9",
+  "langchain-core==1.4.9",
+]
 
 [tool.setuptools.packages.find]
 include = ["attacks*", "defense*", "harness*", "sut*", "utils*", "prompts*"]
@@ -37,7 +43,9 @@ include = ["attacks*", "defense*", "harness*", "sut*", "utils*", "prompts*"]
 attacks = [
   "carddiff/*.json",
   "carddiff/*.jsonl",
-  "carddiff/transfer_native/*.json"
+  "carddiff/transfer_native/*.json",
+  "carddiff/transfer_framework/*.json",
+  "carddiff/transfer_extension/*.json",
 ]
 prompts = [
   "carddiff/*.md"

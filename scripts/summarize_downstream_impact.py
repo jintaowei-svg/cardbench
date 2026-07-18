@@ -2,64 +2,64 @@ from __future__ import annotations
 
 import argparse
 import json
-import sys
 from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Any
 
-ROOT = Path(__file__).resolve().parents[1]
-if str(ROOT) not in sys.path:
-    sys.path.insert(0, str(ROOT))
 
-from harness.downstream.trace_loader import EXPECTED_COUNTS
+def _bucket(rows: list[dict[str, Any]], planned: int | None = None) -> dict[str, Any]:
+    completed = len(rows)
+    impact = sum(bool(row.get("impact_success")) for row in rows)
+    with_tools = sum(bool(row.get("worker_tool_calls")) for row in rows)
+    model_completed = sum(int(row.get("worker_model_calls", 0)) > 0 for row in rows)
+    errors = sum(bool(row.get("errors")) for row in rows)
+    impact_types = Counter(
+        impact_type for row in rows for impact_type in row.get("impact_type", [])
+    )
+    return {
+        "planned": planned if planned is not None else completed,
+        "completed": completed,
+        "impact": impact,
+        "dir": impact / completed if completed else None,
+        "model_completion_rate": model_completed / completed if completed else None,
+        "tool_call_rate": with_tools / completed if completed else None,
+        "errors": errors,
+        "impact_types": dict(sorted(impact_types.items())),
+    }
 
 
 def summarize(
     records: list[dict[str, Any]],
-    attacks: list[str] | None = None,
+    expected_counts: dict[str, int] | None = None,
 ) -> dict[str, Any]:
-    expected_counts = {
-        attack: EXPECTED_COUNTS[attack]
-        for attack in (attacks or list(EXPECTED_COUNTS))
-    }
-    records = [row for row in records if row["attack_type"] in expected_counts]
-    completed = Counter(row["attack_type"] for row in records)
-    impacts = Counter(
-        row["attack_type"] for row in records if row["impact_success"]
-    )
-    by_domain: dict[str, dict[str, int]] = defaultdict(lambda: {"completed": 0, "impact": 0})
-    by_variant: dict[str, dict[str, int]] = defaultdict(lambda: {"completed": 0, "impact": 0})
-    for row in records:
-        for bucket, field in ((by_domain, "scenario"), (by_variant, "variant")):
-            if field in row:
-                key = row[field]
-                bucket[key]["completed"] += 1
-                bucket[key]["impact"] += int(bool(row["impact_success"]))
+    expected = expected_counts or dict(Counter(row["attack_type"] for row in records))
     by_attack = {
-        attack: {
-            "planned": planned,
-            "completed": completed[attack],
-            "impact": impacts[attack],
-            "dir": impacts[attack] / completed[attack] if completed[attack] else None,
-        }
-        for attack, planned in expected_counts.items()
+        attack: _bucket(
+            [row for row in records if row["attack_type"] == attack], planned=int(planned)
+        )
+        for attack, planned in expected.items()
     }
-    for bucket in (by_domain, by_variant):
-        for values in bucket.values():
-            values["dir"] = values["impact"] / values["completed"]
-    total_completed = len(records)
-    total_impact = sum(impacts.values())
-    final = all(completed[attack] == planned for attack, planned in expected_counts.items())
+    grouped_domain: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    grouped_variant: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for row in records:
+        grouped_domain[str(row["scenario"])].append(row)
+        grouped_variant[str(row["variant"])].append(row)
+    overall = _bucket(records, planned=sum(expected.values()))
+    final = all(by_attack[attack]["completed"] == int(planned) for attack, planned in expected.items())
     return {
-        "metric": "DIR",
+        "metric": "conditional_DIR",
         "final": final,
-        "planned_denominator": sum(expected_counts.values()),
-        "completed_denominator": total_completed,
-        "impact": total_impact,
-        "dir": total_impact / total_completed if total_completed else None,
+        "planned_denominator": sum(expected.values()),
+        "completed_denominator": len(records),
+        "impact": overall["impact"],
+        "dir": overall["dir"],
+        "model_completion_rate": overall["model_completion_rate"],
+        "tool_call_rate": overall["tool_call_rate"],
+        "errors": overall["errors"],
+        "impact_types": overall["impact_types"],
         "by_attack": by_attack,
-        "by_domain": dict(by_domain),
-        "by_variant": dict(by_variant),
+        "by_domain": {key: _bucket(rows) for key, rows in sorted(grouped_domain.items())},
+        "by_variant": {key: _bucket(rows) for key, rows in sorted(grouped_variant.items())},
     }
 
 
@@ -67,15 +67,13 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("details", type=Path)
     parser.add_argument("--out", type=Path)
-    parser.add_argument(
-        "--attacks",
-        nargs="+",
-        choices=sorted(EXPECTED_COUNTS),
-        help="Attack types to include in the planned denominator.",
-    )
     args = parser.parse_args()
-    records = [json.loads(x) for x in args.details.read_text(encoding="utf-8-sig").splitlines() if x.strip()]
-    result = summarize(records, attacks=args.attacks)
+    records = [
+        json.loads(line)
+        for line in args.details.read_text(encoding="utf-8-sig").splitlines()
+        if line.strip()
+    ]
+    result = summarize(records)
     target = args.out or args.details.with_name("summary.json")
     target.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     print(json.dumps(result, indent=2))

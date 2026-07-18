@@ -1,0 +1,29 @@
+api_model: gemini-3.5-flash
+attack_specific_prompt: false
+code_commit_sha: 0c81c52bbf0129e3b174e8324337db83ebff9194
+config_sha256: 3a0d68565da1bda327079043295c8eb7d1d0daf13c166e6b8f3220923ea2b8ad
+environment: harness.transfer.official_a2a_env:OfficialSDKCardDiffEnvironment
+event_level_oracle: true
+host: sut.transfer.official_a2a_host:OfficialSDKCardDiffHostSUT
+http_request_retries: 1
+interface_fallback: false
+manifest: attacks/carddiff/official_a2a_main_3150.json
+manifest_sha256: 923f7692c348f2957086253761bd9f1dce94c83674628353605236fbcfe3a6cd
+max_retries: 1
+model: gemini-3.5-flash
+model_specific_prompt: false
+official_a2a_sdk_version: 0.3.26
+parse_failure_fallback: false
+phase: smoke
+prompt_sha256: cd9308482862451ccb7b494765ce2d4b74f4f24c561db23bb291b7beb28d4b6d
+remote_peer: deterministic
+requests_a2a_fallback: false
+response_format:
+  type: json_object
+schema_version: official-a2a-main-v1
+skill_fallback: false
+smoke_cases: 21
+strict_json_parsing: true
+temperature: 0.0
+timeout_s: 60.0
+transport: httpx-asgi

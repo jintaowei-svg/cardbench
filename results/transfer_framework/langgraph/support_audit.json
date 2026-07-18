@@ -1,0 +1,22 @@
+{
+  "api_checks": {
+    "conditional_edges": true,
+    "in_memory_saver": true,
+    "multimodal_ai_message": true,
+    "state_graph": true
+  },
+  "applicability": {
+    "A3": "applicable",
+    "B1": "applicable",
+    "C1": "applicable",
+    "C2": "applicable"
+  },
+  "model_called": false,
+  "runtime": {
+    "langchain-core": "1.4.9",
+    "langgraph": "1.2.9"
+  },
+  "status": "passed",
+  "target": "langgraph",
+  "target_kind": "framework"
+}

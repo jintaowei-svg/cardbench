@@ -1,0 +1,13 @@
+trials: 1
+case_manifest: results/transfer/langgraph_timeout_retry/langgraph_timeout_retry_16.json
+sut:
+  carddiff_host: sut.transfer.langgraph_host:LangGraphCardDiffHostSUT
+  kwargs:
+    model: gpt-5-mini
+    temperature: 0
+    max_retries: 1
+environment:
+  factory: harness.transfer.langgraph_env:LangGraphCardDiffEnvironment
+  kwargs:
+    remote_tool_mode: deterministic
+    persistence: false

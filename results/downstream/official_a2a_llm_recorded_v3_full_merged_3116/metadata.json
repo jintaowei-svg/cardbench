@@ -1,0 +1,30 @@
+{
+  "created_at": "2026-07-18T04:28:52.8466272Z",
+  "duplicate_case_ids": 0,
+  "experiment_id": "official_a2a_llm_downstream_recorded_v3_full_merged_3116",
+  "manifest": "attacks\\carddiff\\downstream\\official_a2a_recorded_triggered_3116.json",
+  "manifest_sha256": "15e0cfd3974f52387af7e0704b2c1a77994311a399dea4cc353023696454a0c1",
+  "merged_details_sha256": "5ef270e49b9eb6ed37dd7ade347186d75a94efd600c8f364bccf0c970ad50166",
+  "missing_case_ids": 0,
+  "mode": "recorded_trace_capability_scoped_llm",
+  "model": "gpt-5-mini",
+  "note": "The server run crashed before writing its retry ledger and final metadata; the raw server log is preserved in the server-partial snapshot.",
+  "planned_downstream_cases": 3116,
+  "segments": [
+    {
+      "path": "results\\downstream\\official_a2a_llm_recorded_v3_full_server_partial_3005_20260718_1130\\details.valid_3005.jsonl",
+      "role": "server_partial",
+      "rows": 3005,
+      "sha256": "5a45deb5c309a6ea62f91c923efb840e6ed8060f223645e65c87a94e9a0c267d",
+      "termination": "no_space_left_on_device"
+    },
+    {
+      "path": "results\\downstream\\official_a2a_llm_recorded_v3_missing_111_local\\details.jsonl",
+      "role": "local_missing_exact_rerun",
+      "rows": 111,
+      "sha256": "843cc794d49237359024e9e231eb2dea5c5b4a50f1342f312922ce498b1b560e",
+      "termination": "complete"
+    }
+  ],
+  "source_trials": 3150
+}

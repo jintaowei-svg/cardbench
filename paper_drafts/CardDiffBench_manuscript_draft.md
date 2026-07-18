@@ -24,7 +24,7 @@ CardDiffBench covers three families of AgentCard differentials:
 | Family | Attack types | Control-plane risk |
 | --- | --- | --- |
 | Extended-card differentials | A1, A2, A3 | Unsafe reliance on authenticated card state that differs from the public card. |
-| Interface and tenant confusion | B1, B2, B3 | Unsafe routing across ordered interfaces, tenants, bindings, or protocol versions. |
+| Interface selection and binding confusion | B1, B2 | Unsafe routing across ordered interfaces, bindings, or protocol versions. |
 | Security and output-mode drift | C1, C2 | Unsafe skill invocation or artifact acceptance when scopes and output modes diverge. |
 
 These categories are CardDiffBench-specific. They should be described as

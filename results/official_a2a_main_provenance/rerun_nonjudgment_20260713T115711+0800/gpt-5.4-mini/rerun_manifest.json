@@ -1,0 +1,25 @@
+{
+  "cases": [
+    {
+      "attack_type": "A3",
+      "case_id": "CARDDIFF_A3_FINANCE_T024_V001",
+      "domain": "finance",
+      "variant": "001"
+    },
+    {
+      "attack_type": "A3",
+      "case_id": "CARDDIFF_A3_FINANCE_T037_V003",
+      "domain": "finance",
+      "variant": "003"
+    },
+    {
+      "attack_type": "B1",
+      "case_id": "CARDDIFF_B1_TRAVEL_T034_V002",
+      "domain": "travel",
+      "variant": "002"
+    }
+  ],
+  "schema_version": "official-a2a-rerun-v1",
+  "source_details_sha256": "cda9d7ce6066ca69d6ea2bbb9de12cb2d2d4a19d1af1e97028c2d4667107b22b",
+  "source_model": "gpt-5.4-mini"
+}
